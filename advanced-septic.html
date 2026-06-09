@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advanced Septic Services, Inc. | Landisburg, PA</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0C160E;--ink2:#1E301F;
+  --cream:#F6F1E8;--cream2:#EDE7D8;--cream3:#E2DAC8;
+  --green:#1B4D2C;--green2:#2A6B3F;
+  --gold:#B8860B;--gold2:#D4A017;
+  --white:#FEFCF8
+}
+body{font-family:'Georgia',serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.5}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 56px;background:rgba(246,241,232,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--cream3)}
+.nl{display:flex;align-items:baseline;gap:14px}
+.nl-name{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--green)}
+.nl-est{font-size:11px;color:rgba(12,22,14,.35);letter-spacing:1px}
+.nr{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(12,22,14,.5);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--green)}
+.nav-cta{font-family:-apple-system,sans-serif;font-size:13px;font-weight:800;color:var(--green);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--white);position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 60px 80px 18%;position:relative;z-index:2}
+.hero-right{position:relative;background:var(--green);display:flex;align-items:center;justify-content:center;overflow:hidden}
+
+.hero-right-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.yr-bg{font-family:-apple-system,sans-serif;font-size:340px;font-weight:900;color:rgba(255,255,255,.04);line-height:1;user-select:none;letter-spacing:-20px}
+
+.hero-tag{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-tag::before{content:'';width:32px;height:1.5px;background:var(--gold)}
+
+.hero-h1{font-size:clamp(52px,6.5vw,108px);font-weight:400;line-height:.92;letter-spacing:-3px;color:var(--ink);margin-bottom:32px}
+.hero-h1 em{font-style:italic;color:var(--green)}
+
+.hero-body{font-family:-apple-system,sans-serif;font-size:18px;line-height:1.75;color:rgba(12,22,14,.6);max-width:420px;margin-bottom:48px}
+
+.hero-contact{display:flex;flex-direction:column;gap:10px;padding-top:36px;border-top:1px solid var(--cream3)}
+.hero-phone{font-family:-apple-system,sans-serif;font-size:36px;font-weight:900;color:var(--ink);letter-spacing:-1px;text-decoration:none;display:inline-block}
+.hero-phone:hover{color:var(--green)}
+.hero-meta{font-family:-apple-system,sans-serif;font-size:13px;color:rgba(12,22,14,.42);letter-spacing:1px}
+
+.hero-panel{position:relative;z-index:2;text-align:center;padding:40px}
+.hero-since{font-family:-apple-system,sans-serif;font-size:12px;font-weight:900;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px}
+.hero-num{font-family:-apple-system,sans-serif;font-size:clamp(100px,14vw,200px);font-weight:900;line-height:.85;color:#fff;letter-spacing:-8px}
+.hero-yrs{font-family:'Georgia',serif;font-size:clamp(18px,2.5vw,32px);font-style:italic;color:rgba(255,255,255,.65);margin-top:12px}
+.hero-loc{font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:24px}
+
+/* STRIP */
+.strip{background:var(--ink);display:flex;overflow:hidden}
+.strip-item{flex:1;padding:22px 0;text-align:center;border-right:1px solid rgba(255,255,255,.07);font-family:-apple-system,sans-serif;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.strip-item:last-child{border-right:none}
+.strip-item span{color:var(--gold2);display:block;font-size:18px;font-weight:900;letter-spacing:0;margin-bottom:4px}
+
+/* SERVICES */
+.services{background:var(--cream);padding:100px 0}
+.services-in{max-width:1200px;margin:0 auto;padding:0 56px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px;gap:40px}
+.section-tag{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-h{font-size:clamp(32px,4.5vw,62px);font-weight:400;line-height:.95;letter-spacing:-2px;color:var(--ink)}
+.section-h em{font-style:italic;color:var(--green)}
+.section-sub{font-family:-apple-system,sans-serif;font-size:17px;color:rgba(12,22,14,.5);line-height:1.65;max-width:360px;text-align:right}
+
+.srv-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--cream3)}
+.srv-item{padding:40px 36px;border-right:1px solid var(--cream3);border-bottom:1px solid var(--cream3);transition:background .2s}
+.srv-item:hover{background:var(--white)}
+.srv-item:nth-child(3n){border-right:none}
+.srv-item:nth-last-child(-n+3){border-bottom:none}
+.srv-num{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:3px;color:rgba(12,22,14,.2);margin-bottom:22px}
+.srv-title{font-size:clamp(18px,1.8vw,24px);font-weight:400;line-height:1.2;letter-spacing:-.5px;color:var(--ink);margin-bottom:14px}
+.srv-body{font-family:-apple-system,sans-serif;font-size:14px;line-height:1.7;color:rgba(12,22,14,.52)}
+.srv-tag{margin-top:20px;font-family:-apple-system,sans-serif;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);opacity:.7}
+
+/* ABOUT */
+.about{background:var(--green);display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.about-left{padding:100px 72px;display:flex;flex-direction:column;justify-content:center}
+.about-right{background:rgba(0,0,0,.15);padding:80px 64px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(255,255,255,.07)}
+
+.about-tag{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+.about-h{font-size:clamp(32px,4vw,60px);font-weight:400;line-height:.95;letter-spacing:-2px;color:#fff;margin-bottom:32px}
+.about-h em{font-style:italic;color:rgba(255,255,255,.55)}
+.about-body{font-family:-apple-system,sans-serif;font-size:17px;line-height:1.8;color:rgba(255,255,255,.65);margin-bottom:40px}
+
+.about-quote{font-size:clamp(17px,1.8vw,22px);font-style:italic;line-height:1.7;color:rgba(255,255,255,.8);padding-left:24px;border-left:3px solid var(--gold2);margin-bottom:28px}
+.about-who{font-family:-apple-system,sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);padding-left:24px}
+
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.cred{padding:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.cred-val{font-family:-apple-system,sans-serif;font-size:13px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.85);margin-bottom:4px}
+.cred-lbl{font-family:-apple-system,sans-serif;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px}
+
+/* STATS ROW */
+.stats-row{background:var(--cream2);border-top:1px solid var(--cream3);border-bottom:1px solid var(--cream3);display:flex}
+.stat-block{flex:1;padding:60px 0;text-align:center;border-right:1px solid var(--cream3)}
+.stat-block:last-child{border-right:none}
+.stat-n{font-family:-apple-system,sans-serif;font-size:clamp(48px,6vw,88px);font-weight:900;letter-spacing:-3px;color:var(--ink);line-height:1}
+.stat-n sup{font-size:.45em;vertical-align:super;letter-spacing:0}
+.stat-l{font-family:-apple-system,sans-serif;font-size:15px;color:rgba(12,22,14,.45);margin-top:8px}
+
+/* TESTIMONIALS */
+.tests{background:var(--white);padding:100px 0}
+.tests-in{max-width:1200px;margin:0 auto;padding:0 56px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cream3);margin-top:56px}
+.test-card{background:var(--white);padding:44px 40px}
+.test-stars{display:flex;gap:4px;margin-bottom:20px}
+.star{width:13px;height:13px;fill:var(--gold)}
+.test-q{font-size:17px;line-height:1.75;color:rgba(12,22,14,.72);margin-bottom:22px;font-style:italic}
+.test-name{font-family:-apple-system,sans-serif;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(12,22,14,.35)}
+
+/* AREA */
+.area{background:var(--cream);padding:100px 0;border-top:1px solid var(--cream3)}
+.area-in{max-width:1200px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.area-tag{font-family:-apple-system,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--green);padding:7px 14px;border:1.5px solid rgba(27,77,44,.22)}
+
+.contact-block{background:var(--white);border:1px solid var(--cream3);padding:40px}
+.cb-h{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.cb-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--cream2)}
+.cb-row:last-child{border-bottom:none}
+.cb-icon svg{width:16px;height:16px;fill:none;stroke:var(--green);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px;flex-shrink:0}
+.cb-lbl{font-family:-apple-system,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(12,22,14,.32);margin-bottom:5px}
+.cb-val{font-size:16px;color:var(--ink);line-height:1.45}
+.cb-val a{color:var(--ink);text-decoration:none}.cb-val a:hover{color:var(--green)}
+
+/* CTA */
+.cta{background:var(--ink);padding:120px 0}
+.cta-in{max-width:900px;margin:0 auto;padding:0 56px;text-align:center}
+.cta-tag{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:24px}
+.cta-h{font-size:clamp(38px,5.5vw,82px);font-weight:400;letter-spacing:-3px;line-height:.92;color:#fff;margin-bottom:16px}
+.cta-h em{font-style:italic;color:var(--gold2)}
+.cta-sub{font-family:-apple-system,sans-serif;font-size:17px;color:rgba(255,255,255,.45);margin-bottom:60px;line-height:1.65}
+.cta-phone{display:inline-block;font-family:-apple-system,sans-serif;font-size:clamp(38px,5vw,72px);font-weight:900;letter-spacing:-2px;color:#fff;text-decoration:none;padding-bottom:6px;border-bottom:3px solid var(--gold2)}
+.cta-phone:hover{color:var(--gold2)}
+.cta-meta{font-family:-apple-system,sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:20px}
+
+/* FOOTER */
+footer{background:#080C09;padding:60px 0 32px}
+.footer-in{max-width:1200px;margin:0 auto;padding:0 56px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px}
+.footer-name{font-family:-apple-system,sans-serif;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.footer-desc{font-size:15px;color:rgba(255,255,255,.32);line-height:1.7;max-width:300px}
+.footer-col-h{font-family:-apple-system,sans-serif;font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:16px}
+.footer-link{display:block;font-family:-apple-system,sans-serif;font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;margin-bottom:8px}
+.footer-link:hover{color:rgba(255,255,255,.7)}
+.footer-bot{display:flex;justify-content:space-between;font-family:-apple-system,sans-serif;font-size:11px;color:rgba(255,255,255,.2)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.15s}.d3{transition-delay:.23s}.d4{transition-delay:.31s}
+
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{min-height:380px}
+  .about{grid-template-columns:1fr}
+  .srv-list{grid-template-columns:1fr 1fr}
+  .srv-item:nth-child(3n){border-right:1px solid var(--cream3)}
+  .srv-item:nth-child(2n){border-right:none}
+  .area-in{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .stats-row{flex-wrap:wrap}
+  .stat-block{min-width:50%;border-bottom:1px solid var(--cream3)}
+}
+@media(max-width:640px){
+  nav{padding:14px 20px}
+  .hero-left{padding:100px 20px 60px}
+  .services-in,.tests-in,.area-in,.cta-in,.footer-in{padding:0 20px}
+  .srv-list{grid-template-columns:1fr}
+  .srv-item{border-right:none!important}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .section-sub{text-align:left}
+  .about-left,.about-right{padding:60px 24px}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nl">
+    <span class="nl-name">Advanced Septic Services</span>
+    <span class="nl-est">Landisburg, PA · Est. 1995</span>
+  </div>
+  <div class="nr">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="tel:7177894548" class="nav-cta">(717) 789-4548</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Perry County's Full-Service Septic &amp; Portable Restrooms</div>
+    <h1 class="hero-h1">
+      Advanced<br>
+      <em>Septic</em><br>
+      Services.
+    </h1>
+    <p class="hero-body">Family-owned by Ronda &amp; Mark Richard since 1995. Licensed, insured, and trusted across Perry, Cumberland, and Juniata counties.</p>
+    <div class="hero-contact">
+      <a href="tel:7177894548" class="hero-phone">(717) 789-4548</a>
+      <span class="hero-meta">Mon – Fri &nbsp;·&nbsp; 7:30 AM – 4:30 PM &nbsp;·&nbsp; 65 Richard Lane, Landisburg PA</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-bg"><span class="yr-bg">30</span></div>
+    <div class="hero-panel">
+      <div class="hero-since">Since</div>
+      <div class="hero-num">1995</div>
+      <div class="hero-yrs">Thirty years of honest work.</div>
+      <div class="hero-loc">Landisburg · Pennsylvania</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><span>30</span>Years in Business</div>
+  <div class="strip-item"><span>5</span>Counties Served</div>
+  <div class="strip-item"><span>3</span>Authorized Brands</div>
+  <div class="strip-item"><span>1</span>Family Operation</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-in">
+    <div class="section-head">
+      <div class="rv">
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-h">Everything<br>septic, <em>done right.</em></h2>
+      </div>
+      <p class="section-sub rv d1">From routine pumping to emergency repairs, real estate inspections to portable restroom rentals — one company handles it all.</p>
+    </div>
+    <div class="srv-list">
+      <div class="srv-item rv">
+        <div class="srv-num">01</div>
+        <div class="srv-title">Septic Tank Cleaning &amp; Pumping</div>
+        <div class="srv-body">Residential and commercial tank pumping done thoroughly and tidily. Regular service prevents costly emergency repairs down the road.</div>
+        <div class="srv-tag">Residential · Commercial</div>
+      </div>
+      <div class="srv-item rv d1">
+        <div class="srv-num">02</div>
+        <div class="srv-title">Portable Restroom Rental</div>
+        <div class="srv-body">Clean units delivered on time for construction sites, events, and long-term placements. We handle all pickup and servicing.</div>
+        <div class="srv-tag">Events · Construction · Long-Term</div>
+      </div>
+      <div class="srv-item rv d2">
+        <div class="srv-num">03</div>
+        <div class="srv-title">Septic Repair &amp; Diagnostics</div>
+        <div class="srv-body">We find the actual problem before we fix it. No guesswork, no unnecessary work — just a clear diagnosis and an honest solution.</div>
+        <div class="srv-tag">All System Types</div>
+      </div>
+      <div class="srv-item rv">
+        <div class="srv-num">04</div>
+        <div class="srv-title">Real Estate Septic Inspections</div>
+        <div class="srv-body">Buying or selling a home? We handle the inspection, paperwork, and all the leg work buyers, sellers, and lenders need.</div>
+        <div class="srv-tag">Buyers · Sellers · Lenders</div>
+      </div>
+      <div class="srv-item rv d1">
+        <div class="srv-num">05</div>
+        <div class="srv-title">Sewer &amp; Drain Line Service</div>
+        <div class="srv-body">Clogged or collapsed lines cleared and repaired. We have the equipment to get things flowing again — fast and without the runaround.</div>
+        <div class="srv-tag">Residential · Commercial</div>
+      </div>
+      <div class="srv-item rv d2">
+        <div class="srv-num">06</div>
+        <div class="srv-title">Mini Backhoe &amp; Excavation</div>
+        <div class="srv-body">On-site excavation for repairs, line replacements, and new installations. One company for the whole job — no coordinating separate contractors.</div>
+        <div class="srv-tag">Excavation · Installation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-block rv">
+    <div class="stat-n">1995</div>
+    <div class="stat-l">Founded in Perry County</div>
+  </div>
+  <div class="stat-block rv d1">
+    <div class="stat-n">30<sup>+</sup></div>
+    <div class="stat-l">Years of Service</div>
+  </div>
+  <div class="stat-block rv d2">
+    <div class="stat-n">5</div>
+    <div class="stat-l">Counties Covered</div>
+  </div>
+  <div class="stat-block rv d3">
+    <div class="stat-n">3</div>
+    <div class="stat-l">Authorized Brands</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left">
+    <div class="about-tag rv">About the Richards</div>
+    <h2 class="about-h rv d1">
+      Thirty years.<br>
+      <em>One family.</em><br>
+      Perry County.
+    </h2>
+    <p class="about-body rv d2">Mark and Ronda Richard built Advanced Septic Services on one principle: show up, do the work right, and treat people fairly. Since 1995 that's been enough — and it still is.</p>
+    <div class="creds rv d3">
+      <div class="cred">
+        <div class="cred-val">Licensed &amp; Insured</div>
+        <div class="cred-lbl">Fully covered, every job</div>
+      </div>
+      <div class="cred">
+        <div class="cred-val">Gould's Pumps</div>
+        <div class="cred-lbl">Authorized dealer</div>
+      </div>
+      <div class="cred">
+        <div class="cred-val">Lenzyme</div>
+        <div class="cred-lbl">Authorized distributor</div>
+      </div>
+      <div class="cred">
+        <div class="cred-val">Infiltrator Tanks</div>
+        <div class="cred-lbl">Authorized dealer</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <blockquote class="about-quote rv">"As a family-owned business, we understand the importance of old-fashioned prompt, reliable, and friendly service. We take great pride in the quality of our work and take the time to ensure we solve your problems in the best and most affordable manner."</blockquote>
+    <div class="about-who rv d1">— Ronda &amp; Mark Richard, Owners</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="tests">
+  <div class="tests-in">
+    <div class="section-tag rv">What Customers Say</div>
+    <h2 class="section-h rv d1">Perry County trusts<br><em>Advanced Septic.</em></h2>
+    <div class="test-grid">
+      <div class="test-card rv">
+        <div class="test-stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="test-q">"Your teamwork is impressive. You did a lot in just 3 hours. Thanks for leaving the site so orderly. You're polite, courteous, efficient and reasonable."</p>
+        <div class="test-name">Perry County Customer</div>
+      </div>
+      <div class="test-card rv d1">
+        <div class="test-stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="test-q">"Advanced Septic has served us for years. They always show up when they say, do excellent work, and leave everything clean. Wouldn't call anyone else."</p>
+        <div class="test-name">Landisburg, PA Homeowner</div>
+      </div>
+      <div class="test-card rv d2">
+        <div class="test-stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="test-q">"Used them for a real estate inspection — fast, thorough, and the report was exactly what our lender needed. Made the whole closing process so much easier."</p>
+        <div class="test-name">Real Estate Client · Perry County</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA & CONTACT -->
+<section class="area">
+  <div class="area-in">
+    <div>
+      <div class="section-tag rv">Service Area</div>
+      <h2 class="section-h rv d1">Serving <em>Central<br>Pennsylvania.</em></h2>
+      <p class="rv d2" style="font-family:-apple-system,sans-serif;font-size:17px;color:rgba(12,22,14,.55);line-height:1.7;margin-top:20px;max-width:440px">All of Perry, Cumberland, and Juniata counties — plus portions of Dauphin and York.</p>
+      <div class="area-tags rv d3">
+        <span class="area-tag">Landisburg</span>
+        <span class="area-tag">Newport</span>
+        <span class="area-tag">New Bloomfield</span>
+        <span class="area-tag">Carlisle</span>
+        <span class="area-tag">Mechanicsburg</span>
+        <span class="area-tag">Mifflintown</span>
+        <span class="area-tag">Liverpool</span>
+        <span class="area-tag">Duncannon</span>
+        <span class="area-tag">Marysville</span>
+        <span class="area-tag">Blain</span>
+        <span class="area-tag">Millerstown</span>
+      </div>
+    </div>
+    <div class="rv d1">
+      <div class="contact-block">
+        <div class="cb-h">Get in Touch</div>
+        <div class="cb-row">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 7.67a19.79 19.79 0 01-3.07-8.63A2 2 0 012.24 7h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 14.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="cb-lbl">Phone</div><div class="cb-val"><a href="tel:7177894548">(717) 789-4548</a></div></div>
+        </div>
+        <div class="cb-row">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="cb-lbl">Email</div><div class="cb-val" style="font-size:14px"><a href="mailto:advancedsepticservicesinc@gmail.com">advancedsepticservicesinc@gmail.com</a></div></div>
+        </div>
+        <div class="cb-row">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="cb-lbl">Address</div><div class="cb-val" style="color:rgba(12,22,14,.65)">65 Richard Lane<br>Landisburg, PA 17040</div></div>
+        </div>
+        <div class="cb-row">
+          <div class="cb-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="cb-lbl">Hours</div><div class="cb-val" style="color:rgba(12,22,14,.65)">Monday – Friday<br>7:30 AM – 4:30 PM</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="cta-tag">Ready to get started?</div>
+    <h2 class="cta-h">Need septic service<br>in <em>Central PA?</em></h2>
+    <p class="cta-sub">Call Ronda and Mark. Thirty years, same promise — show up, do the work right, and treat people fairly.</p>
+    <a href="tel:7177894548" class="cta-phone">(717) 789-4548</a>
+    <div class="cta-meta">Mon – Fri &nbsp;·&nbsp; 7:30 AM – 4:30 PM &nbsp;·&nbsp; Landisburg, PA</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="footer-name">Advanced Septic Services, Inc.</div>
+        <p class="footer-desc">Perry County's full-service septic and portable restroom company since 1995. Family-owned by Ronda &amp; Mark Richard. Licensed, insured, and proud to serve Central Pennsylvania.</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Services</div>
+        <a class="footer-link" href="#services">Septic Tank Cleaning</a>
+        <a class="footer-link" href="#services">Portable Restroom Rental</a>
+        <a class="footer-link" href="#services">Septic Repair &amp; Diagnostics</a>
+        <a class="footer-link" href="#services">Real Estate Inspections</a>
+        <a class="footer-link" href="#services">Sewer &amp; Drain Line</a>
+        <a class="footer-link" href="#services">Mini Backhoe &amp; Excavation</a>
+      </div>
+      <div>
+        <div class="footer-col-h">Contact</div>
+        <a class="footer-link" href="tel:7177894548">(717) 789-4548</a>
+        <a class="footer-link" href="mailto:advancedsepticservicesinc@gmail.com">advancedsepticservicesinc@gmail.com</a>
+        <span class="footer-link">65 Richard Lane<br>Landisburg, PA 17040</span>
+        <span class="footer-link" style="margin-top:6px">Mon–Fri · 7:30 AM – 4:30 PM</span>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2025 Advanced Septic Services, Inc.</span>
+      <span>Perry · Cumberland · Juniata · Dauphin · York Counties</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold: 0.08});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

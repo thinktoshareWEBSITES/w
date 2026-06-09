@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Emergency Pumping and Plumbing LLC — 24/7 septic pumping, ADEQ inspections, and full plumbing service in Phoenix, AZ. Call (602) 438-0911.">
+<title>Emergency Pumping &amp; Plumbing | Phoenix, AZ | 24/7 Service</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#050E1F;color:rgba(255,255,255,.92);overflow-x:hidden;line-height:1.6}
+:root{
+  --navy:#050E1F;--navy2:#0B1829;--navy3:#122036;
+  --copper:#C97A2E;--copper2:#E8924A;--copper3:#F0AA6A;
+  --cream:#F5EFE0;--ink:#060C18;
+  --border:rgba(201,122,46,.14);--r:10px
+}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.rev.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.13s}.d3{transition-delay:.20s}.d4{transition-delay:.27s}.d5{transition-delay:.34s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,14,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,122,46,.08)}
+.nav-logo{font-size:13px;font-weight:900;letter-spacing:2.5px;color:var(--copper);text-transform:uppercase}
+.nav-badge{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--copper);background:rgba(201,122,46,.09);border:1px solid rgba(201,122,46,.22);padding:5px 12px;border-radius:20px}
+.nav-phone{font-size:16px;font-weight:800;color:#fff;text-decoration:none}
+.nav-phone:hover{color:var(--copper)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:120px 80px 80px 18%;gap:60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 72% 44%,rgba(201,122,46,.07) 0%,transparent 60%),radial-gradient(ellipse 55% 55% at 2% 95%,rgba(0,70,160,.06) 0%,transparent 55%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,122,46,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,122,46,.035) 1px,transparent 1px);background-size:64px 64px}
+
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--copper)}
+
+.hero-h1{font-size:clamp(40px,5.2vw,72px);font-weight:900;line-height:.97;letter-spacing:-2px;margin-bottom:6px;color:#fff}
+.hero-h1 .em{color:var(--copper)}
+.hero-sub{font-size:clamp(20px,2.6vw,34px);font-weight:700;color:rgba(255,255,255,.58);letter-spacing:-.5px;margin-bottom:28px}
+
+.hero-desc{font-size:17px;color:rgba(255,255,255,.72);max-width:500px;margin-bottom:38px;line-height:1.68}
+
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.btn-call{display:inline-flex;align-items:center;gap:11px;color:#fff;font-size:20px;font-weight:900;text-decoration:none;letter-spacing:-.3px}
+.btn-call svg{width:20px;height:20px;flex-shrink:0}
+.btn-call:hover{color:var(--copper)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(201,122,46,.1);border:1px solid rgba(201,122,46,.25);color:var(--copper2);font-size:14px;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none;letter-spacing:.3px;transition:background .2s}
+.btn-secondary:hover{background:rgba(201,122,46,.18)}
+
+.hero-stats{display:flex;gap:36px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07)}
+.stat{display:flex;flex-direction:column;gap:3px}
+.stat-num{font-size:32px;font-weight:900;color:var(--copper);letter-spacing:-1px;line-height:1}
+.stat-label{font-size:12px;color:rgba(255,255,255,.58);letter-spacing:2px;text-transform:uppercase}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
+.badge-wrap{position:relative;width:330px;height:330px;flex-shrink:0}
+.badge-glow{position:absolute;inset:-28px;border-radius:50%;background:radial-gradient(circle,rgba(201,122,46,.14) 35%,transparent 68%);animation:glow-pulse 3.8s ease-in-out infinite}
+@keyframes glow-pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.08);opacity:.5}}
+.badge-svg{width:100%;animation:badge-float 5.5s ease-in-out infinite}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ring-draw{to{stroke-dashoffset:0}}
+@keyframes num-pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+
+/* STRIP */
+.strip{background:var(--copper);padding:13px 0;overflow:hidden}
+.strip-in{max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.si{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;padding:8px 22px;border-right:1px solid rgba(255,255,255,.18);white-space:nowrap}
+.si:last-child{border-right:none}
+.si svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* SECTIONS */
+section{padding:88px 0}
+.section-in{max-width:1200px;margin:0 auto;padding:0 44px}
+.slabel{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--copper);margin-bottom:16px}
+.slabel::before{content:'';width:18px;height:2px;background:var(--copper)}
+.sh{font-size:clamp(28px,3.8vw,46px);font-weight:900;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
+.sh .em{color:var(--copper)}
+.sp{font-size:17px;color:rgba(255,255,255,.68);max-width:560px;line-height:1.7;margin-bottom:48px}
+
+/* SERVICES */
+.srv-section{background:var(--navy2)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,122,46,.09);border:1px solid rgba(201,122,46,.1);border-radius:14px;overflow:hidden}
+.srv{background:var(--navy2);padding:34px 30px;transition:background .22s}
+.srv:hover{background:var(--navy3)}
+.srv-ico{width:46px;height:46px;background:rgba(201,122,46,.09);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .22s}
+.srv:hover .srv-ico{background:rgba(201,122,46,.18)}
+.srv-ico svg{width:22px;height:22px;fill:none;stroke:var(--copper);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.srv-title{font-size:17px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.25px}
+.srv-desc{font-size:15px;color:rgba(255,255,255,.68);line-height:1.65}
+.srv-tag{display:inline-block;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);opacity:.9}
+
+/* ABOUT */
+.about-section{background:var(--navy)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-card{background:var(--navy2);border:1px solid var(--border);border-radius:13px;padding:30px;margin-bottom:14px}
+.about-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.about-avatar{width:50px;height:50px;border-radius:50%;background:rgba(201,122,46,.13);border:2px solid rgba(201,122,46,.28);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--copper);flex-shrink:0;letter-spacing:-.5px}
+.about-name{font-size:16px;font-weight:800;color:#fff}
+.about-role{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:1px;text-transform:uppercase;margin-top:3px}
+.about-quote{font-size:16px;color:rgba(255,255,255,.75);line-height:1.72;font-style:italic}
+.about-badges{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:24px}
+.ab{background:var(--navy2);border:1px solid var(--border);border-radius:10px;padding:18px 16px;display:flex;align-items:center;gap:12px}
+.ab-ico{width:36px;height:36px;background:rgba(201,122,46,.09);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ab-ico svg{width:17px;height:17px;fill:none;stroke:var(--copper);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ab-val{font-size:17px;font-weight:900;color:#fff}
+.ab-lbl{font-size:13px;color:rgba(255,255,255,.62);letter-spacing:.5px}
+.diff-card{background:rgba(201,122,46,.05);border:1px solid rgba(201,122,46,.18);border-radius:13px;padding:26px}
+.diff-row{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,.78);padding:8px 0}
+.diff-row+.diff-row{border-top:1px solid rgba(255,255,255,.05)}
+.diff-check{color:var(--copper);font-size:14px;font-weight:900;flex-shrink:0}
+
+/* AREA */
+.area-section{background:var(--navy2)}
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.city-pill{display:inline-flex;align-items:center;background:rgba(201,122,46,.1);border:1px solid rgba(201,122,46,.25);border-radius:6px;padding:8px 16px;font-size:14px;font-weight:700;color:var(--copper2);margin:4px}
+.area-pills{display:flex;flex-wrap:wrap;margin-top:18px}
+.contact-card{background:var(--navy);border:1px solid var(--border);border-radius:14px;padding:34px}
+.contact-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.contact-row:last-child{border-bottom:none}
+.contact-ico{margin-top:2px;flex-shrink:0}
+.contact-ico svg{width:17px;height:17px;fill:none;stroke:rgba(201,122,46,.65);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contact-lbl{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.contact-val{font-size:16px;font-weight:700;color:#fff}
+.contact-val a{color:#fff;text-decoration:none}.contact-val a:hover{color:var(--copper)}
+
+/* CTA */
+.cta-section{background:var(--copper);padding:80px 0}
+.cta-in{max-width:780px;margin:0 auto;padding:0 40px;text-align:center}
+.cta-h{font-size:clamp(26px,4vw,50px);font-weight:900;color:#fff;letter-spacing:-1.2px;margin-bottom:12px;line-height:1.05}
+.cta-sub{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:34px;line-height:1.6}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--copper);font-size:clamp(22px,3.2vw,38px);font-weight:900;padding:20px 44px;border-radius:12px;text-decoration:none;letter-spacing:-1px;transition:transform .15s,box-shadow .15s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(0,0,0,.22)}
+.cta-btn svg{width:30px;height:30px;flex-shrink:0}
+.cta-avail{margin-top:20px;font-size:13px;color:rgba(255,255,255,.75);letter-spacing:2px;text-transform:uppercase}
+
+/* FOOTER */
+footer{background:var(--ink);padding:52px 0 30px}
+.footer-in{max-width:1200px;margin:0 auto;padding:0 44px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:22px}
+.footer-brand{font-size:13px;font-weight:900;letter-spacing:2.5px;color:var(--copper);text-transform:uppercase;margin-bottom:12px}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.68;max-width:300px}
+.footer-col-h{font-size:11px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
+.footer-link{display:block;font-size:14px;color:rgba(255,255,255,.58);text-decoration:none;margin-bottom:7px;line-height:1.55}
+.footer-link:hover{color:var(--copper)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.38)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:100px 32px 60px;text-align:center}
+  .hero-visual{justify-content:center}
+  .hero-stats{justify-content:center}
+  .hero-actions{justify-content:center}
+  .hero-eyebrow{justify-content:center}
+  .hero-desc{margin:0 auto 38px}
+  .badge-wrap{width:270px;height:270px}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.area-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .slabel{justify-content:flex-start}
+}
+@media(max-width:600px){
+  .srv-grid{grid-template-columns:1fr}
+  .hero{padding:88px 20px 50px}
+  .section-in{padding:0 22px}
+  nav{padding:14px 22px}
+  .si{font-size:10.5px;padding:5px 14px}
+  .about-badges{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .rev{opacity:1;transform:none;transition:none}
+  .badge-svg,.badge-glow{animation:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Emergency Pumping &amp; Plumbing</span>
+  <span class="nav-badge">24 / 7 AVAILABLE</span>
+  <a href="tel:6024380911" class="nav-phone">(602) 438-0911</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Phoenix, AZ · 20 Years in the Field</div>
+    <h1 class="hero-h1">
+      <span class="em">EMERGENCY</span><br>
+      PUMPING &amp;<br>
+      PLUMBING
+    </h1>
+    <p class="hero-sub">Septic · Plumbing · 24/7</p>
+    <p class="hero-desc">Phoenix's trusted family-owned septic and plumbing company. ADEQ certified, NAWT inspectors, flat-rate pricing — and we actually answer when you call at 2 a.m.</p>
+    <div class="hero-actions">
+      <a href="tel:6024380911" class="btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 7.67a19.79 19.79 0 01-3.07-8.63A2 2 0 012.24 7h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 14.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (602) 438-0911
+      </a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="20" data-suffix="+">0</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="24">0</span>
+        <span class="stat-label">Hour Availability</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="2">0</span>
+        <span class="stat-label">Counties Served</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="badge-wrap">
+      <div class="badge-glow"></div>
+      <svg class="badge-svg" viewBox="0 0 330 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <circle cx="165" cy="165" r="160" fill="#0B1829"/>
+        <circle cx="165" cy="165" r="147" fill="#0F1E36"/>
+        <!-- Animated ring -->
+        <circle cx="165" cy="165" r="147" fill="none" stroke="#C97A2E" stroke-width="2.5"
+          stroke-dasharray="924" stroke-dashoffset="924"
+          style="animation:ring-draw 2.2s cubic-bezier(.4,0,.2,1) .5s forwards"/>
+        <!-- Inner decorative ring -->
+        <circle cx="165" cy="165" r="130" fill="none" stroke="rgba(201,122,46,.14)" stroke-width="1"/>
+        <!-- Tick marks (major at 30°, minor at 15° between) — all at rim r=137 to r=147 -->
+        <g stroke-linecap="round">
+          <!-- Major ticks -->
+          <line x1="165" y1="20" x2="165" y2="34" stroke="#C97A2E" stroke-width="2.5"/>
+          <line x1="247" y1="42" x2="239" y2="54" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="305" y1="102" x2="293" y2="109" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="312" y1="165" x2="298" y2="165" stroke="#C97A2E" stroke-width="2.5"/>
+          <line x1="305" y1="228" x2="293" y2="221" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="247" y1="288" x2="239" y2="276" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="165" y1="310" x2="165" y2="296" stroke="#C97A2E" stroke-width="2.5"/>
+          <line x1="83" y1="288" x2="91" y2="276" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="25" y1="228" x2="37" y2="221" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="18" y1="165" x2="32" y2="165" stroke="#C97A2E" stroke-width="2.5"/>
+          <line x1="25" y1="102" x2="37" y2="109" stroke="#C97A2E" stroke-width="1.5"/>
+          <line x1="83" y1="42" x2="91" y2="54" stroke="#C97A2E" stroke-width="1.5"/>
+          <!-- Minor ticks -->
+          <line x1="214" y1="24" x2="210" y2="32" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="279" y1="66" x2="272" y2="72" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="306" y1="133" x2="298" y2="137" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="306" y1="197" x2="298" y2="193" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="279" y1="264" x2="272" y2="258" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="214" y1="306" x2="210" y2="298" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="116" y1="306" x2="120" y2="298" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="51" y1="264" x2="58" y2="258" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="24" y1="197" x2="32" y2="193" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="24" y1="133" x2="32" y2="137" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="51" y1="66" x2="58" y2="72" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+          <line x1="116" y1="24" x2="120" y2="32" stroke="rgba(201,122,46,.28)" stroke-width="1"/>
+        </g>
+        <!-- Top arc text at r=111 — topmost point y=54, tick ends at y=34, gap=20px -->
+        <defs>
+          <path id="arc-t" d="M 54,165 A 111,111 0 0,1 276,165"/>
+        </defs>
+        <text fill="#C97A2E" font-size="14.5" font-weight="800" font-family="-apple-system,sans-serif" letter-spacing="7.5" text-anchor="middle">
+          <textPath href="#arc-t" startOffset="50%">ADEQ CERTIFIED</textPath>
+        </text>
+        <!-- Center content -->
+        <text x="165" y="116" text-anchor="middle" font-size="11" font-weight="800" font-family="-apple-system,sans-serif" letter-spacing="5" fill="rgba(255,255,255,.55)">YEARS IN</text>
+        <text x="165" y="196" text-anchor="middle" font-size="98" font-weight="900" font-family="-apple-system,sans-serif" fill="#C97A2E"
+          style="animation:num-pop 1s 2s cubic-bezier(.34,1.56,.64,1) both">20</text>
+        <!-- Three dots -->
+        <circle cx="133" cy="216" r="2.5" fill="rgba(201,122,46,.5)"/>
+        <circle cx="165" cy="223" r="2.5" fill="rgba(201,122,46,.5)"/>
+        <circle cx="197" cy="216" r="2.5" fill="rgba(201,122,46,.5)"/>
+        <!-- Bottom labels -->
+        <text x="165" y="244" text-anchor="middle" font-size="10.5" font-weight="700" font-family="-apple-system,sans-serif" letter-spacing="3" fill="rgba(255,255,255,.58)">NAWT CERTIFIED</text>
+        <text x="165" y="261" text-anchor="middle" font-size="9" font-weight="500" font-family="-apple-system,sans-serif" letter-spacing="2.5" fill="rgba(255,255,255,.32)">PHOENIX, AZ</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="strip-in">
+    <span class="si rev d1"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</span>
+    <span class="si rev d2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>24/7 Emergency Service</span>
+    <span class="si rev d3"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>ADEQ Certified</span>
+    <span class="si rev d4"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>NAWT Inspectors</span>
+    <span class="si rev d5"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Family Owned · No Hidden Fees</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="srv-section" id="services">
+  <div class="section-in">
+    <div class="slabel rev">What We Do</div>
+    <h2 class="sh rev d1">Full Septic &amp; Plumbing<br><span class="em">Under One Roof</span></h2>
+    <p class="sp rev d2">Residential and commercial solutions across the Phoenix metro — from routine tank pumping to sewer camera diagnostics, emergency plumbing to ADEQ-required inspections.</p>
+    <div class="srv-grid">
+      <div class="srv rev d1">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="srv-title">Septic Tank Pumping</div>
+        <div class="srv-desc">Residential and commercial pumping for septic tanks and cesspools throughout Maricopa and Pinal counties. Fast, clean, no mess left behind.</div>
+        <span class="srv-tag">Residential · Commercial</span>
+      </div>
+      <div class="srv rev d2">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="srv-title">ADEQ Septic Inspections</div>
+        <div class="srv-desc">Flat-rate certified inspections for home sales, refinancing, or peace of mind. All inspectors hold NAWT certification — results lenders and escrow trust.</div>
+        <span class="srv-tag">Flat Rate · NAWT Certified</span>
+      </div>
+      <div class="srv rev d3">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="srv-title">Sewer Camera &amp; Locating</div>
+        <div class="srv-desc">Electronic locating and camera inspection to pinpoint blockages, root intrusions, and line breaks before they become expensive failures.</div>
+        <span class="srv-tag">Diagnostic · Non-Invasive</span>
+      </div>
+      <div class="srv rev d1">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="srv-title">Septic Installation &amp; Repair</div>
+        <div class="srv-desc">New septic tank installation and full sewer line repairs — residential and commercial. Both counties, all permit types, done to code.</div>
+        <span class="srv-tag">New Build · Repair · Replace</span>
+      </div>
+      <div class="srv rev d2">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+        </div>
+        <div class="srv-title">Full Plumbing Service</div>
+        <div class="srv-desc">High-pressure jetting, drain cleaning, re-pipes (gas, water &amp; sewer), water heaters, disposals, softeners, RO systems, backflows, and fixture installs.</div>
+        <span class="srv-tag">Residential · Commercial</span>
+      </div>
+      <div class="srv rev d3">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="srv-title">Grease Trap Service</div>
+        <div class="srv-desc">Restaurant and commercial grease trap pumping, installation, and repairs. Keep your kitchen compliant and your plumbing flowing.</div>
+        <span class="srv-tag">Restaurants · Commercial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="section-in">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="slabel rev">About Josh &amp; Tanya</div>
+        <h2 class="sh rev d1">20 Years Keeping<br><span class="em">Arizona Running</span></h2>
+        <p class="sp rev d2" style="margin-bottom:28px;font-size:17px;color:rgba(255,255,255,.72)">Josh and Tanya Butcher started Emergency Pumping and Plumbing because they saw how badly homeowners got treated — overcharged, kept waiting, given vague estimates. They built a company around the opposite.</p>
+        <div class="about-badges rev d3">
+          <div class="ab">
+            <div class="ab-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><div class="ab-val">ADEQ</div><div class="ab-lbl">State Certified</div></div>
+          </div>
+          <div class="ab">
+            <div class="ab-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="ab-val">24/7</div><div class="ab-lbl">Emergency Response</div></div>
+          </div>
+          <div class="ab">
+            <div class="ab-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <div><div class="ab-val">Family</div><div class="ab-lbl">Owned &amp; Operated</div></div>
+          </div>
+          <div class="ab">
+            <div class="ab-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <div><div class="ab-val">Upfront</div><div class="ab-lbl">No Hidden Costs</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="rev d2">
+        <div class="about-card">
+          <div class="about-head">
+            <div class="about-avatar">J&amp;T</div>
+            <div>
+              <div class="about-name">Josh &amp; Tanya Butcher</div>
+              <div class="about-role">Owners · Phoenix, Arizona</div>
+            </div>
+          </div>
+          <div class="about-quote">"We built this company on one rule: treat people the way you'd want to be treated if a pipe burst at midnight. Fair price, real answer, show up fast."</div>
+        </div>
+        <div class="diff-card">
+          <div style="font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:8px">What Sets Us Apart</div>
+          <div class="diff-row"><span class="diff-check">✓</span> Flat-rate ADEQ inspections — price quoted upfront</div>
+          <div class="diff-row"><span class="diff-check">✓</span> NAWT certified inspectors on every inspection job</div>
+          <div class="diff-row"><span class="diff-check">✓</span> Trained technicians, not subcontractors</div>
+          <div class="diff-row"><span class="diff-check">✓</span> 24/7 true emergency dispatch — real people answer</div>
+          <div class="diff-row"><span class="diff-check">✓</span> No surcharges, no trip fees buried in fine print</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section">
+  <div class="section-in">
+    <div class="area-grid">
+      <div>
+        <div class="slabel rev">Service Area</div>
+        <h2 class="sh rev d1">All of <span class="em">Greater Phoenix</span><br>&amp; Beyond</h2>
+        <p class="rev d2" style="font-size:17px;color:rgba(255,255,255,.7);line-height:1.68;margin-bottom:8px">We cover all of <strong style="color:#fff">Maricopa County</strong> and <strong style="color:#fff">Pinal County</strong> for both residential and commercial customers.</p>
+        <div class="area-pills rev d3">
+          <span class="city-pill">Phoenix</span>
+          <span class="city-pill">Scottsdale</span>
+          <span class="city-pill">Mesa</span>
+          <span class="city-pill">Chandler</span>
+          <span class="city-pill">Gilbert</span>
+          <span class="city-pill">Tempe</span>
+          <span class="city-pill">Glendale</span>
+          <span class="city-pill">Peoria</span>
+          <span class="city-pill">Surprise</span>
+          <span class="city-pill">Queen Creek</span>
+          <span class="city-pill">San Tan Valley</span>
+          <span class="city-pill">Casa Grande</span>
+          <span class="city-pill">+ Surrounding Areas</span>
+        </div>
+      </div>
+      <div class="rev d2">
+        <div class="contact-card">
+          <div style="font-size:13px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:var(--copper);margin-bottom:6px">Get in Touch</div>
+          <div class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 7.67a19.79 19.79 0 01-3.07-8.63A2 2 0 012.24 7h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 14.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="contact-lbl">Phone (24/7)</div><div class="contact-val"><a href="tel:6024380911">(602) 438-0911</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="contact-lbl">Email</div><div class="contact-val" style="font-size:15px"><a href="mailto:tanya@emergencypumping.com">tanya@emergencypumping.com</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="contact-lbl">Address</div><div class="contact-val" style="font-size:15px;font-weight:600;color:rgba(255,255,255,.82)">3016 S 38th St<br>Phoenix, AZ 85040</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-in">
+    <h2 class="cta-h">Septic Emergency?<br>Plumbing Crisis?</h2>
+    <p class="cta-sub">We answer 24 hours a day, 7 days a week. Real people, no voicemail tree, no wait. Call now and we dispatch immediately.</p>
+    <a href="tel:6024380911" class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 7.67a19.79 19.79 0 01-3.07-8.63A2 2 0 012.24 7h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 14.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      (602) 438-0911
+    </a>
+    <div class="cta-avail">24 hours · 7 days · No surcharges · No hidden fees</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Emergency Pumping &amp; Plumbing LLC</div>
+        <div class="footer-desc">Phoenix, Arizona's family-owned septic and plumbing company. ADEQ certified. NAWT certified inspectors. Josh &amp; Tanya Butcher, owners. Serving the Phoenix metro for over 20 years.</div>
+      </div>
+      <div>
+        <div class="footer-col-h">Services</div>
+        <a class="footer-link" href="#services">Septic Tank Pumping</a>
+        <a class="footer-link" href="#services">ADEQ Inspections</a>
+        <a class="footer-link" href="#services">Sewer Camera</a>
+        <a class="footer-link" href="#services">Full Plumbing</a>
+        <a class="footer-link" href="#services">Grease Trap Service</a>
+        <a class="footer-link" href="#services">Septic Installation</a>
+      </div>
+      <div>
+        <div class="footer-col-h">Contact</div>
+        <a class="footer-link" href="tel:6024380911">(602) 438-0911</a>
+        <a class="footer-link" href="mailto:tanya@emergencypumping.com">tanya@emergencypumping.com</a>
+        <span class="footer-link">3016 S 38th St, Phoenix, AZ 85040</span>
+        <span class="footer-link" style="margin-top:8px;color:rgba(255,255,255,.22)">Maricopa &amp; Pinal Counties</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Emergency Pumping and Plumbing LLC · All Rights Reserved</span>
+      <span>ADEQ Certified · NAWT Certified Inspectors</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.rev').forEach(el => ro.observe(el));
+
+// Counter animation
+function animCount(el, target, dur) {
+  let v = 0, step = target / (dur / 16);
+  const suffix = el.dataset.suffix || '';
+  function tick() {
+    v = Math.min(v + step, target);
+    el.textContent = Math.round(v) + suffix;
+    if(v < target) requestAnimationFrame(tick);
+  }
+  tick();
+}
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      animCount(e.target, parseInt(e.target.dataset.target), 1400);
+      co.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+</script>
+</body>
+</html>
