@@ -56,7 +56,7 @@ header{position:sticky;top:0;z-index:200;background:rgba(8,8,8,.94);backdrop-fil
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:blur(4px) brightness(.5);transform:scale(1.07)}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.88) 55%,rgba(0,0,0,.72) 100%)}
-.hero-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:120px 5% 100px;width:100%;max-width:720px;padding-left:5%;padding-right:5%}
+.hero-in{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:120px 5% 100px;width:100%;display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;padding:6px 16px;border-radius:4px;margin-bottom:26px}
 .hero-tag svg{width:12px;height:12px;fill:var(--gold)}
 h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:900;color:#fff;line-height:1.02;margin-bottom:22px;letter-spacing:-.02em}
@@ -76,6 +76,18 @@ h1 em{color:var(--gold);font-style:normal}
 .hs-item{}
 .hs-num{font-size:1.9rem;font-weight:900;color:var(--gold2);line-height:1}
 .hs-lbl{font-size:.72rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.18em;margin-top:5px}
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.hv-card{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:20px;padding:28px 22px}
+.hv-car{text-align:center;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:16px}
+.hv-label{text-align:center;font-size:.68rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.2em;margin-bottom:18px;font-weight:700}
+.hv-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.hv-stat{text-align:center;padding:14px 6px;background:rgba(0,0,0,.3);border-radius:10px}
+.hv-n{font-size:1.8rem;font-weight:900;color:var(--gold2);line-height:1;letter-spacing:-.04em}
+.hv-n span{font-size:.65em;color:var(--gold);vertical-align:super}
+.hv-l{font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32);margin-top:5px;font-weight:700}
+.hv-badges{display:flex;flex-direction:column;gap:8px}
+.hv-badge{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 16px;font-size:.81rem;font-weight:600;color:rgba(255,255,255,.6)}
+.hv-badge svg{width:16px;height:16px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* TRUST BAR */
 #trust{background:var(--dark2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:14px 5%}
@@ -227,7 +239,8 @@ footer{background:#000;padding:60px 5% 32px}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .hero-in{max-width:100%}
+  .hero-in{max-width:100%;display:block}
+  .hero-right{display:none}
   .hero-stats{gap:24px}
   .about-grid{grid-template-columns:1fr;text-align:center}
   .owner-img-wrap{width:300px;margin:0 auto 55px}
@@ -313,6 +326,7 @@ footer{background:#000;padding:60px 5% 32px}
   </div>
   <div class="hero-ov"></div>
   <div class="hero-in">
+    <div class="hero-left">
     <div class="hero-tag">
       <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       Mobile Detailing &bull; We Come To You
@@ -334,20 +348,52 @@ footer{background:#000;padding:60px 5% 32px}
         See the Results
       </a>
     </div>
-    <div class="hero-stats">
-      <div class="hs-item">
-        <div class="hs-num">800+</div>
-        <div class="hs-lbl">Cars Detailed</div>
+    </div><!-- /hero-left -->
+    <div class="hero-right">
+      <div class="hv-card">
+        <div class="hv-car">
+          <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 60 L34 36 Q42 22 65 22 L135 22 Q158 22 166 36 L182 60 L186 66 Q186 72 180 72 L20 72 Q14 72 14 66 Z" fill="rgba(201,168,76,.1)" stroke="rgba(201,168,76,.35)" stroke-width="1.5"/>
+            <path d="M70 36 L85 22 L115 22 L130 36 Z" fill="rgba(201,168,76,.07)" stroke="rgba(201,168,76,.2)" stroke-width="1"/>
+            <line x1="100" y1="36" x2="100" y2="70" stroke="rgba(201,168,76,.12)" stroke-width="1"/>
+            <ellipse cx="50" cy="74" rx="18" ry="4" fill="rgba(0,0,0,.35)"/>
+            <ellipse cx="150" cy="74" rx="18" ry="4" fill="rgba(0,0,0,.35)"/>
+            <circle cx="50" cy="72" r="14" fill="rgba(10,10,10,.9)" stroke="rgba(201,168,76,.45)" stroke-width="2"/>
+            <circle cx="50" cy="72" r="7" fill="rgba(30,30,30,.8)" stroke="rgba(201,168,76,.3)" stroke-width="1.5"/>
+            <circle cx="50" cy="72" r="2.5" fill="rgba(201,168,76,.6)"/>
+            <circle cx="150" cy="72" r="14" fill="rgba(10,10,10,.9)" stroke="rgba(201,168,76,.45)" stroke-width="2"/>
+            <circle cx="150" cy="72" r="7" fill="rgba(30,30,30,.8)" stroke="rgba(201,168,76,.3)" stroke-width="1.5"/>
+            <circle cx="150" cy="72" r="2.5" fill="rgba(201,168,76,.6)"/>
+            <circle cx="100" cy="10" r="3" fill="#C9A84C" opacity=".9"/>
+            <circle cx="86" cy="6" r="2" fill="#C9A84C" opacity=".6"/>
+            <circle cx="114" cy="7" r="2" fill="#C9A84C" opacity=".6"/>
+            <circle cx="76" cy="13" r="1.5" fill="#C9A84C" opacity=".4"/>
+            <circle cx="124" cy="12" r="1.5" fill="#C9A84C" opacity=".4"/>
+            <ellipse cx="178" cy="52" rx="5" ry="3" fill="rgba(255,220,100,.25)" stroke="rgba(201,168,76,.5)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="hv-label">Showroom Finish — Guaranteed</div>
+        <div class="hv-stats-row">
+          <div class="hv-stat"><div class="hv-n">800<span>+</span></div><div class="hv-l">Cars Detailed</div></div>
+          <div class="hv-stat"><div class="hv-n">8<span>+</span></div><div class="hv-l">Yrs Experience</div></div>
+          <div class="hv-stat"><div class="hv-n">150<span>+</span></div><div class="hv-l">5-Star Reviews</div></div>
+        </div>
       </div>
-      <div class="hs-item">
-        <div class="hs-num">8+</div>
-        <div class="hs-lbl">Years Experience</div>
+      <div class="hv-badges">
+        <div class="hv-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Same-Day &amp; Weekend Availability
+        </div>
+        <div class="hv-badge">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          We Come to Your Home or Office
+        </div>
+        <div class="hv-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          100% Satisfaction Guaranteed
+        </div>
       </div>
-      <div class="hs-item">
-        <div class="hs-num">150+</div>
-        <div class="hs-lbl">5-Star Reviews</div>
-      </div>
-    </div>
+    </div><!-- /hero-right -->
   </div>
 </section>
 
