@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="BarberDogs Pet Grooming mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Orlando & Kissimmee, FL</div>
     <h1>BarberDogs Pet Grooming</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog BarberDogs" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="BarberDogs grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="BarberDogs grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="BarberDogs grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>BarberDogs</span></h2>
       <p>Mobile pet grooming in Orlando and Kissimmee. Professional care without leaving home. Open 7 days a week for your convenience.</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@barberdogs_petgrooming on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="https://www.instagram.com/barberdogs_petgrooming/" class="btn-cta">Book on Instagram</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
