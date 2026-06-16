@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="Purple Pup Grooming LLC mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Arizona Valley</div>
     <h1>Purple Pup Grooming LLC</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog Purple Pup Grooming" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="Purple Pup Grooming grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Purple Pup Grooming grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Purple Pup Grooming grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>Purple Pup Grooming</span></h2>
       <p>Full service mobile dog grooming in the Arizona Valley by an experienced, certified stylist. Jenna brings the salon to your door.</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@purplepupsalon on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="https://www.instagram.com/purplepupsalon/" class="btn-cta">Book on Instagram</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
