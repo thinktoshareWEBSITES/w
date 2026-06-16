@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="Lucas Mobile Grooming mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Miami, FL</div>
     <h1>Lucas Mobile Grooming</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog Lucas Mobile Grooming" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="Lucas Mobile Grooming grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Lucas Mobile Grooming grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Lucas Mobile Grooming grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>Lucas Mobile Grooming</span></h2>
       <p>Professional dog grooming right at your door in Miami. Your pet stays comfortable in their own neighborhood while we do the work.</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@lucas_mobile_grooming on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="https://www.instagram.com/lucas_mobile_grooming/" class="btn-cta">Book on Instagram</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
