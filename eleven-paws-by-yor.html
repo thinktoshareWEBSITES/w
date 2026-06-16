@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="Eleven Paws by Yor mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Miami, FL</div>
     <h1>Eleven Paws by Yor</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog Eleven Paws" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="Eleven Paws grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Eleven Paws grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="Eleven Paws grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>Eleven Paws</span></h2>
       <p>Professional mobile grooming with a one-on-one, stress-free experience. Personalized care tailored to every pet in Miami, FL.</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@elevenpawsbyor on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="https://www.instagram.com/elevenpawsbyor/" class="btn-cta">Book on Instagram</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
