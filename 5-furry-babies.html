@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="5 Furry Babies mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Georgia Area</div>
     <h1>5 Furry Babies</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog 5 Furry Babies" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="5 Furry Babies grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="5 Furry Babies grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="5 Furry Babies grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>5 Furry Babies</span></h2>
       <p>Full service mobile dog grooming at your home or business. Covid-19 Safety Certified and AKC Safe Mobile Salon Certified groomer.</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@5furrybabies on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="tel:7708708625" class="btn-cta">Call Now</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
