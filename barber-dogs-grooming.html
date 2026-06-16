@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BarberDogs Pet Grooming - Mobile Dog Grooming | Orlando & Kissimmee, FL</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#FF6B6B;--coral2:#FF8E53;--coral3:#FFB5B5;--coral4:#FFF0F0;
+  --sun:#FFD93D;--sun2:#FFC107;
+  --dark:#3B1A08;--dark2:#5C2D0A;--tx:#2D1407;--tx2:#5C3820;--tx3:#9C6644;
+  --cream:#FFF8F0;--warm:#FDEBD0;--r:14px
+}
+body{font-family:system-ui,'Segoe UI',sans-serif;color:var(--tx);background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.05rem}
+.logo svg{width:32px;height:32px;flex-shrink:0}
+.phone-link{color:var(--sun);font-weight:700;font-size:0.95rem;white-space:nowrap}
+.btn-book{background:var(--coral);color:#fff;padding:9px 18px;border-radius:20px;font-weight:700;font-size:0.9rem;white-space:nowrap}
+.btn-book:hover{background:var(--coral2)}
+
+/* HERO */
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+.hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
+.city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
+.hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
+.hero-content p{font-size:1.05rem;opacity:0.92;margin-bottom:24px;max-width:520px;margin-left:auto;margin-right:auto}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.chip{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;padding:5px 14px;border-radius:20px;font-size:0.82rem;font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:var(--coral);color:#fff;padding:13px 28px;border-radius:28px;font-weight:800;font-size:1rem;box-shadow:0 4px 18px rgba(255,107,107,0.5)}
+.btn-secondary{background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.7);color:#fff;padding:11px 24px;border-radius:28px;font-weight:700;font-size:1rem}
+
+/* TRUST BAR */
+#trust{background:linear-gradient(135deg,var(--coral) 0%,var(--coral2) 100%);padding:22px 24px}
+.trust-row{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.trust-item{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);color:#fff;padding:8px 18px;border-radius:20px;font-size:0.85rem;font-weight:700;display:flex;align-items:center;gap:6px}
+
+/* SERVICES */
+#services{background:var(--cream);padding:60px 20px}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head h2{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;color:var(--dark);margin-bottom:8px}
+.section-head p{color:var(--tx2);font-size:1rem;max-width:500px;margin:0 auto}
+.services-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc-card{background:#fff;border-radius:var(--r);padding:26px 22px;box-shadow:0 2px 16px rgba(59,26,8,0.08);border:1px solid var(--warm);transition:transform .2s,box-shadow .2s}
+.svc-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(255,107,107,0.15)}
+.svc-icon{width:52px;height:52px;background:var(--coral4);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.svc-icon svg{width:28px;height:28px}
+.svc-card h3{font-size:1rem;font-weight:800;color:var(--dark);margin-bottom:6px}
+.svc-card p{font-size:0.875rem;color:var(--tx2);line-height:1.5}
+
+/* GALLERY */
+#gallery{background:var(--warm);padding:60px 20px}
+.gallery-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal-card{border-radius:var(--r);overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative}
+.gal-card img{border-radius:var(--r)}
+.gal-grad-1{background:linear-gradient(135deg,#FF6B6B 0%,#FF8E53 100%)}
+.gal-grad-2{background:linear-gradient(135deg,#FF8E53 0%,#FFD93D 100%)}
+.gal-grad-3{background:linear-gradient(135deg,#FFB5B5 0%,#FF6B6B 100%)}
+.gal-icon{opacity:0.3}
+.gal-icon svg{width:56px;height:56px;fill:#fff}
+
+/* STATS */
+#stats{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:50px 20px}
+.stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;text-align:center}
+.stat-box{color:#fff}
+.stat-num{font-size:2.5rem;font-weight:900;color:var(--coral);line-height:1}
+.stat-label{font-size:0.85rem;color:rgba(255,255,255,0.7);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em}
+
+/* REVIEWS */
+#reviews{background:#fff;padding:60px 20px}
+.reviews-grid{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.review-card{background:var(--cream);border-radius:var(--r);padding:24px;border-left:4px solid var(--coral)}
+.stars{color:var(--coral);font-size:1.1rem;margin-bottom:10px}
+.review-text{font-size:0.925rem;color:var(--tx);line-height:1.6;font-style:italic;margin-bottom:12px}
+.reviewer{font-size:0.85rem;font-weight:700;color:var(--tx2)}
+
+/* ABOUT */
+#about{background:var(--dark);padding:60px 20px}
+.about-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center}
+.about-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:1;border:3px solid var(--coral)}
+.about-text{color:#fff}
+.about-text h2{font-size:1.6rem;font-weight:900;margin-bottom:12px}
+.about-text h2 span{color:var(--coral)}
+.about-text p{color:rgba(255,255,255,0.82);line-height:1.7;margin-bottom:16px;font-size:0.95rem}
+.about-handle{color:var(--sun);font-weight:700;font-size:0.95rem}
+
+/* CTA */
+#cta{background:linear-gradient(135deg,var(--coral) 0%,var(--coral2) 100%);padding:60px 20px;text-align:center;color:#fff}
+#cta h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:12px}
+#cta p{font-size:1rem;opacity:0.9;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.btn-cta{display:inline-block;background:#fff;color:var(--coral);padding:14px 36px;border-radius:28px;font-weight:900;font-size:1.05rem;box-shadow:0 4px 20px rgba(0,0,0,0.15)}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.6);text-align:center;padding:24px;font-size:0.85rem}
+footer strong{color:rgba(255,255,255,0.9)}
+
+/* MOBILE FAB */
+.fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--dark);padding:10px 16px;flex-direction:row;gap:10px}
+.fab-call{flex:1;background:var(--coral);color:#fff;padding:12px;border-radius:24px;text-align:center;font-weight:800;font-size:0.95rem}
+.fab-dm{flex:1;background:var(--dark2);border:2px solid var(--coral3);color:#fff;padding:12px;border-radius:24px;text-align:center;font-weight:700;font-size:0.95rem}
+
+@media(max-width:640px){
+  .about-inner{grid-template-columns:1fr;text-align:center}
+  .about-photo{width:160px;margin:0 auto}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .fab{display:flex}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="14" rx="7" ry="9" fill="#FF6B6B"/>
+      <ellipse cx="40" cy="14" rx="7" ry="9" fill="#FF6B6B"/>
+      <ellipse cx="10" cy="32" rx="5" ry="7" fill="#FF8E53"/>
+      <ellipse cx="50" cy="32" rx="5" ry="7" fill="#FF8E53"/>
+      <ellipse cx="30" cy="42" rx="16" ry="12" fill="#FF6B6B"/>
+    </svg>
+    <span>BarberDogs</span>
+  </div>
+  <span class="phone-link">DM on Instagram</span>
+  <a href="#cta" class="btn-book">Book Now</a>
+</header>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="city-badge">Orlando & Kissimmee, FL</div>
+    <h1>BarberDogs Pet Grooming</h1>
+    <p>Mobile pet grooming in Orlando and Kissimmee. Professional care without leaving home. Open 7 days a week for your convenience.</p>
+    <div class="chip-row">
+      <span class="chip">No-Stress</span>
+      <span class="chip">Mobile Service</span>
+      <span class="chip">Insured</span>
+      <span class="chip">One-on-One</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-primary">Book an Appointment</a>
+      <a href="https://www.instagram.com/barberdogs_petgrooming/" class="btn-secondary">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="trust-row">
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Certified Groomer</div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>We Come to You</div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Fully Insured</div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>Eco-Friendly Products</div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <h2>Our Services</h2>
+    <p>Professional grooming tailored to your pet's breed and coat type</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="20" r="12" stroke="#FF6B6B" stroke-width="3"/><path d="M18 34c0 8 24 8 24 0" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/><path d="M24 46 l-4 8 M36 46 l4 8" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="17" r="2" fill="#FF6B6B"/><circle cx="35" cy="17" r="2" fill="#FF6B6B"/></svg>
+      </div>
+      <h3>Bath &amp; Blow Dry</h3>
+      <p>Premium shampoo, conditioner, and thorough blow dry for a fresh, fluffy finish.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
+      </div>
+      <h3>Haircut &amp; Trim</h3>
+      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><rect x="18" y="18" width="24" height="28" rx="6" stroke="#FF6B6B" stroke-width="3"/><path d="M24 28 h12 M24 34 h8" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/><path d="M22 18 v-4 a8 8 0 0 1 16 0 v4" stroke="#FF8E53" stroke-width="3"/></svg>
+      </div>
+      <h3>Nail Trimming</h3>
+      <p>Safe, precise nail trims to keep your dog comfortable and your floors scratch-free.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><path d="M20 30 q10-14 20 0" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="32" r="5" stroke="#FF6B6B" stroke-width="2.5"/><circle cx="40" cy="32" r="5" stroke="#FF6B6B" stroke-width="2.5"/></svg>
+      </div>
+      <h3>Ear Cleaning</h3>
+      <p>Gentle ear cleaning to prevent infections and keep your pup healthy and happy.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><path d="M15 35 q15-20 30 0" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/><path d="M20 38 q10-10 20 0" stroke="#FF8E53" stroke-width="2.5" stroke-linecap="round"/><circle cx="30" cy="20" r="6" stroke="#FF6B6B" stroke-width="2.5"/></svg>
+      </div>
+      <h3>Teeth Brushing</h3>
+      <p>Freshen your dog's breath with a gentle brush using pet-safe toothpaste.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 60 60" fill="none"><path d="M12 28 q18-22 36 0 q0 14-18 20 q-18-6-18-20z" stroke="#FF6B6B" stroke-width="3" fill="#FFF0F0"/><path d="M20 32 q10-8 20 0" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3>De-Shedding Treatment</h3>
+      <p>Specialized treatment to reduce shedding and keep your home fur-free longer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-head">
+    <h2>Our Work</h2>
+    <p>Every pet leaves looking and feeling their best</p>
+  </div>
+  <div class="gallery-grid" style="max-width:960px;margin:0 auto">
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="groomed dog BarberDogs" style="border-radius:var(--r)">
+    </div>
+    <div class="gal-card gal-grad-1">
+      <div class="gal-icon">
+        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
+      </div>
+    </div>
+    <div class="gal-card gal-grad-2">
+      <div class="gal-icon">
+        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-box"><div class="stat-num" data-target="500">0</div><div class="stat-label">Happy Pets Groomed</div></div>
+    <div class="stat-box"><div class="stat-num" data-target="5">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-box"><div class="stat-num" data-target="100">0</div><div class="stat-label">5-Star Reviews</div></div>
+    <div class="stat-box"><div class="stat-num" data-target="7">0</div><div class="stat-label">Days a Week</div></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-head">
+    <h2>What Pet Parents Say</h2>
+    <p>Hundreds of happy dogs â€” and even happier owners</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
+      <div class="reviewer">â€” Jake T., Verified Customer</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img id="ppImg" src="" data-key="pp" alt="BarberDogs Pet Grooming groomer">
+    </div>
+    <div class="about-text">
+      <h2>About <span>BarberDogs</span></h2>
+      <p>Mobile pet grooming in Orlando and Kissimmee. Professional care without leaving home. Open 7 days a week for your convenience.</p>
+      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <div class="about-handle">@barberdogs_petgrooming on Instagram</div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <h2>Ready to Book Your Pet's Groom?</h2>
+  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <a href="https://www.instagram.com/barberdogs_petgrooming/" class="btn-cta">Book on Instagram</a>
+</section>
+
+<footer>
+  <strong>BarberDogs Pet Grooming</strong> &bull; Orlando & Kissimmee, FL &bull; @barberdogs_petgrooming
+  <br>&copy; 2026 BarberDogs Pet Grooming. All rights reserved.
+</footer>
+
+<div class="fab">
+  <a href="https://www.instagram.com/barberdogs_petgrooming/" class="fab-call">Book on Instagram</a>
+  <a href="https://www.instagram.com/barberdogs_petgrooming/" class="fab-dm">View Our Work</a>
+</div>
+
+<script>
+(function(){
+var _d={pp:"data:image/jpeg;base64,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"};
+var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
+var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
+
+var ns=document.querySelectorAll('.stat-num[data-target]');
+var animated=false;
+function animateStats(){
+  if(animated)return;animated=true;
+  ns.forEach(function(el){
+    var t=parseInt(el.dataset.target),s=0,step=Math.ceil(t/40);
+    var iv=setInterval(function(){s+=step;if(s>=t){el.textContent=t+'+';clearInterval(iv);}else{el.textContent=s+'+';} },40);
+  });
+}
+if('IntersectionObserver' in window){var sio=new IntersectionObserver(function(e){if(e[0].isIntersecting)animateStats();},{threshold:0.3});var ss=document.getElementById('stats');if(ss)sio.observe(ss);}
+})();
+</script>
+</body>
+</html>
