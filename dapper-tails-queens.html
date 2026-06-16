@@ -25,7 +25,10 @@ header{position:sticky;top:0;z-index:100;background:var(--dark);padding:12px 20p
 .btn-book:hover{background:var(--coral2)}
 
 /* HERO */
-#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,#6B1F1F 40%,var(--coral) 100%)}
+#hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38) saturate(1.3) blur(2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,26,8,0.6) 0%,rgba(255,107,107,0.45) 100%);z-index:1}
 .hero-content{position:relative;z-index:2;padding:50px 24px;max-width:680px;margin:0 auto;text-align:center;color:#fff}
 .city-badge{display:inline-block;background:rgba(255,211,61,0.25);border:1px solid var(--sun);color:var(--sun);font-size:0.8rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase}
 .hero-content h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,0.4)}
@@ -132,6 +135,10 @@ footer strong{color:rgba(255,255,255,0.9)}
 </header>
 
 <section id="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" data-key="pp" alt="DapperTails Mobile Pet Grooming mobile dog grooming">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="city-badge">Queens, New York</div>
     <h1>DapperTails Mobile Pet Grooming</h1>
@@ -176,7 +183,7 @@ footer strong{color:rgba(255,255,255,0.9)}
         <svg viewBox="0 0 60 60" fill="none"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="8" stroke="#FF8E53" stroke-width="3"/></svg>
       </div>
       <h3>Haircut &amp; Trim</h3>
-      <p>Breed-appropriate styling or custom cuts â€” your dog always leaves looking sharp.</p>
+      <p>Breed-appropriate styling or custom cuts. Your dog always leaves looking sharp.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">
@@ -216,17 +223,13 @@ footer strong{color:rgba(255,255,255,0.9)}
   </div>
   <div class="gallery-grid" style="max-width:960px;margin:0 auto">
     <div class="gal-card">
-      <img src="" data-key="pp" alt="groomed dog DapperTails" style="border-radius:var(--r)">
+      <img src="" data-key="pp" alt="DapperTails grooming work 1">
     </div>
-    <div class="gal-card gal-grad-1">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="40" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="32" rx="5" ry="7"/><ellipse cx="50" cy="32" rx="5" ry="7"/><ellipse cx="30" cy="42" rx="16" ry="12"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="DapperTails grooming work 2">
     </div>
-    <div class="gal-card gal-grad-2">
-      <div class="gal-icon">
-        <svg viewBox="0 0 60 60"><path d="M15 15 l30 30 M20 10 l-10 10 M50 40 l-10 10" stroke-width="5" stroke-linecap="round"/></svg>
-      </div>
+    <div class="gal-card">
+      <img src="" data-key="pp" alt="DapperTails grooming work 3">
     </div>
   </div>
 </section>
@@ -243,18 +246,18 @@ footer strong{color:rgba(255,255,255,0.9)}
 <section id="reviews">
   <div class="section-head">
     <h2>What Pet Parents Say</h2>
-    <p>Hundreds of happy dogs â€” and even happier owners</p>
+    <p>Hundreds of happy dogs &mdash; and even happier owners</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p class="review-text">"My dog is always so relaxed after each groom â€” I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
-      <div class="reviewer">â€” Sarah M., Verified Customer</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My dog is always so relaxed after each groom. I think he actually looks forward to it now! Incredibly professional and convenient. Will never go back to a regular salon."</p>
+      <div class="reviewer">&mdash; Sarah M., Verified Customer</div>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="review-text">"Best grooming service I have ever used. They come right to my door, my poodle looks gorgeous, and the whole experience is stress-free. Highly recommend to anyone!"</p>
-      <div class="reviewer">â€” Jake T., Verified Customer</div>
+      <div class="reviewer">&mdash; Jake T., Verified Customer</div>
     </div>
   </div>
 </section>
@@ -267,7 +270,7 @@ footer strong{color:rgba(255,255,255,0.9)}
     <div class="about-text">
       <h2>About <span>DapperTails</span></h2>
       <p>Luxury mobile pet grooming serving Queens, New York. Services available for dogs and cats. Call or text us to book today!</p>
-      <p>We believe every pet deserves to feel their best â€” and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
+      <p>We believe every pet deserves to feel their best, and every owner deserves the convenience of mobile grooming done right. When you book with us, you get personalized attention, gentle handling, and professional results, all without leaving home.</p>
       <div class="about-handle">@dappertailsmobile_queensny on Instagram</div>
     </div>
   </div>
@@ -275,7 +278,7 @@ footer strong{color:rgba(255,255,255,0.9)}
 
 <section id="cta">
   <h2>Ready to Book Your Pet's Groom?</h2>
-  <p>We come to you â€” no travel, no stress. Just a happy, clean, gorgeous dog.</p>
+  <p>We come to you &mdash; no travel, no stress. Just a happy, clean, gorgeous dog.</p>
   <a href="tel:7185405099" class="btn-cta">Call Now</a>
 </section>
 
@@ -292,8 +295,9 @@ footer strong{color:rgba(255,255,255,0.9)}
 <script>
 (function(){
 var _d={pp:"data:image/jpeg;base64,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"};
+var h=document.getElementById('heroImg');if(h)h.src=_d[h.dataset.key]||'';
 var p=document.getElementById('ppImg');if(p)p.src=_d[p.dataset.key]||'';
-var lazy=document.querySelectorAll('img[data-key]:not(#ppImg)');
+var lazy=document.querySelectorAll('img[data-key]:not(#heroImg):not(#ppImg)');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var i=x.target;i.src=_d[i.dataset.key]||'';io.unobserve(i);}});},{rootMargin:'400px'});lazy.forEach(function(i){io.observe(i);});}else{lazy.forEach(function(i){i.src=_d[i.dataset.key]||'';}); }
 
 var ns=document.querySelectorAll('.stat-num[data-target]');
