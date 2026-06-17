@@ -57,13 +57,20 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
         .controls {
             max-width: 800px;
             margin: 0 auto 20px auto;
             display: flex;
             flex-direction: column;
             gap: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.9);
+            padding: 10px 5px 12px 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
         }
 
         .search-box {
@@ -106,6 +113,7 @@
             overflow-x: auto;
             padding-bottom: 5px;
             scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
         }
 
         .filter-tabs::-webkit-scrollbar {
@@ -225,6 +233,7 @@
             overflow-y: auto;
             border: 1px solid rgba(255, 255, 255, 0.03);
             line-height: 1.4;
+            word-break: break-word;
         }
 
         .actions {
@@ -386,6 +395,110 @@
 
         .btn-modal-close:hover {
             background: #059669;
+        }
+
+        /* Mobile View Optimization */
+        @media (max-width: 500px) {
+            body {
+                padding: 12px 10px 80px 10px;
+            }
+
+            header {
+                margin-bottom: 12px;
+            }
+
+            header h1 {
+                font-size: 1.45rem;
+            }
+
+            header p {
+                font-size: 0.8rem;
+            }
+
+            .controls {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .search-box input {
+                padding: 11px 11px 11px 38px;
+                font-size: 0.88rem;
+                border-radius: 10px;
+            }
+
+            .search-box svg {
+                left: 12px;
+                width: 16px;
+                height: 16px;
+            }
+
+            .tab {
+                padding: 6px 12px;
+                font-size: 0.78rem;
+                border-radius: 16px;
+            }
+
+            .stats {
+                font-size: 0.75rem;
+                margin-bottom: 8px;
+            }
+
+            .leads-list {
+                gap: 12px;
+            }
+
+            .card {
+                padding: 12px;
+                border-radius: 12px;
+                gap: 8px;
+            }
+
+            .biz-name {
+                font-size: 0.95rem;
+            }
+
+            .biz-url {
+                font-size: 0.7rem;
+            }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 3px 6px;
+            }
+
+            .message-preview {
+                font-size: 0.75rem;
+                max-height: 80px;
+                padding: 8px;
+            }
+
+            .actions {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 8px;
+                margin-top: 2px;
+            }
+
+            .btn {
+                padding: 10px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+            }
+
+            .modal-card {
+                width: 92%;
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .modal-title {
+                font-size: 1.05rem;
+            }
+
+            .modal-desc {
+                font-size: 0.75rem;
+                max-height: 90px;
+                padding: 8px;
+            }
         }
     </style>
 </head>
