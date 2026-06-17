@@ -319,8 +319,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             width: 90%;
-            max-width: 420px;
-            padding: 24px;
+            max-width: 400px;
+            padding: 20px;
             text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
             transform: scale(0.9);
@@ -332,33 +332,33 @@
         }
 
         .modal-icon {
-            width: 54px;
-            height: 54px;
+            width: 40px;
+            height: 40px;
             background: rgba(16, 185, 129, 0.12);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 14px auto;
+            margin: 0 auto 10px auto;
             color: #10b981;
         }
 
         .modal-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: white;
         }
 
         .modal-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #d1d5db;
-            margin-bottom: 20px;
-            line-height: 1.45;
-            max-height: 160px;
+            margin-bottom: 16px;
+            line-height: 1.4;
+            max-height: 110px;
             overflow-y: auto;
             background: rgba(0, 0, 0, 0.3);
-            padding: 12px;
+            padding: 10px;
             border-radius: 10px;
             text-align: left;
             white-space: pre-wrap;
@@ -370,14 +370,18 @@
             width: 100%;
             background: #10b981;
             color: white;
-            padding: 14px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 10px;
             border: none;
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: background 0.2s;
+            box-sizing: border-box;
+            display: block;
+            text-decoration: none;
+            text-align: center;
         }
 
         .btn-modal-close:hover {
@@ -3309,12 +3313,12 @@ If you like it lets get on a call maybe to customise it for your business</div>
     <div class="modal-overlay" id="copyModal">
         <div class="modal-card">
             <div class="modal-icon">
-                <svg style="width:28px;height:28px;fill:currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
             </div>
             <div class="modal-title">Copied & Ready!</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px; text-align: left;">Message copied to clipboard:</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; text-align: left;">Message copied to clipboard:</div>
             <div class="modal-desc" id="copiedText"></div>
-            <button class="btn-modal-close" onclick="closeModal()">Awesome, Let's Send it!</button>
+            <a id="modalInstagramLink" href="#" target="_blank" class="btn-modal-close" onclick="closeModal()">Go to Instagram Profile</a>
         </div>
     </div>
 
@@ -3357,6 +3361,7 @@ If you like it lets get on a call maybe to customise it for your business</div>
         function copyMessage(btn) {
             const card = btn.closest('.card');
             const text = card.querySelector('.full-message').value;
+            const igLink = card.querySelector('.btn-ig').getAttribute('href');
             
             navigator.clipboard.writeText(text).then(() => {
                 // Flash button success
@@ -3364,7 +3369,8 @@ If you like it lets get on a call maybe to customise it for your business</div>
                 btn.classList.add('copied');
                 btn.innerHTML = `<svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!`;
                 
-                // Show modal popup with text
+                // Show modal popup with text and dynamic link
+                document.getElementById('modalInstagramLink').setAttribute('href', igLink);
                 document.getElementById('copiedText').innerText = text;
                 document.getElementById('copyModal').classList.add('active');
                 
