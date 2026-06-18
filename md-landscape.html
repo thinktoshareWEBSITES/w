@@ -842,9 +842,24 @@ document.querySelectorAll('[data-slider]').forEach(function(wrap){
   wrap.addEventListener('mousedown',function(e){active=true;setPos(e.clientX);e.preventDefault();});
   window.addEventListener('mouseup',function(){active=false;});
   window.addEventListener('mousemove',function(e){if(active)setPos(e.clientX);});
-  wrap.addEventListener('touchstart',function(e){active=true;setPos(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchend',function(){active=false;});
-  window.addEventListener('touchmove',function(e){if(active)setPos(e.touches[0].clientX);},{passive:true});
+  // Touch: don't commit to horizontal-drag until the gesture is clearly more horizontal than vertical,
+  // so a normal vertical scroll swipe over the slider still scrolls the page instead of being hijacked.
+  var startX=0,startY=0,locked=null;
+  wrap.addEventListener('touchstart',function(e){
+    var t=e.touches[0];
+    startX=t.clientX; startY=t.clientY; locked=null; active=false;
+  },{passive:true});
+  wrap.addEventListener('touchmove',function(e){
+    var t=e.touches[0];
+    var dx=t.clientX-startX, dy=t.clientY-startY;
+    if(locked===null){
+      if(Math.abs(dx)>Math.abs(dy)+6){ locked='x'; active=true; }
+      else if(Math.abs(dy)>Math.abs(dx)+6){ locked='y'; }
+      else return;
+    }
+    if(locked==='x'){ if(e.cancelable)e.preventDefault(); setPos(t.clientX); }
+  },{passive:false});
+  window.addEventListener('touchend',function(){active=false;locked=null;});
 });
 
 var _d={
