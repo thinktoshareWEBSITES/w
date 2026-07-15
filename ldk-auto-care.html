@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LDK Auto Care | Auto Detailing | Mobile Service</title>
+<meta name="description" content="LDK Auto Care â€” professional mobile auto detailing. LDK Auto Care delivers professional mobile auto detailing at your door. Interior deep clean, exterior polish, paint correction, and ceramic coating. DM to book.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0B1729;--navy2:#0F1E35;--navy3:#152540;--accent:#F97316;--accent2:#FB923C;--tx:#0F172A;--tx2:#334155;--mid:#64748B;--light:#F8FAFC;--r:14px}
+html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
+header{position:sticky;top:0;z-index:200;background:rgba(11,23,41,.96);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.05rem;white-space:nowrap}
+.logo svg{width:32px;height:32px;flex-shrink:0}
+nav a{color:rgba(255,255,255,.65);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-left:1.6rem}
+.hdr-cta{background:var(--accent);color:#fff;padding:.5rem 1.2rem;border-radius:22px;font-weight:700;font-size:.83rem;white-space:nowrap;box-shadow:0 4px 14px rgba(249,115,22,.4)}
+#hero{position:relative;min-height:92vh;background:var(--navy);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}.hero-bg img{object-fit:cover;filter:brightness(.28) saturate(1.1);transform:scale(1.03)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,23,41,.96) 0%,rgba(11,23,41,.75) 45%,rgba(11,23,41,.25) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.35);color:#FED7AA;padding:.3rem .9rem;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem}
+.hero-left h1{color:#fff;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.9rem}
+.hero-left h1 em{font-style:normal;color:#FDBA74}
+.hero-left p{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.75;max-width:440px;margin-bottom:1.5rem}
+.hero-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:.28rem .82rem;border-radius:50px;font-size:.72rem;font-weight:600}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-pri{background:linear-gradient(135deg,var(--accent),#EA580C);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:800;font-size:.94rem;box-shadow:0 8px 24px rgba(249,115,22,.4)}
+.btn-sec{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-size:.94rem;font-weight:600}
+.hero-right{display:flex;justify-content:flex-end}
+.hero-card{position:relative;width:100%;max-width:380px;border-radius:22px;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.6);aspect-ratio:1;border:3px solid rgba(255,255,255,.15)}
+.hero-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.25) 0%,transparent 50%)}
+.hero-badge{position:absolute;bottom:1.1rem;left:1.1rem;background:rgba(255,255,255,.96);border-radius:12px;padding:.75rem 1rem;z-index:3;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.badge-stars{color:var(--accent);font-size:1rem;line-height:1}.badge-lbl{font-size:.62rem;color:var(--tx);font-weight:700;margin-top:.15rem}
+.trust-bar{background:linear-gradient(135deg,var(--accent) 0%,#EA580C 100%);padding:.9rem clamp(1rem,4vw,2rem)}
+.trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.trust-item{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#fff;padding:.42rem 1rem;border-radius:50px;font-size:.8rem;font-weight:700;display:flex;align-items:center;gap:.4rem}
+.sec{padding:5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec-tag{display:inline-block;background:#FFF7ED;color:#C2410C;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.32rem .9rem;border-radius:50px;margin-bottom:.75rem;border:1px solid rgba(249,115,22,.25)}
+.sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:900;color:var(--navy);margin-bottom:.5rem;line-height:1.15}
+.sec h2 em{font-style:normal;color:var(--accent)}
+.sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:540px;margin-bottom:2.4rem}
+#svcs{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.svc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:.85;box-shadow:0 6px 24px rgba(11,23,41,.14)}
+.svc-card img{transition:.35s}.svc-card:hover img{transform:scale(1.04)}
+.svc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,23,41,.88) 0%,rgba(11,23,41,.3) 55%,transparent 100%)}
+.svc-label{position:absolute;bottom:0;left:0;right:0;padding:1.1rem .9rem .85rem;color:#fff}
+.svc-label strong{display:block;font-size:.98rem;font-weight:800;margin-bottom:.2rem}
+.svc-label span{font-size:.75rem;color:rgba(255,255,255,.7)}
+#split1{background:var(--navy);padding:5rem clamp(1.25rem,5vw,2rem)}
+.split-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.split-photo{border-radius:20px;overflow:hidden;aspect-ratio:1.05;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.split-text{color:#fff}
+.split-text .sec-tag{background:rgba(249,115,22,.15);color:#FDBA74;border-color:rgba(249,115,22,.3)}
+.split-text h2{color:#fff}.split-text .sec-sub{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.split-list li{display:flex;align-items:flex-start;gap:.7rem;color:rgba(255,255,255,.82);font-size:.92rem;line-height:1.5}
+.split-list li svg{width:18px;height:18px;color:#FDBA74;flex-shrink:0;margin-top:.1rem}
+#gallery{background:#FFF7ED}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.gal-tile{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(11,23,41,.12)}
+.gal-tile img{transition:.3s}.gal-tile:hover img{transform:scale(1.05)}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,23,41,.5) 0%,transparent 55%)}
+#stats{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:3.5rem clamp(1.25rem,5vw,2rem)}
+.stats-row{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-n{font-size:clamp(2rem,4vw,2.6rem);font-weight:900;color:#FDBA74;line-height:1}
+.stat-l{font-size:.75rem;color:rgba(255,255,255,.65);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:1;box-shadow:0 16px 44px rgba(11,23,41,.2)}
+.about-badge{position:absolute;bottom:1rem;left:1rem;right:1rem;background:rgba(255,255,255,.96);border-radius:10px;padding:.65rem .9rem;display:flex;align-items:center;gap:.5rem}
+.about-badge svg{width:16px;height:16px;color:var(--accent);flex-shrink:0}
+.about-badge span{font-size:.75rem;font-weight:700;color:var(--navy)}
+.about-text h2{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:900;color:var(--navy);margin-bottom:.8rem}
+.about-text h2 span{color:var(--accent)}
+.about-text p{color:var(--tx2);line-height:1.75;margin-bottom:.9rem;font-size:.95rem}
+#reviews{background:var(--light)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
+.rev-card{background:#fff;border-radius:var(--r);padding:1.75rem;box-shadow:0 4px 18px rgba(11,23,41,.08);border:1px solid rgba(11,23,41,.07)}
+.rev-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.rev-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#EA580C);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0}
+.rev-name{font-weight:800;font-size:.86rem;color:var(--navy)}.rev-stars{color:var(--accent);font-size:.82rem}
+.rev-text{font-size:.9rem;color:var(--tx2);line-height:1.65;font-style:italic}
+#cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff}
+#cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:.6rem}
+#cta p{font-size:1rem;opacity:.85;margin-bottom:1.7rem;max-width:460px;margin-left:auto;margin-right:auto}
+.btn-cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#EA580C);color:#fff;padding:1rem 2.5rem;border-radius:50px;font-weight:900;font-size:1rem;box-shadow:0 10px 28px rgba(249,115,22,.45)}
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:1.75rem;font-size:.82rem}
+footer strong{color:rgba(255,255,255,.82)}
+.fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--navy);padding:.65rem .85rem;gap:.55rem;box-shadow:0 -3px 16px rgba(0,0,0,.35)}
+.fab-a{flex:1;background:linear-gradient(135deg,var(--accent),#EA580C);color:#fff;padding:.78rem;border-radius:22px;text-align:center;font-weight:800;font-size:.88rem}
+.fab-b{flex:1;background:var(--navy2);border:2px solid rgba(249,115,22,.5);color:#fff;padding:.78rem;border-radius:22px;text-align:center;font-weight:700;font-size:.88rem}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3rem;padding-bottom:3rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
+@media(max-width:768px){nav{display:none}.split-inner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}#split1{padding:3.5rem 1.25rem}}
+@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.fab{display:flex}body{padding-bottom:72px}.hero-btns{justify-content:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 60 60" fill="none"><ellipse cx="30" cy="30" rx="22" ry="14" stroke="#F97316" stroke-width="3"/><ellipse cx="30" cy="30" rx="14" ry="8" fill="#F97316" opacity=".18"/><circle cx="30" cy="30" r="4" fill="#F97316"/><path d="M10 28 Q20 18 30 26 Q40 34 50 28" stroke="#FDBA74" stroke-width="1.5" fill="none"/></svg>
+    <span>LDK Auto Care</span>
+  </div>
+  <nav><a href="#svcs">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+  <a href="https://www.instagram.com/ldkautocare/" class="hdr-cta">Book Now</a>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"><img src="img/ldk-auto-care/ldk-auto-care_hero.jpg" alt="LDK Auto Care"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Professional Auto Detailing</div>
+      <h1>LDK Auto Care<br><em>Auto Detailing</em></h1>
+      <p>LDK Auto Care delivers professional mobile auto detailing at your door. Interior deep clean, exterior polish, paint correction, and ceramic coating. DM to book.</p>
+      <div class="hero-chips"><span class="chip">Interior Deep Clean</span><span class="chip">Paint Correction</span><span class="chip">Ceramic Coating</span><span class="chip">Mobile Service</span></div>
+      <div class="hero-btns"><a href="https://www.instagram.com/ldkautocare/" class="btn-pri">Book an Appointment</a><a href="https://www.instagram.com/ldkautocare/" class="btn-sec" target="_blank" rel="noopener">See Our Work</a></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <img src="img/ldk-auto-care/ldk-auto-care_svc1.jpg" alt="LDK Auto Care" fetchpriority="high">
+        <div class="hero-badge"><div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="badge-lbl">5-Star Detailing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-row">
+    <div class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Interior Detailing</div>
+    <div class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Paint Correction</div>
+    <div class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Ceramic Coating</div>
+    <div class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Mobile Service</div>
+  </div>
+</div>
+
+<section id="svcs" class="sec">
+  <div class="sec-tag">What We Offer</div>
+  <h2>Our Detailing <em>Services</em></h2>
+  <p class="sec-sub">Every vehicle restored to showroom condition. Professional results on every job.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><img src="img/ldk-auto-care/ldk-auto-care_svc1.jpg" alt="Interior Detailing" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Interior Detailing</strong><span>Deep clean from seats to dash</span></div></div>
+    <div class="svc-card"><img src="img/ldk-auto-care/ldk-auto-care_svc2.jpg" alt="Exterior Polish" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Exterior Polish</strong><span>Restore paint to a mirror shine</span></div></div>
+    <div class="svc-card"><img src="img/ldk-auto-care/ldk-auto-care_svc3.jpg" alt="Paint Correction" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Paint Correction</strong><span>Remove swirls, scratches, oxidation</span></div></div>
+    <div class="svc-card"><img src="img/ldk-auto-care/ldk-auto-care_svc4.jpg" alt="Ceramic Coating" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Ceramic Coating</strong><span>Long-term protection and gloss</span></div></div>
+  </div>
+</section>
+
+<section id="split1">
+  <div class="split-inner">
+    <div class="split-photo"><img src="img/ldk-auto-care/ldk-auto-care_split1.jpg" alt="LDK Auto Care" loading="lazy"></div>
+    <div class="split-text">
+      <div class="sec-tag">Why Choose Us</div>
+      <h2>Details That Make the <em>Difference</em></h2>
+      <p class="sec-sub">We don't just clean â€” we transform. Every vehicle gets the full treatment it deserves.</p>
+      <ul class="split-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Professional-grade products and equipment</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>We come to your home or office</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Showroom finish guaranteed</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>All vehicles â€” cars, trucks, SUVs, exotics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="sec">
+  <div class="sec-tag">Our Work</div>
+  <h2>Transformations That <em>Impress</em></h2>
+  <p class="sec-sub">Before and after results that speak louder than words.</p>
+  <div class="gal-grid">
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal1.jpg" alt="Detail 1" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal2.jpg" alt="Detail 2" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal3.jpg" alt="Detail 3" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal4.jpg" alt="Detail 4" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal5.jpg" alt="Detail 5" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/ldk-auto-care/ldk-auto-care_gal6.jpg" alt="Detail 6" loading="lazy"><div class="gal-overlay"></div></div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="stats-row">
+    <div><div class="stat-n">500+</div><div class="stat-l">Vehicles Detailed</div></div>
+    <div><div class="stat-n">5</div><div class="stat-l">Avg Rating</div></div>
+    <div><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div>
+    <div><div class="stat-n">5+</div><div class="stat-l">Years Experience</div></div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="about-grid">
+    <div class="about-photo"><img src="img/ldk-auto-care/ldk-auto-care_split2.jpg" alt="LDK Auto Care" loading="lazy"><div class="about-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Professional Auto Detailer</span></div></div>
+    <div class="about-text">
+      <h2>About <span>LDK Auto Care</span></h2>
+      <p>LDK Auto Care delivers professional mobile auto detailing at your door. Interior deep clean, exterior polish, paint correction, and ceramic coating. DM to book.</p>
+      <p>Every vehicle we touch gets the full attention it deserves â€” from a thorough interior deep clean to a flawless exterior finish. We use professional-grade products to deliver results that last.</p>
+      <div style="color:var(--accent);font-weight:700;font-size:.9rem">@ldkautocare on Instagram</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="sec">
+  <div class="sec-tag">Reviews</div>
+  <h2>What Customers <em>Say</em></h2>
+  <p class="sec-sub">Real feedback from real customers who trust us with their vehicles.</p>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">M</div><div><div class="rev-name">Michael T.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"My car looked better than the day I bought it. The paint correction removed swirls I thought were permanent, and the ceramic coating is making it look incredible weeks later."</p></div>
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">R</div><div><div class="rev-name">Rachel S.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"Incredibly professional â€” they came to my driveway, worked efficiently, and left my car absolutely spotless inside and out. Worth every penny. Booked again for next month."</p></div>
+  </div>
+</section>
+
+<section id="cta">
+  <h2>Ready for a Showroom Finish?</h2>
+  <p>Professional mobile detailing at your door. DM us on Instagram to get a quote.</p>
+  <a href="https://www.instagram.com/ldkautocare/" class="btn-cta">Book on Instagram</a>
+</section>
+
+<footer><strong>LDK Auto Care</strong> &bull; Mobile Service &bull; @ldkautocare<br>&copy; 2026 LDK Auto Care. All rights reserved.</footer>
+
+<div class="fab">
+  <a href="https://www.instagram.com/ldkautocare/" class="fab-a">Book Now</a>
+  <a href="https://www.instagram.com/ldkautocare/" class="fab-b" target="_blank" rel="noopener">View Our Work</a>
+</div>
+</body>
+</html>
