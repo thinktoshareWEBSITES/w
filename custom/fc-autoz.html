@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC Autoz Detailing | Prestige Auto Care</title>
+<meta name="description" content="FC Autoz Detailing -- prestige mobile auto detailing. FC Autoz delivers royal-level care for any vehicle. Interior steam clean, exterior hand wash, polish, and ceramic coating. DM to book.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#150E23;--navy2:#241537;--blue:#7C2D8A;--blue2:#9A3FA8;--accent:#D4AF37;--accent2:#F1D889;--tx:#0F172A;--tx2:#3B3244;--mid:#6B5F72;--light:#FAF6EC;--r:14px}
+html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,.logo span{font-family:Georgia,Cambria,'Times New Roman',serif}
+header{position:sticky;top:0;z-index:200;background:rgba(21,14,35,.96);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem;border-bottom:1px solid rgba(212,175,55,.35)}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.1rem;white-space:nowrap;letter-spacing:.03em}
+.logo svg{width:34px;height:34px;flex-shrink:0}
+nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-left:1.6rem}
+.hdr-cta{background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:.5rem 1.2rem;border-radius:2px;font-weight:800;font-size:.83rem;white-space:nowrap;box-shadow:0 4px 14px rgba(212,175,55,.4);letter-spacing:.03em}
+.divider{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 1.7rem;max-width:220px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent)}
+.divider svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
+.ribbon{position:relative;display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--accent2),var(--accent) 65%,#A9821F);color:#1A0E23;padding:.42rem 1.5rem;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(2.5% 0,97.5% 0,100% 50%,97.5% 100%,2.5% 100%,0 50%);box-shadow:0 4px 14px rgba(212,175,55,.35)}
+#hero{position:relative;min-height:92vh;background:var(--navy);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}.hero-bg img{object-fit:cover;filter:brightness(.2) saturate(1.05) contrast(1.05);transform:scale(1.03)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(21,14,35,.97) 0%,rgba(21,14,35,.8) 45%,rgba(21,14,35,.3) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%}
+.hero-left h1{color:#fff;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;letter-spacing:.005em;margin:1.1rem 0 .9rem}
+.hero-left h1 em{font-style:normal;color:var(--accent2)}
+.hero-left p{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.75;max-width:440px;margin-bottom:1.5rem}
+.hero-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.chip{background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);color:var(--accent2);padding:.28rem .82rem;border-radius:2px;font-size:.72rem;font-weight:600;letter-spacing:.03em}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-pri{background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:.9rem 1.8rem;border-radius:2px;font-weight:800;font-size:.94rem;box-shadow:0 8px 24px rgba(212,175,55,.4);letter-spacing:.02em}
+.btn-sec{border:1.5px solid rgba(212,175,55,.5);color:#fff;padding:.9rem 1.8rem;border-radius:2px;font-size:.94rem;font-weight:600}
+.hero-right{display:flex;justify-content:flex-end}
+.hero-card{position:relative;width:100%;max-width:380px;overflow:hidden;box-shadow:0 0 0 6px rgba(212,175,55,.14),0 28px 60px rgba(0,0,0,.6);aspect-ratio:1;border:3px solid var(--accent)}
+.hero-card img{width:100%;height:100%;object-fit:cover}
+.corner-ribbon{position:absolute;top:20px;left:-42px;width:170px;transform:rotate(-45deg);background:linear-gradient(135deg,var(--accent2),var(--accent));color:#1A0E23;text-align:center;font-size:.66rem;font-weight:800;letter-spacing:.1em;padding:.4rem 0;box-shadow:0 3px 12px rgba(0,0,0,.4);z-index:4;text-transform:uppercase}
+.hero-badge{position:absolute;bottom:1.1rem;right:1.1rem;background:rgba(21,14,35,.92);border:1px solid var(--accent);padding:.75rem 1rem;z-index:3;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.badge-stars{color:var(--accent2);font-size:1rem;line-height:1}.badge-lbl{font-size:.62rem;color:#fff;font-weight:700;margin-top:.15rem;letter-spacing:.03em}
+.trust-bar{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:.9rem clamp(1rem,4vw,2rem);border-top:1px solid rgba(212,175,55,.35);border-bottom:2px solid var(--accent)}
+.trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.trust-item{position:relative;background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.4);color:var(--accent2);padding:.42rem 1.1rem .42rem 1.4rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,10px 50%)}
+.sec{padding:5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.15}
+.sec h2 em{font-style:normal;color:var(--blue2)}
+.sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:540px;margin-bottom:2.4rem}
+#svcs{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.svc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:.85;box-shadow:0 6px 24px rgba(21,14,35,.16);border:2px solid rgba(212,175,55,.25)}
+.svc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,14,35,.9) 0%,rgba(21,14,35,.32) 55%,transparent 100%)}
+.svc-label{position:absolute;bottom:0;left:0;right:0;padding:1.1rem .9rem .85rem;color:#fff}
+.svc-label strong{display:block;font-size:.98rem;font-weight:800;margin-bottom:.2rem;color:var(--accent2)}
+.svc-label span{font-size:.75rem;color:rgba(255,255,255,.75)}
+#split1{background:var(--navy);padding:5rem clamp(1.25rem,5vw,2rem)}
+.split-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.split-photo{overflow:hidden;aspect-ratio:1.05;box-shadow:0 0 0 6px rgba(212,175,55,.12),0 20px 50px rgba(0,0,0,.5);border:3px solid var(--accent)}
+.split-text{color:#fff}
+.split-text .sec-sub{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.split-text h2{color:#fff}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.split-list li{display:flex;align-items:flex-start;gap:.7rem;color:rgba(255,255,255,.82);font-size:.92rem;line-height:1.5}
+.split-list li svg{width:18px;height:18px;color:var(--accent2);flex-shrink:0;margin-top:.1rem}
+#gallery{background:#F8FAFC}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.gal-tile{position:relative;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(21,14,35,.14);border:2px solid rgba(212,175,55,.3)}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,14,35,.5) 0%,transparent 55%)}
+#stats{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:3.5rem clamp(1.25rem,5vw,2rem);border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3)}
+.stats-row{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-n{font-size:clamp(2rem,4vw,2.6rem);font-weight:700;color:var(--accent2);line-height:1;font-family:Georgia,serif}
+.stat-l{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-photo{position:relative;overflow:hidden;aspect-ratio:1;box-shadow:0 0 0 6px rgba(212,175,55,.12),0 16px 44px rgba(21,14,35,.25);border:3px solid var(--accent)}
+.about-text h2{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--navy);margin-bottom:.8rem}
+.about-text p{color:var(--tx2);line-height:1.75;margin-bottom:.9rem;font-size:.95rem}
+#reviews{background:var(--light)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
+.rev-card{background:#fff;border-radius:var(--r);padding:1.75rem;box-shadow:0 4px 18px rgba(21,14,35,.1);border:1px solid rgba(212,175,55,.3)}
+.rev-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.rev-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy2),var(--blue));color:var(--accent2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0;border:1px solid var(--accent)}
+.rev-name{font-weight:800;font-size:.86rem;color:var(--navy)}.rev-stars{color:var(--accent);font-size:.82rem}
+.rev-text{font-size:.9rem;color:var(--tx2);line-height:1.65;font-style:italic}
+#cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff;border-top:2px solid var(--accent)}
+#cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;margin-bottom:.6rem}
+#cta p{font-size:1rem;opacity:.85;margin-bottom:1.7rem;max-width:460px;margin-left:auto;margin-right:auto}
+.btn-cta{display:inline-block;background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:1rem 2.5rem;border-radius:2px;font-weight:800;font-size:1rem;box-shadow:0 10px 28px rgba(212,175,55,.4);letter-spacing:.02em}
+footer{background:var(--navy);color:rgba(255,255,255,.45);text-align:center;padding:1.75rem;font-size:.82rem;border-top:1px solid rgba(212,175,55,.25)}
+footer strong{color:var(--accent2)}
+.fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--navy);padding:.65rem .85rem;gap:.55rem;box-shadow:0 -3px 16px rgba(0,0,0,.35);border-top:1px solid rgba(212,175,55,.35)}
+.fab-a{flex:1;background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:.78rem;border-radius:2px;text-align:center;font-weight:800;font-size:.88rem}
+.fab-b{flex:1;background:var(--navy2);border:2px solid rgba(212,175,55,.4);color:#fff;padding:.78rem;border-radius:2px;text-align:center;font-weight:700;font-size:.88rem}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3rem;padding-bottom:3rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
+@media(max-width:768px){nav{display:none}.split-inner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}#split1{padding:3.5rem 1.25rem}}
+@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.fab{display:flex}body{padding-bottom:72px}.hero-btns{justify-content:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 60 60" fill="none"><path d="M30 6 L48 16 V30 C48 42 40 50 30 54 C20 50 12 42 12 30 V16 Z" fill="#241537" stroke="#D4AF37" stroke-width="2"/><path d="M20 34 C22 26 27 22 30 17 C33 22 38 26 40 34" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="30" cy="30" r="5" fill="none" stroke="#F1D889" stroke-width="1.6"/><circle cx="30" cy="30" r="1.6" fill="#F1D889"/></svg>
+    <span>FC Autoz</span>
+  </div>
+  <nav><a href="#svcs">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+  <a href="https://www.instagram.com/fc.autoz/" class="hdr-cta">Get a Quote</a>
+</header>
+<section id="hero">
+  <div class="hero-bg"><img src="../detail25/img/fc-autoz/fc-autoz_hero.jpg" alt="FC Autoz Detailing"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="ribbon">Prestige Mobile Detailing</div>
+      <h1>FC Autoz<br><em>Royal Auto Care</em></h1>
+      <p>FC Autoz delivers a showroom-grade finish fit for royalty. Interior steam clean, exterior hand wash, polish, and ceramic coating -- brought straight to your driveway. DM to book.</p>
+      <div class="hero-chips"><span class="chip">Interior Detail</span><span class="chip">Exterior Polish</span><span class="chip">Paint Correction</span><span class="chip">Ceramic Coating</span></div>
+      <div class="hero-btns"><a href="https://www.instagram.com/fc.autoz/" class="btn-pri">Get a Free Quote</a><a href="https://www.instagram.com/fc.autoz/" class="btn-sec" target="_blank" rel="noopener">See Our Work</a></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="corner-ribbon">Prestige Care</div>
+        <img src="../detail25/img/fc-autoz/fc-autoz_pp.jpg" alt="FC Autoz" fetchpriority="high">
+        <div class="hero-badge"><div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="badge-lbl">5-Star Detailing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar"><div class="trust-row">
+  <div class="trust-item">Interior Detailing</div>
+  <div class="trust-item">Exterior Polish</div>
+  <div class="trust-item">Paint Correction</div>
+  <div class="trust-item">Ceramic Coating</div>
+</div></div>
+<section id="svcs" class="sec">
+  <div class="ribbon">What We Offer</div>
+  <h2 style="margin-top:.9rem">Our Auto Detailing <em>Services</em></h2>
+  <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
+  <p class="sec-sub" style="margin-top:-1.1rem">From a full interior deep clean to paint correction and ceramic coating.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc2.jpg" alt="Interior Detail" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Interior Detail</strong><span>Deep clean, steam, vacuum, condition</span></div></div>
+    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc3.jpg" alt="Exterior Polish" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Exterior Polish</strong><span>Hand wash, clay bar, machine polish</span></div></div>
+    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc4.jpg" alt="Paint Correction" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Paint Correction</strong><span>Swirl removal, scratch repair</span></div></div>
+    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_split1.jpg" alt="Ceramic Coating" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Ceramic Coating</strong><span>Long-term paint protection</span></div></div>
+  </div>
+</section>
+<section id="split1">
+  <div class="split-inner">
+    <div class="split-photo"><img src="../detail25/img/fc-autoz/fc-autoz_split2.jpg" alt="FC Autoz Detailing" loading="lazy"></div>
+    <div class="split-text">
+      <div class="ribbon">Why Choose Us</div>
+      <h2 style="margin-top:.9rem">Details That Make the <em style="color:var(--accent2)">Difference</em></h2>
+      <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
+      <p class="sec-sub" style="margin-top:-1.1rem">Professional-grade products, mobile service, 100% satisfaction guaranteed.</p>
+      <ul class="split-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Professional-grade products and equipment</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Mobile service -- we come to you</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>100% satisfaction guaranteed</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Flexible scheduling, fast turnaround</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="gallery" class="sec">
+  <div class="ribbon">Our Work</div>
+  <h2 style="margin-top:.9rem">Results We're <em>Proud Of</em></h2>
+  <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
+  <p class="sec-sub" style="margin-top:-1.1rem">Real cars, real results.</p>
+  <div class="gal-grid">
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal1.jpg" alt="Detail 1" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal2.jpg" alt="Detail 2" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal3.jpg" alt="Detail 3" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal4.jpg" alt="Detail 4" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal5.jpg" alt="Detail 5" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal6.jpg" alt="Detail 6" loading="lazy"><div class="gal-overlay"></div></div>
+  </div>
+</section>
+<section id="stats"><div class="stats-row">
+  <div><div class="stat-n">500+</div><div class="stat-l">Vehicles Detailed</div></div>
+  <div><div class="stat-n">5 &#9733;</div><div class="stat-l">Avg Rating</div></div>
+  <div><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div>
+  <div><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+</div></section>
+<section id="about" class="sec">
+  <div class="about-grid">
+    <div class="about-photo"><img src="../detail25/img/fc-autoz/fc-autoz_about.jpg" alt="FC Autoz" loading="lazy"></div>
+    <div class="about-text">
+      <div class="ribbon">Our Story</div>
+      <h2 style="margin-top:.9rem">About FC Autoz</h2>
+      <p>FC Autoz delivers premium mobile auto detailing services for any vehicle, with the kind of attention to detail that makes every car feel brand new. Interior steam clean, exterior hand wash, polish, and ceramic coating -- DM to book.</p>
+      <p>We are passionate about cars and it shows in every detail. DM us on Instagram to book your appointment.</p>
+      <div style="color:var(--blue2);font-weight:700;font-size:.9rem">@fc.autoz on Instagram</div>
+    </div>
+  </div>
+</section>
+<section id="reviews" class="sec">
+  <div class="ribbon">Reviews</div>
+  <h2 style="margin-top:.9rem">What Customers <em>Say</em></h2>
+  <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">M</div><div><div class="rev-name">Marcus T.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"My car looks better than when I bought it. They got every inch clean, paint is popping, interior smells amazing."</p></div>
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">S</div><div><div class="rev-name">Sarah K.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"Found them on Instagram and decided to give it a shot. Best decision ever. Incredible job and the price was fair."</p></div>
+  </div>
+</section>
+<section id="cta">
+  <h2>Ready for a Showroom-Quality Detail?</h2>
+  <p>Prestige auto detailing at your location. DM us on Instagram for a free quote.</p>
+  <a href="https://www.instagram.com/fc.autoz/" class="btn-cta">Get a Free Quote</a>
+</section>
+<footer><strong>FC Autoz Detailing</strong> &bull; Mobile Service &bull; @fc.autoz<br>&copy; 2026 FC Autoz Detailing. All rights reserved.</footer>
+<div class="fab">
+  <a href="https://www.instagram.com/fc.autoz/" class="fab-a">Get a Quote</a>
+  <a href="https://www.instagram.com/fc.autoz/" class="fab-b" target="_blank" rel="noopener">View Our Work</a>
+</div>
+</body>
+</html>
