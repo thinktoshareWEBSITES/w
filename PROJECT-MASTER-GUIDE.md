@@ -86,6 +86,8 @@ if (buffer[0] !== 0xFF || buffer[1] !== 0xD8) continue; // not a real JPEG, skip
 **Save path:** `E:\claude\ig_dl\{handle}\{handle}_001.jpg`, `_002.jpg`, etc.  
 **Profile pic:** `E:\claude\ig_dl\{handle}\{handle}_pp.jpg` (always downloaded, used as hero card)
 
+**HD profile pic tip:** the normal scrape only gets a 150x150 profile picture, which looks blurry on a hero card. See `INSTAGRAM-HD-PROFILE-PIC-TECHNIQUE.md` (repo root) for how to pull the real ~1080x1080 version instead. Use this by default going forward for every build's `_pp.jpg`.
+
 ---
 
 ## 5. The Build Script (PowerShell)
@@ -410,3 +412,4 @@ Base URL for all: `https://thinktosharewebsites.github.io/w/`
 - **Template reference table:** `C:\Users\debor\.claude\projects\e--claude\memory\feedback-use-samples-as-reference.md`
 - **Per-template details:** Individual memory files e.g. `feedback-nails-template.md`, `feedback-lash-template.md`, etc.
 - **Batch history:** Per-batch memory files e.g. `project-detail26-batch-july26.md`
+- **HD profile pictures:** `INSTAGRAM-HD-PROFILE-PIC-TECHNIQUE.md` (repo root) — standalone technique for pulling full-res profile pics instead of Instagram's 150x150 thumbnail
