@@ -23,7 +23,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .ribbon{position:relative;display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--accent2),var(--accent) 65%,#A9821F);color:#1A0E23;padding:.42rem 1.5rem;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(2.5% 0,97.5% 0,100% 50%,97.5% 100%,2.5% 100%,0 50%);box-shadow:0 4px 14px rgba(212,175,55,.35)}
 #hero{position:relative;min-height:92vh;background:var(--navy);overflow:hidden;display:flex;align-items:center}
 .hero-bg{position:absolute;inset:0}.hero-bg img{object-fit:cover;filter:brightness(.2) saturate(1.05) contrast(1.05);transform:scale(1.03)}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(21,14,35,.97) 0%,rgba(21,14,35,.8) 45%,rgba(21,14,35,.3) 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),linear-gradient(105deg,rgba(21,14,35,.97) 0%,rgba(21,14,35,.8) 45%,rgba(21,14,35,.3) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%}
 .hero-left h1{color:#fff;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;letter-spacing:.005em;margin:1.1rem 0 .9rem}
 .hero-left h1 em{font-style:normal;color:var(--accent2)}
@@ -39,9 +39,10 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .corner-ribbon{position:absolute;top:20px;left:-42px;width:170px;transform:rotate(-45deg);background:linear-gradient(135deg,var(--accent2),var(--accent));color:#1A0E23;text-align:center;font-size:.66rem;font-weight:800;letter-spacing:.1em;padding:.4rem 0;box-shadow:0 3px 12px rgba(0,0,0,.4);z-index:4;text-transform:uppercase}
 .hero-badge{position:absolute;bottom:1.1rem;right:1.1rem;background:rgba(21,14,35,.92);border:1px solid var(--accent);padding:.75rem 1rem;z-index:3;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 .badge-stars{color:var(--accent2);font-size:1rem;line-height:1}.badge-lbl{font-size:.62rem;color:#fff;font-weight:700;margin-top:.15rem;letter-spacing:.03em}
-.trust-bar{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:.9rem clamp(1rem,4vw,2rem);border-top:1px solid rgba(212,175,55,.35);border-bottom:2px solid var(--accent)}
-.trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
-.trust-item{position:relative;background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.4);color:var(--accent2);padding:.42rem 1.1rem .42rem 1.4rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,10px 50%)}
+.trust-bar{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:1.6rem clamp(1rem,4vw,2rem) 1.3rem;border-top:1px solid rgba(212,175,55,.35);border-bottom:2px solid var(--accent)}
+.trust-row{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center}
+.trust-item{position:relative;display:flex;flex-direction:column;align-items:center;gap:.35rem;width:118px;background:linear-gradient(160deg,rgba(212,175,55,.14),rgba(212,175,55,.03));border:1px solid rgba(212,175,55,.4);color:var(--accent2);padding:1.3rem .4rem .6rem;font-size:.68rem;font-weight:700;letter-spacing:.02em;text-align:center;line-height:1.25;clip-path:polygon(50% 0%,100% 14%,100% 100%,0% 100%,0% 14%)}
+.trust-item svg{width:22px;height:22px;color:var(--accent2)}
 .sec{padding:6.5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
 .sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.15}
 .sec h2 em{font-style:normal;color:var(--blue2)}
@@ -53,7 +54,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .svc-label{position:absolute;bottom:0;left:0;right:0;padding:1.1rem .9rem .85rem;color:#fff}
 .svc-label strong{display:block;font-size:.98rem;font-weight:800;margin-bottom:.2rem;color:var(--accent2)}
 .svc-label span{font-size:.75rem;color:rgba(255,255,255,.75)}
-#split1{background:var(--navy);padding:5rem clamp(1.25rem,5vw,2rem)}
+#split1{background:repeating-linear-gradient(45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),var(--navy);padding:5rem clamp(1.25rem,5vw,2rem)}
 .split-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
 .split-photo{overflow:hidden;aspect-ratio:1.05;box-shadow:0 0 0 6px rgba(212,175,55,.12),0 20px 50px rgba(0,0,0,.5);border:3px solid var(--accent)}
 .split-text{color:#fff}
@@ -66,7 +67,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
 .gal-tile{position:relative;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(21,14,35,.14);border:2px solid rgba(212,175,55,.3)}
 .gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,14,35,.5) 0%,transparent 55%)}
-#stats{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:3.5rem clamp(1.25rem,5vw,2rem);border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3)}
+#stats{background:repeating-linear-gradient(45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:3.5rem clamp(1.25rem,5vw,2rem);border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3)}
 .stats-row{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
 .stat-n{font-size:clamp(2rem,4vw,2.6rem);font-weight:700;color:var(--accent2);line-height:1;font-family:Georgia,serif}
 .stat-l{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
@@ -82,7 +83,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .rev-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy2),var(--blue));color:var(--accent2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0;border:1px solid var(--accent)}
 .rev-name{font-weight:800;font-size:.86rem;color:var(--navy)}.rev-stars{color:var(--accent);font-size:.82rem}
 .rev-text{font-size:.9rem;color:var(--tx2);line-height:1.65;font-style:italic}
-#cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff;border-top:2px solid var(--accent)}
+#cta{background:repeating-linear-gradient(45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,rgba(201,162,39,.05) 0 1px,transparent 1px 26px),linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff;border-top:2px solid var(--accent)}
 #cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;margin-bottom:.6rem}
 #cta p{font-size:1rem;opacity:.85;margin-bottom:1.7rem;max-width:460px;margin-left:auto;margin-right:auto}
 .btn-cta{display:inline-block;background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:1rem 2.5rem;border-radius:2px;font-weight:800;font-size:1rem;box-shadow:0 10px 28px rgba(212,175,55,.4);letter-spacing:.02em}
@@ -93,6 +94,26 @@ footer strong{color:var(--accent2)}
 .fab-b{flex:1;background:var(--navy2);border:2px solid rgba(212,175,55,.4);color:#fff;padding:.78rem;border-radius:2px;text-align:center;font-weight:700;font-size:.88rem}
 .medallion{position:absolute;bottom:-28px;right:-28px;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--accent2),var(--accent) 55%,#8C6D14 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.45),0 0 0 4px var(--navy),0 0 0 5px rgba(212,175,55,.5);z-index:5}
 .medallion span{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:#1A0E0A;letter-spacing:-.02em}
+.corner-frame{position:relative}
+.corner-frame::after{content:'';position:absolute;inset:12px;pointer-events:none;z-index:5;
+background-image:linear-gradient(to right,var(--accent) 2px,transparent 2px),linear-gradient(to bottom,var(--accent) 2px,transparent 2px),linear-gradient(to left,var(--accent) 2px,transparent 2px),linear-gradient(to bottom,var(--accent) 2px,transparent 2px),linear-gradient(to right,var(--accent) 2px,transparent 2px),linear-gradient(to top,var(--accent) 2px,transparent 2px),linear-gradient(to left,var(--accent) 2px,transparent 2px),linear-gradient(to top,var(--accent) 2px,transparent 2px);
+background-size:24px 2px,2px 24px,24px 2px,2px 24px,24px 2px,2px 24px,24px 2px,2px 24px;
+background-repeat:no-repeat;
+background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right}
+.corner-frame-sm::after{inset:8px;background-size:14px 2px,2px 14px,14px 2px,2px 14px,14px 2px,2px 14px,14px 2px,2px 14px}
+::selection{background:var(--accent);color:#1A0E0A}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--accent2),var(--accent));border-radius:0}
+.crest{width:104px;height:auto;margin-bottom:1.1rem;filter:drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+.motto{display:inline-block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);border-top:1px solid rgba(212,175,55,.4);border-bottom:1px solid rgba(212,175,55,.4);padding:.3rem 0;margin-bottom:1.2rem;font-weight:600}
+.foil{background:linear-gradient(115deg,#8C6D14 0%,var(--accent2) 28%,#fff 42%,var(--accent) 58%,#8C6D14 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-text p:first-of-type::first-letter{float:left;font-family:Georgia,serif;font-size:3.6rem;line-height:.78;padding:.06em .14em 0 0;color:var(--accent);font-weight:700}
+.seal{width:112px;height:112px;margin:0 auto 1.6rem;opacity:.92}
+.stat-item{display:flex;align-items:center;justify-content:center;gap:.5rem}
+.laurel{width:22px;height:38px;color:var(--accent);opacity:.7;flex-shrink:0}
+.laurel-r{transform:scaleX(-1)}
+@media(max-width:480px){.laurel{display:none}}
 @media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3rem;padding-bottom:3rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
 @media(max-width:768px){nav{display:none}.split-inner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}#split1{padding:3.5rem 1.25rem}}
 @media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.fab{display:flex}body{padding-bottom:72px}.hero-btns{justify-content:center}}
@@ -118,14 +139,37 @@ footer strong{color:var(--accent2)}
   <div class="hero-bg"><img src="../detail25/img/fc-autoz/fc-autoz_hero.jpg" alt="FC Autoz Detailing"></div>
   <div class="hero-inner">
     <div class="hero-left">
+      <svg class="crest" viewBox="0 0 180 200" fill="none">
+        <path d="M50 54 L58 28 L74 42 L90 14 L106 42 L122 28 L130 54 Z" fill="#1C1412" stroke="#C9A227" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="50" y="52" width="80" height="9" rx="1" fill="#1C1412" stroke="#C9A227" stroke-width="2"/>
+        <circle cx="58" cy="28" r="3.2" fill="#E8CD7A"/><circle cx="90" cy="14" r="3.6" fill="#E8CD7A"/><circle cx="122" cy="28" r="3.2" fill="#E8CD7A"/>
+        <g stroke="#C9A227" stroke-width="1.3" fill="#C9A227" opacity=".85">
+          <path d="M55,150 C40,140 32,120 34,95 C35,80 42,68 50,60" fill="none"/>
+          <ellipse cx="38" cy="130" rx="6.5" ry="3" transform="rotate(-35 38 130)"/>
+          <ellipse cx="35" cy="112" rx="6.5" ry="3" transform="rotate(-12 35 112)"/>
+          <ellipse cx="37" cy="92" rx="6.5" ry="3" transform="rotate(12 37 92)"/>
+          <ellipse cx="43" cy="74" rx="6.5" ry="3" transform="rotate(35 43 74)"/>
+        </g>
+        <g transform="translate(180,0) scale(-1,1)" stroke="#C9A227" stroke-width="1.3" fill="#C9A227" opacity=".85">
+          <path d="M55,150 C40,140 32,120 34,95 C35,80 42,68 50,60" fill="none"/>
+          <ellipse cx="38" cy="130" rx="6.5" ry="3" transform="rotate(-35 38 130)"/>
+          <ellipse cx="35" cy="112" rx="6.5" ry="3" transform="rotate(-12 35 112)"/>
+          <ellipse cx="37" cy="92" rx="6.5" ry="3" transform="rotate(12 37 92)"/>
+          <ellipse cx="43" cy="74" rx="6.5" ry="3" transform="rotate(35 43 74)"/>
+        </g>
+        <path d="M90 64 L120 78 V108 C120 130 106 144 90 152 C74 144 60 130 60 108 V78 Z" fill="#1C1412" stroke="#C9A227" stroke-width="2.2"/>
+        <circle cx="90" cy="110" r="15" fill="none" stroke="#E8CD7A" stroke-width="1.6"/><circle cx="90" cy="110" r="3.2" fill="#E8CD7A"/>
+        <path d="M76,122 C79,108 87,100 90,90 C93,100 101,108 104,122" stroke="#E8CD7A" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="motto">Excellence In Every Detail</div>
       <div class="ribbon">Prestige Mobile Detailing</div>
-      <h1>FC Autoz<br><em>Royal Auto Care</em></h1>
+      <h1>FC Autoz<br><em class="foil">Royal Auto Care</em></h1>
       <p>FC Autoz delivers a showroom-grade finish fit for royalty. Interior steam clean, exterior hand wash, polish, and ceramic coating -- brought straight to your driveway. DM to book.</p>
       <div class="hero-chips"><span class="chip">Interior Detail</span><span class="chip">Exterior Polish</span><span class="chip">Paint Correction</span><span class="chip">Ceramic Coating</span></div>
       <div class="hero-btns"><a href="https://www.instagram.com/fc.autoz/" class="btn-pri">Get a Free Quote</a><a href="https://www.instagram.com/fc.autoz/" class="btn-sec" target="_blank" rel="noopener">See Our Work</a></div>
     </div>
     <div class="hero-right">
-      <div class="hero-card">
+      <div class="hero-card corner-frame corner-frame-sm">
         <div class="corner-ribbon">Prestige Care</div>
         <img src="../detail25/img/fc-autoz/fc-autoz_pp.jpg" alt="FC Autoz" fetchpriority="high">
         <div class="hero-badge"><div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="badge-lbl">5-Star Detailing</div></div>
@@ -134,10 +178,10 @@ footer strong{color:var(--accent2)}
   </div>
 </section>
 <div class="trust-bar"><div class="trust-row">
-  <div class="trust-item">Interior Detailing</div>
-  <div class="trust-item">Exterior Polish</div>
-  <div class="trust-item">Paint Correction</div>
-  <div class="trust-item">Ceramic Coating</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 L13.5 9.5 L20 11 L13.5 12.5 L12 19 L10.5 12.5 L4 11 L10.5 9.5 Z"/></svg>Interior Detailing</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/></svg>Exterior Polish</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L20 6 V12 C20 17 16.5 20.5 12 22 C7.5 20.5 4 17 4 12 V6 Z"/><path d="M8.5 12l2.5 2.5 5-5"/></svg>Paint Correction</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C12 2 5 11 5 15.5 C5 19.6 8.1 22 12 22 C15.9 22 19 19.6 19 15.5 C19 11 12 2 12 2 Z"/></svg>Ceramic Coating</div>
 </div></div>
 <section id="svcs" class="sec">
   <div class="ribbon">What We Offer</div>
@@ -145,25 +189,25 @@ footer strong{color:var(--accent2)}
   <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
   <p class="sec-sub" style="margin-top:-1.1rem">From a full interior deep clean to paint correction and ceramic coating.</p>
   <div class="svc-grid">
-    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc2.jpg" alt="Interior Detail" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Interior Detail</strong><span>Deep clean, steam, vacuum, condition</span></div></div>
-    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc3.jpg" alt="Exterior Polish" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Exterior Polish</strong><span>Hand wash, clay bar, machine polish</span></div></div>
-    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_svc4.jpg" alt="Paint Correction" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Paint Correction</strong><span>Swirl removal, scratch repair</span></div></div>
-    <div class="svc-card"><img src="../detail25/img/fc-autoz/fc-autoz_split1.jpg" alt="Ceramic Coating" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Ceramic Coating</strong><span>Long-term paint protection</span></div></div>
+    <div class="svc-card corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_svc2.jpg" alt="Interior Detail" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Interior Detail</strong><span>Deep clean, steam, vacuum, condition</span></div></div>
+    <div class="svc-card corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_svc3.jpg" alt="Exterior Polish" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Exterior Polish</strong><span>Hand wash, clay bar, machine polish</span></div></div>
+    <div class="svc-card corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_svc4.jpg" alt="Paint Correction" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Paint Correction</strong><span>Swirl removal, scratch repair</span></div></div>
+    <div class="svc-card corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_split1.jpg" alt="Ceramic Coating" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Ceramic Coating</strong><span>Long-term paint protection</span></div></div>
   </div>
 </section>
 <section id="split1">
   <div class="split-inner">
-    <div class="split-photo"><img src="../detail25/img/fc-autoz/fc-autoz_split2.jpg" alt="FC Autoz Detailing" loading="lazy"></div>
+    <div class="split-photo corner-frame"><img src="../detail25/img/fc-autoz/fc-autoz_split2.jpg" alt="FC Autoz Detailing" loading="lazy"></div>
     <div class="split-text">
       <div class="ribbon">Why Choose Us</div>
-      <h2 style="margin-top:.9rem">Details That Make the <em style="color:var(--accent2)">Difference</em></h2>
+      <h2 style="margin-top:.9rem">Details That Make the <em class="foil">Difference</em></h2>
       <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
       <p class="sec-sub" style="margin-top:-1.1rem">Professional-grade products, mobile service, 100% satisfaction guaranteed.</p>
       <ul class="split-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Professional-grade products and equipment</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Mobile service -- we come to you</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>100% satisfaction guaranteed</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Flexible scheduling, fast turnaround</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg>Professional-grade products and equipment</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg>Mobile service -- we come to you</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg>100% satisfaction guaranteed</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg>Flexible scheduling, fast turnaround</li>
       </ul>
     </div>
   </div>
@@ -174,23 +218,23 @@ footer strong{color:var(--accent2)}
   <div class="divider"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2-7.5L2.5 9h7z"/></svg></div>
   <p class="sec-sub" style="margin-top:-1.1rem">Real cars, real results.</p>
   <div class="gal-grid">
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal1.jpg" alt="Detail 1" loading="lazy"><div class="gal-overlay"></div></div>
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal2.jpg" alt="Detail 2" loading="lazy"><div class="gal-overlay"></div></div>
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal3.jpg" alt="Detail 3" loading="lazy"><div class="gal-overlay"></div></div>
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal4.jpg" alt="Detail 4" loading="lazy"><div class="gal-overlay"></div></div>
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal5.jpg" alt="Detail 5" loading="lazy"><div class="gal-overlay"></div></div>
-    <div class="gal-tile"><img src="../detail25/img/fc-autoz/fc-autoz_gal6.jpg" alt="Detail 6" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal1.jpg" alt="Detail 1" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal2.jpg" alt="Detail 2" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal3.jpg" alt="Detail 3" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal4.jpg" alt="Detail 4" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal5.jpg" alt="Detail 5" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile corner-frame corner-frame-sm"><img src="../detail25/img/fc-autoz/fc-autoz_gal6.jpg" alt="Detail 6" loading="lazy"><div class="gal-overlay"></div></div>
   </div>
 </section>
 <section id="stats"><div class="stats-row">
-  <div><div class="stat-n">500+</div><div class="stat-l">Vehicles Detailed</div></div>
-  <div><div class="stat-n">5 &#9733;</div><div class="stat-l">Avg Rating</div></div>
-  <div><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div>
-  <div><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+  <div class="stat-item"><svg class="laurel" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg><div><div class="stat-n">500+</div><div class="stat-l">Vehicles Detailed</div></div><svg class="laurel laurel-r" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg></div>
+  <div class="stat-item"><svg class="laurel" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg><div><div class="stat-n">5 &#9733;</div><div class="stat-l">Avg Rating</div></div><svg class="laurel laurel-r" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg></div>
+  <div class="stat-item"><svg class="laurel" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg><div><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div><svg class="laurel laurel-r" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg></div>
+  <div class="stat-item"><svg class="laurel" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg><div><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div><svg class="laurel laurel-r" viewBox="0 0 20 40" fill="currentColor"><path d="M10 2 C10 2 4 8 4 14 C4 20 8 24 8 24" stroke="currentColor" stroke-width="1" fill="none"/><ellipse cx="5" cy="8" rx="3" ry="1.6" transform="rotate(-30 5 8)"/><ellipse cx="4" cy="14" rx="3" ry="1.6" transform="rotate(-10 4 14)"/><ellipse cx="4.5" cy="20" rx="3" ry="1.6" transform="rotate(15 4.5 20)"/><ellipse cx="6" cy="25" rx="3" ry="1.6" transform="rotate(35 6 25)"/></svg></div>
 </div></section>
 <section id="about" class="sec">
   <div class="about-grid">
-    <div class="about-photo"><img src="../detail25/img/fc-autoz/fc-autoz_about.jpg" alt="FC Autoz" loading="lazy"><div class="medallion"><span>FC</span></div></div>
+    <div class="about-photo corner-frame"><img src="../detail25/img/fc-autoz/fc-autoz_about.jpg" alt="FC Autoz" loading="lazy"><div class="medallion"><span>FC</span></div></div>
     <div class="about-text">
       <div class="ribbon">Our Story</div>
       <h2 style="margin-top:.9rem">About FC Autoz</h2>
@@ -210,6 +254,14 @@ footer strong{color:var(--accent2)}
   </div>
 </section>
 <section id="cta">
+  <svg class="seal" viewBox="0 0 120 120" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs><path id="sealtext" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0"/></defs>
+    <circle cx="60" cy="60" r="54" fill="none" stroke="#C9A227" stroke-width="1.4"/>
+    <circle cx="60" cy="60" r="44" fill="none" stroke="#C9A227" stroke-width="1"/>
+    <text font-size="7.2" fill="#E8CD7A" letter-spacing="2.5"><textPath xlink:href="#sealtext" href="#sealtext" startOffset="1%">FC AUTOZ &#8226; PRESTIGE MOBILE DETAILING &#8226; </textPath></text>
+    <text x="60" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#E8CD7A">FC</text>
+    <text x="60" y="72" text-anchor="middle" font-size="6.5" letter-spacing="2" fill="#C9A227">EST. PRESTIGE CARE</text>
+  </svg>
   <h2>Ready for a Showroom-Quality Detail?</h2>
   <p>Prestige auto detailing at your location. DM us on Instagram for a free quote.</p>
   <a href="https://www.instagram.com/fc.autoz/" class="btn-cta">Get a Free Quote</a>
