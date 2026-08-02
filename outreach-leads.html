@@ -527,6 +527,7 @@
             <div class="tab" onclick="setCategory('Auto Detailing', this)">Auto Detailing (59)</div>
             <div class="tab" onclick="setCategory('Lawn & Landscaping', this)">Lawn & Landscaping (1)</div>
             <div class="tab" onclick="showSamples(this)" style="border-color:rgba(139,92,246,.4);color:#a78bfa">&#9733; Main Template Samples</div>
+            <div class="tab" onclick="showAgentGuide(this)" style="border-color:rgba(16,185,129,.3);color:#6ee7b7">&#128196; Agent Guide</div>
         </div>
     </div>
 
@@ -2592,6 +2593,83 @@ If you like it lets get on a call maybe to customise it for your business</div>
         </div>
     </div>
 
+    <!-- AGENT GUIDE PANEL -->
+    <div id="agentPanel" style="display:none;max-width:800px;margin:0 auto;padding:4px 0 40px;font-size:.88rem;line-height:1.7;color:#d1d5db">
+
+        <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:14px;padding:20px;margin-bottom:16px">
+            <div style="color:#6ee7b7;font-weight:700;font-size:.95rem;margin-bottom:6px">What is this file?</div>
+            <p><code style="background:rgba(255,255,255,.07);padding:2px 6px;border-radius:4px;font-size:.82rem">outreach-leads.html</code> is the daily outreach dashboard. After each batch of websites is built and uploaded to GitHub Pages, this file gets updated with the new leads so the owner can copy the DM message and send it to each Instagram profile.</p>
+        </div>
+
+        <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;margin-bottom:16px">
+            <div style="color:#f3f4f6;font-weight:700;margin-bottom:12px">&#9989; What to REPLACE on every daily update</div>
+            <ul style="padding-left:18px;color:#9ca3af;display:flex;flex-direction:column;gap:6px">
+                <li>All <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">&lt;div class="card" ...&gt;</code> elements inside <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">#leadsList</code> — full clean overwrite, no old entries kept</li>
+                <li>The filter tabs (only category tabs) — update to match the new batch categories and counts</li>
+                <li>The <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">statsCount</code> text (e.g. "Showing 60 leads")</li>
+            </ul>
+        </div>
+
+        <div style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:14px;padding:20px;margin-bottom:16px">
+            <div style="color:#fca5a5;font-weight:700;margin-bottom:12px">&#10060; What to NEVER touch</div>
+            <ul style="padding-left:18px;color:#9ca3af;display:flex;flex-direction:column;gap:6px">
+                <li>The <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">#samplesPanel</code> div and all its contents (10 template links)</li>
+                <li>The <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">#agentPanel</code> div (this panel)</li>
+                <li>The "&#9733; Main Template Samples" tab and the "&#128196; Agent Guide" tab</li>
+                <li>The <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">showSamples()</code> and <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">showAgentGuide()</code> JS functions</li>
+                <li>The modal (<code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">#copyModal</code>), toast (<code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">#toast</code>), and <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">copyMessage()</code> / <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">closeModal()</code> functions</li>
+                <li>All CSS styles in the <code style="background:rgba(255,255,255,.07);padding:2px 5px;border-radius:4px">&lt;style&gt;</code> block</li>
+            </ul>
+        </div>
+
+        <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;margin-bottom:16px">
+            <div style="color:#f3f4f6;font-weight:700;margin-bottom:12px">&#128274; Card structure (one per lead)</div>
+            <pre style="background:rgba(0,0,0,.3);border-radius:8px;padding:14px;font-size:.75rem;overflow-x:auto;color:#a5b4fc;white-space:pre-wrap">&lt;div class="card" data-category="Auto Detailing" data-name="business name lowercase"&gt;
+    &lt;textarea class="full-message" style="display:none"&gt;[DM MESSAGE]&lt;/textarea&gt;
+    &lt;div class="card-header"&gt;
+        &lt;div class="biz-info"&gt;
+            &lt;div class="biz-name"&gt;Business Name&lt;/div&gt;
+            &lt;a class="biz-url" href="[PAGE URL]" target="_blank"&gt;[PAGE URL]&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;span class="badge"&gt;Auto Detailing&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="actions"&gt;
+        &lt;a class="btn btn-ig" href="https://www.instagram.com/[handle]/" target="_blank"&gt;Send DM&lt;/a&gt;
+        &lt;button class="btn btn-copy" onclick="copyMessage(this)"&gt;Copy Message&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;margin-bottom:16px">
+            <div style="color:#f3f4f6;font-weight:700;margin-bottom:12px">&#128172; DM message format</div>
+            <p style="color:#9ca3af;margin-bottom:10px">Two things change per lead: <strong style="color:#f3f4f6">[CATEGORY PHRASE]</strong> and <strong style="color:#f3f4f6">[PAGE URL]</strong>. Everything else is identical.</p>
+            <pre style="background:rgba(0,0,0,.3);border-radius:8px;padding:14px;font-size:.78rem;overflow-x:auto;color:#fde68a;white-space:pre-wrap">Hey, are you guys taking on new projects?
+
+I usually don't do this but I was just doom scrolling and found your [CATEGORY PHRASE] and your work looks 🔥....was surprised though you got no dedicated website ...especially with the kind content you got....so I went straight ahead and created a high converting website for your business so your clients can see your work and book you seamlessly...
+
+[PAGE URL]
+
+If you like it lets get on a call maybe to customise it for your business</pre>
+        </div>
+
+        <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px">
+            <div style="color:#f3f4f6;font-weight:700;margin-bottom:12px">&#128196; Category phrase map</div>
+            <table style="width:100%;border-collapse:collapse;font-size:.82rem">
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Auto Detailing</td><td style="padding:7px 10px;color:#fde68a">found your auto detailing page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Lawn &amp; Landscaping</td><td style="padding:7px 10px;color:#fde68a">found your lawn care page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Pressure Washing</td><td style="padding:7px 10px;color:#fde68a">found your pressure washing page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Mobile Dog Grooming</td><td style="padding:7px 10px;color:#fde68a">found your dog grooming page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Cake Maker</td><td style="padding:7px 10px;color:#fde68a">found your cake page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Mobile Nail Tech</td><td style="padding:7px 10px;color:#fde68a">found your nail tech page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Lash Extension Artist</td><td style="padding:7px 10px;color:#fde68a">found your lash page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Pool Cleaning</td><td style="padding:7px 10px;color:#fde68a">found your pool cleaning page</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:7px 10px;color:#9ca3af">Window Cleaning</td><td style="padding:7px 10px;color:#fde68a">found your window cleaning page</td></tr>
+                <tr><td style="padding:7px 10px;color:#9ca3af">Charcuterie Boards</td><td style="padding:7px 10px;color:#fde68a">found your charcuterie page</td></tr>
+            </table>
+        </div>
+
+    </div>
+
 <div class="toast" id="toast">
         <svg style="width:18px;height:18px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
         Message copied to clipboard!
@@ -2641,6 +2719,7 @@ If you like it lets get on a call maybe to customise it for your business</div>
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             tabEl.classList.add('active');
             document.getElementById('samplesPanel').style.display = 'none';
+            document.getElementById('agentPanel').style.display = 'none';
             document.getElementById('leadsList').style.display = 'grid';
             document.getElementById('statsCount').style.display = 'block';
             filterLeads();
@@ -2652,6 +2731,16 @@ If you like it lets get on a call maybe to customise it for your business</div>
             document.getElementById('leadsList').style.display = 'none';
             document.getElementById('statsCount').style.display = 'none';
             document.getElementById('samplesPanel').style.display = 'block';
+            document.getElementById('agentPanel').style.display = 'none';
+        }
+
+        function showAgentGuide(tabEl) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            tabEl.classList.add('active');
+            document.getElementById('leadsList').style.display = 'none';
+            document.getElementById('statsCount').style.display = 'none';
+            document.getElementById('samplesPanel').style.display = 'none';
+            document.getElementById('agentPanel').style.display = 'block';
         }
 
         function copyMessage(btn) {
