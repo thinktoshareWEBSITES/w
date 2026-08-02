@@ -21,7 +21,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent)}
 .divider svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
 .ribbon{position:relative;display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--accent2),var(--accent) 65%,#A9821F);color:#1A0E23;padding:.42rem 1.5rem;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(2.5% 0,97.5% 0,100% 50%,97.5% 100%,2.5% 100%,0 50%);box-shadow:0 4px 14px rgba(212,175,55,.35)}
-#hero{position:relative;min-height:92vh;background:var(--navy);overflow:hidden;display:flex;align-items:center}
+#hero{position:relative;min-height:auto;background:var(--navy);overflow:hidden;display:flex;align-items:center;padding:3.5rem 0}
 .hero-bg{position:absolute;inset:0}.hero-bg img{object-fit:cover;filter:brightness(.2) saturate(1.05) contrast(1.05);transform:scale(1.03)}
 .hero-bg::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(201,162,39,.022) 0 1px,transparent 1px 40px),repeating-linear-gradient(-45deg,rgba(201,162,39,.022) 0 1px,transparent 1px 40px),linear-gradient(105deg,rgba(21,14,35,.97) 0%,rgba(21,14,35,.8) 45%,rgba(21,14,35,.3) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%}
@@ -43,7 +43,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .trust-row{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center}
 .trust-item{position:relative;display:flex;flex-direction:column;align-items:center;gap:.35rem;width:118px;background:linear-gradient(160deg,rgba(212,175,55,.14),rgba(212,175,55,.03));border:1px solid rgba(212,175,55,.4);color:var(--accent2);padding:1.3rem .4rem .6rem;font-size:.68rem;font-weight:700;letter-spacing:.02em;text-align:center;line-height:1.25;clip-path:polygon(50% 0%,100% 14%,100% 100%,0% 100%,0% 14%)}
 .trust-item svg{width:22px;height:22px;color:var(--accent2)}
-.sec{padding:6.5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec{padding:4.5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
 .sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.15}
 .sec h2 em{font-style:normal;color:var(--blue2)}
 .sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:540px;margin-bottom:2.4rem}
