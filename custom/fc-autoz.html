@@ -7,11 +7,12 @@
 <meta name="description" content="FC Autoz Detailing -- prestige mobile auto detailing. FC Autoz delivers royal-level care for any vehicle. Interior steam clean, exterior hand wash, polish, and ceramic coating. DM to book.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#150E23;--navy2:#241537;--blue:#7C2D8A;--blue2:#9A3FA8;--accent:#D4AF37;--accent2:#F1D889;--tx:#0F172A;--tx2:#3B3244;--mid:#6B5F72;--light:#FAF6EC;--r:14px}
+:root{--navy:#0B0908;--navy2:#1C1412;--blue:#6B1520;--blue2:#8C1F2C;--accent:#C9A227;--accent2:#E8CD7A;--tx:#0F172A;--tx2:#3B322E;--mid:#6B6058;--light:#FAF6EC;--r:14px}
 html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
 h1,h2,.logo span{font-family:Georgia,Cambria,'Times New Roman',serif}
-header{position:sticky;top:0;z-index:200;background:rgba(21,14,35,.96);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem;border-bottom:1px solid rgba(212,175,55,.35)}
+.top-hairline{height:4px;background:linear-gradient(90deg,#8C6D14 0%,var(--accent2) 25%,var(--accent) 50%,var(--accent2) 75%,#8C6D14 100%)}
+header{position:sticky;top:0;z-index:200;background:rgba(11,9,8,.96);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem;border-bottom:1px solid rgba(201,162,39,.35)}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.1rem;white-space:nowrap;letter-spacing:.03em}
 .logo svg{width:34px;height:34px;flex-shrink:0}
 nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-left:1.6rem}
@@ -41,7 +42,7 @@ nav a{color:rgba(241,216,137,.75);font-size:.78rem;text-transform:uppercase;lett
 .trust-bar{background:linear-gradient(135deg,var(--navy2) 0%,#1E1130 100%);padding:.9rem clamp(1rem,4vw,2rem);border-top:1px solid rgba(212,175,55,.35);border-bottom:2px solid var(--accent)}
 .trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
 .trust-item{position:relative;background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.4);color:var(--accent2);padding:.42rem 1.1rem .42rem 1.4rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,10px 50%)}
-.sec{padding:5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec{padding:6.5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
 .sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.15}
 .sec h2 em{font-style:normal;color:var(--blue2)}
 .sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:540px;margin-bottom:2.4rem}
@@ -90,15 +91,24 @@ footer strong{color:var(--accent2)}
 .fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--navy);padding:.65rem .85rem;gap:.55rem;box-shadow:0 -3px 16px rgba(0,0,0,.35);border-top:1px solid rgba(212,175,55,.35)}
 .fab-a{flex:1;background:linear-gradient(135deg,var(--accent2),var(--accent) 70%);color:#1A0E23;padding:.78rem;border-radius:2px;text-align:center;font-weight:800;font-size:.88rem}
 .fab-b{flex:1;background:var(--navy2);border:2px solid rgba(212,175,55,.4);color:#fff;padding:.78rem;border-radius:2px;text-align:center;font-weight:700;font-size:.88rem}
+.medallion{position:absolute;bottom:-28px;right:-28px;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--accent2),var(--accent) 55%,#8C6D14 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.45),0 0 0 4px var(--navy),0 0 0 5px rgba(212,175,55,.5);z-index:5}
+.medallion span{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:#1A0E0A;letter-spacing:-.02em}
 @media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3rem;padding-bottom:3rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
 @media(max-width:768px){nav{display:none}.split-inner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}#split1{padding:3.5rem 1.25rem}}
 @media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.fab{display:flex}body{padding-bottom:72px}.hero-btns{justify-content:center}}
 </style>
 </head>
 <body>
+<div class="top-hairline"></div>
 <header>
   <div class="logo">
-    <svg viewBox="0 0 60 60" fill="none"><path d="M30 6 L48 16 V30 C48 42 40 50 30 54 C20 50 12 42 12 30 V16 Z" fill="#241537" stroke="#D4AF37" stroke-width="2"/><path d="M20 34 C22 26 27 22 30 17 C33 22 38 26 40 34" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="30" cy="30" r="5" fill="none" stroke="#F1D889" stroke-width="1.6"/><circle cx="30" cy="30" r="1.6" fill="#F1D889"/></svg>
+    <svg viewBox="0 0 60 60" fill="none">
+      <path d="M30 6 L48 16 V30 C48 42 40 50 30 54 C20 50 12 42 12 30 V16 Z" fill="#1C1412" stroke="#C9A227" stroke-width="2"/>
+      <path d="M20 34 C22 26 27 22 30 17 C33 22 38 26 40 34" stroke="#C9A227" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <circle cx="30" cy="30" r="5" fill="none" stroke="#E8CD7A" stroke-width="1.6"/><circle cx="30" cy="30" r="1.6" fill="#E8CD7A"/>
+      <path d="M9 20 C6 24 6 30 9 35 M7 22 C5 25 5 29 7 33 M6 24 C4 26 4 30 6 32" stroke="#C9A227" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+      <path d="M51 20 C54 24 54 30 51 35 M53 22 C55 25 55 29 53 33 M54 24 C56 26 56 30 54 32" stroke="#C9A227" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+    </svg>
     <span>FC Autoz</span>
   </div>
   <nav><a href="#svcs">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
@@ -180,7 +190,7 @@ footer strong{color:var(--accent2)}
 </div></section>
 <section id="about" class="sec">
   <div class="about-grid">
-    <div class="about-photo"><img src="../detail25/img/fc-autoz/fc-autoz_about.jpg" alt="FC Autoz" loading="lazy"></div>
+    <div class="about-photo"><img src="../detail25/img/fc-autoz/fc-autoz_about.jpg" alt="FC Autoz" loading="lazy"><div class="medallion"><span>FC</span></div></div>
     <div class="about-text">
       <div class="ribbon">Our Story</div>
       <h2 style="margin-top:.9rem">About FC Autoz</h2>
