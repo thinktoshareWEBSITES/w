@@ -526,6 +526,7 @@
             <div class="tab active" onclick="setCategory('all', this)">All (60)</div>
             <div class="tab" onclick="setCategory('Auto Detailing', this)">Auto Detailing (59)</div>
             <div class="tab" onclick="setCategory('Lawn & Landscaping', this)">Lawn & Landscaping (1)</div>
+            <div class="tab" onclick="showSamples(this)" style="border-color:rgba(139,92,246,.4);color:#a78bfa">&#9733; Main Template Samples</div>
         </div>
     </div>
 
@@ -2513,6 +2514,84 @@ If you like it lets get on a call maybe to customise it for your business</div>
             </div>
         </div>
     </div>
+
+    <!-- SAMPLES PANEL -->
+    <div id="samplesPanel" style="display:none;max-width:800px;margin:0 auto;padding:4px 0 40px">
+        <div style="color:#9ca3af;font-size:.82rem;margin-bottom:16px">10 template samples — click any to open the live site</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+            <a href="https://thinktosharewebsites.github.io/w/801shine-utah.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f97316;margin-bottom:6px">Auto Detailing</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">801 Shine Utah</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">801shine-utah.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/browns-lawn-landscaping.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#10b981;margin-bottom:6px">Lawn &amp; Landscaping</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Brown's Lawn &amp; Landscaping</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">browns-lawn-landscaping.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/jetwash-nation.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3b82f6;margin-bottom:6px">Pressure Washing</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Jetwash Nation</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">jetwash-nation.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/rays-mobile-dog-grooming.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f59e0b;margin-bottom:6px">Mobile Dog Grooming</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Ray's Mobile Dog Grooming</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">rays-mobile-dog-grooming.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/cake-by-savz.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#ec4899;margin-bottom:6px">Cake Maker</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Cake by Savz</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">cake-by-savz.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/luxe-nails-to-you.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f472b6;margin-bottom:6px">Mobile Nail Tech</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Luxe Nails To You</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">luxe-nails-to-you.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/lashes-by-luna.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;margin-bottom:6px">Lash Extension Artist</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Lashes by Luna</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">lashes-by-luna.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/clearwave-pool-service.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#38bdf8;margin-bottom:6px">Pool Cleaning</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">ClearWave Pool Service</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">clearwave-pool-service.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/sparkline-window-cleaning.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7dd3fc;margin-bottom:6px">Window Cleaning</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Sparkline Window Cleaning</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">sparkline-window-cleaning.html</div>
+                </div>
+            </a>
+            <a href="https://thinktosharewebsites.github.io/w/gather-and-graze.html" target="_blank" rel="noopener" style="text-decoration:none">
+                <div style="background:rgba(17,25,40,.75);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+                    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d97706;margin-bottom:6px">Charcuterie Boards</div>
+                    <div style="font-weight:600;color:#f3f4f6;margin-bottom:4px">Gather &amp; Graze</div>
+                    <div style="font-size:.75rem;color:#3b82f6;word-break:break-all">gather-and-graze.html</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
 <div class="toast" id="toast">
         <svg style="width:18px;height:18px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
         Message copied to clipboard!
@@ -2559,12 +2638,20 @@ If you like it lets get on a call maybe to customise it for your business</div>
 
         function setCategory(cat, tabEl) {
             currentCategory = cat;
-            
-            // Toggle tab active
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             tabEl.classList.add('active');
-            
+            document.getElementById('samplesPanel').style.display = 'none';
+            document.getElementById('leadsList').style.display = 'grid';
+            document.getElementById('statsCount').style.display = 'block';
             filterLeads();
+        }
+
+        function showSamples(tabEl) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            tabEl.classList.add('active');
+            document.getElementById('leadsList').style.display = 'none';
+            document.getElementById('statsCount').style.display = 'none';
+            document.getElementById('samplesPanel').style.display = 'block';
         }
 
         function copyMessage(btn) {
