@@ -10,7 +10,7 @@
 :root{--blue:#0077B6;--blue2:#023E8A;--teal:#0096C7;--sky:#90E0EF;--light:#EAF6FD;--cream:#F0F8FF;--dark:#012A4A;--dark2:#01497C;--gold:#F7B731;--gold2:#E0A020;--tx:#01233D;--tx2:#024E82;--mid:#4A7A9B;--r:14px}
 html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
-.svc-card img,.gal-tile img,.hero-bg img,.about-photo img{position:absolute;inset:0}
+.svc-card img,.gal-tile img,.hero-bg img,.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-bg img{filter:brightness(.28);transform:scale(1.03)}
 header{position:sticky;top:0;z-index:200;background:rgba(1,42,74,.97);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.05rem;white-space:nowrap}
@@ -19,7 +19,7 @@ nav a{color:rgba(255,255,255,.65);font-size:.78rem;text-transform:uppercase;lett
 nav a:hover{color:#fff}
 .hdr-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--dark);padding:.5rem 1.25rem;border-radius:22px;font-weight:700;font-size:.83rem;white-space:nowrap;box-shadow:0 4px 14px rgba(247,183,49,.35)}
 #hero{position:relative;min-height:92vh;background:var(--dark);overflow:hidden;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
 .hero-bg .img-ph{width:100%;height:100%;background:linear-gradient(135deg,#012A4A 0%,#0077B6 40%,#00B4D8 80%,#0096C7 100%);filter:brightness(.28);transform:scale(1.03)}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(1,42,74,.97) 0%,rgba(1,42,74,.82) 45%,rgba(1,42,74,.3) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;width:100%}
