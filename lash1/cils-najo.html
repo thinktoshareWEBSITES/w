@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cils Najo | Lash Extension Artist</title>
+<meta name="description" content="Professional lash extension artist. Classic, hybrid, and volume sets. Wake up beautiful every morning. Book via Instagram.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0D0A0B;--dark2:#1C1719;--charcoal:#2A2127;
+  --gold:#C9A96E;--gold2:#A8893A;--rose:#B5896B;
+  --cream:#FDF8F3;--light:#FBF3EE;--blush:#F8EDE8;
+  --tx:#1A0E0A;--tx2:#3D2820;--mid:#7A5E52;--r:14px
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:200;background:rgba(13,10,11,.96);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.05rem;white-space:nowrap}
+.logo svg{width:30px;height:30px;flex-shrink:0}
+nav a{color:rgba(255,255,255,.6);font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;font-weight:600;margin-left:1.6rem;transition:color .2s}
+nav a:hover{color:#fff}
+.hdr-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:.5rem 1.25rem;border-radius:22px;font-weight:700;font-size:.83rem;white-space:nowrap;box-shadow:0 4px 14px rgba(201,169,110,.4)}
+
+/* HERO */
+#hero{position:relative;min-height:92vh;background:var(--dark);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}
+.hero-bg .img-ph{width:100%;height:100%;background:linear-gradient(135deg,#0D0A0B 0%,#2A1F22 50%,#1C1719 100%);filter:brightness(.25);transform:scale(1.03)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,10,11,.97) 0%,rgba(13,10,11,.85) 45%,rgba(13,10,11,.3) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.35);color:#E8C97C;padding:.3rem .95rem;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.1rem}
+.hero-left h1{color:#fff;font-size:clamp(2.1rem,4.5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.9rem}
+.hero-left h1 em{font-style:normal;color:var(--gold)}
+.hero-left p{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.75;max-width:440px;margin-bottom:1.5rem}
+.hero-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:.28rem .82rem;border-radius:50px;font-size:.72rem;font-weight:600}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-pri{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:.9rem 1.9rem;border-radius:50px;font-weight:800;font-size:.94rem;box-shadow:0 8px 24px rgba(201,169,110,.4);transition:transform .15s}
+.btn-pri:hover{transform:translateY(-2px)}
+.btn-sec{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-size:.94rem;font-weight:600}
+.hero-right{display:flex;justify-content:flex-end}
+.hero-card{position:relative;width:100%;max-width:360px;border-radius:24px;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.7);aspect-ratio:.88;border:3px solid rgba(201,169,110,.3)}
+.hero-card .img-ph{width:100%;height:100%;background:linear-gradient(145deg,#2A1A22 0%,#5A3040 35%,#8B4860 60%,#C9A96E 100%)}
+.hero-badge{position:absolute;bottom:1.1rem;right:1.1rem;background:rgba(255,255,255,.97);border-radius:12px;padding:.75rem 1rem;z-index:3;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.badge-stars{color:var(--gold);font-size:1rem;line-height:1}
+.badge-lbl{font-size:.62rem;color:var(--tx);font-weight:700;margin-top:.15rem}
+
+/* TRUST */
+.trust-bar{background:linear-gradient(135deg,var(--dark2),var(--charcoal));padding:.9rem clamp(1rem,4vw,2rem);border-bottom:2px solid var(--gold)}
+.trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.trust-item{display:flex;align-items:center;gap:.5rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.25);color:rgba(255,255,255,.9);padding:.42rem 1.1rem;border-radius:50px;font-size:.8rem;font-weight:700}
+.trust-item svg{width:14px;height:14px;flex-shrink:0;color:var(--gold)}
+
+/* SHARED */
+.sec{padding:5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec-tag{display:inline-block;background:var(--blush);color:#7A3020;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.32rem .9rem;border-radius:50px;margin-bottom:.75rem;border:1px solid rgba(181,137,107,.3)}
+.sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:900;color:var(--dark);margin-bottom:.5rem;line-height:1.15}
+.sec h2 em{font-style:normal;color:var(--gold)}
+.sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:520px;margin-bottom:2.4rem}
+.img-ph{width:100%;height:100%}
+
+/* SERVICES */
+#svcs{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.svc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:.9;box-shadow:0 6px 24px rgba(13,10,11,.15)}
+.svc-card .img-ph{position:absolute;inset:0}
+.svc-card:nth-child(1) .img-ph{background:linear-gradient(145deg,#F5E8DC,#D4B89A,#B89070)}
+.svc-card:nth-child(2) .img-ph{background:linear-gradient(145deg,#C9A96E,#A8893A,#7A5E2A)}
+.svc-card:nth-child(3) .img-ph{background:linear-gradient(145deg,#2A1A22,#5A3040,#8B4860)}
+.svc-card:nth-child(4) .img-ph{background:linear-gradient(145deg,#0D0A0B,#2A1719,#5A3545)}
+.svc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,10,11,.92) 0%,rgba(13,10,11,.35) 55%,transparent 100%)}
+.svc-label{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem .9rem;color:#fff}
+.svc-label strong{display:block;font-size:.98rem;font-weight:800;margin-bottom:.25rem}
+.svc-label span{font-size:.75rem;color:rgba(255,255,255,.7);line-height:1.4}
+.svc-price{display:inline-block;margin-top:.4rem;background:rgba(201,169,110,.25);border:1px solid rgba(201,169,110,.5);color:#E8C97C;padding:.15rem .55rem;border-radius:50px;font-size:.7rem;font-weight:700}
+
+/* HOW IT WORKS */
+#how{background:var(--dark);padding:5rem clamp(1.25rem,5vw,2rem)}
+#how .sec-inner{max-width:1180px;margin:0 auto}
+#how .sec-tag{background:rgba(201,169,110,.1);color:#E8C97C;border-color:rgba(201,169,110,.25)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:900px;margin:0 auto}
+.step{text-align:center;padding:2rem 1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(201,169,110,.1);border-radius:20px}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--dark);font-size:1.4rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;box-shadow:0 8px 20px rgba(201,169,110,.35)}
+.step h3{color:#fff;font-size:1rem;font-weight:800;margin-bottom:.5rem}
+.step p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.65}
+
+/* GALLERY */
+#gallery{background:var(--cream)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.gal-tile{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(13,10,11,.12);cursor:pointer}
+.gal-tile .img-ph{position:absolute;inset:0;transition:transform .3s}
+.gal-tile:hover .img-ph{transform:scale(1.05)}
+.gal-tile:nth-child(1) .img-ph{background:linear-gradient(145deg,#F5E8DC,#D4B89A,#B59070)}
+.gal-tile:nth-child(2) .img-ph{background:linear-gradient(145deg,#2A1A22,#5A3040,#9B6080)}
+.gal-tile:nth-child(3) .img-ph{background:linear-gradient(145deg,#C9A96E,#A8893A,#785A20)}
+.gal-tile:nth-child(4) .img-ph{background:linear-gradient(145deg,#0D0A0B,#3A2535,#7A4555)}
+.gal-label{position:absolute;bottom:.6rem;left:.6rem;background:rgba(255,255,255,.92);color:var(--tx2);padding:.2rem .6rem;border-radius:50px;font-size:.65rem;font-weight:800}
+
+/* STATS */
+#stats{background:linear-gradient(135deg,var(--dark2) 0%,var(--charcoal) 100%);padding:3.5rem clamp(1.25rem,5vw,2rem);border-top:1px solid rgba(201,169,110,.2);border-bottom:1px solid rgba(201,169,110,.2)}
+.stats-row{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-n{font-size:clamp(2rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1}
+.stat-l{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+
+/* ABOUT */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;max-width:1060px;margin:0 auto}
+.about-photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:.95;box-shadow:0 16px 44px rgba(13,10,11,.18)}
+.about-photo .img-ph{background:linear-gradient(145deg,#F5E8DC,#C9A96E,#5A3040)}
+.about-photo::after{content:'Certified Lash Artist';position:absolute;bottom:1rem;right:1rem;background:rgba(255,255,255,.96);color:var(--tx2);font-size:.72rem;font-weight:800;padding:.45rem .9rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.about-text h2{font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:900;color:var(--dark);margin-bottom:.8rem;line-height:1.2}
+.about-text p{color:var(--tx2);line-height:1.78;margin-bottom:.9rem;font-size:.95rem}
+.about-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.about-badge{background:var(--blush);color:#6A3820;padding:.35rem .85rem;border-radius:50px;font-size:.75rem;font-weight:700;border:1px solid rgba(181,137,107,.2)}
+.ig-handle{color:var(--gold2);font-weight:700;font-size:.9rem;margin-top:1.1rem}
+
+/* REVIEWS */
+#reviews{background:var(--light)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:960px;margin:0 auto}
+.rev-card{background:#fff;border-radius:var(--r);padding:1.75rem;box-shadow:0 4px 18px rgba(13,10,11,.07);border:1px solid rgba(13,10,11,.06)}
+.rev-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.rev-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;color:#fff;flex-shrink:0}
+.rev-av.a{background:linear-gradient(135deg,#C9A96E,#A8893A)}
+.rev-av.b{background:linear-gradient(135deg,#5A3040,#2A1A22)}
+.rev-name{font-weight:800;font-size:.86rem;color:var(--dark)}
+.rev-stars{color:var(--gold);font-size:.82rem;margin-top:.1rem}
+.rev-text{font-size:.9rem;color:var(--tx2);line-height:1.68;font-style:italic}
+.rev-service{display:inline-block;margin-top:.75rem;background:var(--blush);color:#6A3820;padding:.2rem .65rem;border-radius:50px;font-size:.68rem;font-weight:700}
+
+/* CTA */
+#cta{background:linear-gradient(135deg,var(--dark) 0%,var(--charcoal) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff}
+#cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:.6rem}
+#cta h2 em{font-style:normal;color:var(--gold)}
+#cta p{font-size:1rem;opacity:.75;margin-bottom:1.8rem;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.7}
+.btn-cta{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--dark);padding:1rem 2.8rem;border-radius:50px;font-weight:900;font-size:1rem;box-shadow:0 10px 28px rgba(201,169,110,.45);letter-spacing:.02em}
+.cta-note{margin-top:1rem;font-size:.8rem;opacity:.5}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:1.75rem;font-size:.82rem}
+footer strong{color:rgba(255,255,255,.75)}
+
+/* FAB */
+.fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--dark);padding:.65rem .85rem;gap:.55rem;box-shadow:0 -3px 16px rgba(0,0,0,.5)}
+.fab-a{flex:1;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--dark);padding:.8rem;border-radius:22px;text-align:center;font-weight:800;font-size:.88rem}
+.fab-b{flex:1;background:rgba(255,255,255,.07);border:2px solid rgba(201,169,110,.4);color:#fff;padding:.8rem;border-radius:22px;text-align:center;font-weight:700;font-size:.88rem}
+
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.gal-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3.5rem;padding-bottom:3.5rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
+@media(max-width:768px){nav{display:none}.steps{grid-template-columns:1fr;max-width:380px}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}}
+@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.svc-grid{grid-template-columns:1fr 1fr}.fab{display:flex}body{padding-bottom:74px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 60 60" fill="none">
+      <ellipse cx="30" cy="32" rx="22" ry="8" fill="none" stroke="#C9A96E" stroke-width="2.5"/>
+      <path d="M10 32 Q14 10 22 8" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M15 30 Q18 12 26 10" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 29 Q23 14 30 12" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M26 28 Q29 16 34 14" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M32 28 Q35 18 39 17" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M38 29 Q41 22 45 22" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M44 31 Q47 27 50 28" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <span>Cils Najo</span>
+  </div>
+  <nav>
+    <a href="#svcs">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#how">How It Works</a>
+    <a href="#about">About</a>
+  </nav>
+  <a href="https://www.instagram.com/cils.najo/" class="hdr-cta">Book Now</a>
+</header>
+
+<section id="hero">
+  <div class="hero-bg"><div class="img-ph"></div></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
+        Certified Lash Extension Artist
+      </div>
+      <h1>Wake Up to<br><em>Beautiful Lashes.</em></h1>
+      <p>Professional lash extensions applied by a certified artist. Classic sets, hybrid, volume, and mega volume -- all tailored to your eye shape and lifestyle. No mascara. No fuss. Just stunning lashes.</p>
+      <div class="hero-chips">
+        <span class="chip">Classic Set</span>
+        <span class="chip">Hybrid Set</span>
+        <span class="chip">Volume Set</span>
+        <span class="chip">Lash Lift</span>
+        <span class="chip">Fills</span>
+      </div>
+      <div class="hero-btns">
+        <a href="https://www.instagram.com/cils.najo/" class="btn-pri">Book Your Appointment</a>
+        <a href="https://www.instagram.com/cils.najo/" class="btn-sec" target="_blank" rel="noopener">View My Work</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="img-ph"></div>
+        <div class="hero-badge">
+          <div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="badge-lbl">Certified Lash Artist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-row">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7L12 2z"/></svg>Certified &amp; Insured</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Premium Silk &amp; Mink</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>Medical-Grade Adhesive</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Patch Test Available</div>
+  </div>
+</div>
+
+<section id="svcs">
+  <div class="sec">
+    <div class="sec-tag">Lash Services</div>
+    <h2>Find Your <em>Perfect Set</em></h2>
+    <p class="sec-sub">Every set is customized to your eye shape, natural lashes, and the look you want -- from natural and wispy to full glam.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="img-ph"></div><div class="svc-overlay"></div>
+        <div class="svc-label"><strong>Classic Set</strong><span>One extension per natural lash. Natural, elegant everyday look.</span><div class="svc-price">From $85</div></div>
+      </div>
+      <div class="svc-card">
+        <div class="img-ph"></div><div class="svc-overlay"></div>
+        <div class="svc-label"><strong>Hybrid Set</strong><span>Mix of classic and volume. Full, textured and flirty.</span><div class="svc-price">From $110</div></div>
+      </div>
+      <div class="svc-card">
+        <div class="img-ph"></div><div class="svc-overlay"></div>
+        <div class="svc-label"><strong>Volume Set</strong><span>Handcrafted fans for dramatic, fluffy fullness.</span><div class="svc-price">From $130</div></div>
+      </div>
+      <div class="svc-card">
+        <div class="img-ph"></div><div class="svc-overlay"></div>
+        <div class="svc-label"><strong>Lash Lift &amp; Tint</strong><span>Curl and darken your natural lashes. No extensions needed.</span><div class="svc-price">From $75</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="sec-inner" style="max-width:1180px;margin:0 auto;padding:5rem clamp(1.25rem,5vw,2rem)">
+    <div class="sec-tag">The Experience</div>
+    <h2 style="color:#fff;font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:900;margin-bottom:.5rem">How It <em style="font-style:normal;color:var(--gold)">Works</em></h2>
+    <p style="color:rgba(255,255,255,.6);font-size:.98rem;line-height:1.7;max-width:480px;margin-bottom:2.5rem">Three easy steps to the lashes you've always wanted.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Book via Instagram</h3><p>DM me to discuss your desired look, check dates, and secure your spot. A small deposit holds your booking.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Your Lash Appointment</h3><p>Relax in a comfortable lash bed for 90-120 minutes while I apply each extension with precision and care.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Wake Up Beautiful</h3><p>Leave with stunning lashes and a full aftercare guide. Fills recommended every 2-3 weeks to keep them perfect.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="sec">
+    <div class="sec-tag">My Work</div>
+    <h2>Lash <em>Gallery</em></h2>
+    <p class="sec-sub">Real results from real clients. Every set customized, every client obsessed.</p>
+    <div class="gal-grid">
+      <div class="gal-tile"><div class="img-ph"></div><div class="gal-label">Classic Set</div></div>
+      <div class="gal-tile"><div class="img-ph"></div><div class="gal-label">Volume Set</div></div>
+      <div class="gal-tile"><div class="img-ph"></div><div class="gal-label">Hybrid Set</div></div>
+      <div class="gal-tile"><div class="img-ph"></div><div class="gal-label">Lash Lift</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="stats-row">
+    <div><div class="stat-n">800+</div><div class="stat-l">Sets Applied</div></div>
+    <div><div class="stat-n">5&#9733;</div><div class="stat-l">Average Rating</div></div>
+    <div><div class="stat-n">4+</div><div class="stat-l">Years Experience</div></div>
+    <div><div class="stat-n">100%</div><div class="stat-l">Cruelty Free</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec">
+    <div class="about-grid">
+      <div class="about-photo"><div class="img-ph"></div></div>
+      <div class="about-text">
+        <div class="sec-tag">About Me</div>
+        <h2>Your Certified<br>Lash Artist</h2>
+        <p>Hi, I'm your certified lash artist -- a fully certified and insured lash extension artist with over 4 years of experience creating beautiful, customized sets. I trained with industry-leading educators and use only the highest quality silk and mink extensions.</p>
+        <p>Every client gets a consultation before we begin so I can understand your eye shape, lifestyle, and the look you want. Whether you prefer a subtle everyday natural or full mega volume glam -- I've got you.</p>
+        <p>I work from my private studio with a calm, clean, and relaxing environment. No rushing, no drama -- just beautiful lashes.</p>
+        <div class="about-badges">
+          <span class="about-badge">Certified Lash Artist</span>
+          <span class="about-badge">Premium Silk Lashes</span>
+          <span class="about-badge">Private Studio</span>
+          <span class="about-badge">Cruelty Free</span>
+        </div>
+        <div class="ig-handle">@cils.najo on Instagram</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="sec">
+    <div class="sec-tag">Reviews</div>
+    <h2>Clients <em>Obsessed</em></h2>
+    <p class="sec-sub">Don't take my word for it -- hear from the girls.</p>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-top"><div class="rev-av a">A</div><div><div class="rev-name">Alicia T.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+        <p class="rev-text">"I've been getting lashes done for 3 years and Luna is BY FAR the best artist I've found. She actually listened to what I wanted and my set looked exactly like the inspo pics I sent. I literally get compliments every single day."</p>
+        <span class="rev-service">Hybrid Set</span>
+      </div>
+      <div class="rev-card">
+        <div class="rev-top"><div class="rev-av b">M</div><div><div class="rev-name">Megan R.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
+        <p class="rev-text">"First time getting lash extensions and I was nervous, but Luna made me feel so comfortable from the start. The studio is beautiful and she explained every step. My lashes lasted nearly 4 weeks with fills. Won't go anywhere else."</p>
+        <span class="rev-service">Classic Set</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <h2>Ready for Your <em>Dream Lashes?</em></h2>
+  <p>DM me on Instagram to check availability and book your appointment. New clients welcome -- patch test available on request.</p>
+  <a href="https://www.instagram.com/cils.najo/" class="btn-cta">Book via Instagram</a>
+  <div class="cta-note">Limited spots per week &bull; Book in advance to secure your date</div>
+</section>
+
+<footer>
+  <strong>Cils Najo</strong> &bull; Certified Lash Extension Artist &bull; @cils.najo<br>
+  &copy; 2026 Cils Najo. All rights reserved.
+</footer>
+
+<div class="fab">
+  <a href="https://www.instagram.com/cils.najo/" class="fab-a">Book Now</a>
+  <a href="https://www.instagram.com/cils.najo/" class="fab-b" target="_blank" rel="noopener">View Gallery</a>
+</div>
+
+</body>
+</html>
