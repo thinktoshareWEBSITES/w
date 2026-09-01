@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air To Ground Detailers | Auto Detailing | Mobile Auto Detailing</title>
+<meta name="description" content="Air To Ground Detailers -- professional mobile auto detailing. ">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:#F59E0B;--navy:#0A1628;--navy2:#0F2140;--blue2:#1E40AF;--tx:#0F1923;--tx2:#374151;--mid:#6B7280;--light:#FFFBEB;--r:14px}
+html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tx);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
+header{position:sticky;top:0;z-index:200;background:rgba(10,22,40,.97);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,2.5rem);gap:1rem}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.05rem;white-space:nowrap}
+.logo svg{width:32px;height:32px;flex-shrink:0}
+nav a{color:rgba(255,255,255,.65);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-left:1.6rem}
+.hdr-cta{background:var(--accent);color:#fff;padding:.5rem 1.2rem;border-radius:22px;font-weight:700;font-size:.83rem;white-space:nowrap;box-shadow:0 4px 14px rgba(245,158,11,.35)}
+#hero{position:relative;min-height:92vh;background:var(--navy);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}.hero-bg img{object-fit:cover;filter:brightness(.28) saturate(1.1);transform:scale(1.03)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,22,40,.95) 0%,rgba(10,22,40,.75) 45%,rgba(10,22,40,.2) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 clamp(1.5rem,7vw,6rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#FCD34D;padding:.3rem .9rem;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem}
+.hero-left h1{color:#fff;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.9rem}
+.hero-left h1 em{font-style:normal;color:#FBBF24}
+.hero-left p{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.75;max-width:440px;margin-bottom:1.5rem}
+.hero-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:.28rem .82rem;border-radius:50px;font-size:.72rem;font-weight:600}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-pri{background:linear-gradient(135deg,var(--accent),#D97706);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-weight:800;font-size:.94rem;box-shadow:0 8px 24px rgba(245,158,11,.4)}
+.btn-sec{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-size:.94rem;font-weight:600}
+.hero-right{display:flex;justify-content:flex-end}
+.hero-card{position:relative;width:100%;max-width:380px;border-radius:22px;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.6);aspect-ratio:1;border:3px solid rgba(255,255,255,.12)}
+.hero-card img{width:100%;height:100%;object-fit:cover}
+.hero-badge{position:absolute;bottom:1.1rem;right:1.1rem;background:rgba(255,255,255,.96);border-radius:12px;padding:.75rem 1rem;z-index:3;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.badge-stars{color:#F59E0B;font-size:1rem;line-height:1}.badge-lbl{font-size:.62rem;color:var(--tx);font-weight:700;margin-top:.15rem}
+.trust-bar{background:linear-gradient(135deg,var(--navy2) 0%,#112240 100%);padding:.9rem clamp(1rem,4vw,2rem);border-bottom:2px solid var(--accent)}
+.trust-row{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.trust-item{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;padding:.42rem 1rem;border-radius:50px;font-size:.8rem;font-weight:700}
+.sec{padding:5rem clamp(1.25rem,5vw,2rem);max-width:1180px;margin:0 auto}
+.sec-tag{display:inline-block;background:var(--light);color:#92400E;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.32rem .9rem;border-radius:50px;margin-bottom:.75rem;border:1px solid rgba(245,158,11,.2)}
+.sec h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:900;color:var(--navy);margin-bottom:.5rem;line-height:1.15}
+.sec h2 em{font-style:normal;color:var(--blue2)}
+.sec-sub{color:var(--mid);font-size:.98rem;line-height:1.7;max-width:540px;margin-bottom:2.4rem}
+#svcs{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.svc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:.85;box-shadow:0 6px 24px rgba(10,22,40,.14)}
+.svc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.88) 0%,rgba(10,22,40,.3) 55%,transparent 100%)}
+.svc-label{position:absolute;bottom:0;left:0;right:0;padding:1.1rem .9rem .85rem;color:#fff}
+.svc-label strong{display:block;font-size:.98rem;font-weight:800;margin-bottom:.2rem}
+.svc-label span{font-size:.75rem;color:rgba(255,255,255,.7)}
+#split1{background:var(--navy);padding:5rem clamp(1.25rem,5vw,2rem)}
+.split-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.split-photo{border-radius:20px;overflow:hidden;aspect-ratio:1.05;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.split-text{color:#fff}
+.split-text .sec-tag{background:rgba(245,158,11,.12);color:#FCD34D;border-color:rgba(245,158,11,.25)}
+.split-text h2{color:#fff}.split-text .sec-sub{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.split-list li{display:flex;align-items:flex-start;gap:.7rem;color:rgba(255,255,255,.82);font-size:.92rem;line-height:1.5}
+.split-list li svg{width:18px;height:18px;color:#FBBF24;flex-shrink:0;margin-top:.1rem}
+#gallery{background:#F8FAFC}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.gal-tile{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(10,22,40,.12)}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.45) 0%,transparent 55%)}
+#stats{background:linear-gradient(135deg,var(--navy2) 0%,#112240 100%);padding:3.5rem clamp(1.25rem,5vw,2rem)}
+.stats-row{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-n{font-size:clamp(2rem,4vw,2.6rem);font-weight:900;color:#FBBF24;line-height:1}
+.stat-l{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:1;box-shadow:0 16px 44px rgba(10,22,40,.2)}
+.about-text h2{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:900;color:var(--navy);margin-bottom:.8rem}
+.about-text p{color:var(--tx2);line-height:1.75;margin-bottom:.9rem;font-size:.95rem}
+#reviews{background:var(--light)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
+.rev-card{background:#fff;border-radius:var(--r);padding:1.75rem;box-shadow:0 4px 18px rgba(10,22,40,.08);border:1px solid rgba(10,22,40,.07)}
+.rev-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.rev-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy2),var(--blue2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0}
+.rev-name{font-weight:800;font-size:.86rem;color:var(--navy)}.rev-stars{color:#F59E0B;font-size:.82rem}
+.rev-text{font-size:.9rem;color:var(--tx2);line-height:1.65;font-style:italic}
+#cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:5rem clamp(1.25rem,5vw,2rem);text-align:center;color:#fff}
+#cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:.6rem}
+#cta p{font-size:1rem;opacity:.85;margin-bottom:1.7rem;max-width:460px;margin-left:auto;margin-right:auto}
+.btn-cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#D97706);color:#fff;padding:1rem 2.5rem;border-radius:50px;font-weight:900;font-size:1rem;box-shadow:0 10px 28px rgba(245,158,11,.4)}
+footer{background:var(--navy);color:rgba(255,255,255,.45);text-align:center;padding:1.75rem;font-size:.82rem}
+footer strong{color:rgba(255,255,255,.8)}
+.fab{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--navy);padding:.65rem .85rem;gap:.55rem;box-shadow:0 -3px 16px rgba(0,0,0,.35)}
+.fab-a{flex:1;background:linear-gradient(135deg,var(--accent),#D97706);color:#fff;padding:.78rem;border-radius:22px;text-align:center;font-weight:800;font-size:.88rem}
+.fab-b{flex:1;background:var(--navy2);border:2px solid rgba(245,158,11,.4);color:#fff;padding:.78rem;border-radius:22px;text-align:center;font-weight:700;font-size:.88rem}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr;padding-top:3rem;padding-bottom:3rem}.hero-right{justify-content:center}.hero-card{max-width:300px}}
+@media(max-width:768px){nav{display:none}.split-inner{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.sec{padding:3.5rem 1.25rem}#split1{padding:3.5rem 1.25rem}}
+@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr)}.fab{display:flex}body{padding-bottom:72px}.hero-btns{justify-content:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="22" fill="#1E40AF"/><path d="M20 38 C22 28 28 24 30 18 C32 24 38 28 40 38" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="30" cy="30" r="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="30" cy="30" r="2" fill="#FBBF24"/></svg>
+    <span></span>
+  </div>
+  <nav><a href="#svcs">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+  <a href="https://www.instagram.com/airtogrounddetailers/" class="hdr-cta">Get a Quote</a>
+</header>
+<section id="hero">
+  <div class="hero-bg"><img src="img/air-to-ground-detailers/air-to-ground-detailers_hero.jpg" alt="Air To Ground Detailers"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Professional Auto Detailing</div>
+      <h1><br><em>Auto Detailing</em></h1>
+      <p></p>
+      <div class="hero-chips"><span class="chip">Interior Detail</span><span class="chip">Exterior Polish</span><span class="chip">Paint Correction</span><span class="chip">Ceramic Coating</span></div>
+      <div class="hero-btns"><a href="https://www.instagram.com/airtogrounddetailers/" class="btn-pri">Get a Free Quote</a><a href="https://www.instagram.com/airtogrounddetailers/" class="btn-sec" target="_blank" rel="noopener">See Our Work</a></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <img src="img/air-to-ground-detailers/air-to-ground-detailers_svc1.jpg" alt="" fetchpriority="high">
+        <div class="hero-badge"><div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="badge-lbl">5-Star Detailing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar"><div class="trust-row">
+  <div class="trust-item">Interior Detail</div><div class="trust-item">Exterior Polish</div>
+  <div class="trust-item">Paint Correction</div><div class="trust-item">Ceramic Coating</div>
+</div></div>
+<section id="svcs" class="sec">
+  <div class="sec-tag">What We Offer</div>
+  <h2>Our Detailing <em>Services</em></h2>
+  <p class="sec-sub">From a deep interior clean to a full paint correction, we bring your vehicle back to its best.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><img src="img/air-to-ground-detailers/air-to-ground-detailers_svc1.jpg" alt="Interior Detailing" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Interior Detailing</strong><span>Deep clean, steam, conditioning</span></div></div>
+    <div class="svc-card"><img src="img/air-to-ground-detailers/air-to-ground-detailers_svc2.jpg" alt="Exterior Polish" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Exterior Polish</strong><span>Hand wash, clay bar, polish</span></div></div>
+    <div class="svc-card"><img src="img/air-to-ground-detailers/air-to-ground-detailers_svc3.jpg" alt="Paint Correction" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Paint Correction</strong><span>Swirl removal, compound, buff</span></div></div>
+    <div class="svc-card"><img src="img/air-to-ground-detailers/air-to-ground-detailers_svc4.jpg" alt="Ceramic Coating" loading="lazy"><div class="svc-overlay"></div><div class="svc-label"><strong>Ceramic Coating</strong><span>Long-term paint protection</span></div></div>
+  </div>
+</section>
+<section id="split1">
+  <div class="split-inner">
+    <div class="split-photo"><img src="img/air-to-ground-detailers/air-to-ground-detailers_split1.jpg" alt="Air To Ground Detailers" loading="lazy"></div>
+    <div class="split-text">
+      <div class="sec-tag">Why Choose Us</div>
+      <h2>Detailing Done <em>Right</em></h2>
+      <p class="sec-sub">We come to you. Professional results, every time, at your location.</p>
+      <ul class="split-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Mobile service -- we come to you</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Professional grade products and equipment</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>100% satisfaction guaranteed</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Free quotes, flexible scheduling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="gallery" class="sec">
+  <div class="sec-tag">Our Work</div>
+  <h2>Results That <em>Speak</em></h2>
+  <p class="sec-sub">Real vehicles, real results. See the difference professional detailing makes.</p>
+  <div class="gal-grid">
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal1.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal2.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal3.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal4.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal5.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+    <div class="gal-tile"><img src="img/air-to-ground-detailers/air-to-ground-detailers_gal6.jpg" alt="Detail Result" loading="lazy"><div class="gal-overlay"></div></div>
+  </div>
+</section>
+<section id="stats">
+  <div class="stats-row">
+    <div><div class="stat-n" id="sn1">0</div><div class="stat-l">Cars Detailed</div></div>
+    <div><div class="stat-n" id="sn2">0</div><div class="stat-l">Years Experience</div></div>
+    <div><div class="stat-n" id="sn3">0</div><div class="stat-l">5-Star Reviews</div></div>
+    <div><div class="stat-n" id="sn4">0</div><div class="stat-l">% Satisfaction</div></div>
+  </div>
+</section>
+<section id="about">
+  <div class="sec" style="padding-bottom:0"><div class="sec-tag">About</div><h2>Your Mobile <em>Detailing Expert</em></h2></div>
+  <div class="about-grid sec">
+    <div class="about-photo"><img src="img/air-to-ground-detailers/air-to-ground-detailers_about.jpg" alt="Air To Ground Detailers" loading="lazy"></div>
+    <div class="about-text">
+      <h2></h2>
+      <p></p>
+      <p>We use professional-grade products and come fully equipped to your home, office, or any location. No appointment hassle -- just book on Instagram and we handle the rest.</p>
+      <a href="https://www.instagram.com/airtogrounddetailers/" class="btn-cta" style="display:inline-block;margin-top:.5rem">Book Your Detail</a>
+    </div>
+  </div>
+</section>
+<section id="reviews" class="sec">
+  <div class="sec-tag">Reviews</div>
+  <h2>What Customers <em>Say</em></h2>
+  <p class="sec-sub">Real feedback from real customers who trust us with their vehicles.</p>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">J</div><div><div class="rev-name">Jason K.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"My car looked better than the day I bought it. The paint correction removed years of swirls and the ceramic coating makes it shine like a mirror. Outstanding work, highly recommend."</p></div>
+    <div class="rev-card"><div class="rev-top"><div class="rev-av">M</div><div><div class="rev-name">Maria S.</div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div><p class="rev-text">"Super convenient -- they came to my house and detailed my SUV while I worked. Interior was spotless, exterior was gleaming. Professional from start to finish. Will book again for sure."</p></div>
+  </div>
+</section>
+<section id="cta">
+  <h2>Ready for a Showroom Finish?</h2>
+  <p>Book your mobile detail today. We come to you -- easy, convenient, professional.</p>
+  <a href="https://www.instagram.com/airtogrounddetailers/" class="btn-cta">Book Your Detail Now</a>
+</section>
+<footer><strong>Air To Ground Detailers</strong> &mdash; Professional Mobile Auto Detailing</footer>
+<div class="fab">
+  <a href="https://www.instagram.com/airtogrounddetailers/" class="fab-a">Book Your Detail</a>
+  <a href="https://www.instagram.com/airtogrounddetailers/" class="fab-b" target="_blank">See Our Work</a>
+</div>
+<script>
+(function(){
+  var targets=[{id:'sn1',end:320},{id:'sn2',end:5},{id:'sn3',end:150},{id:'sn4',end:100}];
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(!e.isIntersecting)return;obs.unobserve(e.target);
+      targets.forEach(function(t){var el=document.getElementById(t.id);if(!el)return;
+        var dur=1600,s=performance.now();
+        var suffix=t.id==='sn4'?'%':'+';
+        (function tick(now){var p=Math.min((now-s)/dur,1);el.textContent=Math.round(p*t.end)+suffix;if(p<1)requestAnimationFrame(tick);})(s);
+      });
+    });
+  },{threshold:.3});
+  var el=document.getElementById('sn1');if(el)obs.observe(el.closest('section')||el);
+})();
+</script>
+</body>
+</html>
