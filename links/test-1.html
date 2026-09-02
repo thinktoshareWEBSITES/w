@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test 1</title>
+<style>
+:root{
+  --navy:#0b1220; --navy-soft:#131c30; --line:#22304d;
+  --text:#e7ecf7; --text-dim:#9aa6c3;
+  --amber:#e0a94a; --amber-strong:#f0bc63;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; color:var(--text); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #1a2544 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy) 0%, #070b14 100%);
+  display:flex; justify-content:center; padding:48px 18px 32px;
+}
+.card{width:100%; max-width:420px; text-align:center;}
+.avatar{
+  width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto 18px;
+  border:2px solid var(--amber); display:block;
+}
+.avatar-fallback{
+  display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700;
+  background:linear-gradient(135deg, var(--amber), var(--amber-strong)); color:#241c0e;
+}
+h1{font-size:22px; font-weight:700; margin:0 0 28px; letter-spacing:-.01em;}
+.links{display:flex; flex-direction:column; gap:12px;}
+.btn{
+  display:flex; align-items:center; gap:12px; padding:15px 18px; border-radius:12px;
+  background:var(--navy-soft); border:1px solid var(--line); color:var(--text);
+  text-decoration:none; font-size:15px; font-weight:600; text-align:left;
+  transition:border-color .15s, transform .15s;
+}
+.btn:active{transform:scale(.98);}
+.btn:hover{border-color:var(--amber);}
+.btn-icon{width:20px; height:20px; flex:none; color:var(--amber);}
+.btn-icon svg{width:100%; height:100%;}
+.empty{color:var(--text-dim); font-size:14px; padding:24px 0;}
+.badge{
+  margin-top:36px; font-size:12px; color:var(--text-dim); text-decoration:none;
+  display:inline-block; border:1px solid var(--line); border-radius:999px; padding:6px 14px;
+}
+.badge:hover{color:var(--amber); border-color:var(--amber);}
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="avatar" src="jggjgj" alt="test 1">
+    <h1>test 1</h1>
+    <div class="links">
+      
+      <a class="btn" href="tel:64564534" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c0 9.4 6.6 16 16 16l2-4-6-2-2 2c-2.2-1-4-2.8-5-5l2-2-2-6z"/></svg></span>
+        <span>Call Now</span>
+      </a>
+
+      <a class="btn" href="jgfhjgh" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 14l2.5 2.5L16 12"/></svg></span>
+        <span>Book Now</span>
+      </a>
+
+      <a class="btn" href="jgjg" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.6-2.2h6.8L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg></span>
+        <span>See Our Work</span>
+      </a>
+
+      <a class="btn" href="jghjgh" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+        <span>Get Directions</span>
+      </a>
+
+      <a class="btn" href="jgjg" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.5 5.6 6.1.6-4.6 4.1 1.4 6-5.4-3.2-5.4 3.2 1.4-6-4.6-4.1 6.1-.6z"/></svg></span>
+        <span>Leave a Review</span>
+      </a>
+    </div>
+    <a class="badge" href="https://thinktoshare.com" target="_blank" rel="noopener">Built free by ThinkToShare &middot; Get yours</a>
+  </div>
+</body>
+</html>
