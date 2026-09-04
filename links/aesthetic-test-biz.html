@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aesthetic Test Biz</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aesthetic Test Biz">
+<meta property="og:description" content="Mobile detailing serving Dallas since 2019">
+<meta property="og:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Mobile detailing serving Dallas since 2019">
+<style>
+:root{
+  --navy:#0b1220; --navy-soft:#131c30; --line:#22304d;
+  --text:#e7ecf7; --text-dim:#9aa6c3;
+  --amber:#e0a94a; --amber-strong:#f0bc63;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; color:var(--text); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #1a2544 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy) 0%, #070b14 100%);
+  display:flex; justify-content:center; padding-bottom:32px;
+}
+.card{width:100%; max-width:420px; text-align:center; padding-top:48px;}
+.card.has-banner{padding-top:0;}
+.banner{width:100%; height:150px; object-fit:cover; display:block;}
+.avatar, .avatar-fallback{
+  width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto 18px;
+  border:3px solid var(--navy); box-shadow:0 0 0 2px var(--amber);
+}
+.avatar{display:block;}
+.has-banner .avatar, .has-banner .avatar-fallback{margin-top:-40px;}
+.avatar-fallback{
+  display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700;
+  background:linear-gradient(135deg, var(--amber), var(--amber-strong)); color:#241c0e;
+}
+h1{font-size:22px; font-weight:700; margin:0 0 6px; letter-spacing:-.01em; padding:0 18px;}
+.tagline{font-size:13.5px; color:var(--text-dim); margin:0 0 26px; padding:0 24px;}
+.links{display:flex; flex-direction:column; gap:12px; padding:0 18px;}
+.btn{
+  display:flex; align-items:center; gap:12px; padding:15px 18px; border-radius:12px;
+  background:var(--navy-soft); border:1px solid var(--line); color:var(--text);
+  text-decoration:none; font-size:15px; font-weight:600; text-align:left;
+}
+.btn:hover{border-color:var(--amber);}
+.btn-icon{width:20px; height:20px; flex:none; color:var(--amber);}
+.btn-icon svg{width:100%; height:100%;}
+.copy-icon{width:15px; height:15px; opacity:.55;}
+.empty{color:var(--text-dim); font-size:14px; padding:24px 0;}
+.badge{
+  margin-top:36px; font-size:12px; color:var(--text-dim); text-decoration:none;
+  display:inline-block; border:1px solid var(--line); border-radius:999px; padding:6px 14px;
+}
+.badge:hover{color:var(--amber); border-color:var(--amber);}
+
+.btn{ animation: btn-in .45s cubic-bezier(.2,.8,.2,1) both; }
+.links .btn:nth-child(1){ animation-delay: .05s; }
+.links .btn:nth-child(2){ animation-delay: .12s; }
+.links .btn:nth-child(3){ animation-delay: .19s; }
+.links .btn:nth-child(4){ animation-delay: .26s; }
+.links .btn:nth-child(5){ animation-delay: .33s; }
+@keyframes btn-in{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
+.btn{ transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.14); }
+.btn:active{ transform:translateY(0) scale(.97); box-shadow:none; }
+.copy-flash{ margin-left:auto; font-size:11px; opacity:0; transition:opacity .15s ease; flex:none; }
+.copy-flash.show{ opacity:1; }
+@media (prefers-reduced-motion: reduce){
+  .btn{ animation:none !important; transition:none !important; }
+  .btn:hover{ transform:none; }
+}
+
+</style>
+<style>:root{--amber:#4fb8b0;--amber-strong:#6ccec6;}</style>
+</head>
+<body>
+  <div class="card has-banner">
+    <img class="banner" src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800" alt="">
+    <div class="avatar avatar-fallback">A</div>
+    <h1>Aesthetic Test Biz</h1>
+    <p class="tagline">Mobile detailing serving Dallas since 2019</p>
+    <div class="links">
+      
+      <a class="btn" href="tel:5551234567" target="_blank" rel="noopener" data-copy="5551234567">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c0 9.4 6.6 16 16 16l2-4-6-2-2 2c-2.2-1-4-2.8-5-5l2-2-2-6z"/></svg></span>
+        <span>Call Now</span>
+        <span class="copy-flash">Copied</span><span class="btn-icon copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M4 15.5V5.5a2 2 0 0 1 2-2h10"/></svg></span>
+      </a>
+
+      <a class="btn" href="https://example.com/book" target="_blank" rel="noopener">
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 14l2.5 2.5L16 12"/></svg></span>
+        <span>Book Now</span>
+        
+      </a>
+    </div>
+    <a class="badge" href="https://thinktoshare.com" target="_blank" rel="noopener">Built free by ThinkToShare &middot; Get yours</a>
+  </div>
+  
+<script>
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-copy]');
+  if(!el) return;
+  var value = el.getAttribute('data-copy');
+  if(!value || !navigator.clipboard) return;
+  navigator.clipboard.writeText(value).then(function(){
+    var flash = el.querySelector('.copy-flash');
+    if(!flash) return;
+    flash.classList.add('show');
+    setTimeout(function(){ flash.classList.remove('show'); }, 1400);
+  });
+});
+</script>
+
+</body>
+</html>
