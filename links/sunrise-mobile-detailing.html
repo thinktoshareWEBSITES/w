@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunrise Mobile Detailing</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sunrise Mobile Detailing">
+<meta property="og:description" content="Mobile detailing that comes to your driveway, since 2019">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="Mobile detailing that comes to your driveway, since 2019">
+<style>
+:root{
+  --text:#0f2733; --text-dim:#6a8794;
+  --teal:#1789a8; --teal-deep:#0e5a70; --line:#d7e9ef;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; color:var(--text); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(165deg, #f5fafc 0%, #dceef5 100%);
+  display:flex; justify-content:center; padding-bottom:32px;
+}
+.card{width:100%; max-width:420px; text-align:center; padding-top:52px;}
+.card.has-banner{padding-top:0;}
+.banner{width:100%; height:150px; object-fit:cover; display:block;}
+.avatar, .avatar-fallback{
+  width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto 18px;
+  border:3px solid #fff; box-shadow:0 4px 16px rgba(15,80,100,.15);
+}
+.avatar{display:block;}
+.has-banner .avatar, .has-banner .avatar-fallback{margin-top:-40px;}
+.avatar-fallback{
+  display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700;
+  background:linear-gradient(135deg, var(--teal), var(--teal-deep)); color:#fff;
+}
+h1{font-size:22px; font-weight:700; margin:0 0 6px; letter-spacing:-.01em; padding:0 18px;}
+.tagline{font-size:13.5px; color:var(--text-dim); margin:0 0 26px; padding:0 24px;}
+.links{display:flex; flex-direction:column; gap:11px; padding:0 18px;}
+.btn{
+  position:relative; display:flex; align-items:center; gap:12px; padding:15px 18px 15px 22px;
+  border-radius:10px; background:#fff; border:1px solid var(--line); color:var(--text);
+  text-decoration:none; font-size:15px; font-weight:600; text-align:left; overflow:hidden;
+  box-shadow:0 1px 3px rgba(15,80,100,.06);
+}
+.btn:hover{box-shadow:0 4px 12px rgba(15,80,100,.12);}
+.btn-bar{position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--teal);}
+.btn-icon{width:20px; height:20px; flex:none; color:var(--teal);}
+.btn-icon svg{width:100%; height:100%;}
+.copy-icon{width:15px; height:15px; opacity:.55;}
+.empty{color:var(--text-dim); font-size:14px; padding:24px 0;}
+.badge{
+  margin-top:36px; font-size:12px; color:var(--text-dim); text-decoration:none;
+  display:inline-block; border:1px solid var(--line); border-radius:999px; padding:6px 14px;
+}
+.badge:hover{color:var(--teal); border-color:var(--teal);}
+
+.btn{ animation: btn-in .45s cubic-bezier(.2,.8,.2,1) both; }
+.links .btn:nth-child(1){ animation-delay: .05s; }
+.links .btn:nth-child(2){ animation-delay: .12s; }
+.links .btn:nth-child(3){ animation-delay: .19s; }
+.links .btn:nth-child(4){ animation-delay: .26s; }
+.links .btn:nth-child(5){ animation-delay: .33s; }
+@keyframes btn-in{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
+.btn{ transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.14); }
+.btn:active{ transform:translateY(0) scale(.97); box-shadow:none; }
+.copy-flash{ margin-left:auto; font-size:11px; opacity:0; transition:opacity .15s ease; flex:none; }
+.copy-flash.show{ opacity:1; }
+@media (prefers-reduced-motion: reduce){
+  .btn{ animation:none !important; transition:none !important; }
+  .btn:hover{ transform:none; }
+}
+
+</style>
+
+</head>
+<body>
+  <div class="card">
+    
+    <div class="avatar avatar-fallback">S</div>
+    <h1>Sunrise Mobile Detailing</h1>
+    <p class="tagline">Mobile detailing that comes to your driveway, since 2019</p>
+    <div class="links">
+      
+      <a class="btn" href="tel:555-014-2288" target="_blank" rel="noopener" data-copy="555-014-2288">
+        <span class="btn-bar"></span>
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c0 9.4 6.6 16 16 16l2-4-6-2-2 2c-2.2-1-4-2.8-5-5l2-2-2-6z"/></svg></span>
+        <span>Call Now</span>
+        <span class="copy-flash">Copied</span><span class="btn-icon copy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M4 15.5V5.5a2 2 0 0 1 2-2h10"/></svg></span>
+      </a>
+
+      <a class="btn" href="https://sunrisedetailing.example.com/book" target="_blank" rel="noopener">
+        <span class="btn-bar"></span>
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 14l2.5 2.5L16 12"/></svg></span>
+        <span>Book Now</span>
+        
+      </a>
+
+      <a class="btn" href="https://instagram.com/sunrisedetailing" target="_blank" rel="noopener">
+        <span class="btn-bar"></span>
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.6-2.2h6.8L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg></span>
+        <span>See Our Work</span>
+        
+      </a>
+
+      <a class="btn" href="https://maps.google.com/?q=Sunrise+Mobile+Detailing" target="_blank" rel="noopener">
+        <span class="btn-bar"></span>
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+        <span>Get Directions</span>
+        
+      </a>
+
+      <a class="btn" href="https://g.page/r/sunrise-detailing/review" target="_blank" rel="noopener">
+        <span class="btn-bar"></span>
+        <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.5 5.6 6.1.6-4.6 4.1 1.4 6-5.4-3.2-5.4 3.2 1.4-6-4.6-4.1 6.1-.6z"/></svg></span>
+        <span>Leave a Review</span>
+        
+      </a>
+    </div>
+    <a class="badge" href="https://thinktoshare.com" target="_blank" rel="noopener">Built free by ThinkToShare &middot; Get yours</a>
+  </div>
+  
+<script>
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-copy]');
+  if(!el) return;
+  var value = el.getAttribute('data-copy');
+  if(!value || !navigator.clipboard) return;
+  navigator.clipboard.writeText(value).then(function(){
+    var flash = el.querySelector('.copy-flash');
+    if(!flash) return;
+    flash.classList.add('show');
+    setTimeout(function(){ flash.classList.remove('show'); }, 1400);
+  });
+});
+</script>
+
+</body>
+</html>
