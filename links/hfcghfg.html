@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hfcghfg</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="hfcghfg">
+<meta property="og:description" content="Contact hfcghfg — call, book, or get directions, all in one place.">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="Contact hfcghfg — call, book, or get directions, all in one place.">
+<style>
+:root{
+  --text:#0f2733; --text-dim:#6a8794;
+  --teal:#1789a8; --teal-deep:#0e5a70; --line:#d7e9ef;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; color:var(--text); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(165deg, #f5fafc 0%, #dceef5 100%);
+  display:flex; justify-content:center; padding-bottom:32px;
+}
+.card{width:100%; max-width:420px; text-align:center; padding-top:52px;}
+.card.has-banner{padding-top:0;}
+.banner{width:100%; height:150px; object-fit:cover; display:block;}
+.avatar, .avatar-fallback{
+  width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto 18px;
+  border:3px solid #fff; box-shadow:0 4px 16px rgba(15,80,100,.15);
+}
+.avatar{display:block;}
+.has-banner .avatar, .has-banner .avatar-fallback{margin-top:-40px;}
+.avatar-fallback{
+  display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700;
+  background:linear-gradient(135deg, var(--teal), var(--teal-deep)); color:#fff;
+}
+h1{font-size:22px; font-weight:700; margin:0 0 6px; letter-spacing:-.01em; padding:0 18px;}
+.tagline{font-size:13.5px; color:var(--text-dim); margin:0 0 26px; padding:0 24px;}
+.links{display:flex; flex-direction:column; gap:11px; padding:0 18px;}
+.btn{
+  position:relative; display:flex; align-items:center; gap:12px; padding:15px 18px 15px 22px;
+  border-radius:10px; background:#fff; border:1px solid var(--line); color:var(--text);
+  text-decoration:none; font-size:15px; font-weight:600; text-align:left; overflow:hidden;
+  box-shadow:0 1px 3px rgba(15,80,100,.06);
+}
+.btn:hover{box-shadow:0 4px 12px rgba(15,80,100,.12);}
+.btn-bar{position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--teal);}
+.btn-icon{width:20px; height:20px; flex:none; color:var(--teal);}
+.btn-icon svg{width:100%; height:100%;}
+.copy-icon{width:15px; height:15px; opacity:.55;}
+.empty{color:var(--text-dim); font-size:14px; padding:24px 0;}
+.badge{
+  margin-top:36px; font-size:12px; color:var(--text-dim); text-decoration:none;
+  display:inline-block; border:1px solid var(--line); border-radius:999px; padding:6px 14px;
+}
+.badge:hover{color:var(--teal); border-color:var(--teal);}
+
+.btn{ animation: btn-in .45s cubic-bezier(.2,.8,.2,1) both; }
+.links .btn:nth-child(1){ animation-delay: .05s; }
+.links .btn:nth-child(2){ animation-delay: .12s; }
+.links .btn:nth-child(3){ animation-delay: .19s; }
+.links .btn:nth-child(4){ animation-delay: .26s; }
+.links .btn:nth-child(5){ animation-delay: .33s; }
+@keyframes btn-in{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
+.btn{ transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.14); }
+.btn:active{ transform:translateY(0) scale(.97); box-shadow:none; }
+.copy-flash{ margin-left:auto; font-size:11px; opacity:0; transition:opacity .15s ease; flex:none; }
+.copy-flash.show{ opacity:1; }
+@media (prefers-reduced-motion: reduce){
+  .btn{ animation:none !important; transition:none !important; }
+  .btn:hover{ transform:none; }
+}
+
+</style>
+
+</head>
+<body>
+  <div class="card">
+    
+    <div class="avatar avatar-fallback">H</div>
+    <h1>hfcghfg</h1>
+    
+    <div class="links">
+      <p class="empty">This page is still being set up.</p>
+    </div>
+    <a class="badge" href="https://thinktoshare.com" target="_blank" rel="noopener">Built free by ThinkToShare &middot; Get yours</a>
+  </div>
+  
+<script>
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-copy]');
+  if(!el) return;
+  var value = el.getAttribute('data-copy');
+  if(!value || !navigator.clipboard) return;
+  navigator.clipboard.writeText(value).then(function(){
+    var flash = el.querySelector('.copy-flash');
+    if(!flash) return;
+    flash.classList.add('show');
+    setTimeout(function(){ flash.classList.remove('show'); }, 1400);
+  });
+});
+</script>
+
+</body>
+</html>
