@@ -184,6 +184,8 @@
             display: flex;
             flex-direction: column;
             gap: 3px;
+            flex: 1;
+            min-width: 0;
         }
 
         .biz-name {
@@ -204,6 +206,11 @@
             border-radius: 12px;
             font-weight: 600;
             text-transform: uppercase;
+            flex-shrink: 0;
+            text-align: center;
+            max-width: 80px;
+            white-space: normal;
+            line-height: 1.2;
         }
 
         .badge-detailing {
