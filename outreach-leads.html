@@ -1975,11 +1975,10 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         }
 
         // Manual send timer
+        const IG_TIMER_KEY = 'igManualTimerEndsAt';
         let manualTimerInterval = null;
-        function startManualTimer() {
-            closeModal();
-            const mins = Math.floor(Math.random() * (22 - 12 + 1)) + 12;
-            const endsAt = Date.now() + mins * 60 * 1000;
+
+        function runManualTimer(endsAt, totalMs) {
             const bar = document.getElementById('manualTimerBar');
             const label = document.getElementById('manualTimerLabel');
             const fill = document.getElementById('manualTimerFill');
@@ -1991,6 +1990,7 @@ If you like it lets get on a call maybe to customise it for your business</pre>
                 const left = endsAt - Date.now();
                 if (left <= 0) {
                     clearInterval(manualTimerInterval);
+                    try { localStorage.removeItem(IG_TIMER_KEY); } catch {}
                     label.textContent = 'Ready to send next DM!';
                     fill.style.width = '100%';
                     fill.style.background = '#10b981';
@@ -2001,15 +2001,36 @@ If you like it lets get on a call maybe to customise it for your business</pre>
                 const m = Math.floor(left / 60000);
                 const s = Math.floor((left % 60000) / 1000);
                 label.textContent = `Next DM in ${m}:${String(s).padStart(2,'0')} — take your time`;
-                const pct = ((mins * 60 * 1000 - left) / (mins * 60 * 1000)) * 100;
+                const pct = ((totalMs - left) / totalMs) * 100;
                 fill.style.width = pct + '%';
                 fill.style.background = left < 120000 ? '#f59e0b' : '#6366f1';
             }, 1000);
         }
+
+        function startManualTimer() {
+            closeModal();
+            const mins = Math.floor(Math.random() * (22 - 12 + 1)) + 12;
+            const totalMs = mins * 60 * 1000;
+            const endsAt = Date.now() + totalMs;
+            try { localStorage.setItem(IG_TIMER_KEY, String(endsAt)); } catch {}
+            runManualTimer(endsAt, totalMs);
+        }
+
         function dismissManualTimer() {
             document.getElementById('manualTimerBar').style.display = 'none';
             if (manualTimerInterval) clearInterval(manualTimerInterval);
+            try { localStorage.removeItem(IG_TIMER_KEY); } catch {}
         }
+
+        // Restore timer on page load if still active
+        (function() {
+            try {
+                const saved = parseInt(localStorage.getItem(IG_TIMER_KEY) || '0', 10);
+                if (saved && saved > Date.now()) {
+                    runManualTimer(saved, saved - Date.now());
+                }
+            } catch {}
+        })();
 
         // DM Sender integration — keep MIN/MAX in sync with dm-server.js
         const MIN_DELAY = 12, MAX_DELAY = 22; // minutes
