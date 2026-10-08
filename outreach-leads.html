@@ -522,6 +522,103 @@
                 padding: 8px;
             }
         }
+
+        /* DM Sender Panel */
+        .dm-panel {
+            max-width: 800px;
+            margin: 0 auto 16px auto;
+            background: rgba(17, 25, 40, 0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 14px 18px;
+            backdrop-filter: blur(15px);
+        }
+        .dm-panel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .dm-panel-title {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: #f3f4f6;
+            flex: 1;
+        }
+        .dm-btn {
+            padding: 7px 18px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .dm-btn:hover { opacity: 0.85; }
+        .dm-btn-start { background: linear-gradient(135deg, #10b981, #059669); }
+        .dm-btn-stop  { background: linear-gradient(135deg, #ef4444, #dc2626); display: none; }
+        .dm-btn-reset    { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .dm-btn-restart  { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); font-size: 0.78rem; padding: 6px 12px; }
+        .dm-countdown    { font-size: 0.82rem; color: #a78bfa; font-weight: 600; margin-left: 4px; }
+        .dm-eta          { font-size: 0.75rem; color: #6b7280; }
+        .dm-status-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            flex-wrap: wrap;
+        }
+        .dm-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #4b5563;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+        .dm-dot.active {
+            background: #10b981;
+            box-shadow: 0 0 7px #10b981;
+            animation: dmPulse 1.5s infinite;
+        }
+        @keyframes dmPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .dm-progress { font-weight: 600; color: #f3f4f6; }
+        .dm-log {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-family: monospace;
+            max-height: 55px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        .dm-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .dm-status-badge.sent    { background: rgba(16,185,129,.14); color:#10b981; border:1px solid rgba(16,185,129,.3); }
+        .dm-status-badge.sending { background: rgba(59,130,246,.14); color:#3b82f6; border:1px solid rgba(59,130,246,.3); animation: dmPulse 1s infinite; }
+        .dm-blocked-banner {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(239,68,68,.15);
+            border: 1px solid rgba(239,68,68,.4);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #fca5a5;
+            display: none;
+        }
+        .card.dm-sent    { opacity: 0.5; border-color: rgba(16,185,129,.2); }
+        .card.dm-sending { border-color: rgba(59,130,246,.5); box-shadow: 0 0 14px rgba(59,130,246,.18); }
     </style>
 </head>
 <body>
@@ -530,6 +627,30 @@
         <h1>thinktoshare Leads Panel</h1>
         <p>One-tap DM & Outreach Message Copy Tool</p>
     </header>
+
+    <!-- DM Sender Panel -->
+    <div class="dm-panel" id="dmPanel">
+        <div class="dm-panel-header">
+            <span class="dm-panel-title">&#128172; Auto DM Sender</span>
+            <button class="dm-btn dm-btn-start" id="dmStartBtn" onclick="dmStart()">&#9654; Start</button>
+            <button class="dm-btn dm-btn-stop"  id="dmStopBtn"  onclick="dmStop()">&#9632; Stop</button>
+            <button class="dm-btn dm-btn-reset"   id="dmResetBtn"   onclick="dmReset()">&#8635; Reset Queue</button>
+            <button class="dm-btn dm-btn-restart" id="dmRestartBtn" onclick="dmRestart()">&#9881; Restart Server</button>
+        </div>
+        <div class="dm-status-bar">
+            <div class="dm-dot" id="dmDot"></div>
+            <span id="dmStatusText">Server offline &mdash; run <code style="background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-size:0.78rem">node dm-server.js</code> in terminal first</span>
+            <span class="dm-progress" id="dmProgress"></span>
+            <span class="dm-countdown" id="dmCountdown"></span>
+            <span class="dm-eta" id="dmEta"></span>
+        </div>
+        <div class="dm-log" id="dmLog"></div>
+        <div class="dm-blocked-banner" id="dmBlockedBanner"></div>
+        <div style="margin-top:8px;font-size:0.72rem;color:#4b5563">
+            Server: <span id="dmServerDisplay" style="color:#6b7280"></span>
+            <span onclick="dmShowUrlEditor()" style="color:#6366f1;cursor:pointer;margin-left:8px">&#9998; change</span>
+        </div>
+    </div>
 
     <div class="controls">
         <div class="search-box">
@@ -1347,6 +1468,206 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         function closeModal() {
             document.getElementById('copyModal').classList.remove('active');
         }
+
+        // DM Sender integration — keep MIN/MAX in sync with dm-server.js
+        const MIN_DELAY = 12, MAX_DELAY = 22; // minutes
+        let dmPollTimer      = null;
+        let dmCountdownTimer = null;
+        let dmNextSendAt     = null;
+        const DM_SENT_KEY    = 'dm_sent_handles';
+        const DM_SERVER_KEY  = 'dm_server_url';
+
+        function dmServerUrl() {
+            return localStorage.getItem(DM_SERVER_KEY) || 'http://localhost:3333';
+        }
+        function dmSetServerUrl(url) {
+            localStorage.setItem(DM_SERVER_KEY, url.replace(/\/$/, ''));
+        }
+
+        function dmLoadSent() {
+            try { return JSON.parse(localStorage.getItem(DM_SENT_KEY) || '[]'); } catch { return []; }
+        }
+        function dmSaveSent(arr) {
+            try { localStorage.setItem(DM_SENT_KEY, JSON.stringify(arr)); } catch {}
+        }
+
+        async function dmFetch(path, method) {
+            try {
+                const r = await fetch(dmServerUrl() + path, {
+                    method: method || 'GET',
+                    signal: AbortSignal.timeout(4000)
+                });
+                return await r.json();
+            } catch { return null; }
+        }
+
+        function dmShowUrlEditor() {
+            const cur = dmServerUrl();
+            const val = prompt('Enter your DM server URL:\n(localhost = http://localhost:3333\nPhone/remote = your ngrok URL)', cur);
+            if (val && val.trim()) {
+                dmSetServerUrl(val.trim());
+                document.getElementById('dmServerDisplay').textContent = dmServerUrl();
+                dmPoll();
+            }
+        }
+
+        async function dmStart() {
+            const s = await dmFetch('/start', 'POST');
+            if (!s) alert('Server is not running.\n\nDouble-click start-dm.bat on your desktop to launch it, then click Start.');
+        }
+        async function dmStop()    { await dmFetch('/stop',  'POST'); }
+
+        async function dmRestart() {
+            const btn = document.getElementById('dmRestartBtn');
+            btn.textContent = '⏳ Restarting...';
+            btn.disabled = true;
+            await dmFetch('/shutdown', 'POST');
+            // Wait up to 10s for it to come back
+            for (let i = 0; i < 20; i++) {
+                await new Promise(r => setTimeout(r, 500));
+                const s = await dmFetch('/status');
+                if (s) break;
+            }
+            btn.textContent = '⚙ Restart Server';
+            btn.disabled = false;
+            dmPoll();
+        }
+
+        async function dmReset() {
+            if (!confirm('Reset sent list? Everyone will be re-queued.')) return;
+            localStorage.removeItem(DM_SENT_KEY);
+            // Retry up to 5 times until server confirms sent count is 0
+            for (let i = 0; i < 5; i++) {
+                await dmFetch('/reset', 'POST');
+                await new Promise(r => setTimeout(r, 400));
+                const s = await dmFetch('/status');
+                if (s && s.sent && s.sent.length === 0) break;
+            }
+            dmApplyBadges([], null);
+            document.getElementById('dmProgress').textContent   = '';
+            document.getElementById('dmStatusText').textContent = 'Ready — click Start';
+            document.getElementById('dmCountdown').textContent  = '';
+            document.getElementById('dmEta').textContent        = '';
+        }
+
+        function dmApplyBadges(sentHandles, currentHandle) {
+            document.querySelectorAll('.card').forEach(card => {
+                const igLink = card.querySelector('a.btn-ig');
+                if (!igLink) return;
+                const handle = igLink.href.replace('https://www.instagram.com/', '').replace(/\/$/, '');
+                card.classList.remove('dm-sent','dm-sending');
+                card.querySelectorAll('.dm-status-badge').forEach(b => b.remove());
+                const nameEl = card.querySelector('.biz-name');
+                if (!nameEl) return;
+                if (handle === currentHandle) {
+                    card.classList.add('dm-sending');
+                    const b = document.createElement('span');
+                    b.className = 'dm-status-badge sending';
+                    b.textContent = '⟳ Sending';
+                    nameEl.after(b);
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else if (sentHandles.includes(handle)) {
+                    card.classList.add('dm-sent');
+                    const b = document.createElement('span');
+                    b.className = 'dm-status-badge sent';
+                    b.textContent = '✓ Sent';
+                    nameEl.after(b);
+                }
+            });
+        }
+
+        async function dmPoll() {
+            const dot      = document.getElementById('dmDot');
+            const statusTx = document.getElementById('dmStatusText');
+            const progress = document.getElementById('dmProgress');
+            const logEl    = document.getElementById('dmLog');
+            const startBtn = document.getElementById('dmStartBtn');
+            const stopBtn  = document.getElementById('dmStopBtn');
+
+            const s = await dmFetch('/status');
+
+            // Always apply stored sent badges (persist even when server offline)
+            const stored = dmLoadSent();
+
+            if (!s) {
+                dot.className = 'dm-dot';
+                statusTx.innerHTML = 'Server offline &mdash; double-click <strong>start-dm.bat</strong> on desktop to start';
+                progress.textContent = stored.length ? stored.length + ' sent (stored)' : '';
+                logEl.innerHTML = '';
+                startBtn.style.display = 'inline-block';
+                stopBtn.style.display  = 'none';
+                dmApplyBadges(stored, null);
+                return;
+            }
+
+            // Server is source of truth — localStorage is offline cache only
+            const merged = s.sent || [];
+            dmSaveSent(merged);
+
+            dot.className = 'dm-dot' + (s.running ? ' active' : '');
+            startBtn.style.display = s.running ? 'none'         : 'inline-block';
+            stopBtn.style.display  = s.running ? 'inline-block' : 'none';
+
+            if (s.running && s.current) {
+                statusTx.textContent = 'Sending to @' + s.current + '...';
+            } else if (s.running) {
+                statusTx.textContent = 'Waiting before next DM...';
+            } else if (merged.length > 0) {
+                statusTx.textContent = merged.length === s.total ? 'All done! ✓' : 'Paused — ' + (s.total - merged.length) + ' remaining';
+            } else {
+                statusTx.textContent = 'Ready — click Start';
+            }
+
+            progress.textContent = s.total ? merged.length + '/' + s.total + ' sent' : '';
+            if (s.log && s.log.length) logEl.innerHTML = s.log.slice(0, 5).join('<br>');
+
+            // Countdown + ETA
+            dmNextSendAt = s.nextSendAt || null;
+            const etaEl = document.getElementById('dmEta');
+            if (s.running && s.pending && s.pending.length > 0) {
+                const avgGap = (MIN_DELAY + MAX_DELAY) / 2 * 60 * 1000;
+                const etaMs  = Date.now() + (s.nextSendAt ? (s.nextSendAt - Date.now()) : 0) + (s.pending.length - 1) * avgGap;
+                etaEl.textContent = 'Est. finish ' + new Date(etaMs).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+            } else {
+                etaEl.textContent = '';
+            }
+
+            const banner = document.getElementById('dmBlockedBanner');
+            if (s.blocked) {
+                banner.textContent = '⚠ Stopped: ' + s.blocked;
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
+
+            dmApplyBadges(merged, s.current);
+        }
+
+        function dmFmtTime(ms) {
+            if (ms <= 0) return '0:00';
+            const s = Math.floor(ms / 1000);
+            return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+        }
+
+        function dmTickCountdown() {
+            const el = document.getElementById('dmCountdown');
+            if (!dmNextSendAt) { el.textContent = ''; return; }
+            const rem = dmNextSendAt - Date.now();
+            el.textContent = rem > 0 ? 'Next DM in ' + dmFmtTime(rem) : 'Sending soon...';
+        }
+
+        // Apply stored badges immediately on load (before first server poll)
+        (function() {
+            document.getElementById('dmServerDisplay').textContent = dmServerUrl();
+            const stored = dmLoadSent();
+            if (stored.length) dmApplyBadges(stored, null);
+        })();
+
+        // 1-second countdown tick
+        dmCountdownTimer = setInterval(dmTickCountdown, 1000);
+        // Poll server every 5 seconds
+        dmPollTimer = setInterval(dmPoll, 5000);
+        dmPoll();
     </script>
 </body>
 </html>
