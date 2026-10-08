@@ -168,6 +168,8 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            overflow: hidden;
+            min-width: 0;
         }
 
         .card:hover {
@@ -261,8 +263,11 @@
             white-space: pre-wrap;
             max-height: 100px;
             overflow-y: auto;
+            overflow-x: hidden;
             border: 1px solid rgba(255, 255, 255, 0.03);
             line-height: 1.4;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .actions {
