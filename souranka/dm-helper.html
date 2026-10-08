@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think To Share — LinkedIn DM Helper</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1830;
+  --navy2:#13284A;
+  --amber:#EE8B2B;
+  --cream:#F7F2E8;
+  --ink:#16213B;
+  --muted:#5B6578;
+  --line:#2A3A5C;
+  --card-bg:#101F3C;
+  --green:#1E8E5A;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--navy);
+  background-image:radial-gradient(at 0% 0%, rgba(238,139,43,0.08) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, rgba(59,111,224,0.08) 0px, transparent 50%);
+  background-attachment:fixed;
+  color:#fff;
+  padding:20px 15px 80px 15px;
+  min-height:100vh;
+}
+header{ max-width:720px; margin:0 auto 20px auto; text-align:center; padding:14px 0 6px 0; }
+header .mark{ display:inline-flex; align-items:center; gap:10px; margin-bottom:10px; }
+header .mark img{ width:34px;height:34px; }
+header .mark span{ font-weight:800; letter-spacing:1.5px; font-size:14px; color:#AEBEDD; }
+header h1{ font-size:1.7rem; font-weight:800; color:#fff; margin-bottom:6px; }
+header p{ color:#8098C6; font-size:0.9rem; }
+
+.controls{
+  max-width:720px; margin:0 auto 18px auto; display:flex; flex-direction:column; gap:12px;
+  position:sticky; top:0; z-index:100; background:rgba(10,24,48,0.92);
+  padding:10px 5px 12px 5px; border-bottom:1px solid var(--line); backdrop-filter:blur(15px);
+}
+.search-box input{
+  width:100%; padding:13px 16px; background:var(--card-bg); border:1px solid var(--line);
+  border-radius:12px; color:#fff; font-family:inherit; font-size:0.95rem; outline:none;
+}
+.search-box input::placeholder{ color:#6B7794; }
+.filter-tabs{ display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; scrollbar-width:none; }
+.filter-tabs::-webkit-scrollbar{ display:none; }
+.tab{
+  padding:8px 16px; background:rgba(255,255,255,0.05); border:1px solid var(--line);
+  border-radius:20px; font-size:0.82rem; font-weight:600; color:#AEBEDD; cursor:pointer;
+  white-space:nowrap; transition:all .15s ease; flex-shrink:0;
+}
+.tab.active{ background:var(--amber); border-color:var(--amber); color:#fff; }
+
+.stats{ max-width:720px; margin:0 auto 14px auto; color:#6B7794; font-size:0.82rem; padding:0 5px; }
+
+.leads-list{ max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+.card{
+  background:var(--card-bg); border:1px solid var(--line); border-radius:16px; padding:20px;
+  box-shadow:0 20px 40px -20px rgba(0,0,0,0.5);
+}
+.card-header{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:12px; }
+.biz-info .biz-name{ display:block; font-size:1.05rem; font-weight:800; color:#fff; }
+.biz-info .biz-company{ display:block; font-size:0.85rem; color:#8098C6; margin-top:2px; }
+.badge{ font-size:0.72rem; font-weight:800; padding:5px 12px; border-radius:999px; white-space:nowrap; letter-spacing:0.3px; }
+.badge-realestate{ background:rgba(238,139,43,0.18); color:#F3B06A; }
+.badge-interior{ background:rgba(59,111,224,0.18); color:#8FA8F0; }
+.badge-tax{ background:rgba(30,142,90,0.18); color:#6FCB9C; }
+.badge-generic{ background:rgba(255,255,255,0.08); color:#AEBEDD; }
+
+.message-preview{
+  background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:12px;
+  padding:14px 16px; font-size:0.88rem; line-height:1.55; color:#D6DEF0; margin-bottom:14px;
+  white-space:pre-wrap;
+}
+
+.actions{ display:flex; flex-wrap:wrap; gap:10px; }
+.btn{
+  flex:1; min-width:140px; display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 14px; border-radius:10px; font-size:0.85rem; font-weight:700; text-decoration:none;
+  border:none; cursor:pointer; transition:all .15s ease;
+}
+.btn-linkedin{ background:#0A66C2; color:#fff; }
+.btn-linkedin:hover{ background:#0956a3; }
+.btn-copy{ background:rgba(255,255,255,0.08); color:#fff; border:1px solid var(--line); }
+.btn-copy:hover{ background:rgba(255,255,255,0.14); }
+.btn-copy.copied{ background:var(--green); border-color:var(--green); }
+.btn-pdf{ background:var(--amber); color:#fff; }
+.btn-pdf:hover{ background:#d97c1f; }
+
+footer{ max-width:720px; margin:30px auto 0 auto; text-align:center; color:#4A5A80; font-size:0.78rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark">
+    <img src="https://thinktosharewebsites.github.io/w/souranka/brand/tts-logo.png" alt="Think To Share">
+    <span>THINK TO SHARE</span>
+  </div>
+  <h1>LinkedIn DM Helper</h1>
+  <p>Souranka's daily connection outreach, message + PDF for each lead</p>
+</header>
+
+<div class="controls">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by name or company..." oninput="searchCards()">
+  </div>
+  <div class="filter-tabs" id="filterTabs">
+    <div class="tab active" onclick="setCategory('all', this)">All (1)</div>
+    <div class="tab" onclick="setCategory('Real Estate', this)">Real Estate (1)</div>
+    <div class="tab" onclick="setCategory('Interior Design', this)">Interior Design (0)</div>
+    <div class="tab" onclick="setCategory('Tax Advisory', this)">Tax Advisory (0)</div>
+  </div>
+</div>
+
+<div class="stats" id="statsCount">Showing 1 lead</div>
+
+<div class="leads-list" id="leadsList">
+
+  <div class="card" data-category="Real Estate" data-name="aakash dhalwani dynasty developers">
+    <textarea class="full-message" style="display:none">Hey Aakash... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team's plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that's ever needed... but this one's really about what happens after someone's already shown interest. Put together a short PDF on it... take a look when you get a chance?</textarea>
+    <div class="card-header">
+      <div class="biz-info">
+        <span class="biz-name">Aakash Dhalwani</span>
+        <span class="biz-company">Dynasty Developers &middot; Pune</span>
+      </div>
+      <span class="badge badge-realestate">Real Estate</span>
+    </div>
+    <div class="message-preview">Hey Aakash... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team's plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that's ever needed... but this one's really about what happens after someone's already shown interest. Put together a short PDF on it... take a look when you get a chance?</div>
+    <div class="actions">
+      <a href="https://www.linkedin.com/in/aakash-dhalwani-19b866185/" target="_blank" class="btn btn-linkedin">
+        <svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg>
+        Open Profile
+      </a>
+      <button class="btn btn-copy" onclick="copyMessage(this)">
+        <svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        Copy Message
+      </button>
+      <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/Think-To-Share-Aakash-Dhalwani.pdf" download class="btn btn-pdf">
+        <svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Download PDF
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>Think To Share &middot; updated daily, old leads are removed when a new batch goes up</footer>
+
+<script>
+function copyMessage(btn){
+  const card = btn.closest('.card');
+  const text = card.querySelector('.full-message').value;
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = original; }, 1800);
+  });
+}
+
+let currentCategory = 'all';
+
+function setCategory(cat, el){
+  currentCategory = cat;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+
+function searchCards(){ applyFilters(); }
+
+function applyFilters(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+  let shown = 0;
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-category');
+    const name = card.getAttribute('data-name');
+    const matchesCat = currentCategory === 'all' || cat === currentCategory;
+    const matchesSearch = name.includes(q);
+    if (matchesCat && matchesSearch){ card.style.display = ''; shown++; }
+    else { card.style.display = 'none'; }
+  });
+  document.getElementById('statsCount').textContent = 'Showing ' + shown + (shown === 1 ? ' lead' : ' leads');
+}
+</script>
+
+</body>
+</html>
