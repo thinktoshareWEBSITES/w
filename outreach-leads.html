@@ -713,10 +713,10 @@
     <div id="igPanel">
 
     <!-- Manual send cooldown pacer -->
-    <div class="ig-pacer" id="manualTimerBar" style="display:none">
+    <div class="ig-pacer" id="manualTimerBar">
         <div class="ig-pacer-row">
             <span class="ig-pacer-text" id="manualTimerLabel">Ready to send next DM</span>
-            <span class="ig-pacer-reset" onclick="dismissManualTimer()">&#10005; dismiss</span>
+            <span class="ig-pacer-reset" onclick="dismissManualTimer()">&#8635; reset timer</span>
         </div>
         <div class="ig-pacer-track"><div id="manualTimerFill" class="ig-pacer-fill"></div></div>
     </div>
@@ -2017,9 +2017,15 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         }
 
         function dismissManualTimer() {
-            document.getElementById('manualTimerBar').style.display = 'none';
             if (manualTimerInterval) clearInterval(manualTimerInterval);
             try { localStorage.removeItem(IG_TIMER_KEY); } catch {}
+            const bar = document.getElementById('manualTimerBar');
+            const label = document.getElementById('manualTimerLabel');
+            const fill = document.getElementById('manualTimerFill');
+            bar.classList.remove('counting', 'ready');
+            label.textContent = 'Ready to send next DM';
+            fill.style.width = '0%';
+            fill.style.background = '#6366f1';
         }
 
         // Restore timer on page load if still active
