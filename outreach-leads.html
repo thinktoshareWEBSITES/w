@@ -342,6 +342,7 @@
         }
 
         .modal-card {
+            position: relative;
             background: #111827;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
@@ -688,6 +689,7 @@
                                                                                                                                                                         <div class="filter-tabs">
             <div class="tab active" onclick="setCategory('all', this)">All (20)</div>
             <div class="tab" onclick="setCategory('Lawn &amp; Landscaping', this)">Lawn &amp; Landscaping (20)</div>
+            <div class="tab" id="notSentTab" onclick="showNotSent(this)" style="border-color:rgba(239,68,68,.4);color:#fca5a5">&#9888; Not Sent</div>
             <div class="tab" onclick="showSamples(this)" style="border-color:rgba(139,92,246,.4);color:#a78bfa">&#9733; Main Template Samples</div>
             <div class="tab" onclick="showAgentGuide(this)" style="border-color:rgba(16,185,129,.3);color:#6ee7b7">&#128196; Agent Guide</div>
         </div>
@@ -1396,8 +1398,9 @@ If you like it lets get on a call maybe to customise it for your business</pre>
     </div>
 
     <!-- Modal Popup HTML -->
-    <div class="modal-overlay" id="copyModal">
-        <div class="modal-card">
+    <div class="modal-overlay" id="copyModal" onclick="closeModal()">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" style="position:absolute;top:10px;right:12px;background:none;border:none;color:#9ca3af;font-size:1.3rem;cursor:pointer;line-height:1;padding:2px 6px;">&#10005;</button>
             <div class="modal-icon">
                 <svg style="width:28px;height:28px;fill:currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
             </div>
@@ -1443,6 +1446,26 @@ If you like it lets get on a call maybe to customise it for your business</pre>
             document.getElementById('leadsList').style.display = 'grid';
             document.getElementById('statsCount').style.display = 'block';
             filterLeads();
+        }
+
+        function showNotSent(tabEl) {
+            currentCategory = '__not_sent__';
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            tabEl.classList.add('active');
+            document.getElementById('samplesPanel').style.display = 'none';
+            document.getElementById('agentPanel').style.display = 'none';
+            document.getElementById('leadsList').style.display = 'grid';
+            document.getElementById('statsCount').style.display = 'block';
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            let count = 0;
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const notSent = !card.classList.contains('dm-sent');
+                if (notSent && name.includes(query)) { card.style.display = 'flex'; count++; }
+                else card.style.display = 'none';
+            });
+            document.getElementById('statsCount').innerText = `Showing ${count} not sent`;
         }
 
         function showSamples(tabEl) {
