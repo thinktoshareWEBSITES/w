@@ -1978,6 +1978,27 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         const IG_TIMER_KEY = 'igManualTimerEndsAt';
         let manualTimerInterval = null;
 
+        function playTimerAlarm() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const beep = (freq, start, dur) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, ctx.currentTime + start);
+                    gain.gain.setValueAtTime(0.4, ctx.currentTime + start);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + start + dur);
+                    osc.start(ctx.currentTime + start);
+                    osc.stop(ctx.currentTime + start + dur);
+                };
+                // Three rising chimes
+                beep(520, 0,    0.18);
+                beep(660, 0.22, 0.18);
+                beep(880, 0.44, 0.35);
+            } catch {}
+        }
+
         function runManualTimer(endsAt, totalMs) {
             const bar = document.getElementById('manualTimerBar');
             const label = document.getElementById('manualTimerLabel');
@@ -1996,6 +2017,7 @@ If you like it lets get on a call maybe to customise it for your business</pre>
                     fill.style.background = '#10b981';
                     bar.classList.remove('counting');
                     bar.classList.add('ready');
+                    playTimerAlarm();
                     return;
                 }
                 const m = Math.floor(left / 60000);
