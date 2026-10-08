@@ -675,6 +675,14 @@
         .li-pacer-text{ font-size:0.88rem; font-weight:600; color:#8fc1f0; }
         .li-pacer.li-counting .li-pacer-text{ color:#fbbf24; }
         .li-pacer-reset{ font-size:0.75rem; color:#6366f1; cursor:pointer; }
+        .ig-pacer{ max-width:800px; margin:0 auto 14px auto; padding:12px 16px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:12px; }
+        .ig-pacer-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+        .ig-pacer-text{ font-size:0.88rem; font-weight:600; color:#a5b4fc; }
+        .ig-pacer.counting .ig-pacer-text{ color:#fbbf24; }
+        .ig-pacer.ready .ig-pacer-text{ color:#10b981; }
+        .ig-pacer-reset{ font-size:0.75rem; color:#6b7280; cursor:pointer; }
+        .ig-pacer-track{ height:4px; background:rgba(255,255,255,.08); border-radius:4px; overflow:hidden; }
+        .ig-pacer-fill{ height:100%; width:0%; background:#6366f1; border-radius:4px; transition:width 1s linear; }
 
         .biz-company{ font-size:0.75rem; color:var(--text-muted); }
         .li-opened-badge{ display:none; align-items:center; gap:3px; font-size:0.68rem; font-weight:700; color:#10b981; margin-left:8px; vertical-align:middle; }
@@ -703,6 +711,15 @@
     </div>
 
     <div id="igPanel">
+
+    <!-- Manual send cooldown pacer -->
+    <div class="ig-pacer" id="manualTimerBar" style="display:none">
+        <div class="ig-pacer-row">
+            <span class="ig-pacer-text" id="manualTimerLabel">Ready to send next DM</span>
+            <span class="ig-pacer-reset" onclick="dismissManualTimer()">&#10005; dismiss</span>
+        </div>
+        <div class="ig-pacer-track"><div id="manualTimerFill" class="ig-pacer-fill"></div></div>
+    </div>
 
     <!-- DM Sender Panel -->
     <div class="dm-panel" id="dmPanel">
@@ -1833,16 +1850,6 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         Message copied to clipboard!
     </div>
 
-    <!-- Manual send cooldown timer -->
-    <div id="manualTimerBar" style="display:none;position:fixed;bottom:80px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:420px;background:rgba(17,25,40,0.97);border:1px solid rgba(99,102,241,.4);border-radius:12px;padding:10px 14px;z-index:9999;flex-direction:column;gap:6px;box-shadow:0 8px 24px rgba(0,0,0,.5);">
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-            <span id="manualTimerLabel" style="font-size:0.82rem;font-weight:600;color:#e5e7eb;">Calculating...</span>
-            <button onclick="dismissManualTimer()" style="background:none;border:none;color:#6b7280;font-size:1.1rem;cursor:pointer;padding:0 2px;line-height:1;">&#10005;</button>
-        </div>
-        <div style="height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;">
-            <div id="manualTimerFill" style="height:100%;width:0%;background:#6366f1;border-radius:4px;transition:width 1s linear;"></div>
-        </div>
-    </div>
 
     <!-- Modal Popup HTML -->
     <div class="modal-overlay" id="copyModal" onclick="closeModal()">
@@ -1976,7 +1983,9 @@ If you like it lets get on a call maybe to customise it for your business</pre>
             const bar = document.getElementById('manualTimerBar');
             const label = document.getElementById('manualTimerLabel');
             const fill = document.getElementById('manualTimerFill');
-            bar.style.display = 'flex';
+            bar.style.display = 'block';
+            bar.classList.remove('ready');
+            bar.classList.add('counting');
             if (manualTimerInterval) clearInterval(manualTimerInterval);
             manualTimerInterval = setInterval(() => {
                 const left = endsAt - Date.now();
@@ -1985,16 +1994,16 @@ If you like it lets get on a call maybe to customise it for your business</pre>
                     label.textContent = 'Ready to send next DM!';
                     fill.style.width = '100%';
                     fill.style.background = '#10b981';
-                    bar.style.borderColor = 'rgba(16,185,129,.5)';
+                    bar.classList.remove('counting');
+                    bar.classList.add('ready');
                     return;
                 }
                 const m = Math.floor(left / 60000);
                 const s = Math.floor((left % 60000) / 1000);
-                label.textContent = `Wait ${m}:${String(s).padStart(2,'0')} before next DM`;
+                label.textContent = `Next DM in ${m}:${String(s).padStart(2,'0')} — take your time`;
                 const pct = ((mins * 60 * 1000 - left) / (mins * 60 * 1000)) * 100;
                 fill.style.width = pct + '%';
                 fill.style.background = left < 120000 ? '#f59e0b' : '#6366f1';
-                bar.style.borderColor = left < 120000 ? 'rgba(245,158,11,.5)' : 'rgba(99,102,241,.4)';
             }, 1000);
         }
         function dismissManualTimer() {
