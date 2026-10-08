@@ -411,6 +411,34 @@
             background: #059669;
         }
 
+        /* DM Panel Mobile */
+        @media (max-width: 600px) {
+            .dm-panel { padding: 12px 14px; border-radius: 12px; }
+            .dm-panel-header {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .dm-panel-title {
+                width: 100%;
+                font-size: 0.95rem;
+                margin-bottom: 2px;
+            }
+            .dm-btn {
+                flex: 1 1 calc(50% - 4px);
+                padding: 10px 8px;
+                font-size: 0.82rem;
+                text-align: center;
+                min-width: 0;
+            }
+            .dm-btn-restart {
+                flex: 1 1 calc(50% - 4px);
+                padding: 10px 8px;
+                font-size: 0.82rem;
+            }
+            .dm-status-bar { font-size: 0.78rem; gap: 7px; }
+            .dm-log { font-size: 0.72rem; max-height: 60px; }
+        }
+
         /* Mobile View Optimization */
         @media (max-width: 500px) {
             body {
