@@ -1993,13 +1993,19 @@ If you like it lets get on a call maybe to customise it for your business</pre>
             document.getElementById('copyModal').classList.remove('active');
         }
 
-        // Universal pacing timer — server is source of truth, synced across all devices
-        const MUTE_KEY = 'pacerMuted';
+        // Universal pacing timer — server syncs across devices, localStorage persists per device
+        const MUTE_KEY  = 'pacerMuted';
+        const TIMER_KEY = 'pacerTimer';
         let pacerMuted = false;
         try { pacerMuted = localStorage.getItem(MUTE_KEY) === '1'; } catch {}
         let pacerTimerEndsAt    = null;
         let pacerTimerStartedAt = null;
         let pacerAlarmFired     = false;
+        // Restore timer from localStorage on load (works without server)
+        try {
+            const _t = JSON.parse(localStorage.getItem(TIMER_KEY) || 'null');
+            if (_t && _t.endsAt > Date.now()) { pacerTimerEndsAt = _t.endsAt; pacerTimerStartedAt = _t.startedAt; }
+        } catch {}
 
         // Unlock AudioContext on first user interaction so timer alarm works on mobile
         let _audioCtx = null;
@@ -2044,12 +2050,14 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         }
 
         async function postSetTimer(endsAt, startedAt) {
+            try { localStorage.setItem(TIMER_KEY, JSON.stringify({endsAt, startedAt})); } catch {}
             try { await fetch(dmServerUrl() + '/set-timer', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({endsAt, startedAt}), signal: AbortSignal.timeout(3000) }); } catch {}
         }
 
         async function clearSharedTimer() {
             pacerTimerEndsAt = null; pacerTimerStartedAt = null; pacerAlarmFired = false;
             updateBothPacers(null, null);
+            try { localStorage.removeItem(TIMER_KEY); } catch {}
             try { await fetch(dmServerUrl() + '/clear-timer', { method:'POST', signal: AbortSignal.timeout(3000) }); } catch {}
         }
 
@@ -2242,10 +2250,10 @@ If you like it lets get on a call maybe to customise it for your business</pre>
 
             if (!s) {
                 dot.className = 'dm-dot';
-                statusTx.innerHTML = 'Server offline &mdash; double-click <strong>start-dm.bat</strong> on desktop to start';
+                statusTx.innerHTML = 'Bot not active';
                 progress.textContent = stored.length ? stored.length + ' sent (stored)' : '';
                 logEl.innerHTML = '';
-                startBtn.style.display = 'inline-block';
+                startBtn.style.display = 'none';
                 stopBtn.style.display  = 'none';
                 dmApplyBadges(stored, null);
                 return;
