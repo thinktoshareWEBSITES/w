@@ -711,11 +711,14 @@
 
         .actions-3{ grid-template-columns:1fr 0.8fr 0.8fr; }
         .btn-linkedin{ background:linear-gradient(135deg,#0A66C2,#004182); color:#fff; text-decoration:none; }
+        .btn-facebook{ background:#1877F2; color:#fff; text-decoration:none; }
+        .btn-twitter{ background:#000; color:#fff; text-decoration:none; }
         .btn-pdf{ background:var(--accent-orange); color:#fff; text-decoration:none; }
 
         .badge-realestate{ background:rgba(238,139,43,.15); color:#fbbf86; border:1px solid rgba(238,139,43,.3); }
         .badge-tax{ background:rgba(59,130,246,.15); color:#93c5fd; border:1px solid rgba(59,130,246,.3); }
         .badge-generic{ background:rgba(156,163,175,.15); color:#d1d5db; border:1px solid rgba(156,163,175,.3); }
+        .badge-active{ background:rgba(34,197,94,.15); color:#86efac; border:1px solid rgba(34,197,94,.3); }
     </style>
 </head>
 <body>
@@ -1063,24 +1066,1548 @@
       </div>
 
       <div id="paLiSub" style="display:none">
-        <div class="stats">0 leads</div>
-        <div class="leads-list" id="paLiLeadsList"></div>
-        <div class="empty-state">No leads yet. This tab is ready for Parag's LinkedIn outreach once the BNI batch starts.</div>
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="paFilterLi(this)">
+          </div>
+        </div>
+        <div class="stats">21 leads</div>
+        <div class="leads-list" id="paLiLeadsList">
+        <div class="card" data-name="aaron rimolde northwestern mutual">
+            <textarea class="full-message" style="display:none">Hi Aaron, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Aaron Rimolde</span>
+                    <span class="biz-company">Northwestern Mutual</span>
+                </div>
+                <span class="badge badge-active">Active 1 day ago</span>
+            </div>
+            <div class="message-preview">Hi Aaron, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/arimolde/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby johnson harmony nutrition">
+            <textarea class="full-message" style="display:none">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Johnson</span>
+                    <span class="biz-company">Harmony Nutrition</span>
+                </div>
+                <span class="badge badge-active">Active 2mo ago</span>
+            </div>
+            <div class="message-preview">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/harmony-nutrition/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby lee casey von braun center">
+            <textarea class="full-message" style="display:none">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Lee Casey</span>
+                    <span class="biz-company">Von Braun Center</span>
+                </div>
+                <span class="badge badge-active">Active 1w ago</span>
+            </div>
+            <div class="message-preview">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/von-braun-center" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abigail zuniga g&amp;g enterprises">
+            <textarea class="full-message" style="display:none">Hi Abigail, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abigail Zuniga</span>
+                    <span class="biz-company">G&amp;G Enterprises</span>
+                </div>
+                <span class="badge badge-active">Active 1w ago</span>
+            </div>
+            <div class="message-preview">Hi Abigail, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/g&amp;g-enterprises-construction-corp/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abram bryan heir media">
+            <textarea class="full-message" style="display:none">Hi Abram, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abram Bryan</span>
+                    <span class="biz-company">Heir Media</span>
+                </div>
+                <span class="badge badge-active">Active 3mo ago</span>
+            </div>
+            <div class="message-preview">Hi Abram, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/heir-media/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam crouch homestretch north dallas">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Crouch</span>
+                    <span class="biz-company">HOMEstretch North Dallas</span>
+                </div>
+                <span class="badge badge-active">Active 1mo ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adamscrouch/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam greene green lens media">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Greene</span>
+                    <span class="biz-company">Green Lens Media</span>
+                </div>
+                <span class="badge badge-active">Active 1mo ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adamngreene" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam kirk oostas llc">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Kirk</span>
+                    <span class="biz-company">Oostas LLC</span>
+                </div>
+                <span class="badge badge-active">Active 3d ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adamnkirk/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam lancaster stitch real estate">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Lancaster</span>
+                    <span class="biz-company">Stitch Real Estate</span>
+                </div>
+                <span class="badge badge-active">Active 1w ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adam-lancaster-6b04bb13/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam payne pillar to post home inspectors">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Payne</span>
+                    <span class="biz-company">Pillar to Post Home Inspectors</span>
+                </div>
+                <span class="badge badge-active">Active 17h ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adam-payne-7806b71b2/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adelia bennett neurossage">
+            <textarea class="full-message" style="display:none">Hi Adelia, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adelia Bennett</span>
+                    <span class="biz-company">Neurossage</span>
+                </div>
+                <span class="badge badge-active">Active 6h ago</span>
+            </div>
+            <div class="message-preview">Hi Adelia, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adelia-bennett" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian crandall corinthian title company">
+            <textarea class="full-message" style="display:none">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Crandall</span>
+                    <span class="biz-company">Corinthian Title Company</span>
+                </div>
+                <span class="badge badge-active">Active 1w ago</span>
+            </div>
+            <div class="message-preview">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="http://www.linkedin.com/in/adriancrandall/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian villasenor avilla innovations llc">
+            <textarea class="full-message" style="display:none">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Villasenor</span>
+                    <span class="biz-company">Avilla Innovations LLC</span>
+                </div>
+                <span class="badge badge-active">Active 2mo ago</span>
+            </div>
+            <div class="message-preview">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/adrian-villasenor-/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="afreen kamal grow and glow agency">
+            <textarea class="full-message" style="display:none">Hi Afreen, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Afreen Kamal</span>
+                    <span class="biz-company">Grow and Glow Agency</span>
+                </div>
+                <span class="badge badge-active">Active 13h ago</span>
+            </div>
+            <div class="message-preview">Hi Afreen, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/afreenkamal/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="aimee thackara thackara home loans and notary">
+            <textarea class="full-message" style="display:none">Hi Aimee, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Aimee Thackara</span>
+                    <span class="biz-company">Thackara Home Loans and Notary</span>
+                </div>
+                <span class="badge badge-active">Active 1w ago</span>
+            </div>
+            <div class="message-preview">Hi Aimee, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="http://www.linkedin.com/in/aimeethackara/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="aj shirey realtor collier &amp; associates">
+            <textarea class="full-message" style="display:none">Hi AJ, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">AJ Shirey</span>
+                    <span class="biz-company">Realtor Collier &amp; Associates</span>
+                </div>
+                <span class="badge badge-active">Active 1d ago</span>
+            </div>
+            <div class="message-preview">Hi AJ, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/aj-shirey-commercial-and-residential-real-estate-9968757/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="akinkawon frierson arcpoint labs of st augustine">
+            <textarea class="full-message" style="display:none">Hi Akinkawon, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Akinkawon Frierson</span>
+                    <span class="biz-company">ARCpoint Labs of St Augustine</span>
+                </div>
+                <span class="badge badge-active">Active 1d ago</span>
+            </div>
+            <div class="message-preview">Hi Akinkawon, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/arcpointlabs-of-st-augustine/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alec berizzi sentinel insurance llc">
+            <textarea class="full-message" style="display:none">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alec Berizzi</span>
+                    <span class="biz-company">Sentinel Insurance LLC</span>
+                </div>
+                <span class="badge badge-active">Active 1mo ago</span>
+            </div>
+            <div class="message-preview">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/alec-berizzi/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alecia stringer success dream marketing">
+            <textarea class="full-message" style="display:none">Hi Alecia, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alecia Stringer</span>
+                    <span class="biz-company">Success Dream Marketing</span>
+                </div>
+                <span class="badge badge-active">Active 3mo ago</span>
+            </div>
+            <div class="message-preview">Hi Alecia, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/company/askaleciastringer" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex aanderud vitalspark.ai">
+            <textarea class="full-message" style="display:none">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Aanderud</span>
+                    <span class="biz-company">Vitalspark.ai</span>
+                </div>
+                <span class="badge badge-active">Active 1mo ago</span>
+            </div>
+            <div class="message-preview">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/alexaanderud" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex pinacho cornerstone first mortgage">
+            <textarea class="full-message" style="display:none">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Pinacho</span>
+                    <span class="biz-company">Cornerstone First Mortgage</span>
+                </div>
+                <span class="badge badge-active">Active 2mo ago</span>
+            </div>
+            <div class="message-preview">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both in BNI, I&#x27;d love to grab a quick 1-2-1 to learn more about your business... the more I know, the better referrals I can send your way. I&#x27;m Parag, founder of Think To Share... we help businesses automate follow-ups and lead nurturing so nothing slips through the cracks. Not a pitch, just want to connect properly. Open to a 20-30 min chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.linkedin.com/in/pinacholending/" target="_blank" class="btn btn-linkedin">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        </div>
       </div>
       <div id="paIgSub">
-        <div class="stats">0 leads</div>
-        <div class="leads-list" id="paIgLeadsList"></div>
-        <div class="empty-state">No BNI contacts found yet for Instagram. This fills in as the daily research batches come in.</div>
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="paFilterIg(this)">
+          </div>
+        </div>
+        <div class="stats">39 leads</div>
+        <div class="leads-list" id="paIgLeadsList">
+        <div class="card" data-name="abbey griffith clarity fitness">
+            <textarea class="full-message" style="display:none">Hey Abbey! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abbey Griffith</span>
+                    <span class="biz-company">Clarity Fitness</span>
+                </div>
+                <span class="badge badge-active">Active recent (2026 content)</span>
+            </div>
+            <div class="message-preview">Hey Abbey! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/claritydecatur/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby johnson harmony nutrition">
+            <textarea class="full-message" style="display:none">Hey Abby! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Johnson</span>
+                    <span class="biz-company">Harmony Nutrition</span>
+                </div>
+                <span class="badge badge-active">Active recent (reels format)</span>
+            </div>
+            <div class="message-preview">Hey Abby! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/harmonynutritionatl/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby lee casey von braun center">
+            <textarea class="full-message" style="display:none">Hey Abby! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Lee Casey</span>
+                    <span class="biz-company">Von Braun Center</span>
+                </div>
+                <span class="badge badge-active">Active current (events Oct 2026)</span>
+            </div>
+            <div class="message-preview">Hey Abby! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/vonbrauncenter/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abigail zuniga g&amp;g enterprises">
+            <textarea class="full-message" style="display:none">Hey Abigail! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abigail Zuniga</span>
+                    <span class="biz-company">G&amp;G Enterprises</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Abigail! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/ggenterprisescc/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam canni wraps direct">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Canni</span>
+                    <span class="biz-company">Wraps Direct</span>
+                </div>
+                <span class="badge badge-active">Active recent projects shown</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/WrapsDirectOfficial" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam crouch homestretch north dallas">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Crouch</span>
+                    <span class="biz-company">HOMEstretch North Dallas</span>
+                </div>
+                <span class="badge badge-active">Active October 2026</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/homestretch_northdallas/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam kitt adam kitt - the singing realtor exp realty">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Kitt</span>
+                    <span class="biz-company">Adam Kitt - The Singing Realtor eXp Realty</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/adam_thesingingrealtor/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam kirk oostas llc">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Kirk</span>
+                    <span class="biz-company">Oostas LLC</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/oostas/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam lancaster stitch real estate">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Lancaster</span>
+                    <span class="biz-company">Stitch Real Estate</span>
+                </div>
+                <span class="badge badge-active">Active 2025 content</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/_adamlancaster/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam miller level up life planning">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Miller</span>
+                    <span class="biz-company">Level Up Life Planning</span>
+                </div>
+                <span class="badge badge-active">Active October 2026</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/leveluplifeplanning/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam payne pillar to post home inspectors">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Payne</span>
+                    <span class="biz-company">Pillar to Post Home Inspectors</span>
+                </div>
+                <span class="badge badge-active">Active recent (new feature promo)</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://instagram.com/ptp_hickory" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam robinson adam local repairs">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Robinson</span>
+                    <span class="biz-company">Adam Local Repairs</span>
+                </div>
+                <span class="badge badge-active">Active recent (new account</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/adamslocalrepairsllc/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam strother the handy whiz">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Strother</span>
+                    <span class="biz-company">The Handy Whiz</span>
+                </div>
+                <span class="badge badge-active">Active May 2026</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/thehandywhiz/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam von romer axis realty advisors">
+            <textarea class="full-message" style="display:none">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Von Romer</span>
+                    <span class="biz-company">Axis Realty Advisors</span>
+                </div>
+                <span class="badge badge-active">Active recent (open enrollment content)</span>
+            </div>
+            <div class="message-preview">Hey Adam! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/avonromer/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adelia bennett neurossage">
+            <textarea class="full-message" style="display:none">Hey Adelia! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adelia Bennett</span>
+                    <span class="biz-company">Neurossage</span>
+                </div>
+                <span class="badge badge-active">Active recent reels</span>
+            </div>
+            <div class="message-preview">Hey Adelia! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/neurossage" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian crandall corinthian title company">
+            <textarea class="full-message" style="display:none">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Crandall</span>
+                    <span class="biz-company">Corinthian Title Company</span>
+                </div>
+                <span class="badge badge-active">Active recent (Fathers Day/current events content)</span>
+            </div>
+            <div class="message-preview">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://instagram.com/adrian_crandall" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian douglas flow state pressure washing">
+            <textarea class="full-message" style="display:none">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Douglas</span>
+                    <span class="biz-company">Flow State Pressure Washing</span>
+                </div>
+                <span class="badge badge-active">Active seasonal holiday lights content</span>
+            </div>
+            <div class="message-preview">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/flowstate_pw/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian villasenor avilla innovations llc">
+            <textarea class="full-message" style="display:none">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Villasenor</span>
+                    <span class="biz-company">Avilla Innovations LLC</span>
+                </div>
+                <span class="badge badge-active">Active recent reels</span>
+            </div>
+            <div class="message-preview">Hey Adrian! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/avillainnovations/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adriano sara total loss consultants">
+            <textarea class="full-message" style="display:none">Hey Adriano! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adriano Sara</span>
+                    <span class="biz-company">Total Loss Consultants</span>
+                </div>
+                <span class="badge badge-active">Active hurricane season content</span>
+            </div>
+            <div class="message-preview">Hey Adriano! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/tlcadjusters/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="afreen kamal grow and glow agency">
+            <textarea class="full-message" style="display:none">Hey Afreen! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Afreen Kamal</span>
+                    <span class="biz-company">Grow and Glow Agency</span>
+                </div>
+                <span class="badge badge-active">Active recent reels</span>
+            </div>
+            <div class="message-preview">Hey Afreen! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/growandglow_agency/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="agrifino edralin jr media3sixty llc">
+            <textarea class="full-message" style="display:none">Hey Agrifino! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Agrifino Edralin Jr</span>
+                    <span class="biz-company">MEDIA3SIXTY LLC</span>
+                </div>
+                <span class="badge badge-active">Active recent reels</span>
+            </div>
+            <div class="message-preview">Hey Agrifino! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/media3sixty/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="aj shirey realtor collier &amp; associates">
+            <textarea class="full-message" style="display:none">Hey AJ! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">AJ Shirey</span>
+                    <span class="biz-company">Realtor Collier &amp; Associates</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey AJ! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/ajlovesjason/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="akari ueoka akari translations">
+            <textarea class="full-message" style="display:none">Hey Akari! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Akari Ueoka</span>
+                    <span class="biz-company">Akari Translations</span>
+                </div>
+                <span class="badge badge-active">Active recent camp content</span>
+            </div>
+            <div class="message-preview">Hey Akari! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/akaritranslations/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="akinkawon frierson arcpoint labs of st augustine">
+            <textarea class="full-message" style="display:none">Hey Akinkawon! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Akinkawon Frierson</span>
+                    <span class="biz-company">ARCpoint Labs of St Augustine</span>
+                </div>
+                <span class="badge badge-active">Active Oct 15 2026 upcoming webinar</span>
+            </div>
+            <div class="message-preview">Hey Akinkawon! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/arcpoint_staugustinefl/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alanna lynch free spirit photography">
+            <textarea class="full-message" style="display:none">Hey Alanna! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alanna Lynch</span>
+                    <span class="biz-company">Free Spirit Photography</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alanna! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/photosbyfreespirit/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alda boiani 12 cuts brazilian steakhouse">
+            <textarea class="full-message" style="display:none">Hey Alda! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alda Boiani</span>
+                    <span class="biz-company">12 Cuts Brazilian Steakhouse</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alda! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/12cutssteak/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="ale enriquez the lime foundation">
+            <textarea class="full-message" style="display:none">Hey Ale! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Ale Enriquez</span>
+                    <span class="biz-company">The LIME Foundation</span>
+                </div>
+                <span class="badge badge-active">Active Nov 10 2026 upcoming event</span>
+            </div>
+            <div class="message-preview">Hey Ale! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/thelimefoundation/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alecia stringer success dream marketing">
+            <textarea class="full-message" style="display:none">Hey Alecia! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alecia Stringer</span>
+                    <span class="biz-company">Success Dream Marketing</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alecia! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="http://instagram.com/askaleciastringer" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandrina aguilar stellar it solutions llc">
+            <textarea class="full-message" style="display:none">Hey Alejandrina! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandrina Aguilar</span>
+                    <span class="biz-company">Stellar IT Solutions LLC</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alejandrina! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/stellaritsolutions/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandro restrepo puroclean of wilton ridgefield">
+            <textarea class="full-message" style="display:none">Hey Alejandro! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandro Restrepo</span>
+                    <span class="biz-company">PuroClean of Wilton Ridgefield</span>
+                </div>
+                <span class="badge badge-active">Active fall seasonal content current</span>
+            </div>
+            <div class="message-preview">Hey Alejandro! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/puroclean_of_stamford/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandro uribe lending spot">
+            <textarea class="full-message" style="display:none">Hey Alejandro! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandro Uribe</span>
+                    <span class="biz-company">Lending Spot</span>
+                </div>
+                <span class="badge badge-active">Active September 2026</span>
+            </div>
+            <div class="message-preview">Hey Alejandro! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/auribelender/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex aanderud vitalspark.ai">
+            <textarea class="full-message" style="display:none">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Aanderud</span>
+                    <span class="biz-company">Vitalspark.ai</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/alexaanderud" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex kusak alexander kusak photography">
+            <textarea class="full-message" style="display:none">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Kusak</span>
+                    <span class="biz-company">Alexander Kusak Photography</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/alexanderkusak/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex lowy alex lowy photography llc">
+            <textarea class="full-message" style="display:none">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Lowy</span>
+                    <span class="biz-company">Alex Lowy Photography LLC</span>
+                </div>
+                <span class="badge badge-active">Active recent 2025 content</span>
+            </div>
+            <div class="message-preview">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/artphotog" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex pinacho cornerstone first mortgage">
+            <textarea class="full-message" style="display:none">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Pinacho</span>
+                    <span class="biz-company">Cornerstone First Mortgage</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/pinacholending/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex siegler stand strong fencing of east austin">
+            <textarea class="full-message" style="display:none">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Siegler</span>
+                    <span class="biz-company">Stand Strong Fencing of East Austin</span>
+                </div>
+                <span class="badge badge-active">Active October 2026</span>
+            </div>
+            <div class="message-preview">Hey Alex! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/standstrong.eastaustin/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexa neynaber virasoap natural medicine">
+            <textarea class="full-message" style="display:none">Hey Alexa! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexa Neynaber</span>
+                    <span class="biz-company">Virasoap Natural Medicine</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alexa! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/virasoap/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexander espino alemedia">
+            <textarea class="full-message" style="display:none">Hey Alexander! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexander Espino</span>
+                    <span class="biz-company">ALEMedia</span>
+                </div>
+                <span class="badge badge-active">Active recent (2.8k reached insight)</span>
+            </div>
+            <div class="message-preview">Hey Alexander! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/alemedia.co/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexander perpinan chatham subaru">
+            <textarea class="full-message" style="display:none">Hey Alexander! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexander Perpinan</span>
+                    <span class="biz-company">Chatham Subaru</span>
+                </div>
+                <span class="badge badge-active">Active recent</span>
+            </div>
+            <div class="message-preview">Hey Alexander! We&#x27;re both in BNI so figured I&#x27;d reach out... would love a quick 1-2-1 to learn about your business, the more I know the better referrals I can send your way. I&#x27;m Parag, I run Think To Share... we help businesses automate their follow-ups so leads don&#x27;t slip through. Not a pitch, just want to actually connect. Free for a chat this week or next?</div>
+            <div class="actions">
+                <a href="https://www.instagram.com/alexp.sales/" target="_blank" class="btn btn-ig">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        </div>
       </div>
       <div id="paFbSub" style="display:none">
-        <div class="stats">0 leads</div>
-        <div class="leads-list" id="paFbLeadsList"></div>
-        <div class="empty-state">No leads yet. This tab is ready for Parag's Facebook outreach.</div>
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="paFilterFb(this)">
+          </div>
+        </div>
+        <div class="stats">35 leads</div>
+        <div class="leads-list" id="paFbLeadsList">
+        <div class="card" data-name="aaron rimolde northwestern mutual">
+            <textarea class="full-message" style="display:none">Hi Aaron, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Aaron Rimolde</span>
+                    <span class="biz-company">Northwestern Mutual</span>
+                </div>
+                <span class="badge badge-active">Active Sept 21 2026</span>
+            </div>
+            <div class="message-preview">Hi Aaron, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/aaron.rimolde" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abbey griffith clarity fitness">
+            <textarea class="full-message" style="display:none">Hi Abbey, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abbey Griffith</span>
+                    <span class="biz-company">Clarity Fitness</span>
+                </div>
+                <span class="badge badge-active">Active May 4 2026 (~5mo ago)</span>
+            </div>
+            <div class="message-preview">Hi Abbey, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/ClarityDecatur/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby johnson harmony nutrition">
+            <textarea class="full-message" style="display:none">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Johnson</span>
+                    <span class="biz-company">Harmony Nutrition</span>
+                </div>
+                <span class="badge badge-active">Active yesterday</span>
+            </div>
+            <div class="message-preview">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/HarmonyNutritionATL" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby lee casey von braun center">
+            <textarea class="full-message" style="display:none">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Lee Casey</span>
+                    <span class="biz-company">Von Braun Center</span>
+                </div>
+                <span class="badge badge-active">Active current</span>
+            </div>
+            <div class="message-preview">Hi Abby, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/VonBraunCenter" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abigail zuniga g&amp;g enterprises">
+            <textarea class="full-message" style="display:none">Hi Abigail, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abigail Zuniga</span>
+                    <span class="biz-company">G&amp;G Enterprises</span>
+                </div>
+                <span class="badge badge-active">Active October 1 2026</span>
+            </div>
+            <div class="message-preview">Hi Abigail, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/gandgenterprises/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abram bryan heir media">
+            <textarea class="full-message" style="display:none">Hi Abram, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abram Bryan</span>
+                    <span class="biz-company">Heir Media</span>
+                </div>
+                <span class="badge badge-active">Active Sept 2026</span>
+            </div>
+            <div class="message-preview">Hi Abram, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/heirmediacorp" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam crouch homestretch north dallas">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Crouch</span>
+                    <span class="biz-company">HOMEstretch North Dallas</span>
+                </div>
+                <span class="badge badge-active">Active yesterday</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/homestretch.northdallas/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam kitt adam kitt - the singing realtor exp realty">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Kitt</span>
+                    <span class="biz-company">Adam Kitt - The Singing Realtor eXp Realty</span>
+                </div>
+                <span class="badge badge-active">Active recent (consistent w/ IG)</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/adam.kitt1" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam kirk oostas llc">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Kirk</span>
+                    <span class="biz-company">Oostas LLC</span>
+                </div>
+                <span class="badge badge-active">Active October 2026</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/oostas" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam lancaster stitch real estate">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Lancaster</span>
+                    <span class="biz-company">Stitch Real Estate</span>
+                </div>
+                <span class="badge badge-active">Active 11h ago</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/adamtlancaster" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam miller level up life planning">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Miller</span>
+                    <span class="biz-company">Level Up Life Planning</span>
+                </div>
+                <span class="badge badge-active">Active Oct 6 2026</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/LevelUpLifePlanningLLC/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam robinson adam local repairs">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Robinson</span>
+                    <span class="biz-company">Adam Local Repairs</span>
+                </div>
+                <span class="badge badge-active">Active July 2026</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/people/Adams-Local-Repairs/61583488137609/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam strother the handy whiz">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Strother</span>
+                    <span class="biz-company">The Handy Whiz</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/StrotherConstruction/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam von romer axis realty advisors">
+            <textarea class="full-message" style="display:none">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Von Romer</span>
+                    <span class="biz-company">Axis Realty Advisors</span>
+                </div>
+                <span class="badge badge-active">Active Sept 21 2026</span>
+            </div>
+            <div class="message-preview">Hi Adam, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/adam.vonromer/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adelia bennett neurossage">
+            <textarea class="full-message" style="display:none">Hi Adelia, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adelia Bennett</span>
+                    <span class="biz-company">Neurossage</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Adelia, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/neurossage" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian crandall corinthian title company">
+            <textarea class="full-message" style="display:none">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Crandall</span>
+                    <span class="biz-company">Corinthian Title Company</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="http://facebook.com/adrian4title" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adrian villasenor avilla innovations llc">
+            <textarea class="full-message" style="display:none">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adrian Villasenor</span>
+                    <span class="biz-company">Avilla Innovations LLC</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Adrian, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/people/Avilla-Innovations-LLC/61553584839799/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adriano sara total loss consultants">
+            <textarea class="full-message" style="display:none">Hi Adriano, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adriano Sara</span>
+                    <span class="biz-company">Total Loss Consultants</span>
+                </div>
+                <span class="badge badge-active">Active Sept 5 2026</span>
+            </div>
+            <div class="message-preview">Hi Adriano, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/tlcadjusters" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="agrifino edralin jr media3sixty llc">
+            <textarea class="full-message" style="display:none">Hi Agrifino, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Agrifino Edralin Jr</span>
+                    <span class="biz-company">MEDIA3SIXTY LLC</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Agrifino, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/profile.php?id=100063452507147" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="akari ueoka akari translations">
+            <textarea class="full-message" style="display:none">Hi Akari, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Akari Ueoka</span>
+                    <span class="biz-company">Akari Translations</span>
+                </div>
+                <span class="badge badge-active">Active Aug 28 2026</span>
+            </div>
+            <div class="message-preview">Hi Akari, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/akaritranslations" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alanna lynch free spirit photography">
+            <textarea class="full-message" style="display:none">Hi Alanna, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alanna Lynch</span>
+                    <span class="biz-company">Free Spirit Photography</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alanna, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/photosbyfreespirit/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alda boiani 12 cuts brazilian steakhouse">
+            <textarea class="full-message" style="display:none">Hi Alda, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alda Boiani</span>
+                    <span class="biz-company">12 Cuts Brazilian Steakhouse</span>
+                </div>
+                <span class="badge badge-active">Active October 2026</span>
+            </div>
+            <div class="message-preview">Hi Alda, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/12CutsSteakhouse" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="ale enriquez the lime foundation">
+            <textarea class="full-message" style="display:none">Hi Ale, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Ale Enriquez</span>
+                    <span class="biz-company">The LIME Foundation</span>
+                </div>
+                <span class="badge badge-active">Active 19h ago</span>
+            </div>
+            <div class="message-preview">Hi Ale, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/thelimefoundation/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alec berizzi sentinel insurance llc">
+            <textarea class="full-message" style="display:none">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alec Berizzi</span>
+                    <span class="biz-company">Sentinel Insurance LLC</span>
+                </div>
+                <span class="badge badge-active">Active August 2026</span>
+            </div>
+            <div class="message-preview">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/profile.php?id=100082633636774" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alec reynolds allstate insurance (j fox agency)">
+            <textarea class="full-message" style="display:none">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alec Reynolds</span>
+                    <span class="biz-company">Allstate Insurance (J Fox Agency)</span>
+                </div>
+                <span class="badge badge-active">Active Oct 7 2026</span>
+            </div>
+            <div class="message-preview">Hi Alec, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/people/J-Fox-Agency-Allstate-insurance/61571479770818/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alecia stringer success dream marketing">
+            <textarea class="full-message" style="display:none">Hi Alecia, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alecia Stringer</span>
+                    <span class="biz-company">Success Dream Marketing</span>
+                </div>
+                <span class="badge badge-active">Active Oct 5 2026</span>
+            </div>
+            <div class="message-preview">Hi Alecia, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="http://facebook.com/askaleciastringer" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandrina aguilar stellar it solutions llc">
+            <textarea class="full-message" style="display:none">Hi Alejandrina, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandrina Aguilar</span>
+                    <span class="biz-company">Stellar IT Solutions LLC</span>
+                </div>
+                <span class="badge badge-active">Active July 2026</span>
+            </div>
+            <div class="message-preview">Hi Alejandrina, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/stellaritmiami" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandro restrepo puroclean of wilton ridgefield">
+            <textarea class="full-message" style="display:none">Hi Alejandro, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandro Restrepo</span>
+                    <span class="biz-company">PuroClean of Wilton Ridgefield</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alejandro, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/PuroCleanWiltonRidgefield" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alejandro uribe lending spot">
+            <textarea class="full-message" style="display:none">Hi Alejandro, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alejandro Uribe</span>
+                    <span class="biz-company">Lending Spot</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alejandro, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/auribelender/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex lowy alex lowy photography llc">
+            <textarea class="full-message" style="display:none">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Lowy</span>
+                    <span class="biz-company">Alex Lowy Photography LLC</span>
+                </div>
+                <span class="badge badge-active">Active August 2026</span>
+            </div>
+            <div class="message-preview">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/alex.lowy.7" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex pinacho cornerstone first mortgage">
+            <textarea class="full-message" style="display:none">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Pinacho</span>
+                    <span class="biz-company">Cornerstone First Mortgage</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/PinachoLending/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alex siegler stand strong fencing of east austin">
+            <textarea class="full-message" style="display:none">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alex Siegler</span>
+                    <span class="biz-company">Stand Strong Fencing of East Austin</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alex, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/standstrongfencing.eastaustin" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexander espino alemedia">
+            <textarea class="full-message" style="display:none">Hi Alexander, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexander Espino</span>
+                    <span class="biz-company">ALEMedia</span>
+                </div>
+                <span class="badge badge-active">Active Sept 2026</span>
+            </div>
+            <div class="message-preview">Hi Alexander, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/alemedia.co" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexander perpinan chatham subaru">
+            <textarea class="full-message" style="display:none">Hi Alexander, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexander Perpinan</span>
+                    <span class="biz-company">Chatham Subaru</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active IG</span>
+            </div>
+            <div class="message-preview">Hi Alexander, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/profile.php?id=61575248786156" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="alexandra gonzalez nexa mortgage">
+            <textarea class="full-message" style="display:none">Hi Alexandra, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Alexandra Gonzalez</span>
+                    <span class="biz-company">Nexa Mortgage</span>
+                </div>
+                <span class="badge badge-active">Active Sept 5 2026</span>
+            </div>
+            <div class="message-preview">Hi Alexandra, hope you&#x27;re doing well! Since we&#x27;re both part of BNI, I&#x27;d love to set up a quick 1-2-1 to get to know your business better... the more I know, the more relevant referrals I can send your way. I&#x27;m Parag, founder of Think To Share, we help businesses automate their sales follow-ups and lead nurturing. Just a genuine get-to-know-you chat, not a pitch. Open to 20-30 minutes this week or next?</div>
+            <div class="actions">
+                <a href="https://www.facebook.com/alexandra.gonzalez.679631/" target="_blank" class="btn btn-facebook">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        </div>
       </div>
       <div id="paXSub" style="display:none">
-        <div class="stats">0 leads</div>
-        <div class="leads-list" id="paXLeadsList"></div>
-        <div class="empty-state">No leads yet. This tab is ready for Parag's Twitter/X outreach.</div>
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="paFilterX(this)">
+          </div>
+        </div>
+        <div class="stats">5 leads</div>
+        <div class="leads-list" id="paXLeadsList">
+        <div class="card" data-name="aaron rimolde northwestern mutual">
+            <textarea class="full-message" style="display:none">Hey Aaron, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Aaron Rimolde</span>
+                    <span class="biz-company">Northwestern Mutual</span>
+                </div>
+                <span class="badge badge-active">Active Oct 9 2026</span>
+            </div>
+            <div class="message-preview">Hey Aaron, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</div>
+            <div class="actions">
+                <a href="https://x.com/AaronRimolde" target="_blank" class="btn btn-twitter">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="abby lee casey von braun center">
+            <textarea class="full-message" style="display:none">Hey Abby, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Abby Lee Casey</span>
+                    <span class="biz-company">Von Braun Center</span>
+                </div>
+                <span class="badge badge-active">Active Aug 30 2026</span>
+            </div>
+            <div class="message-preview">Hey Abby, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</div>
+            <div class="actions">
+                <a href="https://twitter.com/VonBraunCenter" target="_blank" class="btn btn-twitter">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam strother the handy whiz">
+            <textarea class="full-message" style="display:none">Hey Adam, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Strother</span>
+                    <span class="biz-company">The Handy Whiz</span>
+                </div>
+                <span class="badge badge-active">Active May 26 2026</span>
+            </div>
+            <div class="message-preview">Hey Adam, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</div>
+            <div class="actions">
+                <a href="https://x.com/StrotherCo" target="_blank" class="btn btn-twitter">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adam von romer axis realty advisors">
+            <textarea class="full-message" style="display:none">Hey Adam, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adam Von Romer</span>
+                    <span class="biz-company">Axis Realty Advisors</span>
+                </div>
+                <span class="badge badge-active">Active Oct 8 2026</span>
+            </div>
+            <div class="message-preview">Hey Adam, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</div>
+            <div class="actions">
+                <a href="https://x.com/AdamCcim" target="_blank" class="btn btn-twitter">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        <div class="card" data-name="adriano sara total loss consultants">
+            <textarea class="full-message" style="display:none">Hey Adriano, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Adriano Sara</span>
+                    <span class="biz-company">Total Loss Consultants</span>
+                </div>
+                <span class="badge badge-active">Active consistent w/ active FB/IG</span>
+            </div>
+            <div class="message-preview">Hey Adriano, fellow BNI member here... would love a quick 1-2-1 to learn about your business so I can send good referrals your way. I&#x27;m Parag, founder of Think To Share (sales automation for businesses). Not a pitch, just want to connect. Free for a short chat this week or next?</div>
+            <div class="actions">
+                <a href="https://x.com/tlcadjusters" target="_blank" class="btn btn-twitter">Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+            </div>
+        </div>
+        </div>
       </div>
     </div><!-- /paragPanel -->
 
@@ -1592,6 +3119,18 @@
             document.getElementById('paSubFb').classList.toggle('active', s === 'facebook');
             document.getElementById('paSubX').classList.toggle('active', s === 'twitter');
         }
+
+        function paFilterList(inputEl, listId) {
+            const q = inputEl.value.trim().toLowerCase();
+            document.querySelectorAll('#' + listId + ' .card').forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                card.style.display = name.includes(q) ? '' : 'none';
+            });
+        }
+        function paFilterLi(el) { paFilterList(el, 'paLiLeadsList'); }
+        function paFilterIg(el) { paFilterList(el, 'paIgLeadsList'); }
+        function paFilterFb(el) { paFilterList(el, 'paFbLeadsList'); }
+        function paFilterX(el)  { paFilterList(el, 'paXLeadsList'); }
 
         function liTrackOpen(a){
             const card = a.closest('.card');
