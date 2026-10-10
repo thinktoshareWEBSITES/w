@@ -2162,10 +2162,10 @@ If you like it lets get on a call maybe to customise it for your business</pre>
 
             if (!s) {
                 dot.className = 'dm-dot';
-                statusTx.innerHTML = 'Bot not active';
+                statusTx.innerHTML = 'Server offline &mdash; double-click <strong>start-dm.bat</strong> on desktop to start';
                 progress.textContent = stored.length ? stored.length + ' sent (stored)' : '';
                 logEl.innerHTML = '';
-                startBtn.style.display = 'none';
+                startBtn.style.display = 'inline-block';
                 stopBtn.style.display  = 'none';
                 dmApplyBadges(stored, null);
                 return;
