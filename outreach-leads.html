@@ -669,6 +669,10 @@
         .platform-tabs{ max-width:800px; margin:0 auto 14px auto; display:flex; gap:8px; padding:0 5px; }
         .platform-tab{ flex:1; padding:12px; border-radius:12px; border:1px solid var(--border-color); background:rgba(255,255,255,0.04); color:var(--text-muted); font-family:'Outfit',sans-serif; font-size:0.9rem; font-weight:600; cursor:pointer; transition:all .15s ease; }
         .platform-tab.active{ background:linear-gradient(135deg,#0A66C2,#004182); color:#fff; border-color:#0A66C2; }
+        .sub-tabs{ max-width:800px; margin:0 auto 14px auto; display:flex; gap:6px; padding:0 5px; flex-wrap:wrap; }
+        .sub-tab{ padding:8px 14px; border-radius:10px; border:1px solid var(--border-color); background:rgba(255,255,255,0.03); color:var(--text-muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer; transition:all .15s ease; }
+        .sub-tab.active{ background:linear-gradient(135deg,#0A66C2,#004182); color:#fff; border-color:#0A66C2; }
+        .empty-state{ text-align:center; padding:50px 20px; color:var(--text-muted); font-family:'Outfit',sans-serif; font-size:0.9rem; }
 
         /* Unified pacer bar — used by both IG and LI */
         .pacer{ max-width:800px; margin:0 auto 14px auto; padding:12px 16px; border-radius:12px; }
@@ -723,7 +727,8 @@
 
     <div class="platform-tabs">
         <button class="platform-tab active" id="platTabIg" onclick="switchPlatform('instagram')">Instagram</button>
-        <button class="platform-tab" id="platTabLi" onclick="switchPlatform('linkedin')">LinkedIn</button>
+        <button class="platform-tab" id="platTabSo" onclick="switchPlatform('souranka')">Souranka</button>
+        <button class="platform-tab" id="platTabPa" onclick="switchPlatform('parag')">Parag</button>
     </div>
 
     <div id="igPanel">
@@ -1457,7 +1462,11 @@ If you like it lets get on a call maybe to customise it for your business</pre>
 
     </div><!-- /igPanel -->
 
-    <div id="linkedinPanel" style="display:none">
+    <div id="sourankaPanel" style="display:none">
+      <div class="sub-tabs">
+        <button class="sub-tab active" id="soSubLi" onclick="switchSourankaSub('linkedin')">Souranka LinkedIn</button>
+      </div>
+      <div id="linkedinPanel">
 
       <div class="li-pacer" id="liPacerBar">
         <div class="li-pacer-row">
@@ -1774,7 +1783,37 @@ If you like it lets get on a call maybe to customise it for your business</pre>
       </div>
 
     </div><!-- /linkedinPanel -->
+    </div><!-- /sourankaPanel -->
 
+    <div id="paragPanel" style="display:none">
+      <div class="sub-tabs">
+        <button class="sub-tab active" id="paSubLi" onclick="switchParagSub('linkedin')">LinkedIn</button>
+        <button class="sub-tab" id="paSubIg" onclick="switchParagSub('instagram')">Instagram</button>
+        <button class="sub-tab" id="paSubFb" onclick="switchParagSub('facebook')">Facebook</button>
+        <button class="sub-tab" id="paSubX" onclick="switchParagSub('twitter')">Twitter / X</button>
+      </div>
+
+      <div id="paLiSub">
+        <div class="stats">0 leads</div>
+        <div class="leads-list" id="paLiLeadsList"></div>
+        <div class="empty-state">No leads yet. This tab is ready for Parag's LinkedIn outreach once the BNI batch starts.</div>
+      </div>
+      <div id="paIgSub" style="display:none">
+        <div class="stats">0 leads</div>
+        <div class="leads-list" id="paIgLeadsList"></div>
+        <div class="empty-state">No leads yet. This tab is ready for Parag's Instagram outreach.</div>
+      </div>
+      <div id="paFbSub" style="display:none">
+        <div class="stats">0 leads</div>
+        <div class="leads-list" id="paFbLeadsList"></div>
+        <div class="empty-state">No leads yet. This tab is ready for Parag's Facebook outreach.</div>
+      </div>
+      <div id="paXSub" style="display:none">
+        <div class="stats">0 leads</div>
+        <div class="leads-list" id="paXLeadsList"></div>
+        <div class="empty-state">No leads yet. This tab is ready for Parag's Twitter/X outreach.</div>
+      </div>
+    </div><!-- /paragPanel -->
 
 <div class="toast" id="toast">
         <svg style="width:18px;height:18px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -2258,11 +2297,29 @@ If you like it lets get on a call maybe to customise it for your business</pre>
 
         function switchPlatform(p){
             document.getElementById('igPanel').style.display = (p === 'instagram') ? '' : 'none';
-            document.getElementById('linkedinPanel').style.display = (p === 'linkedin') ? '' : 'none';
+            document.getElementById('sourankaPanel').style.display = (p === 'souranka') ? '' : 'none';
+            document.getElementById('paragPanel').style.display = (p === 'parag') ? '' : 'none';
             document.getElementById('platTabIg').classList.toggle('active', p === 'instagram');
-            document.getElementById('platTabLi').classList.toggle('active', p === 'linkedin');
+            document.getElementById('platTabSo').classList.toggle('active', p === 'souranka');
+            document.getElementById('platTabPa').classList.toggle('active', p === 'parag');
             try { localStorage.setItem('activePlatform', p); } catch {}
-            if (p === 'linkedin') { liRestoreOpened(); liUpdateTimerDisplay(); liUpdateStats(); }
+            if (p === 'souranka') { liRestoreOpened(); liUpdateTimerDisplay(); liUpdateStats(); }
+        }
+
+        function switchSourankaSub(s){
+            // only one sub-tab today (LinkedIn); kept so more of Souranka's platforms can be added the same way Parag's are
+            document.getElementById('soSubLi').classList.add('active');
+        }
+
+        function switchParagSub(s){
+            document.getElementById('paLiSub').style.display = (s === 'linkedin') ? '' : 'none';
+            document.getElementById('paIgSub').style.display = (s === 'instagram') ? '' : 'none';
+            document.getElementById('paFbSub').style.display = (s === 'facebook') ? '' : 'none';
+            document.getElementById('paXSub').style.display = (s === 'twitter') ? '' : 'none';
+            document.getElementById('paSubLi').classList.toggle('active', s === 'linkedin');
+            document.getElementById('paSubIg').classList.toggle('active', s === 'instagram');
+            document.getElementById('paSubFb').classList.toggle('active', s === 'facebook');
+            document.getElementById('paSubX').classList.toggle('active', s === 'twitter');
         }
 
         function liTrackOpen(a){
@@ -2355,7 +2412,8 @@ If you like it lets get on a call maybe to customise it for your business</pre>
         (function liInit(){
             let last = 'instagram';
             try { last = localStorage.getItem('activePlatform') || 'instagram'; } catch {}
-            if (last === 'linkedin') switchPlatform('linkedin');
+            if (last === 'souranka') switchPlatform('souranka');
+            if (last === 'parag') switchPlatform('parag');
         })();
     </script>
 </body>
