@@ -1794,20 +1794,22 @@ const PA_BATCH2 = [{"user_id": "2349027", "name": "Chris Barron", "company": "Mi
         function paRenderPlatform(platform){
             const q = paQueueSeedIfEmpty();
             const items = q[platform] || [];
+            // Done items are hidden the moment they're checked -- already-sent people shouldn't
+            // clutter the list. Still kept in storage (not deleted) so future batch loads/imports
+            // keep skipping them by key instead of re-adding them.
             const pending = items.filter(x => !x.done).sort((a, b) => a.addedAt - b.addedAt);
-            const done = items.filter(x => x.done).sort((a, b) => a.addedAt - b.addedAt);
-            const ordered = pending.concat(done);
+            const doneCount = items.length - pending.length;
 
             const listEl = document.getElementById(PA_LIST_IDS[platform]);
             const statsEl = document.getElementById(PA_STATS_IDS[platform]);
-            if (statsEl) statsEl.textContent = pending.length + ' pending · ' + done.length + ' done';
+            if (statsEl) statsEl.textContent = pending.length + ' pending · ' + doneCount + ' already sent';
             if (!listEl) return;
 
-            listEl.innerHTML = ordered.map(item => {
+            listEl.innerHTML = pending.map(item => {
                 const dataName = (item.name + ' ' + item.company).toLowerCase();
                 const msg = paMsg(platform, item.name, item.company);
-                return '<div class="card pa-card' + (item.done ? ' pa-is-done' : '') + '" data-name="' + paEsc(dataName) + '" data-key="' + paEsc(item.key) + '" data-platform="' + platform + '" data-pname="' + paEsc(item.name) + '" data-company="' + paEsc(item.company) + '" data-url="' + paEsc(item.url) + '" data-active="' + paEsc(item.lastActive) + '">'
-                    + '<input type="checkbox" class="pa-done-check" title="Mark done -- locks it in place, future imports will skip this person" ' + (item.done ? 'checked' : '') + ' onchange="paToggleDone(this)">'
+                return '<div class="card pa-card" data-name="' + paEsc(dataName) + '" data-key="' + paEsc(item.key) + '" data-platform="' + platform + '" data-pname="' + paEsc(item.name) + '" data-company="' + paEsc(item.company) + '" data-url="' + paEsc(item.url) + '" data-active="' + paEsc(item.lastActive) + '">'
+                    + '<input type="checkbox" class="pa-done-check" title="Mark done -- removes it from this list, future imports will skip this person" onchange="paToggleDone(this)">'
                     + '<textarea class="full-message" style="display:none">' + paEsc(msg) + '</textarea>'
                     + '<div class="card-header"><div class="biz-info">'
                     + '<span class="biz-name">' + paEsc(item.name) + '</span>'
