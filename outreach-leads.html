@@ -764,303 +764,201 @@
           <input type="text" id="liSearchInput" placeholder="Search by name or company..." onkeyup="liFilterLeads()">
         </div>
         <div class="filter-tabs">
-          <div class="tab active" onclick="liSetCategory('all', this)">All (17)</div>
-          <div class="tab" onclick="liSetCategory('Real Estate', this)">Real Estate (1)</div>
+          <div class="tab active" onclick="liSetCategory('all', this)">All (11)</div>
+          <div class="tab" onclick="liSetCategory('Real Estate', this)">Real Estate (4)</div>
           <div class="tab" onclick="liSetCategory('Tax Advisory', this)">Tax Advisory (0)</div>
           <div class="tab" onclick="liSetCategory('Interior Design', this)">Interior Design (0)</div>
-          <div class="tab" onclick="liSetCategory('Generic', this)">Generic (16)</div>
+          <div class="tab" onclick="liSetCategory('Generic', this)">Generic (7)</div>
         </div>
       </div>
 
-      <div class="stats" id="liStatsCount">0 of 17 opened today</div>
+      <div class="stats" id="liStatsCount">0 of 11 opened today</div>
 
       <div class="leads-list" id="liLeadsList">
-        <div class="card" data-category="Generic" data-name="curtis buckingham reign gear" data-handle="curtis-buckingham">
-            <textarea class="full-message" style="display:none">Hey Curtis... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Reign Gear too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
+        <div class="card" data-category="Real Estate" data-name="chandra singh nash realty" data-handle="chandra-singh">
+            <textarea class="full-message" style="display:none">Hey Chandra... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Attached a short PDF on how it works... check it out?</textarea>
             <div class="card-header">
                 <div class="biz-info">
-                    <span class="biz-name">Curtis Buckingham <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Reign Gear</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Curtis... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Reign Gear too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/curtisbuckingham/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/curtis-buckingham.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="darayus mehta true diamond" data-handle="darayus-mehta">
-            <textarea class="full-message" style="display:none">Hi Darayus... saw what you&#x27;re building at True Diamond and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Darayus Mehta <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">True Diamond</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hi Darayus... saw what you&#x27;re building at True Diamond and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/darayus-mehta-7b25295/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/darayus-mehta.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="darshan rajodiya zillion export" data-handle="darshan-rajodiya">
-            <textarea class="full-message" style="display:none">Hey Darshan... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Zillion Export too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Darshan Rajodiya <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Zillion Export</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Darshan... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Zillion Export too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/darshan-rajodiya-643815372/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/darshan-rajodiya.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="david shapiro david shapiro enterprises" data-handle="david-shapiro">
-            <textarea class="full-message" style="display:none">Hey David... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for DSE too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">David Shapiro <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">David Shapiro Enterprises</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey David... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for DSE too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/david-shapiro-84b8851/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/david-shapiro.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="deepak khandelwal themoneygrow.in" data-handle="deepak-khandelwal">
-            <textarea class="full-message" style="display:none">Hey Deepak... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Deepak Khandelwal <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">themoneygrow.in</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Deepak... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/deepak-khandelwal-ba500121/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/deepak-khandelwal.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="deepak reddy dr remedies labs" data-handle="deepak-reddy">
-            <textarea class="full-message" style="display:none">Hi Deepak... saw what you&#x27;re building at DR Remedies Labs and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Deepak Reddy <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">DR Remedies Labs</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hi Deepak... saw what you&#x27;re building at DR Remedies Labs and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/deepak-reddy-remedies/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/deepak-reddy.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="dev prasad pingsir solutions" data-handle="dev-prasad">
-            <textarea class="full-message" style="display:none">Hey Dev... this has been sitting in my drafts for a bit, finally sending it. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Pingsir too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Made a quick PDF walking through it... worth a look?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dev Prasad <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Pingsir Solutions</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Dev... this has been sitting in my drafts for a bit, finally sending it. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Pingsir too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Made a quick PDF walking through it... worth a look?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/devprasadxlr/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dev-prasad.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="deva simma prasan invensys" data-handle="deva-simma">
-            <textarea class="full-message" style="display:none">Hey Deva... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Prasan Invensys too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Deva Simma <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Prasan Invensys</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Deva... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Prasan Invensys too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/devasimma/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/deva-simma.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="devendra singh linfohub" data-handle="devendra-singh">
-            <textarea class="full-message" style="display:none">Hey Devendra... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Devendra Singh <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Linfohub</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Devendra... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/devendra-singh1/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/devendra-singh.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="dhanan jay shinitz" data-handle="dhanan-jay">
-            <textarea class="full-message" style="display:none">Hi Dhanan... saw what you&#x27;re building at Shinitz and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dhanan Jay <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Shinitz</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hi Dhanan... saw what you&#x27;re building at Shinitz and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dhanan-jay-28391b421/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dhanan-jay.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="dharani sai tachyon automations" data-handle="dharani-sai">
-            <textarea class="full-message" style="display:none">Hey Dharani... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Tachyon too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dharani Sai <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Tachyon Automations</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Dharani... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Tachyon too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dharani-sai-a73090212/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dharani-sai.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="diamond dogra the local talk - tlt advertising solutions" data-handle="diamond-dogra">
-            <textarea class="full-message" style="display:none">Hey Diamond... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Attached a short PDF on how it works... check it out?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Diamond Dogra <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">THE LOCAL TALK - TLT Advertising Solutions</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Diamond... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Attached a short PDF on how it works... check it out?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/diamond-dogra-52332a23/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/diamond-dogra.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="dimpal aggarwal vowel digital adworld" data-handle="dimpal-aggarwal">
-            <textarea class="full-message" style="display:none">Hi Dimpal... saw what you&#x27;re building at Vowel Digital Adworld and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dimpal Aggarwal <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Vowel Digital Adworld</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hi Dimpal... saw what you&#x27;re building at Vowel Digital Adworld and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dimpal-aggarwal-81678972/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dimpal-aggarwal.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Generic" data-name="dinesh mahajan the future prime consultancy services" data-handle="dinesh-mahajan">
-            <textarea class="full-message" style="display:none">Hey Dinesh... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for The Future Prime too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dinesh Mahajan <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">The Future Prime Consultancy Services</span>
-                </div>
-                <span class="badge badge-generic">Generic</span>
-            </div>
-            <div class="message-preview">Hey Dinesh... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for The Future Prime too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
-            <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dinesh-mahajan-14007a2ab/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
-                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dinesh-mahajan.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="Real Estate" data-name="dinesh rathod jaywant group" data-handle="dinesh-rathod">
-            <textarea class="full-message" style="display:none">Hey Dinesh... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</textarea>
-            <div class="card-header">
-                <div class="biz-info">
-                    <span class="biz-name">Dinesh Rathod <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Jaywant Group</span>
+                    <span class="biz-name">Chandra Singh <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Nash Realty</span>
                 </div>
                 <span class="badge badge-realestate">Real Estate</span>
             </div>
-            <div class="message-preview">Hey Dinesh... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</div>
+            <div class="message-preview">Hey Chandra... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Attached a short PDF on how it works... check it out?</div>
             <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dinesh-rathod-8776365b/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <a href="https://www.linkedin.com/in/chandra-singh-62354540/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
                 <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dinesh-rathod.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/chandra-singh.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
             </div>
         </div>
 
-        <div class="card" data-category="Generic" data-name="dinesh sah new city carrier" data-handle="dinesh-sah">
-            <textarea class="full-message" style="display:none">Hi Dinesh... saw what you&#x27;re doing at New City Carrier and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</textarea>
+        <div class="card" data-category="Real Estate" data-name="dipinder benjamin morpho hotels and resorts" data-handle="dipinder-benjamin">
+            <textarea class="full-message" style="display:none">Hey Dipinder... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</textarea>
             <div class="card-header">
                 <div class="biz-info">
-                    <span class="biz-name">Dinesh Sah <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">New City Carrier</span>
+                    <span class="biz-name">Dipinder Benjamin <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Morpho Hotels and Resorts</span>
                 </div>
-                <span class="badge badge-generic">Generic</span>
+                <span class="badge badge-realestate">Real Estate</span>
             </div>
-            <div class="message-preview">Hi Dinesh... saw what you&#x27;re doing at New City Carrier and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</div>
+            <div class="message-preview">Hey Dipinder... this has been sitting in my drafts for a bit so finally sending it over. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Put together a short PDF on it... take a look when you get a chance?</div>
             <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dinesh-sah-170465274/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <a href="https://www.linkedin.com/in/dipinder7572771a/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
                 <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dinesh-sah.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dipinder-benjamin.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
             </div>
         </div>
 
-        <div class="card" data-category="Generic" data-name="dinesh sarkar namooh groups" data-handle="dinesh-sarkar">
-            <textarea class="full-message" style="display:none">Hey Dinesh... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Namooh too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</textarea>
+        <div class="card" data-category="Generic" data-name="ditto mohan biogrithm" data-handle="ditto-mohan">
+            <textarea class="full-message" style="display:none">Hi Ditto... saw what you&#x27;re building at Biogrithm and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</textarea>
             <div class="card-header">
                 <div class="biz-info">
-                    <span class="biz-name">Dinesh Sarkar <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
-                    <span class="biz-company">Namooh Groups</span>
+                    <span class="biz-name">Ditto Mohan <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Biogrithm</span>
                 </div>
                 <span class="badge badge-generic">Generic</span>
             </div>
-            <div class="message-preview">Hey Dinesh... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Namooh too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</div>
+            <div class="message-preview">Hi Ditto... saw what you&#x27;re building at Biogrithm and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</div>
             <div class="actions actions-3">
-                <a href="https://www.linkedin.com/in/dinesh-sarkar13/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <a href="https://www.linkedin.com/in/ditto-mohan-234296245/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
                 <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
-                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dinesh-sarkar.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/ditto-mohan.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="dr. calvin yu intellectual capital limited" data-handle="dr-calvin-yu">
+            <textarea class="full-message" style="display:none">Hey Calvin... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Intellectual Capital too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Dr. Calvin Yu <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Intellectual Capital Limited</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hey Calvin... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, thought it might be relevant for Intellectual Capital too... WhatsApp handles the qualifying, even books the call. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Threw together a PDF on it... figured it&#x27;s worth five minutes?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/dr-calvin-yu-a9864a38/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dr-calvin-yu.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="dr. rod brazier international humanitarian college london" data-handle="dr-rod-brazier">
+            <textarea class="full-message" style="display:none">Hey Rod... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once a student inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Dr. Rod Brazier <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">International Humanitarian College London</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hey Rod... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once a student inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/dr-rod-brazier-947974b7/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dr-rod-brazier.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="dsvb thribhuvan iheal digital technologies" data-handle="dsvb-thribhuvan">
+            <textarea class="full-message" style="display:none">Hi Thribhuvan... saw what you&#x27;re building at iHeal and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">DSVB Thribhuvan <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">iHeal Digital Technologies</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hi Thribhuvan... saw what you&#x27;re building at iHeal and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Made a quick PDF walking through it... worth a look?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/thribhuvan-d/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/dsvb-thribhuvan.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="easwar namboothiri zukudu" data-handle="easwar-namboothiri">
+            <textarea class="full-message" style="display:none">Hey Easwar... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Zukudu too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Easwar Namboothiri <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Zukudu</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hey Easwar... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Zukudu too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/yeseaswar/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/easwar-namboothiri.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="eclora digital marketing eclora" data-handle="eclora-digital-marketing">
+            <textarea class="full-message" style="display:none">Hey Eclora team... saw what you&#x27;re building and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Eclora Digital Marketing <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Eclora</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hey Eclora team... saw what you&#x27;re building and thought of this. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Attached a short PDF on how it works... check it out?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/eclora-digital-marketing-554860425/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/eclora-digital-marketing.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Real Estate" data-name="erin strain grand welcome" data-handle="erin-strain">
+            <textarea class="full-message" style="display:none">Hey Erin... this has been sitting in my drafts for a bit, finally sending it. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in, figured it&#x27;s relevant for Grand Welcome too... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Made a quick PDF walking through it... worth a look?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Erin Strain <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Grand Welcome</span>
+                </div>
+                <span class="badge badge-realestate">Real Estate</span>
+            </div>
+            <div class="message-preview">Hey Erin... this has been sitting in my drafts for a bit, finally sending it. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in, figured it&#x27;s relevant for Grand Welcome too... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already raised their hand. Made a quick PDF walking through it... worth a look?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/erin-strain-a3ab40144/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/erin-strain.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Real Estate" data-name="freddie blunt red kite" data-handle="freddie-blunt">
+            <textarea class="full-message" style="display:none">Hey Freddie... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Attached a short PDF on how it works... check it out?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Freddie Blunt <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Red Kite</span>
+                </div>
+                <span class="badge badge-realestate">Real Estate</span>
+            </div>
+            <div class="message-preview">Hey Freddie... this is a bit out of nowhere but figured I&#x27;d send it anyway. Been building something at Think To Share that takes real estate leads off your team&#x27;s plate once they come in... WhatsApp does the follow up and the qualifying, even books the site visit. We can help source leads too if that&#x27;s ever needed... but this one&#x27;s really about what happens after someone&#x27;s already shown interest. Attached a short PDF on how it works... check it out?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/freddie-blunt-32b48667/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/freddie-blunt.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="Generic" data-name="gabriel macek young republic digital" data-handle="gabriel-macek">
+            <textarea class="full-message" style="display:none">Hey Gabriel... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Young Republic Digital too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</textarea>
+            <div class="card-header">
+                <div class="biz-info">
+                    <span class="biz-name">Gabriel Macek <span class="li-opened-badge"><svg style="width:14px;height:14px;fill:#10b981" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Opened</span></span>
+                    <span class="biz-company">Young Republic Digital</span>
+                </div>
+                <span class="badge badge-generic">Generic</span>
+            </div>
+            <div class="message-preview">Hey Gabriel... random one but been meaning to send this over. Been building something at Think To Share that takes the follow-up grind off your plate once an inquiry comes in, figured it&#x27;s relevant for Young Republic Digital too... WhatsApp handles the qualifying, even books the call. There&#x27;s a lead-gen side to this too if you want it... though what I wanted to show you is the nurturing part. Put together a short PDF on it... take a look when you get a chance?</div>
+            <div class="actions actions-3">
+                <a href="https://www.linkedin.com/in/gabriel-macek-bbb4482a8/" target="_blank" class="btn btn-linkedin" onclick="liTrackOpen(this)"><svg style="width:16px;height:16px;fill:white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.556V9h3.563v11.452z"/></svg> Open Profile</a>
+                <button class="btn btn-copy" onclick="liCopyMessage(this)"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button>
+                <a href="https://thinktosharewebsites.github.io/w/souranka/pdfs/gabriel-macek.pdf" download class="btn btn-pdf"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> PDF</a>
             </div>
         </div>
       </div>
