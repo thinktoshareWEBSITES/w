@@ -748,6 +748,8 @@
     <div id="sourankaPanel" style="display:none">
       <div class="sub-tabs">
         <button class="sub-tab active" id="soSubLi" onclick="switchSourankaSub('linkedin')">Souranka LinkedIn</button>
+        <button class="sub-tab" id="soSubConnect" onclick="switchSourankaSub('connect')">&#129309; Connection Requests</button>
+        <button class="sub-tab" id="soSubFu" onclick="switchSourankaSub('followup')">&#128276; Needs Follow-Up <span id="soFuCount">(0)</span></button>
       </div>
       <div id="linkedinPanel">
 
@@ -1117,6 +1119,26 @@
       </div>
 
     </div><!-- /linkedinPanel -->
+      <div id="soConnectSub" style="display:none">
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="soFilterConnect(this)">
+          </div>
+          <label class="btn btn-import">
+            &#128229; Import New Batch (CSV)
+            <input type="file" accept=".csv" style="display:none" onchange="soImportBatch(this)">
+          </label>
+        </div>
+        <div class="empty-state" style="padding:8px 4px;font-size:13px;color:#64748b">France-list profiles that aren't free Open Profile hits. Send a connection request first here, then DM them yourself once they accept -- track acceptance in the "Needs Follow-Up" tab.</div>
+        <div class="stats" id="soConnectStats">0 leads</div>
+        <div class="leads-list" id="soConnectLeadsList"></div>
+      </div>
+      <div id="soFollowUpSub" style="display:none">
+        <div class="stats" id="soFollowUpStats">0 pending</div>
+        <div class="leads-list" id="soFollowUpList"></div>
+        <div class="empty-state" id="soFollowUpEmpty">Nothing pending. Click "Mark Connection Sent" on any card to track it here until they accept.</div>
+      </div>
     </div><!-- /sourankaPanel -->
 
     <div id="paragPanel">
@@ -1721,8 +1743,13 @@
         }
 
         function switchSourankaSub(s){
-            // only one sub-tab today (LinkedIn); kept so more of Souranka's platforms can be added the same way Parag's are
-            document.getElementById('soSubLi').classList.add('active');
+            document.getElementById('linkedinPanel').style.display = (s === 'linkedin') ? '' : 'none';
+            document.getElementById('soConnectSub').style.display = (s === 'connect') ? '' : 'none';
+            document.getElementById('soFollowUpSub').style.display = (s === 'followup') ? '' : 'none';
+            document.getElementById('soSubLi').classList.toggle('active', s === 'linkedin');
+            document.getElementById('soSubConnect').classList.toggle('active', s === 'connect');
+            document.getElementById('soSubFu').classList.toggle('active', s === 'followup');
+            if (s === 'followup') soRenderFollowUp();
         }
 
         function switchParagSub(s){
@@ -2051,6 +2078,217 @@
         function paFilterX(el)  { paFilterList(el, 'paXLeadsList'); }
         function paFilterConnect(el) { paFilterList(el, 'paConnectLeadsList'); }
 
+        /* ===== Souranka France-track Connection Requests -- own localStorage keys/DOM ids,
+           no shared state with Parag's PA_* system, only reuses stateless helpers (paEsc,
+           paParseCSV, paFilterList, paDaysAgo, liCopyMessage) that are safe to share ===== */
+        const SO_CONNECT_SEED = []; // empty until the France list + vetting pipeline populates this
+        const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
+        const SO_DATA_VERSION = 1; // bump whenever SO_CONNECT_SEED is updated with new research
+
+        // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
+        // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
+        // member" first, then the same ask Parag's own note makes.
+        const SO_CONNECT_MESSAGE_TEMPLATE = "Hi {fn}, I'm reaching out on behalf of Parag Nandy Roy, a BNI member! Loved what you're building at {company}... keen to connect so he can send good referrals your way.";
+
+        function soMsg(name, company){
+            const fn = (name || '').split(' ')[0] || name || '';
+            return SO_CONNECT_MESSAGE_TEMPLATE.replace(/\{fn\}/g, fn).replace(/\{company\}/g, company || 'your business');
+        }
+
+        function soQueueLoad(){
+            try { return JSON.parse(localStorage.getItem(SO_CONNECT_QUEUE_KEY)); } catch { return null; }
+        }
+        function soQueueSave(state){
+            try { localStorage.setItem(SO_CONNECT_QUEUE_KEY, JSON.stringify(state)); } catch {}
+        }
+
+        function soQueueSeedIfEmpty(){
+            const stored = soQueueLoad();
+            let items = (stored && stored.items) || [];
+            if (!stored || stored._seedVersion !== SO_DATA_VERSION) {
+                const existingByKey = {};
+                items.forEach(x => { existingByKey[x.key] = x; });
+                // Merge-only, same spirit as Parag's accumulating linkedin_connect: never drop
+                // someone just because a later day's SO_CONNECT_SEED omits them.
+                const merged = items.slice();
+                SO_CONNECT_SEED.forEach(item => {
+                    if (!existingByKey[item.key]) {
+                        merged.push(Object.assign({}, item, { done: false, addedAt: Date.now() }));
+                    }
+                });
+                items = merged;
+                soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
+            }
+            return items;
+        }
+
+        function soRenderConnect(){
+            const items = soQueueSeedIfEmpty();
+            const pending = items.filter(x => !x.done).sort((a, b) => a.addedAt - b.addedAt);
+            const doneCount = items.length - pending.length;
+
+            const statsEl = document.getElementById('soConnectStats');
+            if (statsEl) statsEl.textContent = pending.length + ' pending · ' + doneCount + ' already sent';
+            const listEl = document.getElementById('soConnectLeadsList');
+            if (!listEl) return;
+
+            listEl.innerHTML = pending.map(item => {
+                const dataName = (item.name + ' ' + item.company).toLowerCase();
+                const msg = soMsg(item.name, item.company);
+                return '<div class="card pa-card" data-name="' + paEsc(dataName) + '" data-key="' + paEsc(item.key) + '" data-pname="' + paEsc(item.name) + '" data-company="' + paEsc(item.company) + '" data-url="' + paEsc(item.url) + '" data-active="' + paEsc(item.lastActive) + '">'
+                    + '<input type="checkbox" class="pa-done-check" title="Mark done -- removes it from this list, future imports will skip this person" onchange="soToggleDone(this)">'
+                    + '<textarea class="full-message" style="display:none">' + paEsc(msg) + '</textarea>'
+                    + '<div class="card-header"><div class="biz-info">'
+                    + '<span class="biz-name">' + paEsc(item.name) + '</span>'
+                    + '<span class="biz-company">' + paEsc(item.company) + '</span>'
+                    + '</div><span class="badge badge-active">Active ' + paEsc(item.lastActive) + '</span></div>'
+                    + '<div class="message-preview">' + paEsc(msg) + '</div>'
+                    + '<div class="actions actions-3">'
+                    + '<a href="' + paEsc(item.url) + '" target="_blank" class="btn btn-linkedin">View Profile</a>'
+                    + '<button class="btn btn-copy" onclick="liCopyMessage(this)">Copy</button>'
+                    + '<button class="btn btn-requested" onclick="soToggleRequested(this)">Mark Connection Sent</button>'
+                    + '</div></div>';
+            }).join('\n');
+
+            soSyncRequestedButtons();
+        }
+
+        function soToggleDone(checkbox){
+            const card = checkbox.closest('.card');
+            const key = card.getAttribute('data-key');
+            const items = soQueueSeedIfEmpty();
+            const item = items.find(x => x.key === key);
+            if (!item) return;
+            item.done = checkbox.checked;
+            soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
+            soRenderConnect();
+        }
+
+        function soImportBatch(fileInput){
+            const file = fileInput.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e){
+                const records = paParseCSV(e.target.result);
+                const items = soQueueSeedIfEmpty();
+                let added = 0, skipped = 0;
+
+                records.forEach(r => {
+                    const name = (r.name || '').trim();
+                    if (!name) return;
+                    const uid = (r.user_id || '').trim();
+                    const key = 'so_connect::' + (uid || r.url || name);
+                    if (items.some(x => x.key === key)) { skipped++; return; }
+
+                    items.push({
+                        key: key,
+                        name: name,
+                        company: (r.company || '').trim(),
+                        url: (r.url || '').trim(),
+                        lastActive: (r.last_active || '').trim(),
+                        done: false,
+                        addedAt: Date.now()
+                    });
+                    added++;
+                });
+
+                soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
+                soRenderConnect();
+                fileInput.value = '';
+                alert('Imported ' + added + ' new · skipped ' + skipped + ' already in the list.');
+            };
+            reader.readAsText(file);
+        }
+
+        function soFilterConnect(el) { paFilterList(el, 'soConnectLeadsList'); }
+
+        /* ===== Souranka "Needs Follow-Up" tracker -- separate from Parag's paFollowUpList ===== */
+        const SO_FOLLOWUP_KEY = 'soFollowUpList';
+
+        function soFollowUpLoad(){
+            try { return JSON.parse(localStorage.getItem(SO_FOLLOWUP_KEY) || '[]'); } catch { return []; }
+        }
+        function soFollowUpSave(arr){
+            try { localStorage.setItem(SO_FOLLOWUP_KEY, JSON.stringify(arr)); } catch {}
+        }
+
+        function soToggleRequested(btn){
+            const card = btn.closest('.card');
+            const key = card.getAttribute('data-key');
+            let list = soFollowUpLoad();
+            const idx = list.findIndex(x => x.key === key);
+
+            if (idx >= 0) {
+                list.splice(idx, 1);
+                btn.classList.remove('active');
+                btn.textContent = 'Mark Connection Sent';
+            } else {
+                list.push({
+                    key: key,
+                    name: card.getAttribute('data-pname'),
+                    company: card.getAttribute('data-company'),
+                    url: card.getAttribute('data-url'),
+                    message: card.querySelector('.full-message').value,
+                    addedAt: Date.now()
+                });
+                btn.classList.add('active');
+                btn.textContent = '✓ Requested';
+            }
+            soFollowUpSave(list);
+            soRenderFollowUp();
+        }
+
+        function soMarkDone(btn){
+            const key = btn.closest('.card').getAttribute('data-key');
+            const list = soFollowUpLoad().filter(x => x.key !== key);
+            soFollowUpSave(list);
+            soRenderFollowUp();
+        }
+
+        function soSyncRequestedButtons(){
+            const list = soFollowUpLoad();
+            const keys = new Set(list.map(x => x.key));
+            document.querySelectorAll('#soConnectLeadsList .card[data-key] .btn-requested').forEach(btn => {
+                const key = btn.closest('.card').getAttribute('data-key');
+                if (keys.has(key)) { btn.classList.add('active'); btn.textContent = '✓ Requested'; }
+            });
+        }
+
+        function soRenderFollowUp(){
+            const list = soFollowUpLoad();
+            const count = list.length;
+            const countEl = document.getElementById('soFuCount');
+            if (countEl) countEl.textContent = '(' + count + ')';
+            const statsEl = document.getElementById('soFollowUpStats');
+            if (statsEl) statsEl.textContent = count + ' pending';
+            const emptyEl = document.getElementById('soFollowUpEmpty');
+            const listEl = document.getElementById('soFollowUpList');
+            if (!listEl) return;
+
+            if (count === 0) {
+                listEl.innerHTML = '';
+                if (emptyEl) emptyEl.style.display = '';
+                return;
+            }
+            if (emptyEl) emptyEl.style.display = 'none';
+
+            const sorted = [...list].sort((a, b) => a.addedAt - b.addedAt);
+            listEl.innerHTML = sorted.map(item => {
+                return '<div class="card" data-key="' + paEsc(item.key) + '">'
+                    + '<textarea class="full-message" style="display:none">' + paEsc(item.message) + '</textarea>'
+                    + '<div class="card-header"><div class="biz-info">'
+                    + '<span class="biz-name">' + paEsc(item.name) + '</span>'
+                    + '<span class="biz-company">' + paEsc(item.company) + '</span>'
+                    + '</div><span class="badge badge-active">Connection &middot; Day ' + paDaysAgo(item.addedAt) + '</span></div>'
+                    + '<div class="message-preview">' + paEsc(item.message) + '</div>'
+                    + '<div class="actions actions-3">'
+                    + '<a href="' + paEsc(item.url) + '" target="_blank" class="btn btn-linkedin">View Profile</a>'
+                    + '<button class="btn btn-copy" onclick="liCopyMessage(this)">Copy</button>'
+                    + '<button class="btn btn-done" onclick="soMarkDone(this)">&#10003; Mark Done</button>'
+                    + '</div></div>';
+            }).join('\n');
+        }
+
         function liTrackOpen(a){
             const card = a.closest('.card');
             const handle = card.getAttribute('data-handle');
@@ -2145,6 +2383,8 @@
             if (last === 'parag') switchPlatform('parag');
             paRenderAll();
             paRenderFollowUp(); // updates the (N) count on the tab even before it's opened
+            soRenderConnect();
+            soRenderFollowUp();
         })();
     </script>
 </body>
