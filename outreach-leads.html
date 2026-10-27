@@ -1145,6 +1145,7 @@
             &#128229; Import New Batch (CSV)
             <input type="file" accept=".csv" style="display:none" onchange="soImportBatch(this)">
           </label>
+          <button class="btn btn-import" onclick="soResetConnectToSeed()" title="Removes anyone not in the current batch below -- use once to clear out old/test entries, not needed day to day">&#129529; Reset to Today's Batch</button>
         </div>
         <div class="empty-state" style="padding:8px 4px;font-size:13px;color:#64748b">France-list profiles that aren't free Open Profile hits. Send a connection request first here, then DM them yourself once they accept -- track acceptance in the "Needs Follow-Up" tab.</div>
         <div class="stats" id="soConnectStats">0 leads</div>
@@ -2357,6 +2358,19 @@
             const item = items.find(x => x.key === key);
             if (!item) return;
             item.done = checkbox.checked;
+            soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
+            soRenderConnect();
+        }
+
+        function soResetConnectToSeed(){
+            if (!confirm('This drops anyone not in the current batch of ' + SO_CONNECT_SEED.length + ' below (keeps done/sent status for ones that stay). Continue?')) return;
+            const stored = soQueueLoad();
+            const existingByKey = {};
+            ((stored && stored.items) || []).forEach(x => { existingByKey[x.key] = x; });
+            const items = SO_CONNECT_SEED.map(seedItem => {
+                const prior = existingByKey[seedItem.key];
+                return prior ? prior : Object.assign({}, seedItem, { done: false, addedAt: Date.now() });
+            });
             soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
             soRenderConnect();
         }
