@@ -2099,9 +2099,33 @@
            the pending queue (clean-overwrite, same convention as the DM Helper rule in
            CLAUDE.md), done-status is preserved for anyone still present. Mirrors Parag's
            non-accumulating PA_PLATFORMS branch, not the merge-only linkedin_connect one. ===== */
-        const SO_PREMIUM_SEED = []; // empty until the France list + vetting pipeline populates this
+        // First France batch (2026-10-27): top 20 most-recently-active of 50 qualified BNI
+        // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
+        // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
+        const SO_PREMIUM_SEED = [
+          {key:"france::alexandre-cattin-altum", name:"Alexandre CATTIN", company:"ALTUM", url:"http://www.linkedin.com/in/alexandre-cattin-3329479a", lastActive:"7h"},
+          {key:"france::alexis-le-guern-alexis-le-guern-domicil-gym", name:"Alexis LE GUERN", company:"Alexis Le Guern Domicil'Gym", url:"https://www.linkedin.com/in/alexis-le-guern-bb1560173/", lastActive:"18h"},
+          {key:"france::antonin-boiveau-antonin-margaux", name:"Antonin BOIVEAU", company:"Antonin + Margaux", url:"https://www.linkedin.com/in/antonin-boiveau/", lastActive:"18h"},
+          {key:"france::aur-lien-galy-agence-axa-aur-lien-galy", name:"Aurélien GALY", company:"Agence AXA Aurélien GALY", url:"https://fr.linkedin.com/in/aurélien-galy-28377ba3", lastActive:"Oct 23"},
+          {key:"france::axel-calvet-fedarc", name:"Axel CALVET", company:"FEDARC", url:"https://www.linkedin.com/in/axel-calvet-1bb5566a", lastActive:"16h"},
+          {key:"france::bryan-do-casal-aic-conseil", name:"Bryan DO CASAL", company:"AIC CONSEIL", url:"http://www.linkedin.com/in/bryan-do-casal-42819897", lastActive:"Oct 21"},
+          {key:"france::claire-favier-vision-performance", name:"Claire FAVIER", company:"VISION PERFORMANCE", url:"https://www.linkedin.com/in/favierclaire?trk=nav_responsive_tab_profile", lastActive:"Oct 23"},
+          {key:"france::claude-richoux-cabinet-360-transactions", name:"Claude RICHOUX", company:"Cabinet 360 TRANSACTIONS", url:"https://www.linkedin.com/in/claude-richoux-a4067338/", lastActive:"17h"},
+          {key:"france::cl-ment-bonnet-basalt", name:"Clément BONNET", company:"BASALT_", url:"https://www.linkedin.com/in/clément-bonnet-5729b0154", lastActive:"1d"},
+          {key:"france::corinne-chabauty-ethic-peintures-et-sols", name:"Corinne CHABAUTY", company:"ETHIC PEINTURES ET SOLS", url:"http://linkedin.com/in/corinne-chabauty-ab91b724", lastActive:"1d"},
+          {key:"france::cyril-blanchard-la-maison-des-travaux", name:"Cyril BLANCHARD", company:"La Maison Des Travaux", url:"https://www.linkedin.com/in/cyril-blanchard-5a883286?trk=nav_responsive_tab_profile_pic", lastActive:"1d"},
+          {key:"france::david-labarrere-sarl-moiroud-labarrere-assurances-axa", name:"David LABARRERE", company:"SARL MOIROUD LABARRERE ASSURANCES AXA", url:"https://www.linkedin.com/in/david-labarrere/", lastActive:"Oct 21"},
+          {key:"france::david-marre-axa-prevoyance-et-patrimoine", name:"David MARRE", company:"AXA PREVOYANCE ET PATRIMOINE", url:"http://www.linkedin.com/in/david-marre", lastActive:"19h"},
+          {key:"france::david-salembier-leasygo", name:"David SALEMBIER", company:"LEASYGO", url:"https://www.linkedin.com/in/davidsalembier/", lastActive:"Oct 22"},
+          {key:"france::delphine-serpette-optimise-gestion", name:"Delphine SERPETTE", company:"Optimise Gestion", url:"http://www.linkedin.com/in/delphine-serpette", lastActive:"8h"},
+          {key:"france::diana-ruiz-diana-ruiz-immobilier", name:"Diana RUIZ", company:"Diana Ruiz Immobilier", url:"https://www.linkedin.com/in/diana-ruiz-010a64125", lastActive:"Oct 22"},
+          {key:"france::doriane-pomero-doriane-pomero-assistante-ind-pendante", name:"Doriane POMERO", company:"Doriane Pomero assistante indépendante", url:"http://linkedin.com/in/dorianepomeroassistante", lastActive:"9h"},
+          {key:"france::emilie-fuentes-emilie-fuentes", name:"Emilie FUENTES", company:"EMILIE FUENTES", url:"https://www.linkedin.com/in/emilie-fuentes-b83b54b6/", lastActive:"Oct 21"},
+          {key:"france::barbara-barre-orsea", name:"Barbara BARRE", company:"ORSEA", url:"https://fr.linkedin.com/in/barbara-barre-canel-6955aa2", lastActive:"Oct 18"},
+          {key:"france::christine-zilliox-christine-zilliox-mh-interior", name:"Christine ZILLIOX", company:"Christine ZILLIOX MH Interior", url:"https://www.linkedin.com/in/christine-mhinterior-haguenau/", lastActive:"Oct 20"}
+        ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 1; // bump whenever SO_PREMIUM_SEED is replaced with a new day's batch
+        const SO_PREMIUM_DATA_VERSION = 2; // bumped 2026-10-27: first France batch (20 people) seeded
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2231,30 +2255,32 @@
         /* ===== Souranka France-track Connection Requests -- own localStorage keys/DOM ids,
            no shared state with Parag's PA_* system, only reuses stateless helpers (paEsc,
            paParseCSV, paFilterList, paDaysAgo, liCopyMessage) that are safe to share ===== */
-        // First France batch (2026-10-27): 17 qualified out of 37 BNI members screened --
-        // title/role check + activity-recency check (exclude 21+ weeks inactive), vetted by
-        // visiting each profile via Souranka's own logged-in session. Key = 'france::' + slug.
+        // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
+        // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::ahmed-hamrad-med-in-coaching", name:"Ahmed HAMRAD", company:"MED'IN COACHING", url:"https://www.linkedin.com/in/ahmed-hamrad-9a1ba5146/", lastActive:"Aug 1"},
-          {key:"france::alexandre-basse-coach-d-affaires", name:"Alexandre BASSE", company:"COACH D'AFFAIRES", url:"https://www.linkedin.com/in/alexandre-basse-coachdaffaires", lastActive:"Aug 6"},
-          {key:"france::alexandre-cattin-altum", name:"Alexandre CATTIN", company:"ALTUM", url:"http://www.linkedin.com/in/alexandre-cattin-3329479a", lastActive:"7h"},
-          {key:"france::alexis-croix-selarl-a-lex-avocat", name:"Alexis CROIX", company:"SELARL A-LEX AVOCAT", url:"https://www.linkedin.com/in/alexis-croix-97750a2/", lastActive:"Aug 28"},
-          {key:"france::alexis-le-guern-alexis-le-guern-domicil-gym", name:"Alexis LE GUERN", company:"Alexis Le Guern Domicil'Gym", url:"https://www.linkedin.com/in/alexis-le-guern-bb1560173/", lastActive:"18h"},
-          {key:"france::ange-trobrillant-excel-conseils-management", name:"Ange TROBRILLANT", company:"EXCEL' CONSEILS MANAGEMENT", url:"https://www.linkedin.com/in/ange-mc-trobrillant-28057918a/", lastActive:"Aug 14"},
-          {key:"france::anne-de-carvalho-anne-de-carvalho-photographie", name:"Anne DE CARVALHO", company:"Anne De Carvalho Photographie", url:"https://www.linkedin.com/in/anne-de-carvalho-photographe-912a1947/", lastActive:"Jun 18"},
+          {key:"france::christophe-decaix-2b-patrimoine", name:"Christophe DECAIX", company:"2B PATRIMOINE", url:"https://www.linkedin.com/in/christophe-decaix-31561628/", lastActive:"Oct 20"},
+          {key:"france::colette-belhumeur-daf-et-plus", name:"Colette BELHUMEUR", company:"DAF ET PLUS", url:"https://www.linkedin.com/in/colette-belhumeur", lastActive:"Oct 20"},
+          {key:"france::denis-thuillier-strategie-des-champions", name:"Denis THUILLIER", company:"STRATEGIE DES CHAMPIONS", url:"http://linkedin.com/in/denisthuillier", lastActive:"Oct 14"},
+          {key:"france::edouard-mulot-em-conseils", name:"Edouard MULOT", company:"EM Conseils", url:"https://www.linkedin.com/in/edouard-mulot/", lastActive:"Oct 16"},
           {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", lastActive:"Oct 10"},
-          {key:"france::antoine-faure-cote-particuliers-bordeaux-ornano", name:"Antoine FAURE", company:"COTE PARTICULIERS BORDEAUX ORNANO", url:"https://www.linkedin.com/in/antoinefaure-immobilier-bordeaux/", lastActive:"Sep 8"},
-          {key:"france::antonin-boiveau-antonin-margaux", name:"Antonin BOIVEAU", company:"Antonin + Margaux", url:"https://www.linkedin.com/in/antonin-boiveau/", lastActive:"18h"},
           {key:"france::arnaud-auerbach-re-max-sunset-valbonne", name:"Arnaud AUERBACH", company:"RE/MAX SUNSET VALBONNE", url:"https://www.linkedin.com/in/arnaud-auerbach", lastActive:"Oct 7"},
-          {key:"france::aur-lien-galy-agence-axa-aur-lien-galy", name:"Aurélien GALY", company:"Agence AXA Aurélien GALY", url:"https://fr.linkedin.com/in/aurélien-galy-28377ba3", lastActive:"Oct 23"},
-          {key:"france::axel-calvet-fedarc", name:"Axel CALVET", company:"FEDARC", url:"https://www.linkedin.com/in/axel-calvet-1bb5566a", lastActive:"16h"},
+          {key:"france::cannelle-recher-boho", name:"Cannelle Recher", company:"BOHO", url:"https://www.linkedin.com/in/cannelle-recher-4a32271b8/", lastActive:"Oct 13"},
+          {key:"france::carine-metivier-cf-design-graphic-et-digital", name:"Carine METIVIER", company:"CF Design Graphic et Digital", url:"https://www.linkedin.com/in/carine-metivier-designer/", lastActive:"Oct 12"},
+          {key:"france::david-dubourgnoux-d-d-service-installation-d-pannage", name:"David DUBOURGNOUX", company:"D D service installation dépannage", url:"https://www.linkedin.com/in/david-dubourgnoux-52a895166/", lastActive:"Oct 9"},
+          {key:"france::david-duval-atout-amenagement", name:"David DUVAL", company:"ATOUT AMENAGEMENT", url:"https://www.linkedin.com/in/david-duval-37200410a/", lastActive:"Oct 11"},
+          {key:"france::denis-capitan-cap-d", name:"Denis CAPITAN", company:"CAP D", url:"https://www.linkedin.com/in/denis-capitan-27a8a521", lastActive:"Oct 9"},
+          {key:"france::christophe-hauser-m2w", name:"Christophe HAUSER", company:"M2W", url:"https://www.linkedin.com/in/christophehauser?trk=nav_responsive_tab_profile_pic", lastActive:"Oct 2"},
+          {key:"france::cyril-armada-dlc-photography", name:"Cyril ARMADA", company:"DLC PHOTOGRAPHY", url:"https://www.linkedin.com/in/cyril-armada-26a917241/", lastActive:"Oct 5"},
+          {key:"france::delphine-mauhourat-iad-france", name:"Delphine MAUHOURAT", company:"IAD FRANCE", url:"https://www.linkedin.com/in/delphine-mauhourat-ab5405125/", lastActive:"Oct 6"},
+          {key:"france::dominique-julien-start-travaux", name:"Dominique JULIEN", company:"START TRAVAUX", url:"https://www.linkedin.com/in/dominique-julien-68858383/", lastActive:"Oct 5"},
+          {key:"france::elodie-giacometti-clap-cut", name:"Elodie GIACOMETTI", company:"CLAP & CUT", url:"https://www.linkedin.com/in/elodie-giacometti-132490110/", lastActive:"Sep 30"},
           {key:"france::axel-roche-decor-home", name:"Axel ROCHE", company:"DECOR'HOME", url:"https://fr.linkedin.com/in/axel-roche-9ab689272", lastActive:"Sep 24"},
-          {key:"france::barbara-barre-orsea", name:"Barbara BARRE", company:"ORSEA", url:"https://fr.linkedin.com/in/barbara-barre-canel-6955aa2", lastActive:"Oct 18"},
+          {key:"france::cyril-le-tellier-cyliad-immobilier", name:"Cyril LE TELLIER", company:"CYLIAD IMMOBILIER", url:"https://www.linkedin.com/in/cyril-le-tellier-9b752ba3/", lastActive:"Sep 29"},
           {key:"france::boris-quinchon-coaching-renouveau-evolvance", name:"Boris QUINCHON", company:"COACHING & RENOUVEAU EVOLVANCE", url:"http://www.linkedin.com/in/boris-quinchon-9760732", lastActive:"1mo"},
-          {key:"france::bruno-besland-neosema", name:"Bruno BESLAND", company:"NEOSEMA", url:"https://www.linkedin.com/in/bruno-besland-9a792334?trk=hp-identity-name", lastActive:"4mo"}
+          {key:"france::bruno-maire-proxym-it", name:"Bruno MAIRE", company:"Proxym'IT", url:"https://www.linkedin.com/in/bruno-maire-b03776122/", lastActive:"Sep 14"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 2; // bumped 2026-10-27: first France batch (17 people) seeded
+        const SO_DATA_VERSION = 3; // bumped 2026-10-27: full 20/20 premium+connect split seeded
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
