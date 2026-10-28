@@ -750,6 +750,7 @@
         <button class="sub-tab active" id="soSubLi" onclick="switchSourankaSub('linkedin')">Souranka LinkedIn</button>
         <button class="sub-tab" id="soSubPremium" onclick="switchSourankaSub('premium')">&#128142; Sales Navigator</button>
         <button class="sub-tab" id="soSubConnect" onclick="switchSourankaSub('connect')">&#129309; Connection Requests</button>
+        <button class="sub-tab" id="soSubAccepted" onclick="switchSourankaSub('accepted')">&#9989; Connection Accepted</button>
         <button class="sub-tab" id="soSubFu" onclick="switchSourankaSub('followup')">&#128276; Needs Follow-Up <span id="soFuCount">(0)</span></button>
       </div>
       <div id="linkedinPanel">
@@ -1151,6 +1152,21 @@
         <div class="stats" id="soConnectStats">0 leads</div>
         <div class="leads-list" id="soConnectLeadsList"></div>
       </div>
+      <div id="soAcceptedSub" style="display:none">
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="soFilterAccepted(this)">
+          </div>
+          <label class="btn btn-import">
+            &#128229; Import New Batch (CSV)
+            <input type="file" accept=".csv" style="display:none" onchange="soImportAcceptedBatch(this)">
+          </label>
+        </div>
+        <div class="empty-state" style="padding:8px 4px;font-size:13px;color:#64748b">People who accepted a connection request -- they're now a 1st-degree connection, so you can DM them for free, no InMail credit needed. Accumulates day over day, never cleared automatically.</div>
+        <div class="stats" id="soAcceptedStats">0 leads</div>
+        <div class="leads-list" id="soAcceptedLeadsList"></div>
+      </div>
       <div id="soFollowUpSub" style="display:none">
         <div class="stats" id="soFollowUpStats">0 pending</div>
         <div class="leads-list" id="soFollowUpList"></div>
@@ -1166,6 +1182,7 @@
         <button class="sub-tab" id="paSubFb" onclick="switchParagSub('facebook')">Facebook</button>
         <button class="sub-tab" id="paSubX" onclick="switchParagSub('twitter')">Twitter / X</button>
         <button class="sub-tab" id="paSubConnect" onclick="switchParagSub('linkedin_connect')">&#129309; Connection Requests</button>
+        <button class="sub-tab" id="paSubAccepted" onclick="switchParagSub('accepted')">&#9989; Connection Accepted</button>
         <button class="sub-tab" id="paSubFu" onclick="switchParagSub('followup')">&#128276; Needs Follow-Up <span id="paFuCount">(0)</span></button>
       </div>
 
@@ -1253,6 +1270,21 @@
         <div class="empty-state" style="padding:8px 4px;font-size:13px;color:#64748b">People found while hunting for free Open Profile LinkedIn hits who weren't free. Send a connection request first here, then DM them yourself once they accept -- track acceptance in the "Needs Follow-Up" tab.</div>
         <div class="stats" id="paConnectStats">0 leads</div>
         <div class="leads-list" id="paConnectLeadsList"></div>
+      </div>
+      <div id="paAcceptedSub" style="display:none">
+        <div class="controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Search by name or company..." onkeyup="paFilterAccepted(this)">
+          </div>
+          <label class="btn btn-import">
+            &#128229; Import New Batch (CSV)
+            <input type="file" accept=".csv" style="display:none" onchange="paImportAcceptedBatch(this)">
+          </label>
+        </div>
+        <div class="empty-state" style="padding:8px 4px;font-size:13px;color:#64748b">People who accepted a connection request -- they're now a 1st-degree connection, so you can DM them for free, no InMail credit needed. Accumulates day over day, never cleared automatically.</div>
+        <div class="stats" id="paAcceptedStats">0 leads</div>
+        <div class="leads-list" id="paAcceptedLeadsList"></div>
       </div>
       <div id="paFollowUpSub" style="display:none">
         <div class="stats" id="paFollowUpStats">0 pending</div>
@@ -1763,11 +1795,14 @@
             document.getElementById('linkedinPanel').style.display = (s === 'linkedin') ? '' : 'none';
             document.getElementById('soPremiumSub').style.display = (s === 'premium') ? '' : 'none';
             document.getElementById('soConnectSub').style.display = (s === 'connect') ? '' : 'none';
+            document.getElementById('soAcceptedSub').style.display = (s === 'accepted') ? '' : 'none';
             document.getElementById('soFollowUpSub').style.display = (s === 'followup') ? '' : 'none';
             document.getElementById('soSubLi').classList.toggle('active', s === 'linkedin');
             document.getElementById('soSubPremium').classList.toggle('active', s === 'premium');
             document.getElementById('soSubConnect').classList.toggle('active', s === 'connect');
+            document.getElementById('soSubAccepted').classList.toggle('active', s === 'accepted');
             document.getElementById('soSubFu').classList.toggle('active', s === 'followup');
+            if (s === 'accepted') soRenderAccepted();
             if (s === 'followup') soRenderFollowUp();
         }
 
@@ -1778,6 +1813,7 @@
             document.getElementById('paFbSub').style.display = (s === 'facebook') ? '' : 'none';
             document.getElementById('paXSub').style.display = (s === 'twitter') ? '' : 'none';
             document.getElementById('paConnectSub').style.display = (s === 'linkedin_connect') ? '' : 'none';
+            document.getElementById('paAcceptedSub').style.display = (s === 'accepted') ? '' : 'none';
             document.getElementById('paFollowUpSub').style.display = (s === 'followup') ? '' : 'none';
             document.getElementById('paSubLi').classList.toggle('active', s === 'linkedin');
             document.getElementById('paSubIgBwp').classList.toggle('active', s === 'instagram_bwp');
@@ -1785,7 +1821,9 @@
             document.getElementById('paSubFb').classList.toggle('active', s === 'facebook');
             document.getElementById('paSubX').classList.toggle('active', s === 'twitter');
             document.getElementById('paSubConnect').classList.toggle('active', s === 'linkedin_connect');
+            document.getElementById('paSubAccepted').classList.toggle('active', s === 'accepted');
             document.getElementById('paSubFu').classList.toggle('active', s === 'followup');
+            if (s === 'accepted') paRenderAccepted();
             if (s === 'followup') paRenderFollowUp();
         }
 
@@ -1912,7 +1950,7 @@
         // Bump this every time PA_SEED is updated with new research. Any device whose stored
         // version doesn't match gets auto-reconciled to the current PA_SEED on next page load --
         // no button, no console command, works identically on phone, desktop, any browser.
-        const PA_DATA_VERSION = 18;
+        const PA_DATA_VERSION = 19;
 
         function paQueueSeedIfEmpty(){
             let q = paQueueLoad();
@@ -2095,6 +2133,121 @@
         function paFilterX(el)  { paFilterList(el, 'paXLeadsList'); }
         function paFilterConnect(el) { paFilterList(el, 'paConnectLeadsList'); }
 
+        /* ===== Parag "Connection Accepted" -- people who said yes to a connection request,
+           now 1st-degree so they're free to DM. Accumulates day over day (merge-only, like
+           Connection Requests), never auto-cleared. Populated by hand after each acceptance check. */
+        const PA_ACCEPTED_SEED = [
+          {key:"us::2147169", name:"Rossiel Harris", company:"Smart IntelliStrategies Group Corp DBA Restoration 1 of NW Cobb", url:"https://www.linkedin.com/in/rossielharris/", acceptedOn:"2026-10-28"}
+        ];
+        const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
+        const PA_ACCEPTED_DATA_VERSION = 1;
+
+        function paAcceptedMsg(name, company){
+            const fn = (name || '').split(' ')[0] || name || '';
+            return PA_MESSAGE_TEMPLATES.linkedin.replace(/\{fn\}/g, fn).replace(/\{company\}/g, company || 'your business');
+        }
+
+        function paAcceptedQueueLoad(){
+            try { return JSON.parse(localStorage.getItem(PA_ACCEPTED_QUEUE_KEY)); } catch { return null; }
+        }
+        function paAcceptedQueueSave(state){
+            try { localStorage.setItem(PA_ACCEPTED_QUEUE_KEY, JSON.stringify(state)); } catch {}
+        }
+        function paAcceptedQueueSeedIfEmpty(){
+            const stored = paAcceptedQueueLoad();
+            let items = (stored && stored.items) || [];
+            if (!stored || stored._seedVersion !== PA_ACCEPTED_DATA_VERSION) {
+                const existingByKey = {};
+                items.forEach(x => { existingByKey[x.key] = x; });
+                const merged = items.slice();
+                PA_ACCEPTED_SEED.forEach(item => {
+                    if (!existingByKey[item.key]) {
+                        merged.push(Object.assign({}, item, { done: false, addedAt: Date.now() }));
+                    }
+                });
+                items = merged;
+                paAcceptedQueueSave({ items: items, _seedVersion: PA_ACCEPTED_DATA_VERSION });
+            }
+            return items;
+        }
+
+        function paRenderAccepted(){
+            const items = paAcceptedQueueSeedIfEmpty();
+            const pending = items.filter(x => !x.done).sort((a, b) => a.addedAt - b.addedAt);
+            const doneCount = items.length - pending.length;
+
+            const statsEl = document.getElementById('paAcceptedStats');
+            if (statsEl) statsEl.textContent = pending.length + ' ready to DM · ' + doneCount + ' already messaged';
+            const listEl = document.getElementById('paAcceptedLeadsList');
+            if (!listEl) return;
+
+            listEl.innerHTML = pending.map(item => {
+                const dataName = (item.name + ' ' + item.company).toLowerCase();
+                const msg = paAcceptedMsg(item.name, item.company);
+                return '<div class="card pa-card" data-name="' + paEsc(dataName) + '" data-key="' + paEsc(item.key) + '">'
+                    + '<input type="checkbox" class="pa-done-check" title="Mark done -- removes it from this list once you have DMed them" onchange="paToggleDoneAccepted(this)">'
+                    + '<textarea class="full-message" style="display:none">' + paEsc(msg) + '</textarea>'
+                    + '<div class="card-header"><div class="biz-info">'
+                    + '<span class="biz-name">' + paEsc(item.name) + '</span>'
+                    + '<span class="biz-company">' + paEsc(item.company) + '</span>'
+                    + '</div><span class="badge badge-active">Accepted ' + paEsc(item.acceptedOn || '') + '</span></div>'
+                    + '<div class="message-preview">' + paEsc(msg) + '</div>'
+                    + '<div class="actions actions-2">'
+                    + '<a href="' + paEsc(item.url) + '" target="_blank" class="btn btn-linkedin">View Profile</a>'
+                    + '<button class="btn btn-copy" onclick="liCopyMessage(this)">Copy</button>'
+                    + '</div></div>';
+            }).join('\n');
+        }
+
+        function paToggleDoneAccepted(checkbox){
+            const card = checkbox.closest('.card');
+            const key = card.getAttribute('data-key');
+            const items = paAcceptedQueueSeedIfEmpty();
+            const item = items.find(x => x.key === key);
+            if (!item) return;
+            item.done = checkbox.checked;
+            paAcceptedQueueSave({ items: items, _seedVersion: PA_ACCEPTED_DATA_VERSION });
+            paRenderAccepted();
+        }
+
+        function paImportAcceptedBatch(fileInput){
+            const file = fileInput.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e){
+                const records = paParseCSV(e.target.result);
+                const items = paAcceptedQueueSeedIfEmpty();
+                let added = 0, skipped = 0;
+
+                records.forEach(r => {
+                    const name = (r.name || '').trim();
+                    if (!name) return;
+                    const uid = (r.user_id || '').trim();
+                    const key = 'pa_accepted::' + (uid || r.url || name);
+                    if (items.some(x => x.key === key)) { skipped++; return; }
+
+                    items.push({
+                        key: key,
+                        name: name,
+                        company: (r.company || '').trim(),
+                        url: (r.url || '').trim(),
+                        acceptedOn: (r.accepted_on || '').trim(),
+                        done: false,
+                        addedAt: Date.now()
+                    });
+                    added++;
+                });
+
+                paAcceptedQueueSave({ items: items, _seedVersion: PA_ACCEPTED_DATA_VERSION });
+                paRenderAccepted();
+                fileInput.value = '';
+                alert('Imported ' + added + ' new · skipped ' + skipped + ' already in the list.');
+            };
+            reader.readAsText(file);
+        }
+
+        function paFilterAccepted(el) { paFilterList(el, 'paAcceptedLeadsList'); }
+
         /* ===== Souranka France-track Sales Navigator (premium, free Open Profile) bucket --
            own localStorage key/DOM ids, non-accumulating: each day's SO_PREMIUM_SEED replaces
            the pending queue (clean-overwrite, same convention as the DM Helper rule in
@@ -2126,7 +2279,7 @@
           {key:"france::christine-zilliox-christine-zilliox-mh-interior", name:"Christine ZILLIOX", company:"Christine ZILLIOX MH Interior", url:"https://www.linkedin.com/in/christine-mhinterior-haguenau/", lastActive:"Oct 20"}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 2; // bumped 2026-10-27: first France batch (20 people) seeded
+        const SO_PREMIUM_DATA_VERSION = 2; // reverted 2026-10-28: accepted connections now go to their own Connection Accepted tab, not here
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2266,7 +2419,6 @@
           {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", lastActive:"Oct 10"},
           {key:"france::arnaud-auerbach-re-max-sunset-valbonne", name:"Arnaud AUERBACH", company:"RE/MAX SUNSET VALBONNE", url:"https://www.linkedin.com/in/arnaud-auerbach", lastActive:"Oct 7"},
           {key:"france::cannelle-recher-boho", name:"Cannelle Recher", company:"BOHO", url:"https://www.linkedin.com/in/cannelle-recher-4a32271b8/", lastActive:"Oct 13"},
-          {key:"france::carine-metivier-cf-design-graphic-et-digital", name:"Carine METIVIER", company:"CF Design Graphic et Digital", url:"https://www.linkedin.com/in/carine-metivier-designer/", lastActive:"Oct 12"},
           {key:"france::david-dubourgnoux-d-d-service-installation-d-pannage", name:"David DUBOURGNOUX", company:"D D service installation dépannage", url:"https://www.linkedin.com/in/david-dubourgnoux-52a895166/", lastActive:"Oct 9"},
           {key:"france::david-duval-atout-amenagement", name:"David DUVAL", company:"ATOUT AMENAGEMENT", url:"https://www.linkedin.com/in/david-duval-37200410a/", lastActive:"Oct 11"},
           {key:"france::denis-capitan-cap-d", name:"Denis CAPITAN", company:"CAP D", url:"https://www.linkedin.com/in/denis-capitan-27a8a521", lastActive:"Oct 9"},
@@ -2281,7 +2433,7 @@
           {key:"france::bruno-maire-proxym-it", name:"Bruno MAIRE", company:"Proxym'IT", url:"https://www.linkedin.com/in/bruno-maire-b03776122/", lastActive:"Sep 14"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 3; // bumped 2026-10-27: full 20/20 premium+connect split seeded
+        const SO_DATA_VERSION = 4; // bumped 2026-10-28: removed Carine Metivier (accepted -- moved to Sales Navigator tab as free DM)
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
@@ -2412,6 +2564,121 @@
         }
 
         function soFilterConnect(el) { paFilterList(el, 'soConnectLeadsList'); }
+
+        /* ===== Souranka "Connection Accepted" -- people who said yes to a connection request,
+           now 1st-degree so they're free to DM. Accumulates day over day (merge-only, like
+           Connection Requests), never auto-cleared. Populated by hand after each acceptance check. */
+        const SO_ACCEPTED_SEED = [
+          {key:"france::carine-metivier-cf-design-graphic-et-digital", name:"Carine METIVIER", company:"CF Design Graphic et Digital", url:"https://www.linkedin.com/in/carine-metivier-designer/", acceptedOn:"2026-10-27"}
+        ];
+        const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
+        const SO_ACCEPTED_DATA_VERSION = 1;
+
+        function soAcceptedMsg(name, company){
+            const fn = (name || '').split(' ')[0] || name || '';
+            return SO_PREMIUM_MESSAGE_TEMPLATE.replace(/\{fn\}/g, fn).replace(/\{company\}/g, company || 'your business');
+        }
+
+        function soAcceptedQueueLoad(){
+            try { return JSON.parse(localStorage.getItem(SO_ACCEPTED_QUEUE_KEY)); } catch { return null; }
+        }
+        function soAcceptedQueueSave(state){
+            try { localStorage.setItem(SO_ACCEPTED_QUEUE_KEY, JSON.stringify(state)); } catch {}
+        }
+        function soAcceptedQueueSeedIfEmpty(){
+            const stored = soAcceptedQueueLoad();
+            let items = (stored && stored.items) || [];
+            if (!stored || stored._seedVersion !== SO_ACCEPTED_DATA_VERSION) {
+                const existingByKey = {};
+                items.forEach(x => { existingByKey[x.key] = x; });
+                const merged = items.slice();
+                SO_ACCEPTED_SEED.forEach(item => {
+                    if (!existingByKey[item.key]) {
+                        merged.push(Object.assign({}, item, { done: false, addedAt: Date.now() }));
+                    }
+                });
+                items = merged;
+                soAcceptedQueueSave({ items: items, _seedVersion: SO_ACCEPTED_DATA_VERSION });
+            }
+            return items;
+        }
+
+        function soRenderAccepted(){
+            const items = soAcceptedQueueSeedIfEmpty();
+            const pending = items.filter(x => !x.done).sort((a, b) => a.addedAt - b.addedAt);
+            const doneCount = items.length - pending.length;
+
+            const statsEl = document.getElementById('soAcceptedStats');
+            if (statsEl) statsEl.textContent = pending.length + ' ready to DM · ' + doneCount + ' already messaged';
+            const listEl = document.getElementById('soAcceptedLeadsList');
+            if (!listEl) return;
+
+            listEl.innerHTML = pending.map(item => {
+                const dataName = (item.name + ' ' + item.company).toLowerCase();
+                const msg = soAcceptedMsg(item.name, item.company);
+                return '<div class="card pa-card" data-name="' + paEsc(dataName) + '" data-key="' + paEsc(item.key) + '">'
+                    + '<input type="checkbox" class="pa-done-check" title="Mark done -- removes it from this list once you have DMed them" onchange="soToggleDoneAccepted(this)">'
+                    + '<textarea class="full-message" style="display:none">' + paEsc(msg) + '</textarea>'
+                    + '<div class="card-header"><div class="biz-info">'
+                    + '<span class="biz-name">' + paEsc(item.name) + '</span>'
+                    + '<span class="biz-company">' + paEsc(item.company) + '</span>'
+                    + '</div><span class="badge badge-active">Accepted ' + paEsc(item.acceptedOn || '') + '</span></div>'
+                    + '<div class="message-preview">' + paEsc(msg) + '</div>'
+                    + '<div class="actions">'
+                    + '<a href="' + paEsc(item.url) + '" target="_blank" class="btn btn-linkedin">View Profile</a>'
+                    + '<button class="btn btn-copy" onclick="liCopyMessage(this)">Copy</button>'
+                    + '</div></div>';
+            }).join('\n');
+        }
+
+        function soToggleDoneAccepted(checkbox){
+            const card = checkbox.closest('.card');
+            const key = card.getAttribute('data-key');
+            const items = soAcceptedQueueSeedIfEmpty();
+            const item = items.find(x => x.key === key);
+            if (!item) return;
+            item.done = checkbox.checked;
+            soAcceptedQueueSave({ items: items, _seedVersion: SO_ACCEPTED_DATA_VERSION });
+            soRenderAccepted();
+        }
+
+        function soImportAcceptedBatch(fileInput){
+            const file = fileInput.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e){
+                const records = paParseCSV(e.target.result);
+                const items = soAcceptedQueueSeedIfEmpty();
+                let added = 0, skipped = 0;
+
+                records.forEach(r => {
+                    const name = (r.name || '').trim();
+                    if (!name) return;
+                    const uid = (r.user_id || '').trim();
+                    const key = 'so_accepted::' + (uid || r.url || name);
+                    if (items.some(x => x.key === key)) { skipped++; return; }
+
+                    items.push({
+                        key: key,
+                        name: name,
+                        company: (r.company || '').trim(),
+                        url: (r.url || '').trim(),
+                        acceptedOn: (r.accepted_on || '').trim(),
+                        done: false,
+                        addedAt: Date.now()
+                    });
+                    added++;
+                });
+
+                soAcceptedQueueSave({ items: items, _seedVersion: SO_ACCEPTED_DATA_VERSION });
+                soRenderAccepted();
+                fileInput.value = '';
+                alert('Imported ' + added + ' new · skipped ' + skipped + ' already in the list.');
+            };
+            reader.readAsText(file);
+        }
+
+        function soFilterAccepted(el) { paFilterList(el, 'soAcceptedLeadsList'); }
 
         /* ===== Souranka "Needs Follow-Up" tracker -- separate from Parag's paFollowUpList ===== */
         const SO_FOLLOWUP_KEY = 'soFollowUpList';
@@ -2596,6 +2863,7 @@
             paRenderFollowUp(); // updates the (N) count on the tab even before it's opened
             soRenderPremium();
             soRenderConnect();
+            soRenderAccepted();
             soRenderFollowUp();
         })();
     </script>
