@@ -2412,25 +2412,6 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::christophe-decaix-2b-patrimoine", name:"Christophe DECAIX", company:"2B PATRIMOINE", url:"https://www.linkedin.com/in/christophe-decaix-31561628/", lastActive:"Oct 20"},
-          {key:"france::colette-belhumeur-daf-et-plus", name:"Colette BELHUMEUR", company:"DAF ET PLUS", url:"https://www.linkedin.com/in/colette-belhumeur", lastActive:"Oct 20"},
-          {key:"france::denis-thuillier-strategie-des-champions", name:"Denis THUILLIER", company:"STRATEGIE DES CHAMPIONS", url:"http://linkedin.com/in/denisthuillier", lastActive:"Oct 14"},
-          {key:"france::edouard-mulot-em-conseils", name:"Edouard MULOT", company:"EM Conseils", url:"https://www.linkedin.com/in/edouard-mulot/", lastActive:"Oct 16"},
-          {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", lastActive:"Oct 10"},
-          {key:"france::arnaud-auerbach-re-max-sunset-valbonne", name:"Arnaud AUERBACH", company:"RE/MAX SUNSET VALBONNE", url:"https://www.linkedin.com/in/arnaud-auerbach", lastActive:"Oct 7"},
-          {key:"france::cannelle-recher-boho", name:"Cannelle Recher", company:"BOHO", url:"https://www.linkedin.com/in/cannelle-recher-4a32271b8/", lastActive:"Oct 13"},
-          {key:"france::david-dubourgnoux-d-d-service-installation-d-pannage", name:"David DUBOURGNOUX", company:"D D service installation dépannage", url:"https://www.linkedin.com/in/david-dubourgnoux-52a895166/", lastActive:"Oct 9"},
-          {key:"france::david-duval-atout-amenagement", name:"David DUVAL", company:"ATOUT AMENAGEMENT", url:"https://www.linkedin.com/in/david-duval-37200410a/", lastActive:"Oct 11"},
-          {key:"france::denis-capitan-cap-d", name:"Denis CAPITAN", company:"CAP D", url:"https://www.linkedin.com/in/denis-capitan-27a8a521", lastActive:"Oct 9"},
-          {key:"france::christophe-hauser-m2w", name:"Christophe HAUSER", company:"M2W", url:"https://www.linkedin.com/in/christophehauser?trk=nav_responsive_tab_profile_pic", lastActive:"Oct 2"},
-          {key:"france::cyril-armada-dlc-photography", name:"Cyril ARMADA", company:"DLC PHOTOGRAPHY", url:"https://www.linkedin.com/in/cyril-armada-26a917241/", lastActive:"Oct 5"},
-          {key:"france::delphine-mauhourat-iad-france", name:"Delphine MAUHOURAT", company:"IAD FRANCE", url:"https://www.linkedin.com/in/delphine-mauhourat-ab5405125/", lastActive:"Oct 6"},
-          {key:"france::dominique-julien-start-travaux", name:"Dominique JULIEN", company:"START TRAVAUX", url:"https://www.linkedin.com/in/dominique-julien-68858383/", lastActive:"Oct 5"},
-          {key:"france::elodie-giacometti-clap-cut", name:"Elodie GIACOMETTI", company:"CLAP & CUT", url:"https://www.linkedin.com/in/elodie-giacometti-132490110/", lastActive:"Sep 30"},
-          {key:"france::axel-roche-decor-home", name:"Axel ROCHE", company:"DECOR'HOME", url:"https://fr.linkedin.com/in/axel-roche-9ab689272", lastActive:"Sep 24"},
-          {key:"france::cyril-le-tellier-cyliad-immobilier", name:"Cyril LE TELLIER", company:"CYLIAD IMMOBILIER", url:"https://www.linkedin.com/in/cyril-le-tellier-9b752ba3/", lastActive:"Sep 29"},
-          {key:"france::boris-quinchon-coaching-renouveau-evolvance", name:"Boris QUINCHON", company:"COACHING & RENOUVEAU EVOLVANCE", url:"http://www.linkedin.com/in/boris-quinchon-9760732", lastActive:"1mo"},
-          {key:"france::bruno-maire-proxym-it", name:"Bruno MAIRE", company:"Proxym'IT", url:"https://www.linkedin.com/in/bruno-maire-b03776122/", lastActive:"Sep 14"},
           {key:"france::gilles-vogler-agence-crv-associes", name:"Gilles VOGLER", company:"Agence CRV & Associés", url:"https://www.linkedin.com/in/gilles-vogler-451315a6/", lastActive:"Oct 13"},
           {key:"france::frederic-maliesky-michel-simond-l-immobiliere-alsacienne", name:"Frédéric MALIESKY", company:"MICHEL SIMOND - L'immobilière Alsacienne", url:"https://www.linkedin.com/in/frederic-maliesky/", lastActive:"Oct 6"},
           {key:"france::fabien-bougreau-abeille-assurances", name:"Fabien BOUGREAU", company:"ABEILLE ASSURANCES", url:"https://www.linkedin.com/in/fabien-bougreau-2785b3aa/", lastActive:"Oct 1"},
@@ -2453,7 +2434,7 @@
           {key:"france::anne-de-carvalho-anne-de-carvalho-photographie", name:"Anne DE CARVALHO", company:"Anne De Carvalho Photographie", url:"https://www.linkedin.com/in/anne-de-carvalho-photographe-912a1947/", lastActive:"Jun 18"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 5; // bumped 2026-10-28: added today's fresh 20 (accumulating on top of 10-27's 19 still-pending)
+        const SO_DATA_VERSION = 6; // bumped 2026-10-28: trimmed to just today's fresh 20 per owner request; 10-27's 19 already-sent remnants moved out of the active queue
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
