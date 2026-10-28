@@ -2574,7 +2574,7 @@
           {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", acceptedOn:"2026-10-28"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 1;
+        const SO_ACCEPTED_DATA_VERSION = 2; // bumped 2026-10-29: Antoine Colombo added, force re-merge for browsers already seeded at v1
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
