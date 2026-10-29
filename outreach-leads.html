@@ -2558,10 +2558,16 @@
            Connection Requests), never auto-cleared. Populated by hand after each acceptance check. */
         const SO_ACCEPTED_SEED = [
           {key:"france::carine-metivier-cf-design-graphic-et-digital", name:"Carine METIVIER", company:"CF Design Graphic et Digital", url:"https://www.linkedin.com/in/carine-metivier-designer/", acceptedOn:"2026-10-27"},
-          {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", acceptedOn:"2026-10-28"}
+          {key:"france::antoine-colombo-neel-fraisse", name:"Antoine COLOMBO", company:"NEEL FRAISSE", url:"https://www.linkedin.com/in/colomboantoine/", acceptedOn:"2026-10-28"},
+          {key:"france::cyril-armada-dlc-photography", name:"Cyril ARMADA", company:"DLC PHOTOGRAPHY", url:"https://www.linkedin.com/in/cyril-armada-26a917241/", acceptedOn:"2026-10-29"},
+          {key:"france::gilles-vogler-agence-crv-associes", name:"Gilles VOGLER", company:"Agence CRV & Associés", url:"https://www.linkedin.com/in/gilles-vogler-451315a6/", acceptedOn:"2026-10-29"},
+          {key:"france::doutchka-spony-linget-mobalpa", name:"Doutchka Spony Linget", company:"MOBALPA", url:"http://www.linkedin.com/in/sponylinget110", acceptedOn:"2026-10-29"},
+          {key:"france::flavie-hourtolou-flavie-hourtolou", name:"Flavie HOURTOLOU", company:"Flavie HOURTOLOU", url:"https://www.linkedin.com/in/flaviehourtolou", acceptedOn:"2026-10-29"},
+          {key:"france::frederic-desbois-arteo-conseil", name:"Frédéric DESBOIS", company:"Arteo Conseil", url:"https://www.linkedin.com/in/frederic-desbois/", acceptedOn:"2026-10-29"},
+          {key:"france::antoine-jambart-boomerang-conseil", name:"Antoine JAMBART", company:"Boomerang Conseil", url:"https://www.linkedin.com/in/antoine-jambart/", acceptedOn:"2026-10-29"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 2; // bumped 2026-10-29: Antoine Colombo added, force re-merge for browsers already seeded at v1
+        const SO_ACCEPTED_DATA_VERSION = 3; // bumped 2026-10-29: 6 new accepts from daily check (Cyril Armada, Gilles Vogler, Doutchka Spony Linget, Flavie Hourtolou, Frederic Desbois, Antoine Jambart), force re-merge
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
