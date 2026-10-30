@@ -2419,10 +2419,13 @@
           {key:"france::jean-pierre-marinello-cabinet-jean-pierre-marinello", name:"Jean-Pierre MARINELLO", company:"Cabinet Jean-Pierre MARINELLO", url:"https://www.linkedin.com/pub/jean-pierre-marinello/28/893/a51", lastActive:"Oct 6"},
           {key:"france::jimmy-beteau-actioncoach", name:"Jimmy BÉTEAU", company:"ACTIONCOACH", url:"http://www.linkedin.com/in/jimmybeteau", lastActive:"Oct 26"},
           {key:"france::jonathan-courquin-idfabric", name:"Jonathan COURQUIN", company:"Idfabric", url:"http://www.linkedin.com/in/jonathan-courquin-11864083/", lastActive:"Jul 28"},
-          {key:"france::laurent-deus-les-clotures-marseillaises", name:"Laurent DEUS", company:"LES CLOTURES MARSEILLAISES", url:"https://www.linkedin.com/in/laurent-deus-28207182/", lastActive:"Oct 26"}
+          {key:"france::laurent-deus-les-clotures-marseillaises", name:"Laurent DEUS", company:"LES CLOTURES MARSEILLAISES", url:"https://www.linkedin.com/in/laurent-deus-28207182/", lastActive:"Oct 26"},
+          {key:"france::franck-fiszel-coach-europ", name:"Franck FISZEL", company:"Coach Europ", url:"https://www.linkedin.com/in/franckfiszel/", lastActive:"Oct 8"},
+          {key:"france::jimmy-parmentier-provence-bati-courtage", name:"Jimmy PARMENTIER", company:"Provence Bati Courtage", url:"https://www.linkedin.com/in/jimmy-parmentier-83463b70/", lastActive:"Oct 16"},
+          {key:"france::jonathan-muller-p-r-0-consulting", name:"Jonathan MULLER", company:"P=R+0 consulting || PAPY-POM SAS", url:"https://www.linkedin.com/in/muller-jonathan/", lastActive:"Oct 22"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 9; // bumped 2026-10-31: clean-overwrite with fresh 15 (2 PASS + 13 manually-judged title-ambiguous REVIEW) from the newly-vetted 346-candidate pool; supply is thin, see oct31_candidates.json
+        const SO_DATA_VERSION = 11; // bumped 2026-10-30: (1) FIXED soQueueSeedIfEmpty() to actually clean-overwrite instead of silently accumulating every day's batch forever since Oct 27 -- pending/sent counts had drifted totally out of sync with any real day's batch, only cleared by tapping "Mark Connection Sent" per card. (2) Topped up today's 15 to 18 with Franck Fiszel/Jimmy Parmentier/Jonathan Muller, pulled from the Premium reserve (not needed there, Premium's already full at its 10-credit cap today). Still short of the usual 20 -- pool is genuinely thin, needs a fresh vetting pass to fully restock.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
@@ -2447,15 +2450,18 @@
             if (!stored || stored._seedVersion !== SO_DATA_VERSION) {
                 const existingByKey = {};
                 items.forEach(x => { existingByKey[x.key] = x; });
-                // Merge-only, same spirit as Parag's accumulating linkedin_connect: never drop
-                // someone just because a later day's SO_CONNECT_SEED omits them.
-                const merged = items.slice();
-                SO_CONNECT_SEED.forEach(item => {
-                    if (!existingByKey[item.key]) {
-                        merged.push(Object.assign({}, item, { done: false, addedAt: Date.now() }));
-                    }
+                // Clean-overwrite (fixed 2026-10-30): rebuild from the current authoritative
+                // SO_CONNECT_SEED only, same as Premium. Anyone no longer in it is dropped from
+                // view; anyone who persists keeps their done-status and original addedAt. The old
+                // accumulate-forever behavior silently piled up every past day's batch in each
+                // browser's localStorage with no way to clear it except per-card clicks, which
+                // caused real pending counts to drift wildly from what any seed/day actually had.
+                items = SO_CONNECT_SEED.map(item => {
+                    const prev = existingByKey[item.key];
+                    return prev
+                        ? Object.assign({}, item, { done: prev.done, addedAt: prev.addedAt })
+                        : Object.assign({}, item, { done: false, addedAt: Date.now() });
                 });
-                items = merged;
                 soQueueSave({ items: items, _seedVersion: SO_DATA_VERSION });
             }
             return items;
