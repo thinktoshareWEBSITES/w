@@ -2260,19 +2260,19 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::flora-pollefoort-sense-beyond", name:"Flora Pollefoort", company:"Sense & Beyond", url:"https://www.linkedin.com/in/flora-pollefoort-marketing-experience-client/", lastActive:"1h"},
-          {key:"france::houssem-boughanmi-insight-developpement", name:"Houssem BOUGHANMI", company:"Insight Développement", url:"http://fr.linkedin.com/in/houssemboughanmi", lastActive:"1h"},
-          {key:"france::hugo-avale-celuga", name:"Hugo AVALE", company:"CELUGA", url:"https://www.linkedin.com/in/hugo-avale-neojobs-marque-employeur/", lastActive:"6d"},
-          {key:"france::jeremy-goulene-inaccessible35", name:"Jérémy GOULENE", company:"INACCESSIBLE35", url:"http://www.linkedin.com/in/jérémy-goulene-4baaa41a3", lastActive:"1d"},
-          {key:"france::jonas-feuvrier-jf-invest", name:"Jonas Feuvrier", company:"JF Invest", url:"http://www.linkedin.com/in/jonas-feuvrier-951595157", lastActive:"1h"},
           {key:"france::laetitia-leclerc-aube-securite-incendie", name:"Laetitia Leclerc", company:"Aube sécurité incendie", url:"http://linkedin.com/in/laetitia-leclerc87", lastActive:"2h"},
-          {key:"france::laurent-denis-asr-rhone-alpes-groupe-fast-lease", name:"Laurent DENIS", company:"ASR RHÔNE ALPES Groupe fast lease", url:"https://fr.linkedin.com/in/laurent-denis-8a3a57aa", lastActive:"Oct 22"},
-          {key:"france::loic-ventaja-century-21", name:"Loïc VENTAJA", company:"Century 21", url:"https://www.linkedin.com/in/loicventaja/", lastActive:"21h"},
           {key:"france::ludovic-darsin-agence-ici", name:"Ludovic DARSIN", company:"AGENCE ICI", url:"http://linkedin.com/in/ludovic-darsin", lastActive:"Oct 26"},
-          {key:"france::marc-tavernier-efficom-consulting", name:"Marc TAVERNIER", company:"EFFICOM CONSULTING", url:"https://www.linkedin.com/in/marc-tavernier-56b91ba4", lastActive:"5h"}
+          {key:"france::marc-tavernier-efficom-consulting", name:"Marc TAVERNIER", company:"EFFICOM CONSULTING", url:"https://www.linkedin.com/in/marc-tavernier-56b91ba4", lastActive:"5h"},
+          {key:"france::angelo-pedro-edeix", name:"Angelo PEDRO", company:"EDEIX", url:"http://fr.linkedin.com/pub/angelo-pedro/3/277/472/", lastActive:"Oct 21"},
+          {key:"france::carine-duter-imediat", name:"Carine DUTER", company:"IMEDIAT", url:"https://www.linkedin.com/in/carine-duter-6250a1112/", lastActive:"Oct 27"},
+          {key:"france::charlotte-urman-miip-made-in-ip", name:"Charlotte URMAN", company:"MIIP MADE IN IP", url:"https://www.linkedin.com/in/charlotte-urman-5237115/", lastActive:"Oct 12"},
+          {key:"france::delphine-zabouri-facon-deezign", name:"Delphine ZABOURI-FACON", company:"DEEZIGN", url:"https://www.linkedin.com/in/delphine-zabouri-facon-079a6962/", lastActive:"Oct 20"},
+          {key:"france::emmanuelle-biou-petits-fils", name:"Emmanuelle BIOU", company:"PETITS-FILS", url:"https://www.linkedin.com/in/emmanuelle-biou-179b99174/", lastActive:"Sep 30"},
+          {key:"france::fabien-girault-visionsi", name:"Fabien GIRAULT", company:"VisionSI", url:"https://www.linkedin.com/in/fabien-girault-a50060177", lastActive:"Oct 14"},
+          {key:"france::florian-volle-sas-bpi-facades", name:"Florian VOLLE", company:"SAS BPI FACADES", url:"https://fr.linkedin.com/in/florian-volle-440774105", lastActive:"Sep 28"}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 5; // bumped 2026-10-30: fresh 10 Sales Navigator batch (capped from 20 -- owner down to 10 InMail credits), clean-overwrite replaces 10-29's
+        const SO_PREMIUM_DATA_VERSION = 7; // bumped 2026-10-30 (correction): owner caught 7 of the original 10-30 batch (Flora Pollefoort, Houssem Boughanmi, Hugo Avale, Jeremy Goulene, Jonas Feuvrier, Laurent Denis, Loic Ventaja) as repeat Sales Navigator sends from before 10-29 tracking existed -- no permanent sent-log existed pre-10-29, only the self-overwriting seed array, so untracked repeats could resurface; now logged permanently to sales-navigator-sent-log.csv. Kept the 3 genuine (Leclerc, Darsin, Tavernier, unsent) + filled to 10 with 7 of the newly-vetted 10-31 pool (Florian Volle and earlier in list order); Franck Fiszel, Jimmy Parmentier, Jonathan Muller held in reserve for 11-01.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2405,23 +2405,24 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::gaetan-vergely-axa-cabinet-vergely", name:"Gaëtan VERGELY", company:"AXA- Cabinet Vergely", url:"https://www.linkedin.com/in/gaetanvergely/", lastActive:"1d"},
-          {key:"france::laurent-guillout-solutions-conseils-en-innovation-numerique", name:"Laurent GUILLOUT", company:"SOLUTIONS CONSEILS EN INNOVATION NUMERIQUE", url:"https://fr.linkedin.com/in/laurentguillout", lastActive:"Oct 23"},
-          {key:"france::florent-marechal-absolem", name:"Florent MARECHAL", company:"ABSOLEM", url:"https://www.linkedin.com/in/florent-marechal-158731112/", lastActive:"Oct 15"},
-          {key:"france::franck-bruneau-izidee-studio-graphique", name:"Franck BRUNEAU", company:"IZIDÉE STUDIO GRAPHIQUE", url:"http://linkedin.com/in/franck-bruneau-b44b0627/?originalSubdomain=fr", lastActive:"Oct 19"},
-          {key:"france::guillaume-bauzou-attila-narbonne", name:"Guillaume BAUZOU", company:"ATTILA Narbonne", url:"https://www.linkedin.com/in/gbauzou", lastActive:"Oct 20"},
-          {key:"france::guy-mordret-anaximandre", name:"Guy MORDRET", company:"ANAXIMANDRE", url:"https://www.linkedin.com/in/guy-mordret-352090a/", lastActive:"Oct 21"},
-          {key:"france::lucille-cozigou-kafeta", name:"Lucille COZIGOU", company:"KAFETA", url:"https://www.linkedin.com/in/lucille-dagorn/", lastActive:"Oct 21"},
-          {key:"france::laurent-fonteneau-eirl-fonteneau-laurent", name:"Laurent FONTENEAU", company:"EIRL FONTENEAU LAURENT", url:"http://linkedin.com/in/laurent-fonteneau-b6409b124", lastActive:"Oct 16"},
-          {key:"france::manon-scieszyk-avicap", name:"Manon SCIESZYK", company:"AVICAP", url:"https://www.linkedin.com/in/manon-scieszyk-253045123/", lastActive:"Oct 18"},
-          {key:"france::emilie-garrel-le-p-ti-mag-de-l-ouest", name:"Emilie GARREL", company:"Le P'ti Mag de L'Ouest", url:"https://www.linkedin.com/in/emilie-garrel-pti-mag", lastActive:"Oct 9"},
-          {key:"france::fabrice-beauviconte-pfp-aquitaine", name:"Fabrice BEAUVICONTE", company:"PFP AQUITAINE", url:"http://www.linkedin.com/in/pfp-aquitaine", lastActive:"Oct 14"},
-          {key:"france::freddy-terryn-sofred-auto", name:"Freddy TERRYN", company:"SOFRED AUTO", url:"https://www.linkedin.com/in/freddy-terryn-394416170", lastActive:"Oct 9"},
-          {key:"france::marie-chevallier-l-ordre-des-choses", name:"Marie CHEVALLIER", company:"L'Ordre des Choses", url:"https://www.linkedin.com/in/marie-chevallier-4393a56a/", lastActive:"Sep 10"},
-          {key:"france::marie-helene-moscardini-mh-architecte-d-interieur", name:"Marie-Helene Moscardini", company:"MH ARCHITECTE D'INTÉRIEUR", url:"https://www.linkedin.com/in/marie-helene-moscardini-76b335155/", lastActive:""}
+          {key:"france::julien-bacon-ergo-office", name:"Julien BACON", company:"ERGO OFFICE", url:"http://www.linkedin.com/in/julien-bacon-ergo-office", lastActive:"Oct 26"},
+          {key:"france::ludovic-marzin-lm-industrie", name:"Ludovic MARZIN", company:"LM INDUSTRIE", url:"https://www.linkedin.com/in/marzin-ludovic-aa607a85", lastActive:"4h"},
+          {key:"france::alexandre-de-sousa-izzi", name:"Alexandre DE SOUSA", company:"iZZi", url:"https://www.linkedin.com/in/alexandredesousa/", lastActive:"1d"},
+          {key:"france::alexandre-lemercier-lemercier-avocat", name:"Alexandre LEMERCIER", company:"LEMERCIER AVOCAT", url:"https://fr.linkedin.com/pub/alexandre-lemercier/71/b50/257", lastActive:""},
+          {key:"france::christian-kamlet-cekane", name:"Christian KAMLET", company:"CEKANE", url:"http://www.linkedin.com/pub/christian-kamlet/1a/149/a83", lastActive:"Oct 13"},
+          {key:"france::christophe-mirabel-instantby", name:"Christophe MIRABEL", company:"INSTANTBY", url:"https://fr.linkedin.com/in/christophe-mirabel-3027b51", lastActive:"Jun 13"},
+          {key:"france::celine-lanusse-digital-edit", name:"Céline LANUSSE", company:"DIGITAL EDIT", url:"https://www.linkedin.com/in/celinelanusse-digitaledit/", lastActive:""},
+          {key:"france::didier-nefzi-magnitude-events-services", name:"Didier NEFZI", company:"MAGNITUDE EVENTS & SERVICES", url:"https://www.linkedin.com/in/didiernefzi/", lastActive:"Sep 30"},
+          {key:"france::elise-dangleterre-resolve-avocat", name:"Elise DANGLETERRE", company:"RESOLVE AVOCAT", url:"http://www.linkedin.com/pub/elise-dangleterre/55/430/128", lastActive:"1mo"},
+          {key:"france::emilie-castille-ei-emilie-castille-architecture", name:"Emilie CASTILLE", company:"EI Emilie Castille - Architecture Intérieure", url:"https://www.linkedin.com/in/emiliecastille-deco/", lastActive:"Oct 20"},
+          {key:"france::jean-luc-collet-allianz-collet", name:"Jean-Luc COLLET", company:"ALLIANZ COLLET", url:"http://fr.linkedin.com/pub/jean-luc-collet/64/b95/838", lastActive:"14h"},
+          {key:"france::jean-pierre-marinello-cabinet-jean-pierre-marinello", name:"Jean-Pierre MARINELLO", company:"Cabinet Jean-Pierre MARINELLO", url:"https://www.linkedin.com/pub/jean-pierre-marinello/28/893/a51", lastActive:"Oct 6"},
+          {key:"france::jimmy-beteau-actioncoach", name:"Jimmy BÉTEAU", company:"ACTIONCOACH", url:"http://www.linkedin.com/in/jimmybeteau", lastActive:"Oct 26"},
+          {key:"france::jonathan-courquin-idfabric", name:"Jonathan COURQUIN", company:"Idfabric", url:"http://www.linkedin.com/in/jonathan-courquin-11864083/", lastActive:"Jul 28"},
+          {key:"france::laurent-deus-les-clotures-marseillaises", name:"Laurent DEUS", company:"LES CLOTURES MARSEILLAISES", url:"https://www.linkedin.com/in/laurent-deus-28207182/", lastActive:"Oct 26"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 8; // bumped 2026-10-30: clean-overwrite with fresh 14 (pool down to 24 total today -- France BNI list nearing exhaustion, see fresh_pass_oct30.json / fresh_review_oct30_candidates.json)
+        const SO_DATA_VERSION = 9; // bumped 2026-10-31: clean-overwrite with fresh 15 (2 PASS + 13 manually-judged title-ambiguous REVIEW) from the newly-vetted 346-candidate pool; supply is thin, see oct31_candidates.json
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
