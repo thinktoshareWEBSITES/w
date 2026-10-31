@@ -2155,15 +2155,9 @@
         /* ===== Parag "Connection Accepted" -- people who said yes to a connection request,
            now 1st-degree so they're free to DM. Accumulates day over day (merge-only, like
            Connection Requests), never auto-cleared. Populated by hand after each acceptance check. */
-        const PA_ACCEPTED_SEED = [
-          {key:"us::2147169", name:"Rossiel Harris", company:"Smart IntelliStrategies Group Corp DBA Restoration 1 of NW Cobb", url:"https://www.linkedin.com/in/rossielharris/", acceptedOn:"2026-10-28"},
-          {key:"us::2031658", name:"Heidi Miller", company:"La Costa Neighbors", url:"https://www.linkedin.com/in/heidi-miller-77147a4/", acceptedOn:"2026-10-29"},
-          {key:"us::96696", name:"Matt Kinsey", company:"IT Fusion LLC", url:"https://www.linkedin.com/in/mattkinsey/", acceptedOn:"2026-10-29"},
-          {key:"us::1553826", name:"Sanem Surel", company:"ToolBox Construction", url:"https://www.linkedin.com/in/sanem-surel-31472a10/", acceptedOn:"2026-10-29"},
-          {key:"us::1805266", name:"Jane Parmel", company:"Cardinal Profit Strategies", url:"https://www.linkedin.com/in/jane-parmel/", acceptedOn:"2026-10-30"}
-        ];
+        const PA_ACCEPTED_SEED = [{"key":"us::2147169","name":"Rossiel Harris","company":"Smart IntelliStrategies Group Corp DBA Restoration 1 of NW Cobb","url":"https://www.linkedin.com/in/rossielharris/","acceptedOn":"2026-10-28"},{"key":"us::2031658","name":"Heidi Miller","company":"La Costa Neighbors","url":"https://www.linkedin.com/in/heidi-miller-77147a4/","acceptedOn":"2026-10-29"},{"key":"us::96696","name":"Matt Kinsey","company":"IT Fusion LLC","url":"https://www.linkedin.com/in/mattkinsey/","acceptedOn":"2026-10-29"},{"key":"us::1553826","name":"Sanem Surel","company":"ToolBox Construction","url":"https://www.linkedin.com/in/sanem-surel-31472a10/","acceptedOn":"2026-10-29"},{"key":"us::1805266","name":"Jane Parmel","company":"Cardinal Profit Strategies","url":"https://www.linkedin.com/in/jane-parmel/","acceptedOn":"2026-10-30"},{"key":"us::272810","name":"Greg Provo","company":"Strategy Cafe Inc","url":"https://www.linkedin.com/in/gregprovo/","acceptedOn":"2026-10-31"},{"key":"us::2308260","name":"Daniel Ludin","company":"FastSigns Northlake-Tucker","url":"https://www.linkedin.com/in/danielludin/","acceptedOn":"2026-10-29"}];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 3;
+        const PA_ACCEPTED_DATA_VERSION = 4;
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
