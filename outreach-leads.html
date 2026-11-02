@@ -2274,19 +2274,19 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::laetitia-leclerc-aube-securite-incendie", name:"Laetitia Leclerc", company:"Aube sécurité incendie", url:"http://linkedin.com/in/laetitia-leclerc87", lastActive:"2h"},
-          {key:"france::ludovic-darsin-agence-ici", name:"Ludovic DARSIN", company:"AGENCE ICI", url:"http://linkedin.com/in/ludovic-darsin", lastActive:"Oct 26"},
-          {key:"france::marc-tavernier-efficom-consulting", name:"Marc TAVERNIER", company:"EFFICOM CONSULTING", url:"https://www.linkedin.com/in/marc-tavernier-56b91ba4", lastActive:"5h"},
-          {key:"france::angelo-pedro-edeix", name:"Angelo PEDRO", company:"EDEIX", url:"http://fr.linkedin.com/pub/angelo-pedro/3/277/472/", lastActive:"Oct 21"},
-          {key:"france::carine-duter-imediat", name:"Carine DUTER", company:"IMEDIAT", url:"https://www.linkedin.com/in/carine-duter-6250a1112/", lastActive:"Oct 27"},
-          {key:"france::charlotte-urman-miip-made-in-ip", name:"Charlotte URMAN", company:"MIIP MADE IN IP", url:"https://www.linkedin.com/in/charlotte-urman-5237115/", lastActive:"Oct 12"},
-          {key:"france::delphine-zabouri-facon-deezign", name:"Delphine ZABOURI-FACON", company:"DEEZIGN", url:"https://www.linkedin.com/in/delphine-zabouri-facon-079a6962/", lastActive:"Oct 20"},
-          {key:"france::emmanuelle-biou-petits-fils", name:"Emmanuelle BIOU", company:"PETITS-FILS", url:"https://www.linkedin.com/in/emmanuelle-biou-179b99174/", lastActive:"Sep 30"},
-          {key:"france::fabien-girault-visionsi", name:"Fabien GIRAULT", company:"VisionSI", url:"https://www.linkedin.com/in/fabien-girault-a50060177", lastActive:"Oct 14"},
-          {key:"france::florian-volle-sas-bpi-facades", name:"Florian VOLLE", company:"SAS BPI FACADES", url:"https://fr.linkedin.com/in/florian-volle-440774105", lastActive:"Sep 28"}
+          {key:"france::adams-mabiala-cuisinies-venidom", name:"Adams MABIALA", company:"CUISINIES VENIDOM", url:"https://www.linkedin.com/in/adams-mabiala", lastActive:"1d"},
+          {key:"france::adnane-ghallab-numxpert", name:"Adnane GHALLAB", company:"NumXpert", url:"https://www.linkedin.com/in/adnane-ghallab", lastActive:"1mo"},
+          {key:"france::agathe-gouzien-axa-prevoyance-et-patrimoine", name:"Agathe GOUZIEN", company:"AXA Prévoyance et Patrimoine", url:"https://www.linkedin.com/in/agathe-gouzien", lastActive:"3w"},
+          {key:"france::alain-marquis-bethune-hockey-club-copilote-tpe-pme", name:"Alain Marquis", company:"Béthune Hockey Club & Copilote TPE PME", url:"https://www.linkedin.com/in/alain-marquis", lastActive:"3d"},
+          {key:"france::alexandre-gailhac-les-3-oliviers-conseil", name:"Alexandre GAILHAC", company:"Les 3 oliviers conseil", url:"https://www.linkedin.com/in/alexandre-gailhac", lastActive:""},
+          {key:"france::adeline-pottier-co-pilotes-experts-comptables", name:"Adeline POTTIER", company:"CO-PILOTES Experts-Comptables", url:"https://www.linkedin.com/in/adeline-pottier/", lastActive:"1w"},
+          {key:"france::alexandre-besson-alex-platrerie", name:"Alexandre BESSON", company:"Alex platrerie", url:"https://www.linkedin.com/in/alexandrebesson/", lastActive:"2h"},
+          {key:"france::alexi-maujoin-a-d-s-a-vigouroux", name:"Alexi MAUJOIN", company:"A.D.S.A. VIGOUROUX", url:"https://www.linkedin.com/in/alexi-maujoin-b773a3b9/", lastActive:"1mo"},
+          {key:"france::alexia-pasquier-monie-conseils", name:"Alexia PASQUIER", company:"Monie conseils", url:"https://www.linkedin.com/in/alexia-pasquier-518332123/", lastActive:"2d"},
+          {key:"france::alexian-chanat-ac-renovation", name:"Alexian CHANAT", company:"AC RÉNOVATION", url:"https://www.linkedin.com/in/alexian-chanat/", lastActive:"2w"}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 7; // bumped 2026-10-30 (correction): owner caught 7 of the original 10-30 batch (Flora Pollefoort, Houssem Boughanmi, Hugo Avale, Jeremy Goulene, Jonas Feuvrier, Laurent Denis, Loic Ventaja) as repeat Sales Navigator sends from before 10-29 tracking existed -- no permanent sent-log existed pre-10-29, only the self-overwriting seed array, so untracked repeats could resurface; now logged permanently to sales-navigator-sent-log.csv. Kept the 3 genuine (Leclerc, Darsin, Tavernier, unsent) + filled to 10 with 7 of the newly-vetted 10-31 pool (Florian Volle and earlier in list order); Franck Fiszel, Jimmy Parmentier, Jonathan Muller held in reserve for 11-01.
+        const SO_PREMIUM_DATA_VERSION = 8; // bumped 2026-11-02: clean-overwrite, full fresh 10. InMail credits confirmed refilled (54 available) via live Sales Nav settings check. Source method changed: the France BNI master CSV's genuine-LinkedIn-URL pool (246 people) is now 100% exhausted (all already used in prior batches), so today's candidates came from a new LinkedIn People-Search resolver (search by name, match results against the person's real company name in the headline) instead of guessed vanity URLs -- ~33-50% confirmed hit rate vs ~1% blind guessing. An identity-verification bug was caught and fixed mid-build: company-name token matching was initially accepting matches where the ONLY overlapping word was the person's own surname coincidentally appearing in the company name (e.g. a Warner Bros marketing manager in Switzerland got matched to a French law firm "Verquin Flament Avocats" purely because his surname is Flament) -- fixed by excluding the person's own name tokens from the match requirement, re-audited all resolved matches, excluded 10 of 61 as unverifiable. All 10 people here passed identity verification (real company-name match in their actual LinkedIn headline, not just name coincidence).
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2420,22 +2420,29 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::adrien-gerard-notaires-paris-sentier-montorgueil", name:"Adrien GERARD", company:"NOTAIRES PARIS SENTIER MONTORGUEIL", url:"https://www.linkedin.com/in/adrien-gerard", lastActive:"4d"},
-          {key:"france::celine-graviere-avocat-conseil", name:"Céline GRAVIERE", company:"AVOCAT CONSEIL", url:"https://www.linkedin.com/in/celine-graviere", lastActive:"Oct 27"},
-          {key:"france::francois-tillot-cap-creane", name:"François TILLOT", company:"CAP CREANE", url:"https://www.linkedin.com/in/francois-tillot-5295a9/", lastActive:"3h"},
-          {key:"france::herve-pradourat-pradourat-associes", name:"Hervé PRADOURAT", company:"PRADOURAT & ASSOCIÉS", url:"https://fr.linkedin.com/pub/herve-pradourat/55/363/91a", lastActive:"3h"},
-          {key:"france::adele-bailly-agence-ab-consulting", name:"Adèle BAILLY", company:"Agence AB Consulting", url:"https://www.linkedin.com/in/adele-bailly", lastActive:"1w"},
-          {key:"france::kevin-gambin-tekoha", name:"Kevin GAMBIN", company:"TekoHa", url:"http://fr.linkedin.com/pub/kévin-gambin/55/3a9/809/", lastActive:"Oct 22"},
-          {key:"france::adrien-augusto-dispo-menage", name:"Adrien AUGUSTO", company:"DISPO MENAGE", url:"https://www.linkedin.com/in/adrien-augusto", lastActive:"2w"},
-          {key:"france::aimery-vernhes-experts-geo", name:"Aimery VERNHES", company:"EXPERTS GEO", url:"https://www.linkedin.com/in/aimery-vernhes", lastActive:"2w"},
-          {key:"france::aurelie-py-le-brun-py-digital", name:"Aurelie PY LE BRUN", company:"PY DIGITAL", url:"https://www.linkedin.com/in/aurelie-pylebrun/", lastActive:"2w"},
-          {key:"france::marie-josephe-nuel-eclere", name:"Marie-Josèphe NUEL", company:"ECLERE", url:"https://www.linkedin.com/in/mariejosephenuel/", lastActive:"Oct 15"},
-          {key:"france::adrien-bocquillon-babychou", name:"Adrien BOCQUILLON", company:"BABYCHOU", url:"https://www.linkedin.com/in/adrien-bocquillon", lastActive:"2mo"},
-          {key:"france::franck-bernard-tremplin-digital", name:"Franck BERNARD", company:"TREMPLIN DIGITAL", url:"https://www.linkedin.com/in/franckbernard/", lastActive:""},
-          {key:"france::laurent-bernard-ldmb-conseil-agence-laurent-lesage", name:"Laurent BERNARD", company:"LDMB Conseil - Agence LAURENT / LESAGE", url:"https://fr.linkedin.com/pub/laurent-bernard/42/3ab/b10", lastActive:""}
+          {key:"france::alexie-mineo-de-la-boutresse-dbo-avocats", name:"Alexie MINEO DE LA BOUTRESSE", company:"DBO Avocats", url:"https://www.linkedin.com/in/alexie-mineo-de-la-boutresse-542393113/", lastActive:"1mo"},
+          {key:"france::alexis-bruno-sas-psbb-atelier-bru", name:"Alexis BRUNO", company:"SAS PSBB - ATELIER BRU", url:"https://www.linkedin.com/in/alexis-bruno-b5b367144/", lastActive:"3d"},
+          {key:"france::alexis-chaboche-wemaj-in", name:"Alexis CHABOCHE", company:"Wemaj'in", url:"https://www.linkedin.com/in/alexis-chaboche/", lastActive:"1mo"},
+          {key:"france::alexis-delacourt-acces-reseaux-informatique", name:"Alexis DELACOURT", company:"ACCES RESEAUX INFORMATIQUE", url:"https://www.linkedin.com/in/alexisdelacourt/", lastActive:"3mo"},
+          {key:"france::alexis-fouillet-ets-planchet-automobiles", name:"ALEXIS FOUILLET", company:"Ets PLANCHET Automobiles", url:"https://www.linkedin.com/in/alexis-fouillet-0650871a8/", lastActive:"1w"},
+          {key:"france::alexis-giannico-agl-renov", name:"Alexis GIANNICO", company:"Agl renov", url:"https://www.linkedin.com/in/alexis-giannico-a14471151/", lastActive:"3mo"},
+          {key:"france::alexis-lacene-performance-cars-lease", name:"Alexis LACENE", company:"PERFORMANCE CARS LEASE", url:"https://www.linkedin.com/in/alexis-lacene-378671195/", lastActive:"1w"},
+          {key:"france::alexis-lavancier-afr-financement", name:"Alexis LAVANCIER", company:"AFR FINANCEMENT", url:"https://www.linkedin.com/in/alexis-lavancier-85637283/", lastActive:"5d"},
+          {key:"france::alexis-maurice-simple-comme-web", name:"Alexis MAURICE", company:"SIMPLE COMME WEB", url:"https://www.linkedin.com/in/alexismaurice/", lastActive:"1w"},
+          {key:"france::alexis-renou-fleuron-des-mauges", name:"alexis RENOU", company:"FLEURON DES MAUGES", url:"https://www.linkedin.com/in/alexis-renou-922554178/", lastActive:"1w"},
+          {key:"france::alexis-sarioglou-teps-energie", name:"Alexis SARIOGLOU", company:"TEPS ENERGIE", url:"https://www.linkedin.com/in/alexis-sarioglou-157047127/", lastActive:"4mo"},
+          {key:"france::alexis-sebbag-virtuose", name:"Alexis SEBBAG", company:"Virtuose", url:"https://www.linkedin.com/in/alexis-sebbag/", lastActive:"3d"},
+          {key:"france::alice-bourbon-float-harmony", name:"Alice BOURBON", company:"FLOAT HARMONY", url:"https://www.linkedin.com/in/alice-bourbon-salif-78558976/", lastActive:"1w"},
+          {key:"france::agnes-ferrari-guiral-agil-solutions", name:"Agnès FERRARI GUIRAL", company:"AGIL-SOLUTIONS", url:"https://www.linkedin.com/in/agn%C3%A8s-ferrari-guiral/", lastActive:"3d"},
+          {key:"france::alain-augeard-cotentin-gestion-travaux", name:"Alain AUGEARD", company:"COTENTIN GESTION TRAVAUX", url:"https://www.linkedin.com/in/alain-augeard-363a64159/", lastActive:"1d"},
+          {key:"france::alexandre-zittel-alexandre-zittel-gan-assurances", name:"Alexandre ZITTEL", company:"Alexandre ZITTEL - Gan Assurances", url:"https://www.linkedin.com/in/alexandre-zittel-899435116/", lastActive:""},
+          {key:"france::alexia-glomot-boghossian-alexia-glomot-boghossian-architecte", name:"Alexia GLOMOT BOGHOSSIAN", company:"Alexia Glomot Boghossian Architecte", url:"https://www.linkedin.com/in/alexia-glomot-boghossian-9a58ab113/", lastActive:"11mo"},
+          {key:"france::alexia-hays-ah-avocate", name:"Alexia HAYS", company:"AH Avocate", url:"https://www.linkedin.com/in/alexiahays/", lastActive:"3mo"},
+          {key:"france::alexia-lazaro-prelys-courtage", name:"Alexia LAZARO", company:"Prelys courtage", url:"https://www.linkedin.com/in/alexialazaro/", lastActive:"3d"},
+          {key:"france::alexia-marx-alexia-marx-immobilier", name:"Alexia MARX", company:"Alexia Marx Immobilier", url:"https://www.linkedin.com/in/alexia-marx-98831a1b5/", lastActive:"2w"}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 12; // bumped 2026-10-31: clean-overwrite with a fresh 13-name batch (not the usual 20 -- see batch-log.csv 2026-10-31 entry). Root cause: the France BNI master CSV's "linkedin" column is unreliable for most unvetted members -- many values are company pages, dead legacy /pub/ links, or non-LinkedIn domains (Instagram/Pinterest/websites), not personal profile URLs. After filtering the unused PASS+REVIEW pool down to genuine personal-profile URLs only (no padding with unusable links), 13 was the real count: 5 fresh PASS from today's vetting pass + 8 manually-verified REVIEW entries with confirmed personal /in/ or /pub/ URLs. Sales Navigator/Premium untouched today (owner's InMail credits exhausted, skipped entirely this batch).
+        const SO_DATA_VERSION = 13; // bumped 2026-11-02: clean-overwrite with a full fresh 20-name batch. France BNI master CSV's genuine-LinkedIn-URL pool (246 people) confirmed 100% exhausted today -- checked the full 9,990-row master directly, every genuine /in/ or /pub/ URL was already in the candidate pool. Switched sourcing method: LinkedIn People-Search resolver (search by name, require the scraped headline to contain a real word from the person's company name) instead of guessed vanity URLs, getting ~33-50% confirmed hit rate vs ~1% from blind guessing on 10-31. Caught and fixed an identity-matching bug mid-build (see SO_PREMIUM_DATA_VERSION 8 comment for detail) -- 10 of 61 resolved matches were excluded as unverifiable (match driven only by the person's own surname coincidentally appearing in their company's name, not real evidence). This batch: 13 fresh PASS (title+activity both passed) + 7 manually-reviewed REVIEW entries (clear business-owner/sole-practitioner headlines -- general contractor, insurance agent, architect, lawyer, broker, real estate agent, HR consultant -- that didn't match the blunt CEO/Director keyword regex but are legitimate BNI-type small-business owners), all identity-verified.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
@@ -2583,10 +2590,11 @@
           {key:"france::flavie-hourtolou-flavie-hourtolou", name:"Flavie HOURTOLOU", company:"Flavie HOURTOLOU", url:"https://www.linkedin.com/in/flaviehourtolou", acceptedOn:"2026-10-29"},
           {key:"france::frederic-desbois-arteo-conseil", name:"Frédéric DESBOIS", company:"Arteo Conseil", url:"https://www.linkedin.com/in/frederic-desbois/", acceptedOn:"2026-10-29"},
           {key:"france::antoine-jambart-boomerang-conseil", name:"Antoine JAMBART", company:"Boomerang Conseil", url:"https://www.linkedin.com/in/antoine-jambart/", acceptedOn:"2026-10-29"},
-          {key:"france::antoine-faure-cote-particuliers-bordeaux-ornano", name:"Antoine FAURE", company:"COTE PARTICULIERS BORDEAUX ORNANO", url:"https://www.linkedin.com/in/antoinefaure-immobilier-bordeaux/", acceptedOn:"2026-10-30"}
+          {key:"france::antoine-faure-cote-particuliers-bordeaux-ornano", name:"Antoine FAURE", company:"COTE PARTICULIERS BORDEAUX ORNANO", url:"https://www.linkedin.com/in/antoinefaure-immobilier-bordeaux/", acceptedOn:"2026-10-30"},
+          {key:"france::francois-tillot-cap-creane", name:"François TILLOT", company:"CAP CREANE", url:"https://www.linkedin.com/in/francois-tillot-5295a9/", acceptedOn:"2026-11-02"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 4; // bumped 2026-10-30: 1 new accept from daily check (Antoine Faure), force re-merge
+        const SO_ACCEPTED_DATA_VERSION = 5; // bumped 2026-11-02: 1 new accept from daily check (François Tillot), force re-merge
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
