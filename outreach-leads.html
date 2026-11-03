@@ -2297,19 +2297,19 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::alice-moulinneuf-recci-financem", name:"Alice MOULINNEUF", company:"RECCI FINANCEM", url:"https://www.linkedin.com/in/alice-moulinneuf-a7abba178/", lastActive:"4d"},
-          {key:"france::aline-groot-tableapart", name:"Aline GROOT", company:"TABLEAPART", url:"https://www.linkedin.com/in/aline-groot-dhalluin-483b95ba/", lastActive:"1mo"},
-          {key:"france::aline-lejeune-creneau-emploi", name:"Aline LEJEUNE", company:"CRENEAU EMPLOI", url:"https://www.linkedin.com/in/aline-lejeune-4a8277a4/", lastActive:"3w"},
-          {key:"france::aline-meunier-atala-coaching-et-formation", name:"Aline MEUNIER", company:"ATALA COACHING ET FORMATION", url:"https://www.linkedin.com/in/aline-meunier/", lastActive:"3d"},
-          {key:"france::aliona-bogacenco-pari-propre", name:"Aliona BOGACENCO", company:"PARI PROPRE", url:"https://www.linkedin.com/in/aliona-bogacenco-5721151b0/", lastActive:"2d"},
-          {key:"france::alison-raibaut-noblessa-cuisines", name:"Alison RAIBAUT", company:"NOBLESSA CUISINES", url:"https://www.linkedin.com/in/alison-raibaut-797380a5/", lastActive:"3w"},
-          {key:"france::alisson-cartigny-maison-et-services", name:"Alisson CARTIGNY", company:"Maison et services", url:"https://www.linkedin.com/in/alisson-cartigny-873920234/", lastActive:"1w"},
-          {key:"france::alizee-farnier-sas-avant-garde", name:"Alizée FARNIER", company:"Sas Avant-Garde", url:"https://www.linkedin.com/in/aliz%C3%A9e-farnier-22308b106/", lastActive:"1mo"},
-          {key:"france::alexia-nallet-asteria-notaires", name:"Alexia NALLET", company:"ASTERIA NOTAIRES", url:"https://www.linkedin.com/in/alexia-nallet-720917117/", lastActive:"1w"},
-          {key:"france::alexis-boury-est-multicopie", name:"Alexis BOURY", company:"EST MULTICOPIE", url:"https://www.linkedin.com/in/alexis-boury-6a1657312/", lastActive:"11mo"}
+          {key:"france::amanda-carcea-cassiopub", name:"Amanda CARCEA", company:"Cassiopub", url:"https://www.linkedin.com/in/amanda-carcea-838b42122/", lastActive:""},
+          {key:"france::amandine-bouvier-actea-legal", name:"Amandine BOUVIER", company:"ACTEA LEGAL+", url:"https://www.linkedin.com/in/amandine-bouvier-341b57189/", lastActive:""},
+          {key:"france::amandine-chombart-sur-le-pont-communication", name:"Amandine CHOMBART", company:"Sur le pont ! Communication", url:"https://www.linkedin.com/in/amandine-chombart-4a428453/", lastActive:""},
+          {key:"france::amandine-commereuc-commereuc-immobilier", name:"Amandine COMMEREUC", company:"COMMEREUC IMMOBILIER", url:"https://www.linkedin.com/in/amandine-commereuc-26b50735a/", lastActive:""},
+          {key:"france::amandine-laforge-swisslife", name:"Amandine LAFORGE", company:"SwissLife", url:"https://www.linkedin.com/in/amandine-laforge-227693134/", lastActive:""},
+          {key:"france::amandine-mallet-reseau-gcl", name:"Amandine MALLET", company:"Reseau GCL", url:"https://www.linkedin.com/in/amandine-mallet-expertcomptable/", lastActive:""},
+          {key:"france::amandine-soubielle-pano-dax", name:"Amandine SOUBIELLE", company:"PANO DAX", url:"https://www.linkedin.com/in/amandine-soubielle/", lastActive:""},
+          {key:"france::amandine-ville-alarme-conseil-protection", name:"Amandine VILLE", company:"ALARME CONSEIL & PROTECTION", url:"https://www.linkedin.com/in/amandine-ville/", lastActive:""},
+          {key:"france::amaury-dubois-58minutes-com", name:"Amaury DUBOIS", company:"58MINUTES.COM", url:"https://www.linkedin.com/in/amaury-dubois-27439a119/", lastActive:""},
+          {key:"france::alida-mangin-am-interieur-design", name:"Alida MANGIN", company:"AM INTERIEUR DESIGN", url:"https://www.linkedin.com/in/alida-mangin-261666247/", lastActive:""}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 9; // bumped 2026-11-03: clean-overwrite, full fresh 10. Fresh PASS pool from the master CSV is now fully exhausted (0 remaining); this batch combines 20 leftover identity-confirmed candidates from Nov 2's resolver run (never used in a prior batch) with 27 newly resolved via search_resolve_batch.js today (50.9% cumulative hit rate, 173 attempts). Live InMail credit re-check hit UI friction (Sales Nav settings pages 404'd, compose-modal button not clickable) and was skipped as non-blocking -- last confirmed balance was 54 on 2026-11-02, comfortably above today's 10. All 10 people here passed identity verification via real company-name token match in the scraped search-result text (8 also passed the title/activity PASS bar; 2 are REVIEW on title-ambiguity only, identity still confirmed).
+        const SO_PREMIUM_DATA_VERSION = 10; // bumped 2026-11-04: clean-overwrite, full fresh 10. Continued search_resolve_batch.js from index 173 (73 more attempts, 31 resolved, 48.6% cumulative). Rebuilt the dedup logic from scratch this time to scan ALL historical per-day selection JSON files (not just the permanent sent-logs) after discovering the original 2026-10-27 Sales Nav batch (france_premium_20.json, e.g. Axel Calvet, Claude Richoux) predates sales-navigator-sent-log.csv and was invisible to URL dedup -- those are now correctly excluded as already-contacted. All 10 here are leftover-unused + newly-resolved candidates from the Nov 2-4 resolver pool (indices 1070-1110): 9 PASS + 1 REVIEW (identity still confirmed via company-token match).
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2443,29 +2443,29 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::alexis-corujeira-le-conservateur", name:"Alexis Corujeira", company:"Le Conservateur", url:"https://www.linkedin.com/in/alexis-corujeira/", lastActive:""},
-          {key:"france::alexis-dagnaud-la-maison-des-travaux", name:"Alexis DAGNAUD", company:"LA MAISON DES TRAVAUX", url:"https://www.linkedin.com/in/alexisdagnaud/", lastActive:"3mo"},
-          {key:"france::alexis-dolidze-tino-trans-fermetures", name:"Alexis DOLIDZE", company:"TINO TRANS FERMETURES", url:"https://www.linkedin.com/in/alexis-dolidze-58889b130/", lastActive:"4mo"},
-          {key:"france::alexis-fournier-l-atelier-vel-aube", name:"Alexis Fournier", company:"L'Atelier Vel'aube", url:"https://www.linkedin.com/in/alexis-fournier-7a372517b/", lastActive:""},
-          {key:"france::alexis-gourdon-adrien-alarme", name:"Alexis GOURDON", company:"ADRIEN ALARME", url:"https://www.linkedin.com/in/alexis-gourdon-84ba881b8/", lastActive:"2w"},
-          {key:"france::alexis-jouandou-cuisines-aviva", name:"Alexis JOUANDOU", company:"CUISINES AVIVA", url:"https://www.linkedin.com/in/alexis-jouandou-37319091/", lastActive:"3mo"},
-          {key:"france::alexis-massard-renault", name:"Alexis MASSARD", company:"RENAULT", url:"https://www.linkedin.com/in/alexis-massard-a40331158/", lastActive:"1mo"},
-          {key:"france::alexis-mazoyer-endrix", name:"Alexis MAZOYER", company:"ENDRIX", url:"https://www.linkedin.com/in/alexis-mazoyer-23537a106/", lastActive:"11mo"},
-          {key:"france::alexis-pelluchon-atelier-echos", name:"Alexis pelluchon", company:"atelier echos", url:"https://www.linkedin.com/in/alexis-pelluchon-5a69b4195/", lastActive:""},
-          {key:"france::alexis-piat-marchand-dirland-st-dizier", name:"Alexis Piat Marchand", company:"DIRLAND  St Dizier", url:"https://www.linkedin.com/in/alexis-piat-marchand-b6598a265/", lastActive:"2w"},
-          {key:"france::alexis-pinel-demenagements-patrick-pinel", name:"Alexis PINEL", company:"DEMENAGEMENTS PATRICK PINEL", url:"https://www.linkedin.com/in/alexis-pinel-72727029/", lastActive:"1mo"},
-          {key:"france::alexis-vantorre-rydge-conseil", name:"Alexis VANTORRE", company:"RYDGE conseil", url:"https://www.linkedin.com/in/alexis-vantorre-b20b82227/", lastActive:"6mo"},
-          {key:"france::alfred-page-alpa-conseil", name:"Alfred PAGE", company:"ALPA CONSEIL", url:"https://www.linkedin.com/in/alfred-page-17642711a/", lastActive:"1mo"},
-          {key:"france::alice-charpentier-sotheby-s", name:"Alice CHARPENTIER", company:"SOTHEBY'S", url:"https://www.linkedin.com/in/alice-charpentier-4433662ba/", lastActive:"6mo"},
-          {key:"france::alice-delbecque-welcome-finition", name:"Alice DELBECQUE", company:"WELCOME FINITION", url:"https://www.linkedin.com/in/alice-delbecque-8323542bb/", lastActive:"7mo"},
-          {key:"france::alice-escarabajal-groupe-morgan-services", name:"Alice ESCARABAJAL", company:"GROUPE MORGAN SERVICES", url:"https://www.linkedin.com/in/alice-escarabajal/", lastActive:"9mo"},
-          {key:"france::alice-herole-alice-herole-avocat-au-barreau-de-lyon", name:"Alice HEROLE", company:"Alice HEROLE Avocat au Barreau de Lyon", url:"https://www.linkedin.com/in/alice-herole-8967431b5/", lastActive:""},
-          {key:"france::alice-macquart-renov-ext-courtage", name:"Alice MACQUART", company:"RENOV&EXT Courtage", url:"https://www.linkedin.com/in/alice-macquart-bb4b5485/", lastActive:"5d"},
-          {key:"france::alice-menard-temporis", name:"Alice MENARD", company:"TEMPORIS", url:"https://www.linkedin.com/in/alice-m%C3%A9nard/", lastActive:"1w"},
-          {key:"france::alice-orengo-alice-orengo-avocat", name:"Alice ORENGO", company:"Alice Orengo Avocat", url:"https://www.linkedin.com/in/alice-orengo-oncle-222199258/", lastActive:"2w"}
+          {key:"france::alin-dumitrel-cioroiu-aln", name:"Alin Dumitrel CIOROIU", company:"ALN", url:"https://www.linkedin.com/in/alin-dumitrel-cioroiu-aln/", lastActive:""},
+          {key:"france::aline-bourduge-all-in-digital", name:"Aline BOURDUGE", company:"ALL IN DIGITAL", url:"https://www.linkedin.com/in/alinebourduge/", lastActive:""},
+          {key:"france::aline-brunet-caviste", name:"Aline BRUNET", company:"Caviste", url:"https://www.linkedin.com/in/aline-brunet-9b8ab55a/", lastActive:""},
+          {key:"france::aline-fidelis-af-design-d-interieur", name:"Aline FIDELIS", company:"AF Design d'intérieur", url:"https://www.linkedin.com/in/ialinefidelis/", lastActive:""},
+          {key:"france::aline-guilleman-allianz", name:"Aline GUILLEMAN", company:"Allianz", url:"https://www.linkedin.com/in/aline-guilleman-917554106/", lastActive:""},
+          {key:"france::aline-morlec-gan-assurances", name:"Aline MORLEC", company:"GAN Assurances", url:"https://www.linkedin.com/in/aline-morlec-bousseau-940ba2198/", lastActive:""},
+          {key:"france::aline-pineau-banque-populaire-aquitaine-centre-atlantique", name:"Aline PINEAU", company:"Banque Populaire Aquitaine Centre Atlantique", url:"https://www.linkedin.com/in/aline-pineau-0165b0267/", lastActive:""},
+          {key:"france::aline-serrot-synergie", name:"Aline SERROT", company:"SYNERGIE", url:"https://www.linkedin.com/in/aline-serrot-553325210/", lastActive:""},
+          {key:"france::aline-teodori-marly-immobilier", name:"Aline TEODORI", company:"MARLY IMMOBILIER", url:"https://www.linkedin.com/in/aline-teodori-9b07a228/", lastActive:""},
+          {key:"france::alisson-bouvet-fossati-villa-nomade", name:"Alisson BOUVET-FOSSATI", company:"VILLA NOMADE", url:"https://www.linkedin.com/in/lilliehdecoevent/", lastActive:""},
+          {key:"france::allan-attali-allan-attali-avocat", name:"Allan ATTALI", company:"ALLAN ATTALI AVOCAT", url:"https://www.linkedin.com/in/allan4a/", lastActive:""},
+          {key:"france::allan-nierengarten-allan-elec", name:"Allan NIERENGARTEN", company:"ALLAN'ELEC", url:"https://www.linkedin.com/in/allan-nierengarten-lopergolo-89144b16a/", lastActive:""},
+          {key:"france::amandine-boure-elista-conseils", name:"Amandine BOURÉ", company:"ELISTA CONSEILS", url:"https://www.linkedin.com/in/amandineboure/", lastActive:""},
+          {key:"france::amandine-cayzac-amandine-cayzac-osteopathe", name:"Amandine CAYZAC", company:"Amandine Cayzac Ostéopathe", url:"https://www.linkedin.com/in/amandine-cayzac-8635b9371/", lastActive:""},
+          {key:"france::amandine-hispa-iad", name:"Amandine HISPA", company:"IAD", url:"https://www.linkedin.com/in/amandine-hispa/", lastActive:""},
+          {key:"france::amandine-ortiz-ansemble", name:"Amandine ORTIZ", company:"Ansemble", url:"https://www.linkedin.com/in/amandine-ortiz-9b979aa0/", lastActive:""},
+          {key:"france::amandine-papin-amenagement-deco", name:"Amandine Papin", company:"Aménagement Déco", url:"https://www.linkedin.com/in/papin-amandine-15385abb/", lastActive:""},
+          {key:"france::amandine-primel-haliatus-patrimoine", name:"Amandine PRIMEL", company:"Haliatus Patrimoine", url:"https://www.linkedin.com/in/amandine-primel-994ab9166/", lastActive:""},
+          {key:"france::amandine-soyer-avantage-interim", name:"Amandine Soyer", company:"Avantage Interim", url:"https://www.linkedin.com/in/amandine-soyer-64bb5a182/", lastActive:""},
+          {key:"france::amaury-berthelot-scp-c-pinchon-s-cacheux-a-berthelot", name:"Amaury BERTHELOT", company:"SCP C.PINCHON-S.CACHEUX-A.BERTHELOT", url:"https://www.linkedin.com/in/amaury-berthelot-89a9aa153/", lastActive:""}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 14; // bumped 2026-11-03: clean-overwrite with a full fresh 20-name batch, same sourcing method and pool as SO_PREMIUM_DATA_VERSION 9 (see that comment for detail on exhausted-PASS-pool + resolver continuation). All 20 are REVIEW-verdict (title-ambiguous) but identity-confirmed via real company-name token match in the scraped search-result text, drawn from 20 leftover Nov 2 candidates never used in a prior batch plus newly resolved Nov 3 ones.
+        const SO_DATA_VERSION = 15; // bumped 2026-11-04: clean-overwrite with a full fresh 20-name batch, same sourcing/dedup method and pool as SO_PREMIUM_DATA_VERSION 10 (see that comment for the historical-selection-file dedup gap found and fixed today). All 20 are REVIEW-verdict (title-ambiguous) but identity-confirmed via real company-name token match in the scraped search-result text, drawn from the Nov 2-4 resolver pool (indices 1071-1109).
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
@@ -2622,10 +2622,12 @@
           {key:"france::alexandre-de-sousa-izzi", name:"Alexandre DE SOUSA", company:"iZZi", url:"https://www.linkedin.com/in/alexandredesousa/", acceptedOn:"2026-11-02"},
           {key:"france::alexia-lazaro-prelys-courtage", name:"Alexia LAZARO", company:"Prelys courtage", url:"https://www.linkedin.com/in/alexialazaro/", acceptedOn:"2026-11-02"},
           {key:"france::aurelie-py-le-brun-py-digital", name:"Aurelie PY LE BRUN", company:"PY DIGITAL", url:"https://www.linkedin.com/in/aurelie-pylebrun/", acceptedOn:"2026-11-02"},
-          {key:"france::alexis-bruno-sas-psbb-atelier-bru-accepted", name:"Alexis BRUNO", company:"SAS PSBB - ATELIER BRU", url:"https://www.linkedin.com/in/alexis-bruno-b5b367144/", acceptedOn:"2026-11-03"}
+          {key:"france::alexis-bruno-sas-psbb-atelier-bru-accepted", name:"Alexis BRUNO", company:"SAS PSBB - ATELIER BRU", url:"https://www.linkedin.com/in/alexis-bruno-b5b367144/", acceptedOn:"2026-11-03"},
+          {key:"france::alice-menard-temporis-accepted", name:"Alice MENARD", company:"TEMPORIS", url:"https://www.linkedin.com/in/alice-m%C3%A9nard/", acceptedOn:"2026-11-04"},
+          {key:"france::agnes-ferrari-guiral-agil-solutions-accepted", name:"Agnès FERRARI GUIRAL", company:"AGIL-SOLUTIONS", url:"https://www.linkedin.com/in/agn%C3%A8s-ferrari-guiral/", acceptedOn:"2026-11-04"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 7; // bumped 2026-11-03: 1 new accept from daily check (Alexis Bruno), force re-merge
+        const SO_ACCEPTED_DATA_VERSION = 8; // bumped 2026-11-04: 2 new accepts from daily check (Alice Menard, Agnes Ferrari Guiral), force re-merge
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
