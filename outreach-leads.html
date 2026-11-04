@@ -2624,10 +2624,11 @@
           {key:"france::aurelie-py-le-brun-py-digital", name:"Aurelie PY LE BRUN", company:"PY DIGITAL", url:"https://www.linkedin.com/in/aurelie-pylebrun/", acceptedOn:"2026-11-02"},
           {key:"france::alexis-bruno-sas-psbb-atelier-bru-accepted", name:"Alexis BRUNO", company:"SAS PSBB - ATELIER BRU", url:"https://www.linkedin.com/in/alexis-bruno-b5b367144/", acceptedOn:"2026-11-03"},
           {key:"france::alice-menard-temporis-accepted", name:"Alice MENARD", company:"TEMPORIS", url:"https://www.linkedin.com/in/alice-m%C3%A9nard/", acceptedOn:"2026-11-04"},
-          {key:"france::agnes-ferrari-guiral-agil-solutions-accepted", name:"Agnès FERRARI GUIRAL", company:"AGIL-SOLUTIONS", url:"https://www.linkedin.com/in/agn%C3%A8s-ferrari-guiral/", acceptedOn:"2026-11-04"}
+          {key:"france::agnes-ferrari-guiral-agil-solutions-accepted", name:"Agnès FERRARI GUIRAL", company:"AGIL-SOLUTIONS", url:"https://www.linkedin.com/in/agn%C3%A8s-ferrari-guiral/", acceptedOn:"2026-11-04"},
+          {key:"france::alexis-jouandou-cuisines-aviva-accepted", name:"Alexis JOUANDOU", company:"CUISINES AVIVA", url:"https://www.linkedin.com/in/alexis-jouandou-37319091/", acceptedOn:"2026-11-04"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 8; // bumped 2026-11-04: 2 new accepts from daily check (Alice Menard, Agnes Ferrari Guiral), force re-merge
+        const SO_ACCEPTED_DATA_VERSION = 9; // bumped 2026-11-04: 1 more new accept from a same-day re-check (Alexis Jouandou, accepted same day his connection request went out), force re-merge
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
