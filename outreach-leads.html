@@ -2628,10 +2628,13 @@
           {key:"france::alexis-jouandou-cuisines-aviva-accepted", name:"Alexis JOUANDOU", company:"CUISINES AVIVA", url:"https://www.linkedin.com/in/alexis-jouandou-37319091/", acceptedOn:"2026-11-04"},
           {key:"france::allan-attali-allan-attali-avocat-accepted", name:"Allan ATTALI", company:"ALLAN ATTALI AVOCAT", url:"https://www.linkedin.com/in/allan4a/", acceptedOn:"2026-11-05"},
           {key:"france::alexis-vantorre-rydge-conseil-accepted", name:"Alexis VANTORRE", company:"RYDGE conseil", url:"https://www.linkedin.com/in/alexis-vantorre-b20b82227/", acceptedOn:"2026-11-05"},
-          {key:"france::aline-teodori-marly-immobilier-accepted", name:"Aline TEODORI", company:"MARLY IMMOBILIER", url:"https://www.linkedin.com/in/aline-teodori-9b07a228/", acceptedOn:"2026-11-05"}
+          {key:"france::aline-teodori-marly-immobilier-accepted", name:"Aline TEODORI", company:"MARLY IMMOBILIER", url:"https://www.linkedin.com/in/aline-teodori-9b07a228/", acceptedOn:"2026-11-05"},
+          {key:"france::amelie-bouillon-id-office-accepted", name:"Amélie BOUILLON", company:"ID OFFICE", url:"https://www.linkedin.com/in/am%C3%A9lie-bouillon-646ab5195/", acceptedOn:"2026-11-05"},
+          {key:"france::amelie-jasmain-finance-conseil-accepted", name:"Amélie JASMAIN", company:"FINANCE CONSEIL", url:"https://www.linkedin.com/in/am%C3%A9lie-jasmain-2ba362139/", acceptedOn:"2026-11-05"},
+          {key:"france::anais-climent-reno-services-31-accepted", name:"Anaïs CLIMENT", company:"Reno Services 31", url:"https://www.linkedin.com/in/anais-climent-92886612b/", acceptedOn:"2026-11-05"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 12; // bumped 2026-11-05 (second check): found 3 new acceptances on a same-day re-check after the batch push -- Allan Attali, Alexis Vantorre, Aline Teodori. accepted_date auto-filled in connection-request-tracking-log.csv.
+        const SO_ACCEPTED_DATA_VERSION = 13; // bumped 2026-11-06: added 3 more same-day acceptances found on the Nov 6 morning check -- Amelie Bouillon, Amelie Jasmain, Anais Climent. accepted_date already in connection-request-tracking-log.csv.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
