@@ -2625,10 +2625,13 @@
           {key:"france::alexis-bruno-sas-psbb-atelier-bru-accepted", name:"Alexis BRUNO", company:"SAS PSBB - ATELIER BRU", url:"https://www.linkedin.com/in/alexis-bruno-b5b367144/", acceptedOn:"2026-11-03"},
           {key:"france::alice-menard-temporis-accepted", name:"Alice MENARD", company:"TEMPORIS", url:"https://www.linkedin.com/in/alice-m%C3%A9nard/", acceptedOn:"2026-11-04"},
           {key:"france::agnes-ferrari-guiral-agil-solutions-accepted", name:"Agnès FERRARI GUIRAL", company:"AGIL-SOLUTIONS", url:"https://www.linkedin.com/in/agn%C3%A8s-ferrari-guiral/", acceptedOn:"2026-11-04"},
-          {key:"france::alexis-jouandou-cuisines-aviva-accepted", name:"Alexis JOUANDOU", company:"CUISINES AVIVA", url:"https://www.linkedin.com/in/alexis-jouandou-37319091/", acceptedOn:"2026-11-04"}
+          {key:"france::alexis-jouandou-cuisines-aviva-accepted", name:"Alexis JOUANDOU", company:"CUISINES AVIVA", url:"https://www.linkedin.com/in/alexis-jouandou-37319091/", acceptedOn:"2026-11-04"},
+          {key:"france::allan-attali-allan-attali-avocat-accepted", name:"Allan ATTALI", company:"ALLAN ATTALI AVOCAT", url:"https://www.linkedin.com/in/allan4a/", acceptedOn:"2026-11-05"},
+          {key:"france::alexis-vantorre-rydge-conseil-accepted", name:"Alexis VANTORRE", company:"RYDGE conseil", url:"https://www.linkedin.com/in/alexis-vantorre-b20b82227/", acceptedOn:"2026-11-05"},
+          {key:"france::aline-teodori-marly-immobilier-accepted", name:"Aline TEODORI", company:"MARLY IMMOBILIER", url:"https://www.linkedin.com/in/aline-teodori-9b07a228/", acceptedOn:"2026-11-05"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 11; // bumped 2026-11-05: re-added Alexis Jouandou as planned (held out of 11-04 at owner's request). Daily acceptance re-check found 0 new today.
+        const SO_ACCEPTED_DATA_VERSION = 12; // bumped 2026-11-05 (second check): found 3 new acceptances on a same-day re-check after the batch push -- Allan Attali, Alexis Vantorre, Aline Teodori. accepted_date auto-filled in connection-request-tracking-log.csv.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
