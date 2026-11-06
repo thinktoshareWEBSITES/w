@@ -3,7 +3,7 @@
 // moment they're pushed, on every device, with no manual refresh tricks ever needed.
 // Falls back to the last-known copy only if there's genuinely no network connection.
 
-const CACHE_NAME = 'dm-helper-offline-fallback-v2';
+const CACHE_NAME = 'dm-helper-offline-fallback-v3';
 
 self.addEventListener('install', () => {
     self.skipWaiting(); // activate immediately, don't wait for old tabs to close
