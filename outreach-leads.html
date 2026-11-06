@@ -2613,7 +2613,7 @@
           {key:"france::anais-climent-reno-services-31-accepted", name:"Anaïs CLIMENT", company:"Reno Services 31", url:"https://www.linkedin.com/in/anais-climent-92886612b/", acceptedOn:"2026-11-05"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 14; // bumped 2026-11-06: owner asked to only show the latest check's accepts, not full history. Trimmed to the 2026-11-05 batch (6 names). Going forward this tab clean-overwrites each check like Premium/Connect.
+        const SO_ACCEPTED_DATA_VERSION = 15; // bumped 2026-11-06 (second time): v14 trimmed the seed to 6 names but the queue-rebuild function was still merge-only, so browsers that already loaded v14 cached a stale 25-pending state and never got the real fix. This bump forces one more rebuild using the corrected (clean-overwrite) logic below.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
