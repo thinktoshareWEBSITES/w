@@ -2607,12 +2607,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::amelie-bouillon-id-office-accepted", name:"Amélie BOUILLON", company:"ID OFFICE", url:"https://www.linkedin.com/in/am%C3%A9lie-bouillon-646ab5195/", acceptedOn:"2026-11-05"},
-          {key:"france::amelie-jasmain-finance-conseil-accepted", name:"Amélie JASMAIN", company:"FINANCE CONSEIL", url:"https://www.linkedin.com/in/am%C3%A9lie-jasmain-2ba362139/", acceptedOn:"2026-11-05"},
-          {key:"france::anais-climent-reno-services-31-accepted", name:"Anaïs CLIMENT", company:"Reno Services 31", url:"https://www.linkedin.com/in/anais-climent-92886612b/", acceptedOn:"2026-11-05"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 16; // bumped 2026-11-06 (third time): owner reported 3 of the 6 shown (Allan Attali, Alexis Vantorre, Aline Teodori) were already DMed per connection-request-tracking-log.csv's dm_sent_date, just never checked off in the dashboard. Trimmed seed to the 3 genuinely un-DMed accepts, cross-checked directly against the CSV.
+        const SO_ACCEPTED_DATA_VERSION = 17; // bumped 2026-11-06 (fourth time): owner confirmed via CSV request that today's sends went out, including DMs to the 3 accepted-but-undmed people (Bouillon, Jasmain, Climent) -- dm_sent_date backfilled in connection-request-tracking-log.csv. No one currently has accepted_date filled with dm_sent_date empty, so the seed is correctly empty until the next acceptance check finds someone new.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
