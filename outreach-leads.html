@@ -2632,22 +2632,27 @@
             if (!stored || stored._seedVersion !== SO_ACCEPTED_DATA_VERSION) {
                 const existingByKey = {};
                 items.forEach(x => { existingByKey[x.key] = x; });
-                const merged = items.slice();
-                SO_ACCEPTED_SEED.forEach(item => {
-                    if (!existingByKey[item.key]) {
-                        merged.push(Object.assign({}, item, { done: false, addedAt: Date.now() }));
-                    }
+                // Clean-overwrite (fixed 2026-11-06, same fix as Premium/Connect on 2026-10-30):
+                // rebuild from the current authoritative SO_ACCEPTED_SEED only. Anyone no longer
+                // in it (an older check's batch) is dropped from view; anyone who persists keeps
+                // their done-status and original addedAt. Previously this merged seed into
+                // whatever was already in localStorage and never dropped old entries, so the
+                // "ready to DM" count kept growing forever even after the seed array was trimmed.
+                items = SO_ACCEPTED_SEED.map(item => {
+                    const prev = existingByKey[item.key];
+                    return prev
+                        ? Object.assign({}, item, { done: prev.done, addedAt: prev.addedAt })
+                        : Object.assign({}, item, { done: false, addedAt: Date.now() });
                 });
-                items = merged;
                 soAcceptedQueueSave({ items: items, _seedVersion: SO_ACCEPTED_DATA_VERSION });
             }
             return items;
         }
 
         // Added 2026-10-30: single always-visible summary so "X new today" from a script run is
-        // never mistaken for "X total" -- shows today's-batch counts for Premium/Connect (both
-        // clean-overwrite) plus the true all-time count for Accepted (which intentionally
-        // accumulates forever) side by side, so nothing has to be inferred or asked about.
+        // never mistaken for "X total" -- shows today's-batch counts for Premium/Connect/Accepted
+        // (all three clean-overwrite as of 2026-11-06) side by side, so nothing has to be
+        // inferred or asked about.
         function soRenderSummaryBanner(){
             const el = document.getElementById('soSummaryBanner');
             if (!el) return;
@@ -2660,7 +2665,7 @@
             el.innerHTML =
                 '<div class="so-summary-row"><span>&#128142; Sales Navigator (today\'s batch)</span><span><b>' + pPending + '</b> pending &middot; ' + pDone + ' sent</span></div>' +
                 '<div class="so-summary-row"><span>&#129309; Connection Requests (today\'s batch)</span><span><b>' + cPending + '</b> pending &middot; ' + cDone + ' sent</span></div>' +
-                '<div class="so-summary-row"><span>&#9989; Connection Accepted (all-time total)</span><span><b>' + aPending + '</b> waiting on a DM &middot; ' + aDone + ' already DMed</span></div>';
+                '<div class="so-summary-row"><span>&#9989; Connection Accepted (latest batch)</span><span><b>' + aPending + '</b> waiting on a DM &middot; ' + aDone + ' already DMed</span></div>';
         }
 
         function soRenderAccepted(){
