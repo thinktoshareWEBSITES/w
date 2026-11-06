@@ -2602,18 +2602,17 @@
         function soFilterConnect(el) { paFilterList(el, 'soConnectLeadsList'); }
 
         /* ===== Souranka "Connection Accepted" -- people who said yes to a connection request,
-           now 1st-degree so they're free to DM. Clean-overwrite each check (like Premium/Connect):
-           shows only the most recent acceptance check's names, not full campaign history. */
+           now 1st-degree so they're free to DM. Clean-overwrite from connection-request-tracking-log.csv
+           each time: only rows with accepted_date filled AND dm_sent_date empty -- i.e. accepted
+           but genuinely not yet messaged per the real record, not per the dashboard's own
+           click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::allan-attali-allan-attali-avocat-accepted", name:"Allan ATTALI", company:"ALLAN ATTALI AVOCAT", url:"https://www.linkedin.com/in/allan4a/", acceptedOn:"2026-11-05"},
-          {key:"france::alexis-vantorre-rydge-conseil-accepted", name:"Alexis VANTORRE", company:"RYDGE conseil", url:"https://www.linkedin.com/in/alexis-vantorre-b20b82227/", acceptedOn:"2026-11-05"},
-          {key:"france::aline-teodori-marly-immobilier-accepted", name:"Aline TEODORI", company:"MARLY IMMOBILIER", url:"https://www.linkedin.com/in/aline-teodori-9b07a228/", acceptedOn:"2026-11-05"},
           {key:"france::amelie-bouillon-id-office-accepted", name:"Amélie BOUILLON", company:"ID OFFICE", url:"https://www.linkedin.com/in/am%C3%A9lie-bouillon-646ab5195/", acceptedOn:"2026-11-05"},
           {key:"france::amelie-jasmain-finance-conseil-accepted", name:"Amélie JASMAIN", company:"FINANCE CONSEIL", url:"https://www.linkedin.com/in/am%C3%A9lie-jasmain-2ba362139/", acceptedOn:"2026-11-05"},
           {key:"france::anais-climent-reno-services-31-accepted", name:"Anaïs CLIMENT", company:"Reno Services 31", url:"https://www.linkedin.com/in/anais-climent-92886612b/", acceptedOn:"2026-11-05"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 15; // bumped 2026-11-06 (second time): v14 trimmed the seed to 6 names but the queue-rebuild function was still merge-only, so browsers that already loaded v14 cached a stale 25-pending state and never got the real fix. This bump forces one more rebuild using the corrected (clean-overwrite) logic below.
+        const SO_ACCEPTED_DATA_VERSION = 16; // bumped 2026-11-06 (third time): owner reported 3 of the 6 shown (Allan Attali, Alexis Vantorre, Aline Teodori) were already DMed per connection-request-tracking-log.csv's dm_sent_date, just never checked off in the dashboard. Trimmed seed to the 3 genuinely un-DMed accepts, cross-checked directly against the CSV.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
