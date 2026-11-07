@@ -2610,13 +2610,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::aline-guilleman-allianz-accepted", name:"Aline GUILLEMAN", company:"Allianz", url:"https://www.linkedin.com/in/aline-guilleman-917554106/", acceptedOn:"2026-11-06"},
-          {key:"france::amelie-leport-al-avocate-accepted", name:"Amélie LEPORT", company:"AL avocate", url:"https://www.linkedin.com/in/am%C3%A9lie-leport/", acceptedOn:"2026-11-06"},
-          {key:"france::andrea-garrouste-icc-finance-accepted", name:"Andrea GARROUSTE", company:"ICC FINANCE", url:"https://www.linkedin.com/in/andrea-garrouste-269755155/", acceptedOn:"2026-11-06"},
-          {key:"france::angelique-garofano-unikalo-accepted", name:"Angélique GAROFANO", company:"Unikalo", url:"https://www.linkedin.com/in/ang%C3%A9lique-garofano-b28b7a254/", acceptedOn:"2026-11-06"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 19; // bumped 2026-11-07: found and fixed a real scroll bug in the acceptance-check script (it was scrolling the page body, but the connections list scrolls inside its own <main> container, so every prior run was effectively capped at the first ~20 links). Re-ran the fixed script against the full 1,612-connection list and found 1 more genuine accept it had missed -- Angelique Garofano -- added here. None of these 4 are DMed yet per connection-request-tracking-log.csv.
+        const SO_ACCEPTED_DATA_VERSION = 20; // bumped 2026-11-07: owner confirmed today's sends via "time to create the CSV" -- the 4 accepted-undmed people (Aline Guilleman, Amelie Leport, Andrea Garrouste, Angelique Garofano) got dm_sent_date=2026-11-07 in connection-request-tracking-log.csv, so none currently qualify as accepted-but-undmed. Emptied per the standing rule.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
