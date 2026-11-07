@@ -2180,9 +2180,9 @@
            each time: only rows with accepted_date filled AND dm_sent_date empty -- i.e. accepted
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
-        const PA_ACCEPTED_SEED = [{"key":"us::2322443","name":"Maybelline Jerez","company":"Vita Curated","url":"https://www.linkedin.com/in/maybellinejerez/","acceptedOn":"2026-10-31"},{"key":"us::2112777","name":"Maribel Jimenez","company":"MJ Trust Law","url":"https://www.linkedin.com/in/maribelj/","acceptedOn":"2026-11-07"}];
+        const PA_ACCEPTED_SEED = [];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 11; // bumped 2026-11-07 (2nd time today): owner pasted the full live Connections list and confirmed Jane Parmel messaged -- cross-checked all 50 names on it against the tracking log. Found 2 real misses: Maribel Jimenez (same-day accept from today's Nov 7 connect batch, never added) and Maybelline Jerez (flagged back on 10/31 as an already-1st-degree connection needing a direct message, but never made it into this seed). Everyone else on the pasted list either already has a dm_sent_date logged or isn't one of ours (Open Profile / unrelated tech-leader connections).
+        const PA_ACCEPTED_DATA_VERSION = 12; // bumped 2026-11-07 (3rd time today): Maribel Jimenez and Maybelline Jerez confirmed DMed (today's connection-dms.csv), dm_sent_date logged. Nothing left pending as of now -- seed is empty until the next acceptance check finds someone new.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
