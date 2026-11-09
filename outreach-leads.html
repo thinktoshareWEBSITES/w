@@ -2610,9 +2610,17 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
+          {key:"france::berengere-coussolle-accepted", name:"Bérengère COUSSOLLE", company:"", url:"https://fr.linkedin.com/in/bérengère-coussolle-97aba4145", acceptedOn:"2026-11-09"},
+          {key:"france::alexis-pinel-demenagements-patrick-pinel-accepted", name:"Alexis PINEL", company:"DEMENAGEMENTS PATRICK PINEL", url:"https://www.linkedin.com/in/alexis-pinel-72727029/", acceptedOn:"2026-11-09"},
+          {key:"france::alice-orengo-avocat-accepted", name:"Alice ORENGO", company:"Alice Orengo Avocat", url:"https://www.linkedin.com/in/alice-orengo-oncle-222199258/", acceptedOn:"2026-11-09"},
+          {key:"france::amelie-gerig-resetel-accepted", name:"Amélie GERIG", company:"RESETEL - Réseaux & Télécom d'Alsace", url:"https://www.linkedin.com/in/amelie-gerig-99a97720b/", acceptedOn:"2026-11-09"},
+          {key:"france::anne-coquillaud-swisslife-accepted", name:"Anne COQUILLAUD", company:"CABINET CORTADE COQUILLAUD SWISSLIFE", url:"https://www.linkedin.com/in/anne-coquillaud-1280a833a/", acceptedOn:"2026-11-09"},
+          {key:"france::anne-donnet-sensasformation-accepted", name:"Anne DONNET", company:"SENSASFORMATION", url:"https://www.linkedin.com/in/anne-donnet-60323087/", acceptedOn:"2026-11-09"},
+          {key:"france::anne-petit-hypnose-accepted", name:"Anne PETIT", company:"ANNE PETIT HYPNOSE", url:"https://www.linkedin.com/in/annepetit/", acceptedOn:"2026-11-09"},
+          {key:"france::anne-solene-herve-iad-accepted", name:"Anne-Solène HERVÉ", company:"iad", url:"https://www.linkedin.com/in/anne-sol%C3%A8ne-herv%C3%A9-796aba22/", acceptedOn:"2026-11-09"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 20; // bumped 2026-11-07: owner confirmed today's sends via "time to create the CSV" -- the 4 accepted-undmed people (Aline Guilleman, Amelie Leport, Andrea Garrouste, Angelique Garofano) got dm_sent_date=2026-11-07 in connection-request-tracking-log.csv, so none currently qualify as accepted-but-undmed. Emptied per the standing rule.
+        const SO_ACCEPTED_DATA_VERSION = 21; // bumped 2026-11-10: first full-list acceptance check since fixing the <main> scroll bug -- found 8 genuine new accepts in one pass (vs the ~3/day the broken scroll used to surface), confirming the fix materially improved coverage. None DMed yet per connection-request-tracking-log.csv.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
