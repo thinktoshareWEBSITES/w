@@ -2301,19 +2301,19 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::annabelle-degryse-fleur-et-style", name:"Annabelle DEGRYSE", company:"FLEUR ET STYLE", url:"https://www.linkedin.com/in/annabelle-degryse-334458161/", lastActive:""},
-          {key:"france::anne-dandre-cnc-multicut", name:"Anne Dandre", company:"CNC multicut", url:"https://www.linkedin.com/in/anne-dandre-9a40b5309/", lastActive:""},
-          {key:"france::anne-heurtel-sarl-heurtel-et-moga", name:"Anne HEURTEL", company:"SARL HEURTEL ET MOGA", url:"https://www.linkedin.com/in/anne-heurtel-63551195/", lastActive:""},
-          {key:"france::anne-joule-imprimerie-joule-anispub-creation", name:"Anne Joulé", company:"IMPRIMERIE JOULE ANISPUB CREATION", url:"https://www.linkedin.com/in/anne-imprimerie-joul%C3%A9-9b902a76/", lastActive:""},
-          {key:"france::anne-francoise-nay-laplasse-fidal", name:"Anne-Françoise NAY-LAPLASSE", company:"FIDAL", url:"https://www.linkedin.com/in/anne-fran%C3%A7oise-nay-laplasse-7b97a7184/", lastActive:""},
-          {key:"france::anne-gaelle-daviet-altim-formation", name:"Anne-Gaëlle DAVIET", company:"ALTIM FORMATION", url:"https://www.linkedin.com/in/anne-ga%C3%ABlle-daviet-200805a8/", lastActive:""},
-          {key:"france::anne-sophie-denis-garage-du-vimeu-renault", name:"Anne Sophie DENIS", company:"GARAGE DU VIMEU RENAULT", url:"https://www.linkedin.com/in/anne-sophie-denis-276622160/", lastActive:""},
-          {key:"france::anna-coquelet-french-factory-bordeaux", name:"Anna COQUELET", company:"French Factory Bordeaux", url:"https://www.linkedin.com/in/anna-coquelet-232b18158/", lastActive:""},
-          {key:"france::annabelle-leotier-abriculteurs", name:"Annabelle LEOTIER", company:"ABRICULTEURS", url:"https://www.linkedin.com/in/annabelle-leotier-a48b3b176/", lastActive:""},
-          {key:"france::annabelle-piel-immopret", name:"Annabelle PIEL", company:"Immopret", url:"https://www.linkedin.com/in/annabelle-piel-510873410/", lastActive:""}
+          {key:"france::anne-sophie-desmoulins-comyou", name:"Anne-sophie DESMOULINS", company:"COM&YOU", url:"https://www.linkedin.com/in/anne-sophie-desmoulins-6b292783/", lastActive:""},
+          {key:"france::anne-sophie-rose-artdhesif", name:"Anne-Sophie ROSE", company:"ART'DHÉSIF", url:"https://www.linkedin.com/in/anne-sophie-rose-1aaa32b2/", lastActive:""},
+          {key:"france::anne-sophie-vert-ekite-avocats", name:"Anne-Sophie VERT", company:"EKITE AVOCATS", url:"https://www.linkedin.com/in/anne-sophie-vert/", lastActive:""},
+          {key:"france::anouk-charreire-nestenn", name:"Anouk CHARREIRE", company:"NESTENN", url:"https://www.linkedin.com/in/anouk-charreire-475bb780/", lastActive:""},
+          {key:"france::anthony-authier-epdg", name:"Anthony AUTHIER", company:"EPDG", url:"https://www.linkedin.com/in/anthony-authier-bb5944193/", lastActive:""},
+          {key:"france::anthony-blairon-transports-rocadis", name:"Anthony BLAIRON", company:"TRANSPORT", url:"https://www.linkedin.com/in/anthony-blairon-8a9746312/", lastActive:""},
+          {key:"france::anthony-brandli-afaar", name:"Anthony BRANDLI", company:"AFAAR", url:"https://www.linkedin.com/in/anthony-brandli-84a38a39a/", lastActive:""},
+          {key:"france::anthony-celerier-madygood", name:"Anthony CELERIER", company:"Madygood", url:"https://www.linkedin.com/in/anthonycelerier/", lastActive:""},
+          {key:"france::anthony-coraboeuf-stonart", name:"Anthony Coraboeuf", company:"STONART", url:"https://www.linkedin.com/in/anthony-coraboeuf-6315871b8/", lastActive:""},
+          {key:"france::anthony-cuff-cuisines-references", name:"Anthony CUFF", company:"CUISINES RÉFÉRENCES", url:"https://www.linkedin.com/in/anthony-cuff-59001a1a2/", lastActive:""}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 13; // bumped 2026-11-07: clean-overwrite, full fresh 10. Fixed an infra bug first: an earlier resolver run didn't actually exit when it reported finishing, a second overlapping run corrupted 3 records -- found+killed both zombie processes, repaired the 3 corrupted entries from my own run logs. Ran a clean search_resolve_batch.js run (394-486, 93 attempts, 42 resolved). Vetted the 41 newly appended candidates (vet_france_batch.js 1183 9999): 8 PASS + rest REVIEW. Self-name audit found 7 new suspects (cumulative 22) -- excluded. NEW BUG FOUND: Anne-Marie GRUEL's matched LinkedIn URL was actually her employee Carole Blond's profile (matchedText showed "Carole BLOND...chez SCP Anne-Marie GRUEL") -- the resolver matched on the company name literally being the target's own name, surfacing an employee instead. Excluded her and added a name-in-matchedText mismatch check to the build script. Also excluded Anne LESCURE (company "BNI Terre Atlantique") to avoid pitching a BNI-chapter entity. Final eligible after all exclusions: 29 (one short of the usual 30) -- 7 PASS + 3 REVIEW to Sales Nav, 19 REVIEW to Connection Requests.
+        const SO_PREMIUM_DATA_VERSION = 14; // bumped 2026-11-10: clean-overwrite, full fresh 10 (all PASS). Resolver run (487-576, 90 attempts, 41 newly resolved, cumulative 262/577=45.4%), vetted (vet_france_batch.js 1224 9999: 141 cumulative PASS), self-name audit (28->30 suspects after adding 3 PERMANENT exclusions to the suspect list so they stop recurring every day: Anne-Marie GRUEL/Carole-Blond misidentification from Nov 7, Anne LESCURE/BNI-chapter relevance exclusion from Nov 7, and a NEW one -- Anthony DELPECH's matched profile said "Directeur general chez Groupe HDI" while his BNI roster company is "Demeures d'Occitanie", a complete mismatch (matchScore 1) plus HDI/Talanx is enterprise-scale anyway. Also excluded Anthony Ducret (Banque Populaire, regulated bank, enterprise-scale). This is the first batch built after fixing the acceptance-check scroll bug -- unrelated to batch composition but same-day context.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2447,28 +2447,29 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::annabelle-roberjot-anna-crea-design", name:"Annabelle ROBERJOT", company:"Anna Créa design", url:"https://www.linkedin.com/in/annabelle-roberjot-807507128/", lastActive:""},
-          {key:"france::anne-condamine-meilleurtaux-com", name:"Anne CONDAMINE", company:"Meilleurtaux.com", url:"https://www.linkedin.com/in/anne-condamine-14a42b129/", lastActive:""},
-          {key:"france::anne-coquillaud-cabinet-cortade-coquillaud-swisslife", name:"Anne COQUILLAUD", company:"CABINET CORTADE COQUILLAUD SWISSLIFE", url:"https://www.linkedin.com/in/anne-coquillaud-1280a833a/", lastActive:""},
-          {key:"france::anne-debernard-dauriac-lx-limoges", name:"Anne DEBERNARD DAURIAC", company:"LX LIMOGES", url:"https://www.linkedin.com/in/anne-debernard-dauriac-4b4423a3/", lastActive:""},
-          {key:"france::anne-desbois-desbois-instant-immo", name:"Anne DESBOIS", company:"DESBOIS INSTANT IMMO", url:"https://www.linkedin.com/in/anne-desbois-202045102/", lastActive:""},
-          {key:"france::anne-donnet-sensasformation", name:"Anne DONNET", company:"SENSASFORMATION", url:"https://www.linkedin.com/in/anne-donnet-60323087/", lastActive:""},
-          {key:"france::anne-nourry-tout-a-dom-services", name:"Anne NOURRY", company:"TOUT A DOM' SERVICES", url:"https://www.linkedin.com/in/anne-nourry-021aa81a5/", lastActive:""},
-          {key:"france::anne-petit-anne-petit-hypnose", name:"Anne PETIT", company:"ANNE PETIT HYPNOSE", url:"https://www.linkedin.com/in/annepetit/", lastActive:""},
-          {key:"france::anne-ecochard-store-ecochard", name:"Anne ÉCOCHARD", company:"STORE ECOCHARD", url:"https://www.linkedin.com/in/anne-ecochard-consultantecoachmanagement/", lastActive:""},
-          {key:"france::anne-charlotte-deu-ss2i-services", name:"Anne-Charlotte DEU", company:"SS2i services", url:"https://www.linkedin.com/in/anne-charlotte-deu-20a506153/", lastActive:""},
-          {key:"france::anne-christine-castella-ac-castella-architecte-dplg", name:"Anne-Christine CASTELLA", company:"AC CASTELLA ARCHITECTE DPLG", url:"https://www.linkedin.com/in/anne-christine-castella-96891a1a0/", lastActive:""},
-          {key:"france::anne-claire-sabadel-qualiretraite", name:"Anne-Claire SABADEL", company:"QUALIRETRAITE", url:"https://www.linkedin.com/in/anne-claire-sabadel-9b40052a4/", lastActive:""},
-          {key:"france::anne-cecile-perrouty-bpg-avocats", name:"Anne-Cécile PERROUTY", company:"BPG AVOCATS", url:"https://www.linkedin.com/in/anne-cecile-perrouty-04759086/", lastActive:""},
-          {key:"france::anne-laure-klenschi-cabinet-d-avocat-klenschi", name:"Anne-Laure KLENSCHI", company:"CABINET D'AVOCAT KLENSCHI", url:"https://www.linkedin.com/in/anne-laure-klenschi-52940a114/", lastActive:""},
-          {key:"france::anne-laure-le-mens-caisse-de-credit-mutuel-fontainebleau-avon", name:"Anne-Laure LE MENS", company:"CAISSE DE CREDIT MUTUEL FONTAINEBLEAU AVON", url:"https://www.linkedin.com/in/anne-laure-le-mens-40a03434b/", lastActive:""},
-          {key:"france::anne-laure-normand-fidal-avocats", name:"Anne-Laure NORMAND", company:"FIDAL AVOCATS", url:"https://www.linkedin.com/in/anne-laure-normand-33a55353/", lastActive:""},
-          {key:"france::anne-marie-combe-signarama", name:"Anne-Marie Combe", company:"Signarama", url:"https://www.linkedin.com/in/anne-marie-combe-2126ab102/", lastActive:""},
-          {key:"france::anne-marie-silbert-mon-chasseur-immo", name:"Anne-Marie SILBERT", company:"Mon Chasseur Immo", url:"https://www.linkedin.com/in/anne-marie-urrutia-silbert/", lastActive:""},
-          {key:"france::anne-solene-herve-iad", name:"Anne-Solène HERVÉ", company:"iad", url:"https://www.linkedin.com/in/anne-sol%C3%A8ne-herv%C3%A9-796aba22/", lastActive:""}
+          {key:"france::anthony-djalti-ars-habitat", name:"Anthony DJALTI", company:"ARS Habitat", url:"https://www.linkedin.com/in/ars-habitat/", lastActive:""},
+          {key:"france::anthony-giacomini-antoine-espaces-verts", name:"Anthony GIACOMINI", company:"ANTOINE ESPACES VERTS", url:"https://www.linkedin.com/in/anthony-giacomini-49706a105/", lastActive:""},
+          {key:"france::anne-sophie-lincks-arche-crea", name:"Anne-Sophie LINCKS", company:"ARCHE CRÉA", url:"https://www.linkedin.com/in/anne-sophie-lincks-132186120/", lastActive:""},
+          {key:"france::anne-sophie-moutard-gan-assurances", name:"Anne-Sophie MOUTARD", company:"GAN ASSURANCES", url:"https://www.linkedin.com/in/anne-sophie-moutard-40b168b8/", lastActive:""},
+          {key:"france::anouk-delmar-aleteia-juris", name:"Anouk DELMAR", company:"ALETEIA JURIS", url:"https://www.linkedin.com/in/anouk-delmar-38ab9b1a4/", lastActive:""},
+          {key:"france::anthony-augier-nouvelleyre-maconnerie", name:"anthony augier", company:"Nouvel'Eyre Maçonnerie", url:"https://www.linkedin.com/in/anthony-augier-52353b163/", lastActive:""},
+          {key:"france::anthony-bassi-apb", name:"Anthony BASSI", company:"APB", url:"https://www.linkedin.com/in/anthony-bassi-17a655105/", lastActive:""},
+          {key:"france::anthony-bondonneau-couvreur-zingueur", name:"Anthony Bondonneau", company:"Couvreur Zingueur", url:"https://www.linkedin.com/in/anthony-bondonneau-615754180/", lastActive:""},
+          {key:"france::anthony-burdese-sur-mesure", name:"Anthony Burdese", company:"Sur mesure", url:"https://www.linkedin.com/in/anthony-burdese-520524192/", lastActive:""},
+          {key:"france::anthony-carabin-maison-carabin", name:"Anthony CARABIN", company:"MAISON CARABIN", url:"https://www.linkedin.com/in/anthony-carabin-bb69031b2/", lastActive:""},
+          {key:"france::anthony-chadburn-ochanta", name:"Anthony CHADBURN", company:"OCHANTA", url:"https://www.linkedin.com/in/anthony-chadburn/", lastActive:""},
+          {key:"france::anthony-ciano-massilia-diagnostic", name:"Anthony CIANO", company:"Massilia Diagnostic", url:"https://www.linkedin.com/in/massiliadiag/", lastActive:""},
+          {key:"france::anthony-delaune-arbres-en-tete", name:"Anthony DELAUNE", company:"ARBRES EN TETE", url:"https://www.linkedin.com/in/anthony-delaun%C3%A9-289942152/", lastActive:""},
+          {key:"france::anthony-douchez-nine-web", name:"Anthony DOUCHEZ", company:"Nine web", url:"https://www.linkedin.com/in/anthony-douchez-39797751/", lastActive:""},
+          {key:"france::anthony-drahonnet-atlantique-materiaux", name:"Anthony DRAHONNET", company:"ATLANTIQUE MATÉRIAUX", url:"https://www.linkedin.com/in/anthony-drahonnet-1158a6160/", lastActive:""},
+          {key:"france::anthony-gargowitsch-peinture-heibel-gargowitsch", name:"Anthony GARGOWITSCH", company:"Peinture Heibel Gargowitsch", url:"https://www.linkedin.com/in/anthony-gargowitsch-1501b3370/", lastActive:""},
+          {key:"france::anthony-ghestin-domicilgym", name:"Anthony GHESTIN", company:"Anthony Ghestin DOMICIL'GYM", url:"https://www.linkedin.com/in/anthonyghestin/", lastActive:""},
+          {key:"france::anthony-girod-atp-plomberie", name:"Anthony GIROD", company:"ATP PLOMBERIE", url:"https://www.linkedin.com/in/anthony-girod-b12471161/", lastActive:""},
+          {key:"france::anthony-grimaud-xefi", name:"Anthony Grimaud", company:"XEFI", url:"https://www.linkedin.com/in/anthony-grimaud-xefi-68660150/", lastActive:""},
+          {key:"france::anthony-guglielmet-ag-pictures", name:"Anthony GUGLIELMET", company:"AG Pictures", url:"https://www.linkedin.com/in/anthony-guglielmet/", lastActive:""}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 18; // bumped 2026-11-07: clean-overwrite with a fresh 19-name batch (one short of the usual 20 -- see SO_PREMIUM_DATA_VERSION 13 comment for today's resolver/vetting/audit/bugfix detail, including the Anne-Marie Gruel employee-misidentification exclusion and the BNI-named-company exclusion). All 19 are REVIEW-verdict, identity-confirmed via real company-name token match in the scraped search-result text.
+        const SO_DATA_VERSION = 19; // bumped 2026-11-10: clean-overwrite with a fresh 20-name batch (2 PASS + 18 REVIEW). See SO_PREMIUM_DATA_VERSION 14 comment for today's resolver/vetting/audit detail, including 3 permanent exclusions added to the suspect list (Gruel/Blond misidentification + Lescure/BNI relevance from Nov 7, now made permanent; plus a new one, Delpech/Groupe HDI mismatch+enterprise-scale) and the Ducret/Banque Populaire enterprise-scale exclusion.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
