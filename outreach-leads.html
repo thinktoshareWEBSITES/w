@@ -2180,9 +2180,9 @@
            each time: only rows with accepted_date filled AND dm_sent_date empty -- i.e. accepted
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
-        const PA_ACCEPTED_SEED = [{"key":"us::2326958","name":"Farrah Woodall","company":"My Earthly Essentials, LLC","url":"https://www.linkedin.com/in/myearthlyessentials1/","acceptedOn":"2026-11-08"},{"key":"us::2124094","name":"Jackie Eskay","company":"Eskay Law Group","url":"https://www.linkedin.com/in/jacquelyn-eskay-40662411/","acceptedOn":"2026-11-08"}];
+        const PA_ACCEPTED_SEED = [{"key":"us::2326958","name":"Farrah Woodall","company":"My Earthly Essentials, LLC","url":"https://www.linkedin.com/in/myearthlyessentials1/","acceptedOn":"2026-11-08"},{"key":"us::2124094","name":"Jackie Eskay","company":"Eskay Law Group","url":"https://www.linkedin.com/in/jacquelyn-eskay-40662411/","acceptedOn":"2026-11-08"},{"key":"us::1686875","name":"Sean Gordon","company":"CMG Home Loans","url":"https://www.linkedin.com/in/seangordon3/","acceptedOn":"2026-11-09"}];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 13; // bumped 2026-11-09: acceptance check found 2 new genuine accepts from 11/8 (Farrah Woodall, Jackie Eskay), neither DMed yet.
+        const PA_ACCEPTED_DATA_VERSION = 14; // bumped 2026-11-10: acceptance check found 1 new genuine accept from 11/9 (Sean Gordon), added alongside Farrah Woodall/Jackie Eskay, none DMed yet.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
