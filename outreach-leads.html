@@ -2301,19 +2301,18 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::anne-sophie-desmoulins-comyou", name:"Anne-sophie DESMOULINS", company:"COM&YOU", url:"https://www.linkedin.com/in/anne-sophie-desmoulins-6b292783/", lastActive:""},
-          {key:"france::anne-sophie-rose-artdhesif", name:"Anne-Sophie ROSE", company:"ART'DHÉSIF", url:"https://www.linkedin.com/in/anne-sophie-rose-1aaa32b2/", lastActive:""},
-          {key:"france::anne-sophie-vert-ekite-avocats", name:"Anne-Sophie VERT", company:"EKITE AVOCATS", url:"https://www.linkedin.com/in/anne-sophie-vert/", lastActive:""},
-          {key:"france::anouk-charreire-nestenn", name:"Anouk CHARREIRE", company:"NESTENN", url:"https://www.linkedin.com/in/anouk-charreire-475bb780/", lastActive:""},
-          {key:"france::anthony-authier-epdg", name:"Anthony AUTHIER", company:"EPDG", url:"https://www.linkedin.com/in/anthony-authier-bb5944193/", lastActive:""},
-          {key:"france::anthony-blairon-transports-rocadis", name:"Anthony BLAIRON", company:"TRANSPORT", url:"https://www.linkedin.com/in/anthony-blairon-8a9746312/", lastActive:""},
-          {key:"france::anthony-brandli-afaar", name:"Anthony BRANDLI", company:"AFAAR", url:"https://www.linkedin.com/in/anthony-brandli-84a38a39a/", lastActive:""},
-          {key:"france::anthony-celerier-madygood", name:"Anthony CELERIER", company:"Madygood", url:"https://www.linkedin.com/in/anthonycelerier/", lastActive:""},
-          {key:"france::anthony-coraboeuf-stonart", name:"Anthony Coraboeuf", company:"STONART", url:"https://www.linkedin.com/in/anthony-coraboeuf-6315871b8/", lastActive:""},
-          {key:"france::anthony-cuff-cuisines-references", name:"Anthony CUFF", company:"CUISINES RÉFÉRENCES", url:"https://www.linkedin.com/in/anthony-cuff-59001a1a2/", lastActive:""}
+          {key:"france::anthony-mazuir-novances", name:"Anthony Mazuir", company:"NOVANCES", url:"https://www.linkedin.com/in/anthony-mazuir-70118622b/", lastActive:""},
+          {key:"france::anthony-pellenard-sagesse", name:"Anthony PELLENARD", company:"SAGESSE", url:"https://www.linkedin.com/in/anthony-pellenard-a95056161/", lastActive:""},
+          {key:"france::anthony-pointecouteau-ap-cuisine", name:"Anthony POINTECOUTEAU", company:"AP CUISINE", url:"https://www.linkedin.com/in/anthony-pointecouteau-937085aa/", lastActive:""},
+          {key:"france::anthony-rocher-vousfinancer", name:"Anthony ROCHER", company:"Vousfinancer", url:"https://www.linkedin.com/in/anthony-rocher-14271312/", lastActive:""},
+          {key:"france::anthony-szostok-batt", name:"Anthony SZOSTOK", company:"BATT", url:"https://www.linkedin.com/in/anthony-szostok/", lastActive:""},
+          {key:"france::antoine-blaise-oscar-ai", name:"Antoine Blaise", company:"OSCAR AI SOLUTIONS", url:"https://www.linkedin.com/in/antoine-blaise-oscar/", lastActive:""},
+          {key:"france::antoine-cremmel-cabinet-lambert", name:"Antoine CREMMEL", company:"Cabinet LAMBERT & Associés", url:"https://www.linkedin.com/in/antoine-cremmel/", lastActive:""},
+          {key:"france::antoine-dietrich-rogang", name:"Antoine DIETRICH", company:"ROGANG PRODUCTION", url:"https://www.linkedin.com/in/antoine-dietrich/", lastActive:""},
+          {key:"france::antoine-gire-verialis-perigueux", name:"Antoine GIRÉ", company:"VERIALIS PERIGUEUX", url:"https://www.linkedin.com/in/antoine-gir%C3%A9-859843127/", lastActive:""}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 14; // bumped 2026-11-10: clean-overwrite, full fresh 10 (all PASS). Resolver run (487-576, 90 attempts, 41 newly resolved, cumulative 262/577=45.4%), vetted (vet_france_batch.js 1224 9999: 141 cumulative PASS), self-name audit (28->30 suspects after adding 3 PERMANENT exclusions to the suspect list so they stop recurring every day: Anne-Marie GRUEL/Carole-Blond misidentification from Nov 7, Anne LESCURE/BNI-chapter relevance exclusion from Nov 7, and a NEW one -- Anthony DELPECH's matched profile said "Directeur general chez Groupe HDI" while his BNI roster company is "Demeures d'Occitanie", a complete mismatch (matchScore 1) plus HDI/Talanx is enterprise-scale anyway. Also excluded Anthony Ducret (Banque Populaire, regulated bank, enterprise-scale). This is the first batch built after fixing the acceptance-check scroll bug -- unrelated to batch composition but same-day context.
+        const SO_PREMIUM_DATA_VERSION = 15; // bumped 2026-11-11: clean-overwrite with 9 (owner instruction: only 9 Sales Nav DMs today, not the usual 10). All 9 PASS. Resolver run (577-676, 100 attempts, 31 newly resolved, cumulative 293/677=43.3%), vetted (vet_france_batch.js 1265 9999: cumulative 154 PASS). Self-name audit on new entries: clean, no mismatches. Manual scale/wrong-person scan found 2 new permanent exclusions added to suspect_self_name_matches.json: Anthony REMONT (SG Credit du Nord -- Societe Generale regional banking subsidiary, enterprise-scale) and Antoine BONFILS (Renault Melun -- fleet sales advisor, non-decision-maker title, not owner/director/C-suite). Pool is thin: only 27 eligible unused remained after this run (13 PASS + 14 REVIEW) vs 29 needed for 9+20, so today's Connection Requests batch is 18 instead of 20 (2 short) -- see SO_DATA_VERSION 20 comment.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2447,29 +2446,27 @@
         // First France batch (2026-10-27): next 20 most-recently-active of 50 qualified BNI
         // members (the other 20 went to SO_PREMIUM_SEED, no overlap). Key = 'france::' + slug.
         const SO_CONNECT_SEED = [
-          {key:"france::anthony-djalti-ars-habitat", name:"Anthony DJALTI", company:"ARS Habitat", url:"https://www.linkedin.com/in/ars-habitat/", lastActive:""},
-          {key:"france::anthony-giacomini-antoine-espaces-verts", name:"Anthony GIACOMINI", company:"ANTOINE ESPACES VERTS", url:"https://www.linkedin.com/in/anthony-giacomini-49706a105/", lastActive:""},
-          {key:"france::anne-sophie-lincks-arche-crea", name:"Anne-Sophie LINCKS", company:"ARCHE CRÉA", url:"https://www.linkedin.com/in/anne-sophie-lincks-132186120/", lastActive:""},
-          {key:"france::anne-sophie-moutard-gan-assurances", name:"Anne-Sophie MOUTARD", company:"GAN ASSURANCES", url:"https://www.linkedin.com/in/anne-sophie-moutard-40b168b8/", lastActive:""},
-          {key:"france::anouk-delmar-aleteia-juris", name:"Anouk DELMAR", company:"ALETEIA JURIS", url:"https://www.linkedin.com/in/anouk-delmar-38ab9b1a4/", lastActive:""},
-          {key:"france::anthony-augier-nouvelleyre-maconnerie", name:"anthony augier", company:"Nouvel'Eyre Maçonnerie", url:"https://www.linkedin.com/in/anthony-augier-52353b163/", lastActive:""},
-          {key:"france::anthony-bassi-apb", name:"Anthony BASSI", company:"APB", url:"https://www.linkedin.com/in/anthony-bassi-17a655105/", lastActive:""},
-          {key:"france::anthony-bondonneau-couvreur-zingueur", name:"Anthony Bondonneau", company:"Couvreur Zingueur", url:"https://www.linkedin.com/in/anthony-bondonneau-615754180/", lastActive:""},
-          {key:"france::anthony-burdese-sur-mesure", name:"Anthony Burdese", company:"Sur mesure", url:"https://www.linkedin.com/in/anthony-burdese-520524192/", lastActive:""},
-          {key:"france::anthony-carabin-maison-carabin", name:"Anthony CARABIN", company:"MAISON CARABIN", url:"https://www.linkedin.com/in/anthony-carabin-bb69031b2/", lastActive:""},
-          {key:"france::anthony-chadburn-ochanta", name:"Anthony CHADBURN", company:"OCHANTA", url:"https://www.linkedin.com/in/anthony-chadburn/", lastActive:""},
-          {key:"france::anthony-ciano-massilia-diagnostic", name:"Anthony CIANO", company:"Massilia Diagnostic", url:"https://www.linkedin.com/in/massiliadiag/", lastActive:""},
-          {key:"france::anthony-delaune-arbres-en-tete", name:"Anthony DELAUNE", company:"ARBRES EN TETE", url:"https://www.linkedin.com/in/anthony-delaun%C3%A9-289942152/", lastActive:""},
-          {key:"france::anthony-douchez-nine-web", name:"Anthony DOUCHEZ", company:"Nine web", url:"https://www.linkedin.com/in/anthony-douchez-39797751/", lastActive:""},
-          {key:"france::anthony-drahonnet-atlantique-materiaux", name:"Anthony DRAHONNET", company:"ATLANTIQUE MATÉRIAUX", url:"https://www.linkedin.com/in/anthony-drahonnet-1158a6160/", lastActive:""},
-          {key:"france::anthony-gargowitsch-peinture-heibel-gargowitsch", name:"Anthony GARGOWITSCH", company:"Peinture Heibel Gargowitsch", url:"https://www.linkedin.com/in/anthony-gargowitsch-1501b3370/", lastActive:""},
-          {key:"france::anthony-ghestin-domicilgym", name:"Anthony GHESTIN", company:"Anthony Ghestin DOMICIL'GYM", url:"https://www.linkedin.com/in/anthonyghestin/", lastActive:""},
-          {key:"france::anthony-girod-atp-plomberie", name:"Anthony GIROD", company:"ATP PLOMBERIE", url:"https://www.linkedin.com/in/anthony-girod-b12471161/", lastActive:""},
-          {key:"france::anthony-grimaud-xefi", name:"Anthony Grimaud", company:"XEFI", url:"https://www.linkedin.com/in/anthony-grimaud-xefi-68660150/", lastActive:""},
-          {key:"france::anthony-guglielmet-ag-pictures", name:"Anthony GUGLIELMET", company:"AG Pictures", url:"https://www.linkedin.com/in/anthony-guglielmet/", lastActive:""}
+          {key:"france::antoine-graveleau-illico-travaux", name:"Antoine GRAVELEAU", company:"ILLICO TRAVAUX", url:"https://www.linkedin.com/in/antoine-graveleau-7232205/", lastActive:""},
+          {key:"france::antoine-laine-select-poids-lourds-49", name:"Antoine LAINÉ", company:"Select Poids Lourds 49", url:"https://www.linkedin.com/in/antoine-lain%C3%A9-84142870/", lastActive:""},
+          {key:"france::antoine-lernout-pierres-construction", name:"Antoine LERNOUT", company:"PIERRES  CONSTRUCTION", url:"https://www.linkedin.com/in/antoine-lernout-627ab05b/", lastActive:""},
+          {key:"france::antoine-magnier-am-conseil-formation", name:"Antoine MAGNIER", company:"AM CONSEIL ET FORMATION", url:"https://www.linkedin.com/in/antoine-magnier-2a718815/", lastActive:""},
+          {key:"france::anthony-huotmarchand-axa", name:"Anthony HUOT-MARCHAND", company:"AGIPI - AXA", url:"https://www.linkedin.com/in/anthony-huot-marchand/", lastActive:""},
+          {key:"france::anthony-menant-lequertier", name:"Anthony MENANT", company:"Lequertier", url:"https://www.linkedin.com/in/anthony-menant-b3aa8b145/", lastActive:""},
+          {key:"france::antoine-benhamou-agence-axa", name:"Antoine Benhamou", company:"Agence Axa Antoine Benhamou", url:"https://www.linkedin.com/in/antoine-benhamou-prevoyance-sante-patrimoine/", lastActive:""},
+          {key:"france::antoine-bosselut-esprit-copeaux", name:"Antoine BOSSELUT", company:"ESPRIT COPEAUX", url:"https://www.linkedin.com/in/antoine-bosselut-a56b3b325/", lastActive:""},
+          {key:"france::antoine-cousinard-idf-communication", name:"Antoine COUSINARD", company:"IDF COMMUNICATION", url:"https://www.linkedin.com/in/antoine-cousinard-81021a184/", lastActive:""},
+          {key:"france::antoine-coyer-guyot-environnement", name:"Antoine COYER", company:"Guyot Environnement", url:"https://www.linkedin.com/in/antoine-coyer-890776169/", lastActive:""},
+          {key:"france::antoine-delaveau-monsieur-store-poitiers", name:"Antoine DELAVEAU", company:"MONSIEUR STORE POITIERS", url:"https://www.linkedin.com/in/antoine-delaveau-a769ab1ab/", lastActive:""},
+          {key:"france::antoine-dominique-sarl-ad-photographe", name:"Antoine DOMINIQUE", company:"SARL AD PHOTOGRAPHE", url:"https://www.linkedin.com/in/antoine-dominique-9b117a1b2/", lastActive:""},
+          {key:"france::antoine-faion-atx-computer", name:"Antoine FAION", company:"ATX COMPUTER", url:"https://www.linkedin.com/in/antoine-faion-6720b538/", lastActive:""},
+          {key:"france::antoine-frotier-arptego", name:"Antoine FROTIER DE LA MESSELIÈRE", company:"ARPTEGO GEOMETRE-EXPERT", url:"https://www.linkedin.com/in/antoine-frotier-de-la-messeli%C3%A8re-b9273448/", lastActive:""},
+          {key:"france::antoine-giraux-premium", name:"Antoine GIRAUX", company:"PREMIUM", url:"https://www.linkedin.com/in/antoine-giraux%E2%98%80-premium-sas-%E2%98%80-574b3257/", lastActive:""},
+          {key:"france::antoine-kibler-avocat", name:"Antoine KIBLER", company:"KIBLER AVOCAT", url:"https://www.linkedin.com/in/antoine-kibler-958179103/", lastActive:""},
+          {key:"france::antoine-lavaud-valeurs-investissements", name:"Antoine LAVAUD", company:"VALEURS INVESTISSEMENTS PATRIMOINE", url:"https://www.linkedin.com/in/antoine-lavaud-8793b729/", lastActive:""},
+          {key:"france::antoine-malpeyre-swiss-life", name:"Antoine MALPEYRE", company:"SWISS LIFE", url:"https://www.linkedin.com/in/antoine-malpeyre-649a1389/", lastActive:""}
         ];
         const SO_CONNECT_QUEUE_KEY = 'soConnectQueueData';
-        const SO_DATA_VERSION = 19; // bumped 2026-11-10: clean-overwrite with a fresh 20-name batch (2 PASS + 18 REVIEW). See SO_PREMIUM_DATA_VERSION 14 comment for today's resolver/vetting/audit detail, including 3 permanent exclusions added to the suspect list (Gruel/Blond misidentification + Lescure/BNI relevance from Nov 7, now made permanent; plus a new one, Delpech/Groupe HDI mismatch+enterprise-scale) and the Ducret/Banque Populaire enterprise-scale exclusion.
+        const SO_DATA_VERSION = 20; // bumped 2026-11-11: clean-overwrite with 18 (2 short of the usual 20 -- pool is thin, only 27 total eligible unused remained after today's resolver run, see SO_PREMIUM_DATA_VERSION 15 comment for full detail). 4 PASS + 14 REVIEW.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own linkedin_connect note, reframed
         // as Souranka messaging on his behalf -- "communicating on behalf of Parag Nandy Roy, a BNI
@@ -2611,9 +2608,11 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
+          {key:"france::andre-guche-lesaffre-accepted", name:"André GUCHE", company:"LESAFFRE UTILITAIRES VOLKSWAGEN", url:"https://www.linkedin.com/in/andre-guche-004976118/", acceptedOn:"2026-11-10"},
+          {key:"france::andrea-larochelle-adn-accepted", name:"Andréa LAROCHELLE", company:"ADN CONTROLES", url:"https://www.linkedin.com/in/andr%C3%A9a-larochelle-4b1633160/", acceptedOn:"2026-11-10"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 22; // bumped 2026-11-10: owner confirmed Nov 10 sends (CSV-confirmation), which DMed all 8 accepted-but-undmed people from the prior check -- Accepted tab emptied since none currently qualify as accepted-but-undmed. Re-ran full acceptance check same day: 0 new accepts found (191 pending unchanged).
+        const SO_ACCEPTED_DATA_VERSION = 23; // bumped 2026-11-11: daily acceptance check found 2 new genuine accepts (Andre Guche, Andrea Larochelle), neither DMed yet.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
