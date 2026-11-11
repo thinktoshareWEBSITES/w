@@ -2302,16 +2302,9 @@
         // members, for Sales Navigator messaging (50 fresh InMail credits cover any of them,
         // no Open Profile distinction needed per owner). Ranked by most-recent-activity.
         const SO_PREMIUM_SEED = [
-          {key:"france::anthony-mazuir-novances", name:"Anthony Mazuir", company:"NOVANCES", url:"https://www.linkedin.com/in/anthony-mazuir-70118622b/", lastActive:""},
-          {key:"france::anthony-pellenard-sagesse", name:"Anthony PELLENARD", company:"SAGESSE", url:"https://www.linkedin.com/in/anthony-pellenard-a95056161/", lastActive:""},
-          {key:"france::anthony-pointecouteau-ap-cuisine", name:"Anthony POINTECOUTEAU", company:"AP CUISINE", url:"https://www.linkedin.com/in/anthony-pointecouteau-937085aa/", lastActive:""},
-          {key:"france::anthony-rocher-vousfinancer", name:"Anthony ROCHER", company:"Vousfinancer", url:"https://www.linkedin.com/in/anthony-rocher-14271312/", lastActive:""},
-          {key:"france::anthony-szostok-batt", name:"Anthony SZOSTOK", company:"BATT", url:"https://www.linkedin.com/in/anthony-szostok/", lastActive:""},
-          {key:"france::antoine-blaise-oscar-ai", name:"Antoine Blaise", company:"OSCAR AI SOLUTIONS", url:"https://www.linkedin.com/in/antoine-blaise-oscar/", lastActive:""},
-          {key:"france::antoine-cremmel-cabinet-lambert", name:"Antoine CREMMEL", company:"Cabinet LAMBERT & Associés", url:"https://www.linkedin.com/in/antoine-cremmel/", lastActive:""}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 16; // bumped 2026-11-11: owner only had 7 InMail credits left today (not 9) -- removed Antoine DIETRICH and Antoine GIRE from the live queue, held both in premium_reserve_nov12.json for tomorrow's batch instead of sending or logging them as sent. Remaining 7 confirmed sent (CSV-confirmation) and logged in sales-navigator-sent-log.csv.
+        const SO_PREMIUM_DATA_VERSION = 17; // bumped 2026-11-12: emptied -- all 7 from v16 were confirmed sent by the owner (logged in sales-navigator-sent-log.csv) but the dashboard's own per-card done-checkbox was never ticked, so they kept showing as "pending" here even though already sent. No new Sales Nav batch today (credits still exhausted) to replace them with, so clean-overwrite to empty rather than leaving stale already-sent cards visible. Dietrich/Gire remain in premium_reserve_nov12.json awaiting credits.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
