@@ -2307,12 +2307,10 @@
           {key:"france::anthony-rocher-vousfinancer", name:"Anthony ROCHER", company:"Vousfinancer", url:"https://www.linkedin.com/in/anthony-rocher-14271312/", lastActive:""},
           {key:"france::anthony-szostok-batt", name:"Anthony SZOSTOK", company:"BATT", url:"https://www.linkedin.com/in/anthony-szostok/", lastActive:""},
           {key:"france::antoine-blaise-oscar-ai", name:"Antoine Blaise", company:"OSCAR AI SOLUTIONS", url:"https://www.linkedin.com/in/antoine-blaise-oscar/", lastActive:""},
-          {key:"france::antoine-cremmel-cabinet-lambert", name:"Antoine CREMMEL", company:"Cabinet LAMBERT & Associés", url:"https://www.linkedin.com/in/antoine-cremmel/", lastActive:""},
-          {key:"france::antoine-dietrich-rogang", name:"Antoine DIETRICH", company:"ROGANG PRODUCTION", url:"https://www.linkedin.com/in/antoine-dietrich/", lastActive:""},
-          {key:"france::antoine-gire-verialis-perigueux", name:"Antoine GIRÉ", company:"VERIALIS PERIGUEUX", url:"https://www.linkedin.com/in/antoine-gir%C3%A9-859843127/", lastActive:""}
+          {key:"france::antoine-cremmel-cabinet-lambert", name:"Antoine CREMMEL", company:"Cabinet LAMBERT & Associés", url:"https://www.linkedin.com/in/antoine-cremmel/", lastActive:""}
         ];
         const SO_PREMIUM_QUEUE_KEY = 'soPremiumQueueData';
-        const SO_PREMIUM_DATA_VERSION = 15; // bumped 2026-11-11: clean-overwrite with 9 (owner instruction: only 9 Sales Nav DMs today, not the usual 10). All 9 PASS. Resolver run (577-676, 100 attempts, 31 newly resolved, cumulative 293/677=43.3%), vetted (vet_france_batch.js 1265 9999: cumulative 154 PASS). Self-name audit on new entries: clean, no mismatches. Manual scale/wrong-person scan found 2 new permanent exclusions added to suspect_self_name_matches.json: Anthony REMONT (SG Credit du Nord -- Societe Generale regional banking subsidiary, enterprise-scale) and Antoine BONFILS (Renault Melun -- fleet sales advisor, non-decision-maker title, not owner/director/C-suite). Pool is thin: only 27 eligible unused remained after this run (13 PASS + 14 REVIEW) vs 29 needed for 9+20, so today's Connection Requests batch is 18 instead of 20 (2 short) -- see SO_DATA_VERSION 20 comment.
+        const SO_PREMIUM_DATA_VERSION = 16; // bumped 2026-11-11: owner only had 7 InMail credits left today (not 9) -- removed Antoine DIETRICH and Antoine GIRE from the live queue, held both in premium_reserve_nov12.json for tomorrow's batch instead of sending or logging them as sent. Remaining 7 confirmed sent (CSV-confirmation) and logged in sales-navigator-sent-log.csv.
 
         // Owner-approved wording (2026-10-27): mirrors Parag's own full Open Profile message
         // (PA_MESSAGE_TEMPLATES.linkedin), reframed in third person since Souranka is messaging
@@ -2608,11 +2606,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::andre-guche-lesaffre-accepted", name:"André GUCHE", company:"LESAFFRE UTILITAIRES VOLKSWAGEN", url:"https://www.linkedin.com/in/andre-guche-004976118/", acceptedOn:"2026-11-10"},
-          {key:"france::andrea-larochelle-adn-accepted", name:"Andréa LAROCHELLE", company:"ADN CONTROLES", url:"https://www.linkedin.com/in/andr%C3%A9a-larochelle-4b1633160/", acceptedOn:"2026-11-10"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 23; // bumped 2026-11-11: daily acceptance check found 2 new genuine accepts (Andre Guche, Andrea Larochelle), neither DMed yet.
+        const SO_ACCEPTED_DATA_VERSION = 24; // bumped 2026-11-11: owner confirmed Nov 11 sends (CSV-confirmation), which DMed both accepted-but-undmed people (Andre Guche, Andrea Larochelle) -- Accepted tab emptied since none currently qualify as accepted-but-undmed.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
