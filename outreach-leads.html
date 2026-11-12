@@ -2182,12 +2182,10 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
         const PA_ACCEPTED_SEED = [
-          {key:"accepted::1843460", name:"Caleb Nation", company:"Nation Media Design", url:"https://www.linkedin.com/in/calebnationmedia/", acceptedOn:"2026-11-12"},
-          {key:"accepted::2323249", name:"Darius Mills", company:"Creative Health Solutions", url:"https://www.linkedin.com/in/chs-dmills/", acceptedOn:"2026-11-12"},
-          {key:"accepted::398274", name:"Kenneth Smith", company:"Powering Elite Performers, LLC", url:"https://www.linkedin.com/in/ken-smith-9096091/", acceptedOn:"2026-11-12"}
+          {key:"accepted::1825994", name:"Pua Pakele", company:"RBL Media", url:"https://www.linkedin.com/in/pualena/", acceptedOn:"2026-11-13"}
         ];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 16; // bumped 2026-11-12: clean-overwrite with today's 3 new accepted-but-undmed people found by the acceptance check (Caleb Nation, Darius Mills, Kenneth Smith).
+        const PA_ACCEPTED_DATA_VERSION = 17; // bumped 2026-11-13: clean-overwrite -- prior 3 (Caleb Nation, Darius Mills, Kenneth Smith) already DMed and removed; today's new accepted-but-undmed person is Pua Pakele.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
