@@ -2605,9 +2605,14 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
+          {key:"france::alin-dumitrel-cioroiu-aln", name:"Alin Dumitrel CIOROIU", company:"ALN", url:"https://www.linkedin.com/in/alin-dumitrel-cioroiu-aln/", acceptedDate:"2026-11-16"},
+          {key:"france::anita-sette-cuisine-deco", name:"Anita Sette", company:"Cuisine Deco", url:"https://www.linkedin.com/in/anita-sette-0678a1220/", acceptedDate:"2026-11-16"},
+          {key:"france::anis-maalej-colead-finance", name:"Anis MAALEJ", company:"COLEAD FINANCE", url:"https://www.linkedin.com/in/anis-maalej-7372b930/", acceptedDate:"2026-11-16"},
+          {key:"france::alexia-glomot-boghossian-alexia-glomot-boghossian-architecte", name:"Alexia GLOMOT BOGHOSSIAN", company:"Alexia Glomot Boghossian Architecte", url:"https://www.linkedin.com/in/alexia-glomot-boghossian-9a58ab113/", acceptedDate:"2026-11-16"},
+          {key:"france::antoine-saba-la-fabrica-audiovisuel", name:"Antoine SABA", company:"La Fabrica - Audiovisuel", url:"https://www.linkedin.com/in/antoine-saba-lafabrica/", acceptedDate:"2026-11-16"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 29; // bumped 2026-11-17: clean-overwrite -- the previous 5 (Busquets, Meunier, Tabareau, Moulinneuf, Dietrich) now have dm_sent_date logged so they drop off. Today's acceptance check could not run: the Souranka Edge profile's LinkedIn session was logged out and hit a Cloudflare bot-check page ("Just a moment...") instead of loading the connections list, so no new accepts could be verified. Not treated as "zero accepts" -- genuinely unknown until the owner logs back into that profile and the check is rerun. Tab left empty rather than carrying stale data.
+        const SO_ACCEPTED_DATA_VERSION = 30; // bumped 2026-11-17: clean-overwrite -- login was fixed in the Souranka Edge profile and the acceptance check reran successfully (1646 profile links visible, vs 0 on the earlier failed attempt). Found 5 new accepted-but-undmed people (Cioroiu, Sette, Maalej, Glomot Boghossian, Saba). Tab was empty going into today since the previous 5 already had dm_sent_date logged.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
