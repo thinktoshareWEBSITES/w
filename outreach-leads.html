@@ -2182,11 +2182,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
         const PA_ACCEPTED_SEED = [
-          {key:"accepted::2321673", name:"Ian Brewer", company:"Anointed Vessel LLC", url:"https://www.linkedin.com/in/ian-brewer-dc-atc-cscs-592b97120/", acceptedOn:"2026-11-17"},
-          {key:"accepted::955655", name:"Melissa Seidel", company:"The RECollective", url:"https://www.linkedin.com/in/melissaseidel/", acceptedOn:"2026-11-17"}
         ];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 23; // bumped 2026-11-17: clean-overwrite with today's 2 new accepted-but-undmed people (Ian Brewer, Melissa Seidel).
+        const PA_ACCEPTED_DATA_VERSION = 24; // bumped 2026-11-17: clean-overwrite, empty -- today's 2 (Ian Brewer, Melissa Seidel) DMed via connection-dms.csv, dm_sent_date now set.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
