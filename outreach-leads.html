@@ -2603,12 +2603,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::arnaud-cochet-westotel-tours", name:"Arnaud COCHET", company:"WESTOTEL TOURS", url:"https://www.linkedin.com/in/arnaud-cochet-25089713a/", acceptedDate:"2026-11-18"},
-          {key:"france::anthony-celerier-madygood", name:"Anthony CELERIER", company:"Madygood", url:"https://www.linkedin.com/in/anthonycelerier/", acceptedDate:"2026-11-18"},
-          {key:"france::anne-cecile-perrouty-bpg-avocats", name:"Anne-Cécile PERROUTY", company:"BPG AVOCATS", url:"https://www.linkedin.com/in/anne-cecile-perrouty-04759086/", acceptedDate:"2026-11-18"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 31; // bumped 2026-11-18: clean-overwrite -- the previous 5 (Cioroiu, Sette, Maalej, Glomot Boghossian, Saba) already had dm_sent_date logged 2026-11-17, so they drop off. Today's acceptance check (1649 profile links visible) found 3 new accepted-but-undmed people: Cochet, Celerier, Perrouty -- all from earlier days' Connection Request sends (Celerier was in the Nov 17 batch).
+        const SO_ACCEPTED_DATA_VERSION = 32; // bumped 2026-11-18: clean-overwrite -- Cochet, Celerier and Perrouty (accepted 2026-11-17 per the tracking log, found by that day's acceptance check) now have dm_sent_date=2026-11-18 logged, so they drop off. Tab emptied pending the next acceptance check.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
