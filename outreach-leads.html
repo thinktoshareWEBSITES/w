@@ -2604,16 +2604,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::aude-lopes", name:"Aude LOPES", company:"ALPS DESIGN", url:"https://www.linkedin.com/in/aude-lopes-40b05887/", acceptedDate:"2026-11-18"},
-          {key:"france::amandine-bouvier", name:"Amandine BOUVIER", company:"ACTEA LEGAL+", url:"https://www.linkedin.com/in/amandine-bouvier-341b57189/", acceptedDate:"2026-11-18"},
-          {key:"france::arthur-orliac", name:"Arthur ORLIAC", company:"HOMNI", url:"https://www.linkedin.com/in/arthur-orliac-865721150/", acceptedDate:"2026-11-18"},
-          {key:"france::audrey-brianchon-mollet", name:"Audrey BRIANCHON-MOLLET", company:"ARTOIS GOHELLE NOTAIRES", url:"https://www.linkedin.com/in/audrey-brianchon-mollet-2131a7aa/", acceptedDate:"2026-11-18"},
-          {key:"france::anne-claire-sabadel", name:"Anne-Claire SABADEL", company:"QUALIRETRAITE", url:"https://www.linkedin.com/in/anne-claire-sabadel-9b40052a4/", acceptedDate:"2026-11-18"},
-          {key:"france::arnaud-riedel", name:"Arnaud Riedel", company:"Riedel façades", url:"https://www.linkedin.com/in/arnaud-riedel-04a8b895/", acceptedDate:"2026-11-18"},
-          {key:"france::arnaud-montagnon", name:"Arnaud MONTAGNON", company:"Qovop Events", url:"https://www.linkedin.com/in/arnaud-montagnon/", acceptedDate:"2026-11-18"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 33; // bumped 2026-11-19: clean-overwrite -- 7 new accepts found by the acceptance check (real system-clock date 2026-11-18, per the cross-midnight convention since the check ran before midnight): Aude Lopes/Alps Design, Amandine Bouvier/Actea Legal+, Arthur Orliac/Homni, Audrey Brianchon-Mollet/Artois Gohelle Notaires, Anne-Claire Sabadel/Qualiretraite, Arnaud Riedel/Riedel facades, Arnaud Montagnon/Qovop Events. All 7 also drop out of today's SO_CONNECT_SEED batch since they're no longer pending requests.
+        const SO_ACCEPTED_DATA_VERSION = 34; // bumped 2026-11-19: clean-overwrite -- Lopes, Bouvier, Orliac, Brianchon-Mollet, Sabadel, Riedel and Montagnon (accepted 2026-11-18 per the tracking log) now have dm_sent_date=2026-11-19 logged, so they drop off. Tab emptied pending the next acceptance check.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
