@@ -2182,10 +2182,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
         const PA_ACCEPTED_SEED = [
-          {key:"accepted::2232478", name:"Teeg Stouffer", company:"Fascination Film Studio", url:"https://www.linkedin.com/in/teegstouffer/", acceptedOn:"2026-11-19"}
         ];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 25; // bumped 2026-11-19: 1 new accept (Teeg Stouffer) found on re-check, caught after initial Nov19 check missed it.
+        const PA_ACCEPTED_DATA_VERSION = 26; // bumped 2026-11-19: clean-overwrite, empty -- Teeg Stouffer DMed via connection-dms.csv, dm_sent_date now set.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
