@@ -2603,11 +2603,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::audrey-olive", name:"Audrey OLIVE", company:"ABEILLE ASSURANCES CANNES FORVILLE", url:"https://www.linkedin.com/in/audrey-olive-871bb71a9/", acceptedOn:"2026-11-19"},
-          {key:"france::augustin-massenet", name:"Augustin Massenet", company:"Etolrak", url:"https://www.linkedin.com/in/augustin-massenet-a38a59157/", acceptedOn:"2026-11-19"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 35; // bumped 2026-11-20: clean-overwrite -- 2 new accepts from the Nov 20 acceptance check (Audrey Olive/Abeille Assurances Cannes Forville, Augustin Massenet/Etolrak), both accepted_date=2026-11-19 per the tracking log.
+        const SO_ACCEPTED_DATA_VERSION = 36; // bumped 2026-11-20: clean-overwrite -- Audrey Olive and Augustin Massenet graduated off this tab now that their DMs are confirmed sent (dm_sent_date=2026-11-20 per the tracking log).
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
