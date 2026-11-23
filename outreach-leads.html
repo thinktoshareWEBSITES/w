@@ -2182,11 +2182,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
         const PA_ACCEPTED_SEED = [
-          {key:"accepted::1921128", name:"Jason Kelley", company:"Blue Squared", url:"https://www.linkedin.com/in/officaljasonjkelley/", acceptedOn:"2026-11-22"},
-          {key:"accepted::2195911", name:"Sam Andrus", company:"GTI Consulting LLC", url:"http://linkedin.com/in/samuel-andrus218", acceptedOn:"2026-11-22"}
         ];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 27; // bumped 2026-11-22: 2 new accepts (Jason Kelley, Sam Andrus) found on today's check -- covers the Nov 21-22 gap.
+        const PA_ACCEPTED_DATA_VERSION = 28; // bumped 2026-11-23: emptied -- Jason Kelley + Sam Andrus both DMed today via make_nov23_csvs.js.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
@@ -2605,16 +2603,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::aurelie-dumontaud-seure", name:"Aurélie DUMONTAUD SEURE", company:"ADLS WONDER COACHING", url:"https://www.linkedin.com/in/aur%C3%A9lie-dumontaud-seure-%E2%AD%90-adls-wonder-coaching-3424a065/", acceptedOn:"2026-11-22"},
-          {key:"france::beata-jagla", name:"Beata JAGLA", company:"EMA DESIGN", url:"https://www.linkedin.com/in/beata-jagla-1260b4b2/", acceptedOn:"2026-11-22"},
-          {key:"france::baptiste-bretigniere", name:"Baptiste BRETIGNIERE", company:"AXA PRÉVOYANCE ET PATRIMOINE", url:"https://www.linkedin.com/in/baptiste-bretigniere-70871513/", acceptedOn:"2026-11-22"},
-          {key:"france::astrid-boutaud", name:"Astrid BOUTAUD", company:"Les Pointures", url:"https://www.linkedin.com/in/astridboutaud/", acceptedOn:"2026-11-22"},
-          {key:"france::aurelie-centimes", name:"Aurélie CENTIMES", company:"Fiducie Consultants", url:"https://www.linkedin.com/in/aur%C3%A9lie-centimes-5732b9141/", acceptedOn:"2026-11-22"},
-          {key:"france::jonathan-courquin", name:"Jonathan COURQUIN", company:"Idfabric", url:"http://www.linkedin.com/in/jonathan-courquin-11864083/", acceptedOn:"2026-11-22"},
-          {key:"france::aurore-dangleterre", name:"Aurore DANGLETERRE", company:"PAILLETTES LIFE", url:"https://www.linkedin.com/in/aurore-dangleterre/", acceptedOn:"2026-11-22"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 37; // bumped 2026-11-23: clean-overwrite -- 7 new accepts from the Nov 23 acceptance check, all accepted_date=2026-11-22 per the tracking log.
+        const SO_ACCEPTED_DATA_VERSION = 38; // bumped 2026-11-23: clean-overwrite -- the 7 Nov-22 accepts were DM-confirmed (dm_sent_date=2026-11-23) and graduated off this tab.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
