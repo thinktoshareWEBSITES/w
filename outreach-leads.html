@@ -2603,15 +2603,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::benoit-baubriau", name:"Benoît BAUBRIAU", company:"BAUBRIAU AVOCAT", url:"https://www.linkedin.com/in/beno%C3%AEt-baubriau-24248a166/", acceptedOn:"2026-11-23"},
-          {key:"france::aurore-lachuer", name:"Aurore LACHUER", company:"LACHUER PATRIMOINE", url:"https://www.linkedin.com/in/aurore-lachuer/", acceptedOn:"2026-11-23"},
-          {key:"france::alexis-chaboche", name:"Alexis CHABOCHE", company:"Wemaj'in", url:"https://www.linkedin.com/in/alexis-chaboche/", acceptedOn:"2026-11-23"},
-          {key:"france::audrey-soler", name:"Audrey SOLER", company:"Racines", url:"https://www.linkedin.com/in/audreysolerbordeaux/", acceptedOn:"2026-11-23"},
-          {key:"france::baptiste-goddyn", name:"Baptiste GODDYN", company:"CAZES GODDYN-EXPERT COMPTABLE", url:"https://www.linkedin.com/in/baptiste-goddyn-14a235184/", acceptedOn:"2026-11-23"},
-          {key:"france::arthur-mouy", name:"Arthur MOUY", company:"Allianz", url:"https://www.linkedin.com/in/arthur-mouy-3b4277109/", acceptedOn:"2026-11-23"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 39; // bumped 2026-11-24: clean-overwrite -- 6 new accepts from the Nov 24 acceptance check, all accepted_date=2026-11-23 per the tracking log.
+        const SO_ACCEPTED_DATA_VERSION = 40; // bumped 2026-11-24: clean-overwrite -- the 6 Nov23 accepts (Baubriau, Lachuer, Chaboche, Soler, Goddyn, Mouy) were DM'd 2026-11-24 and graduate off this tab.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
