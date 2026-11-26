@@ -2604,16 +2604,9 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
         const SO_ACCEPTED_SEED = [
-          {key:"france::benjamin-voisine", name:"Benjamin VOISINE", company:"JPBV NETTOYAGE", url:"https://www.linkedin.com/in/benjamin-voisine-465578a7/", acceptedOn:"2026-11-24"},
-          {key:"france::andy-aubert", name:"Andy AUBERT", company:"AUBERT DEBARRAS", url:"https://www.linkedin.com/in/andy-aubert-a83b46295/", acceptedOn:"2026-11-24"},
-          {key:"france::benjamin-pescheux", name:"Benjamin PESCHEUX", company:"SCALEDEV", url:"https://www.linkedin.com/in/benjamin-pescheux-b3b9a858/", acceptedOn:"2026-11-24"},
-          {key:"france::camille-lepers", name:"Camille LEPERS", company:"Camille Lepers Design", url:"https://www.linkedin.com/in/camille-lepers-84815a127/", acceptedOn:"2026-11-24"},
-          {key:"france::bruno-fedrigo", name:"Bruno FEDRIGO", company:"FEDRIGO PATRIMOINE", url:"https://www.linkedin.com/in/bruno-fedrigo/", acceptedOn:"2026-11-24"},
-          {key:"france::camille-hatt", name:"camille HATT", company:"Camille HATT Avocat", url:"https://www.linkedin.com/in/camille-hatt-1244b8133/", acceptedOn:"2026-11-24"},
-          {key:"france::baptiste-bain", name:"Baptiste BAIN", company:"DB POMPES", url:"https://www.linkedin.com/in/baptiste-bain-918618146/", acceptedOn:"2026-11-24"}
         ];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 41; // bumped 2026-11-26: clean-overwrite -- 7 new accepts from the Nov 26 batch-cycle acceptance check, all accepted_date=2026-11-24 per the tracking log.
+        const SO_ACCEPTED_DATA_VERSION = 42; // bumped 2026-11-26: clean-overwrite -- the 7 Nov24 accepts (Voisine, Aubert, Pescheux, Lepers, Fedrigo, Hatt, Bain) were DM'd 2026-11-26 and graduate off this tab.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
