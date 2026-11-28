@@ -2182,9 +2182,11 @@
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (same fix applied to Souranka's tab on 2026-11-06). */
         const PA_ACCEPTED_SEED = [
+          {key:"accepted::2132599", name:"Sandra Daffer", company:"Hawaiian Built Roofing", url:"https://www.linkedin.com/in/sandra-daffer-08493314/", acceptedOn:"2026-11-27"},
+          {key:"accepted::2341712", name:"Jackson Zaugg", company:"Social Indoor of Austin", url:"https://www.linkedin.com/in/jacksonzaugg/", acceptedOn:"2026-11-27"}
         ];
         const PA_ACCEPTED_QUEUE_KEY = 'paAcceptedQueueData';
-        const PA_ACCEPTED_DATA_VERSION = 30; // bumped 2026-11-26: emptied -- Cherrie Hughes DMed today via make_nov26_csvs.js.
+        const PA_ACCEPTED_DATA_VERSION = 31; // bumped 2026-11-28: 2 new accepts (Sandra Daffer, Jackson Zaugg) found on today's check.
 
         function paAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
