@@ -2604,19 +2604,9 @@
            each time: only rows with accepted_date filled AND dm_sent_date empty -- i.e. accepted
            but genuinely not yet messaged per the real record, not per the dashboard's own
            click-a-checkbox "done" state (those two can drift apart, which is what caused this). */
-        const SO_ACCEPTED_SEED = [
-          {key:"france::catherine-muhl", name:"Catherine MUHL", company:"ICF CONSEIL", url:"https://www.linkedin.com/in/catherinemuhl/", acceptedOn:"2026-11-28"},
-          {key:"france::benjamin-destor", name:"Benjamin DESTOR", company:"XEFI QUIMPER", url:"https://www.linkedin.com/in/benjamin-destor-057179147/", acceptedOn:"2026-11-28"},
-          {key:"france::basile-blomme", name:"Basile BLOMME", company:"IMMOTECH", url:"https://www.linkedin.com/in/basile-blomme-626aa9396/", acceptedOn:"2026-11-28"},
-          {key:"france::caroline-da-silva", name:"Caroline DA SILVA", company:"Clarte", url:"https://www.linkedin.com/in/caroline-da-silva-250b55157/", acceptedOn:"2026-11-28"},
-          {key:"france::antoine-blaise", name:"Antoine Blaise", company:"OSCAR AI SOLUTIONS", url:"https://www.linkedin.com/in/antoine-blaise-oscar/", acceptedOn:"2026-11-28"},
-          {key:"france::adrien-augusto", name:"Adrien AUGUSTO", company:"DISPO MENAGE", url:"https://www.linkedin.com/in/adrien-augusto", acceptedOn:"2026-11-28"},
-          {key:"france::baptiste-collet", name:"Baptiste COLLET", company:"CBS GROUPE", url:"https://www.linkedin.com/in/baptiste-collet-94a1bb229/", acceptedOn:"2026-11-28"},
-          {key:"france::caroline-beaujard", name:"Caroline BEAUJARD", company:"LAZARE in the jungle", url:"https://www.linkedin.com/in/caroline-beaujard/", acceptedOn:"2026-11-28"},
-          {key:"france::angeline-perconte", name:"Angéline PERCONTE", company:"APECO Home-staging", url:"https://www.linkedin.com/in/angeline-perconte/", acceptedOn:"2026-11-28"}
-        ];
+        const SO_ACCEPTED_SEED = [];
         const SO_ACCEPTED_QUEUE_KEY = 'soAcceptedQueueData';
-        const SO_ACCEPTED_DATA_VERSION = 44; // bumped 2026-11-28: 3 more new accepts added (Collet, Beaujard, Perconte) from an ad-hoc recheck.
+        const SO_ACCEPTED_DATA_VERSION = 45; // bumped 2026-11-28: owner confirmed CSV creation -- all 9 pending accepts (Muhl, Destor, Blomme, Da Silva, Blaise, Augusto, Collet, Beaujard, Perconte) got dm_sent_date=2026-11-28 in connection-request-tracking-log.csv, so the clean-overwrite filter (accepted_date filled AND dm_sent_date empty) now yields zero -- tab cleared until the next acceptance check finds new accepts.
 
         function soAcceptedMsg(name, company){
             const fn = (name || '').split(' ')[0] || name || '';
